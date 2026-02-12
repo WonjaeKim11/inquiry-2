@@ -1,0 +1,11 @@
+packages:
+  - apps/*
+  - packages/*
+
+onlyBuiltDependencies:
+  - '@swc/core'
+  - 'nx'
+  - '@parcel/watcher'
+  - 'esbuild'
+  - 'less'
+  - 'sharp'
