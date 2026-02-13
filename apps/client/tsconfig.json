@@ -47,6 +47,12 @@
   "references": [
     {
       "path": "../../packages/db"
+    },
+    {
+      "path": "../../libs/client/core"
+    },
+    {
+      "path": "../../libs/client/auth"
     }
   ]
 }

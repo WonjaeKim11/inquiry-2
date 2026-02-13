@@ -1,8 +1,4 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+// Prisma 스키마: 인증 관련 모델 (User, Account, RefreshToken)
 
 generator client {
   provider = "prisma-client-js"
@@ -10,4 +6,56 @@ generator client {
 
 datasource db {
   provider = "postgresql"
+}
+
+/// 사용자 계정 정보. OAuth 전용 사용자는 password가 null
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  name          String?
+  password      String?   // nullable: OAuth 사용자는 비밀번호 없음
+  emailVerified Boolean   @default(false)
+  image         String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  accounts      Account[]
+  refreshTokens RefreshToken[]
+
+  @@map("users")
+}
+
+/// OAuth 프로바이더 연결 정보 (Google, GitHub 등)
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  provider          String  // "google" | "github"
+  providerAccountId String
+  accessToken       String?
+  refreshToken      String?
+  expiresAt         Int?
+  tokenType         String?
+  scope             String?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+/// JWT Refresh Token 관리 (rotation, 만료, 폐기)
+model RefreshToken {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  userId    String
+  expiresAt DateTime
+  revoked   Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("refresh_tokens")
 }

@@ -11,6 +11,18 @@
     },
     {
       "path": "./packages/db"
+    },
+    {
+      "path": "./libs/server/prisma"
+    },
+    {
+      "path": "./libs/server/auth"
+    },
+    {
+      "path": "./libs/client/core"
+    },
+    {
+      "path": "./libs/client/auth"
     }
   ]
 }

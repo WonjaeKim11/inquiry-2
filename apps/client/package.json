@@ -4,8 +4,11 @@
   "private": true,
   "dependencies": {
     "@inquiry/db": "workspace:*",
+    "@inquiry/client-core": "workspace:*",
+    "@inquiry/client-auth": "workspace:*",
     "next": "~16.0.1",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "zod": "^4.3.6"
   }
 }
