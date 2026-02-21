@@ -6,6 +6,7 @@ module.exports = {
   externals: {
     bcryptjs: 'commonjs bcryptjs',
     nodemailer: 'commonjs nodemailer',
+    'cookie-parser': 'commonjs cookie-parser',
   },
   output: {
     path: join(__dirname, 'dist'),
