@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { z } from 'zod';
 import { useAuth } from '@inquiry/client-core';
+import { useTranslation } from 'react-i18next';
 import { SocialLoginButtons } from './social-login-buttons';
 
 /**
@@ -10,18 +11,18 @@ import { SocialLoginButtons } from './social-login-buttons';
  * 서버 DTO 규칙과 동기화되어야 한다.
  */
 const signupSchema = z.object({
-  email: z.string().email('올바른 이메일 형식을 입력해주세요.').max(255),
+  email: z.string().email('auth.login_form.invalid_email').max(255),
   password: z
     .string()
-    .min(8, '비밀번호는 최소 8자 이상이어야 합니다.')
-    .max(128, '비밀번호는 최대 128자까지 가능합니다.')
-    .regex(/[A-Z]/, '비밀번호에 대문자가 1자 이상 포함되어야 합니다.')
-    .regex(/[0-9]/, '비밀번호에 숫자가 1자 이상 포함되어야 합니다.'),
+    .min(8, 'auth.reset_password.min_length')
+    .max(128, 'auth.reset_password.max_length')
+    .regex(/[A-Z]/, 'auth.reset_password.require_uppercase')
+    .regex(/[0-9]/, 'auth.reset_password.require_number'),
   name: z
     .string()
-    .min(1, '이름은 필수 입력입니다.')
+    .min(1, 'auth.signup_form.name_required')
     .max(50)
-    .regex(/^[\p{L}\p{N}\s\-']+$/u, '이름에 허용되지 않는 문자가 포함되어 있습니다.'),
+    .regex(/^[\p{L}\p{N}\s\-']+$/u, 'auth.signup_form.name_invalid'),
 });
 
 /**
@@ -41,6 +42,7 @@ const checkPasswordRules = (pwd: string) => {
  * 회원가입 성공 시 이메일 검증 안내 메시지를 표시한다.
  */
 export function SignupForm() {
+  const { t } = useTranslation();
   const { signup } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -58,7 +60,7 @@ export function SignupForm() {
 
     const result = signupSchema.safeParse({ email, password, name: name.trim() });
     if (!result.success) {
-      setError(result.error.issues[0].message);
+      setError(t(result.error.issues[0].message));
       return;
     }
 
@@ -67,7 +69,7 @@ export function SignupForm() {
       await signup(email, password, name.trim());
       setSuccess(true);
     } catch (err) {
-      setError(err instanceof Error ? err.message : '회원가입에 실패했습니다.');
+      setError(err instanceof Error ? err.message : t('auth.signup_form.signup_fail'));
     } finally {
       setLoading(false);
     }
@@ -83,17 +85,17 @@ export function SignupForm() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
           </div>
-          <h1 className="text-2xl font-bold tracking-tight text-slate-900">이메일을 확인해주세요</h1>
+          <h1 className="text-2xl font-bold tracking-tight text-slate-900">{t('auth.signup_form.verify_email_title')}</h1>
           <p className="mt-4 text-sm text-slate-500">
-            <strong>{email}</strong>로 인증 메일을 발송했습니다.
+            {t('auth.signup_form.verify_email_sent_1', { email: <strong>{email}</strong> })}
             <br />
-            메일의 링크를 클릭하여 계정을 활성화해주세요.
+            {t('auth.signup_form.verify_email_sent_2')}
           </p>
           <a
             href="/auth/login"
             className="mt-8 inline-block w-full rounded-md bg-slate-900 px-3 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-slate-800"
           >
-            로그인 페이지로 이동
+            {t('auth.signup_form.to_login')}
           </a>
         </div>
       </div>
@@ -113,24 +115,24 @@ export function SignupForm() {
             </svg>
             <span className="text-2xl font-bold tracking-tight text-slate-900">Inquiry</span>
           </div>
-          <h2 className="mt-2 text-center text-sm font-medium text-slate-600">Create your account</h2>
+          <h2 className="mt-2 text-center text-sm font-medium text-slate-600">{t('auth.signup_form.title')}</h2>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="name" className="sr-only">이름</label>
+            <label htmlFor="name" className="sr-only">{t('auth.signup_form.name_label')}</label>
             <input
               id="name"
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="Full Name"
+              placeholder={t('auth.signup_form.name_placeholder')}
               required
               className="block w-full rounded-md border border-slate-200 px-3 py-2.5 text-sm outline-none placeholder:text-slate-400 focus:border-slate-400 focus:ring-1 focus:ring-slate-400"
             />
           </div>
           <div>
-            <label htmlFor="email" className="sr-only">이메일</label>
+            <label htmlFor="email" className="sr-only">{t('auth.signup_form.email_label')}</label>
             <input
               id="email"
               type="email"
@@ -142,7 +144,7 @@ export function SignupForm() {
             />
           </div>
           <div>
-            <label htmlFor="password" className="sr-only">비밀번호</label>
+            <label htmlFor="password" className="sr-only">{t('auth.signup_form.password_label')}</label>
             <input
               id="password"
               type="password"
@@ -161,19 +163,19 @@ export function SignupForm() {
                   <svg className="mr-1.5 h-3.5 w-3.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  최소 8자 이상
+                  {t('auth.signup_form.pwd_rule_length')}
                 </p>
                 <p className={`${pwdRules.uppercase ? 'text-teal-600' : 'text-slate-400'} flex items-center transition-colors`}>
                   <svg className="mr-1.5 h-3.5 w-3.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  대문자 1자 이상 포함
+                  {t('auth.signup_form.pwd_rule_uppercase')}
                 </p>
                 <p className={`${pwdRules.number ? 'text-teal-600' : 'text-slate-400'} flex items-center transition-colors`}>
                   <svg className="mr-1.5 h-3.5 w-3.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  숫자 1자 이상 포함
+                  {t('auth.signup_form.pwd_rule_number')}
                 </p>
               </div>
             )}
@@ -190,16 +192,16 @@ export function SignupForm() {
             disabled={loading}
             className="mt-2 flex w-full justify-center rounded-md bg-slate-900 px-3 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 disabled:opacity-70"
           >
-            {loading ? '가입 중...' : 'Sign up with Email'}
+            {loading ? t('auth.signup_form.signing_up') : t('auth.signup_form.submit')}
           </button>
         </form>
 
         <SocialLoginButtons />
 
         <div className="mt-8 text-center text-xs text-slate-500">
-          Already have an account?{' '}
+          {t('auth.signup_form.already_have_account')}{' '}
           <a href="/auth/login" className="font-semibold text-slate-900 hover:underline">
-            Login
+            {t('auth.signup_form.login')}
           </a>
         </div>
       </div>

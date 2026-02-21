@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useAuth } from '@inquiry/client-core';
+import { useTranslation } from 'react-i18next';
 
 /**
  * OAuth 콜백 처리 컴포넌트.
@@ -11,13 +12,14 @@ import { useAuth } from '@inquiry/client-core';
 export function AuthCallback() {
   const { handleOAuthCallback } = useAuth();
   const [error, setError] = useState<string | null>(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const accessToken = params.get('accessToken');
 
     if (!accessToken) {
-      setError('인증 토큰이 없습니다. 다시 시도해주세요.');
+      setError(t('auth.callback.no_token'));
       return;
     }
 
@@ -27,7 +29,7 @@ export function AuthCallback() {
         window.location.href = '/';
       })
       .catch(() => {
-        setError('인증 처리 중 오류가 발생했습니다.');
+        setError(t('auth.callback.error'));
       });
   }, [handleOAuthCallback]);
 
@@ -35,14 +37,14 @@ export function AuthCallback() {
     return (
       <div style={{ textAlign: 'center', padding: '2rem' }}>
         <p style={{ color: 'red' }}>{error}</p>
-        <a href="/auth/login">로그인 페이지로 돌아가기</a>
+        <a href="/auth/login">{t('auth.callback.back_to_login')}</a>
       </div>
     );
   }
 
   return (
     <div style={{ textAlign: 'center', padding: '2rem' }}>
-      <p>인증 처리 중...</p>
+      <p>{t('auth.callback.processing')}</p>
     </div>
   );
 }

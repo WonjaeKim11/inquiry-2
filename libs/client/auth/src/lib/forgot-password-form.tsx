@@ -3,9 +3,10 @@
 import { useState } from 'react';
 import { z } from 'zod';
 import { apiFetch } from '@inquiry/client-core';
+import { useTranslation } from 'react-i18next';
 
 const forgotPasswordSchema = z.object({
-  email: z.string().email('올바른 이메일 형식을 입력해주세요.').max(255),
+  email: z.string().email('auth.forgot_password.invalid_email').max(255),
 });
 
 /**
@@ -13,6 +14,7 @@ const forgotPasswordSchema = z.object({
  * 이메일을 입력하면 서버에서 재설정 링크를 발송한다.
  */
 export function ForgotPasswordForm() {
+  const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
@@ -24,7 +26,7 @@ export function ForgotPasswordForm() {
 
     const result = forgotPasswordSchema.safeParse({ email });
     if (!result.success) {
-      setError(result.error.issues[0].message);
+      setError(t(result.error.issues[0].message));
       return;
     }
 
@@ -36,11 +38,11 @@ export function ForgotPasswordForm() {
       });
       if (!res.ok) {
         const data = await res.json();
-        throw new Error(data.message || '요청 처리에 실패했습니다.');
+        throw new Error(data.message || t('auth.forgot_password.fail'));
       }
       setSent(true);
     } catch (err) {
-      setError(err instanceof Error ? err.message : '요청 처리에 실패했습니다.');
+      setError(err instanceof Error ? err.message : t('auth.forgot_password.fail'));
     } finally {
       setLoading(false);
     }
@@ -49,14 +51,14 @@ export function ForgotPasswordForm() {
   if (sent) {
     return (
       <div style={{ maxWidth: 400, margin: '0 auto', padding: '2rem', textAlign: 'center' }}>
-        <h1>이메일을 확인해주세요</h1>
+        <h1>{t('auth.forgot_password.check_email_title')}</h1>
         <p style={{ marginTop: '1rem', color: '#555' }}>
-          <strong>{email}</strong>로 비밀번호 재설정 링크를 발송했습니다.
+          {t('auth.forgot_password.email_sent_1', { email: <strong>{email}</strong> })}
           <br />
-          메일함을 확인해주세요.
+          {t('auth.forgot_password.email_sent_2')}
         </p>
         <p style={{ marginTop: '1.5rem' }}>
-          <a href="/auth/login">로그인 페이지로 돌아가기</a>
+          <a href="/auth/login">{t('auth.forgot_password.back_to_login')}</a>
         </p>
       </div>
     );
@@ -64,13 +66,13 @@ export function ForgotPasswordForm() {
 
   return (
     <div style={{ maxWidth: 400, margin: '0 auto', padding: '2rem' }}>
-      <h1>비밀번호 재설정</h1>
+      <h1>{t('auth.forgot_password.title')}</h1>
       <p style={{ color: '#555', marginBottom: '1.5rem' }}>
-        가입에 사용한 이메일을 입력하면 비밀번호 재설정 링크를 보내드립니다.
+        {t('auth.forgot_password.description')}
       </p>
       <form onSubmit={handleSubmit}>
         <div style={{ marginBottom: '1rem' }}>
-          <label htmlFor="email">이메일</label>
+          <label htmlFor="email">{t('auth.forgot_password.email_label')}</label>
           <input
             id="email"
             type="email"
@@ -87,11 +89,11 @@ export function ForgotPasswordForm() {
           disabled={loading}
           style={{ width: '100%', padding: '0.75rem', cursor: loading ? 'not-allowed' : 'pointer' }}
         >
-          {loading ? '처리 중...' : '재설정 링크 보내기'}
+          {loading ? t('auth.forgot_password.processing') : t('auth.forgot_password.submit')}
         </button>
       </form>
       <p style={{ textAlign: 'center', marginTop: '1rem' }}>
-        <a href="/auth/login">로그인 페이지로 돌아가기</a>
+        <a href="/auth/login">{t('auth.forgot_password.back_to_login')}</a>
       </p>
     </div>
   );

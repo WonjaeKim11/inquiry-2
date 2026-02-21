@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { z } from 'zod';
 import { useAuth } from '@inquiry/client-core';
+import { useTranslation } from 'react-i18next';
 import { SocialLoginButtons } from './social-login-buttons';
 
 /**
@@ -10,15 +11,15 @@ import { SocialLoginButtons } from './social-login-buttons';
  * 서버 DTO 규칙과 동기화되어야 한다.
  */
 const loginSchema = z.object({
-  email: z.string().email('올바른 이메일 형식을 입력해주세요.').max(255),
-  password: z.string().min(1, '비밀번호를 입력해주세요.').max(128),
+  email: z.string().email('auth.login_form.invalid_email').max(255),
+  password: z.string().min(1, 'auth.login_form.password_required').max(128),
 });
 
 /** 에러 코드 → 사용자 메시지 매핑 */
 const ERROR_MESSAGES: Record<string, string> = {
-  'email-verification-required': '이메일 인증이 필요합니다. 메일함을 확인해주세요.',
-  'account-inactive': '비활성화된 계정입니다. 관리자에게 문의해주세요.',
-  'invalid-credentials': '이메일 또는 비밀번호가 올바르지 않습니다.',
+  'email-verification-required': 'auth.login_form.error_email_verification',
+  'account-inactive': 'auth.login_form.error_account_inactive',
+  'invalid-credentials': 'auth.login_form.error_invalid_credentials',
 };
 
 /**
@@ -27,6 +28,7 @@ const ERROR_MESSAGES: Record<string, string> = {
  * URL query string의 ?error= 파라미터로 에러 메시지를 표시한다.
  */
 export function LoginForm() {
+  const { t } = useTranslation();
   const { login } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -38,9 +40,9 @@ export function LoginForm() {
     const params = new URLSearchParams(window.location.search);
     const errorCode = params.get('error');
     if (errorCode && ERROR_MESSAGES[errorCode]) {
-      setError(ERROR_MESSAGES[errorCode]);
+      setError(t(ERROR_MESSAGES[errorCode]));
     }
-  }, []);
+  }, [t]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -48,7 +50,7 @@ export function LoginForm() {
 
     const result = loginSchema.safeParse({ email, password });
     if (!result.success) {
-      setError(result.error.issues[0].message);
+      setError(t(result.error.issues[0].message));
       return;
     }
 
@@ -56,7 +58,7 @@ export function LoginForm() {
     try {
       await login(email, password);
     } catch (err) {
-      setError(err instanceof Error ? err.message : '로그인에 실패했습니다.');
+      setError(err instanceof Error ? err.message : t('auth.login_form.login_fail'));
     } finally {
       setLoading(false);
     }
@@ -75,12 +77,12 @@ export function LoginForm() {
             </svg>
             <span className="text-2xl font-bold tracking-tight text-slate-900">Inquiry</span>
           </div>
-          <h2 className="mt-2 text-center text-sm font-medium text-slate-600">Login to your account</h2>
+          <h2 className="mt-2 text-center text-sm font-medium text-slate-600">{t('auth.login_form.title')}</h2>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="email" className="sr-only">이메일</label>
+            <label htmlFor="email" className="sr-only">{t('auth.login_form.email_label')}</label>
             <input
               id="email"
               type="email"
@@ -92,7 +94,7 @@ export function LoginForm() {
             />
           </div>
           <div>
-            <label htmlFor="password" className="sr-only">비밀번호</label>
+            <label htmlFor="password" className="sr-only">{t('auth.login_form.password_label')}</label>
             <input
               id="password"
               type="password"
@@ -115,16 +117,16 @@ export function LoginForm() {
             disabled={loading}
             className="flex w-full justify-center rounded-md bg-slate-900 px-3 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 disabled:opacity-70"
           >
-            {loading ? '로그인 중...' : 'Login with Email'}
+            {loading ? t('auth.login_form.logging_in') : t('auth.login_form.submit')}
           </button>
         </form>
 
         <SocialLoginButtons />
 
         <div className="mt-8 text-center text-xs text-slate-500">
-          New to Inquiry?{' '}
+          {t('auth.login_form.new_user')}{' '}
           <a href="/auth/signup" className="font-semibold text-slate-900 hover:underline">
-            Create an account
+            {t('auth.login_form.create_account')}
           </a>
         </div>
       </div>
