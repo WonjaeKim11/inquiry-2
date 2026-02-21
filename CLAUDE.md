@@ -60,6 +60,7 @@ To help developers who are new to the project understand, we include:
 
 ### Build & Commit Policy
 - After all code modifications and file creations are complete, always run the build
-- Only proceed with commit if the build succeeds
+- **If the build succeeds, immediately proceed with commit — do not wait for user confirmation**
 - If the build fails, fix the errors and rebuild before committing
 - Commit messages must always be written in Korean
+- Do not include `Co-Authored-By` lines in commit messages
