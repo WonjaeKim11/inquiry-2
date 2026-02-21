@@ -92,7 +92,7 @@
     "@nestjs/throttler": "^6.5.0",
     "@nestjs/platform-express": "^11.0.0",
     "nodemailer": "^8.0.1",
-    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.3",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.3",
     "cookie-parser": "^1.4.7",
@@ -107,7 +107,6 @@
   },
   "devDependencies": {
     "@nestjs/testing": "^11.0.0",
-    "@types/bcrypt": "^6.0.0",
     "@types/cookie-parser": "^1.4.10",
     "@types/passport-github2": "^1.2.9",
     "@types/passport-google-oauth20": "^2.0.17",

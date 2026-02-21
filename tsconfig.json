@@ -23,6 +23,15 @@
     },
     {
       "path": "./libs/client/auth"
+    },
+    {
+      "path": "./libs/server/rate-limit"
+    },
+    {
+      "path": "./libs/server/audit-log"
+    },
+    {
+      "path": "./libs/server/email"
     }
   ]
 }

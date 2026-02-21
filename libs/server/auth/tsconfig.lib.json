@@ -19,10 +19,19 @@
   "include": ["src/**/*.ts"],
   "references": [
     {
-      "path": "../prisma/tsconfig.lib.json"
+      "path": "../../../packages/db/tsconfig.lib.json"
     },
     {
-      "path": "../../../packages/db/tsconfig.lib.json"
+      "path": "../rate-limit/tsconfig.lib.json"
+    },
+    {
+      "path": "../audit-log/tsconfig.lib.json"
+    },
+    {
+      "path": "../email/tsconfig.lib.json"
+    },
+    {
+      "path": "../prisma/tsconfig.lib.json"
     }
   ]
 }

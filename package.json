@@ -2,7 +2,11 @@
   "name": "@inquiry/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "dev": "nx run-many --targets=serve,dev --projects=@inquiry/server,@inquiry/client --parallel",
+    "dev:server": "nx serve @inquiry/server",
+    "dev:client": "nx dev @inquiry/client"
+  },
   "private": true,
   "devDependencies": {
     "@nestjs/schematics": "^11.0.0",
@@ -17,6 +21,7 @@
     "@swc/cli": "~0.8.0",
     "@swc/core": "1.15.8",
     "@swc/helpers": "0.5.18",
+    "@types/bcryptjs": "^3.0.0",
     "@types/node": "20.19.9",
     "@types/nodemailer": "^7.0.11",
     "@types/react": "^19.0.0",
@@ -35,6 +40,7 @@
     "@nestjs/core": "^11.0.0",
     "@nestjs/platform-express": "^11.0.0",
     "@nestjs/throttler": "^6.5.0",
+    "bcryptjs": "^3.0.3",
     "next": "~16.0.1",
     "nodemailer": "^8.0.1",
     "react": "^19.0.0",

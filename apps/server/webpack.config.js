@@ -2,6 +2,11 @@ const { NxAppWebpackPlugin } = require('@nx/webpack/app-plugin');
 const { join } = require('path');
 
 module.exports = {
+  // bcrypt, nodemailer 등 네이티브/Node 전용 모듈은 번들에서 제외
+  externals: {
+    bcryptjs: 'commonjs bcryptjs',
+    nodemailer: 'commonjs nodemailer',
+  },
   output: {
     path: join(__dirname, 'dist'),
     clean: true,

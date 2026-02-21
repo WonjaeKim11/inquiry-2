@@ -18,13 +18,22 @@
   "exclude": [],
   "references": [
     {
-      "path": "../../packages/db/tsconfig.lib.json"
+      "path": "../../libs/server/audit-log/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/server/email/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/server/rate-limit/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/server/auth/tsconfig.lib.json"
     },
     {
       "path": "../../libs/server/prisma/tsconfig.lib.json"
     },
     {
-      "path": "../../libs/server/auth/tsconfig.lib.json"
+      "path": "../../packages/db/tsconfig.lib.json"
     }
   ]
 }
