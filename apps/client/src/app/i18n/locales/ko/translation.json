@@ -71,10 +71,10 @@
             "email_label": "이메일",
             "password_label": "비밀번호",
             "logging_in": "로그인 중...",
-            "title": "Login to your account",
-            "submit": "Login with Email",
-            "new_user": "New to Inquiry?",
-            "create_account": "Create an account"
+            "title": "계정에 로그인",
+            "submit": "이메일로 로그인",
+            "new_user": "Inquiry가 처음이신가요?",
+            "create_account": "계정 만들기"
         },
         "signup_form": {
             "name_required": "이름은 필수 입력입니다.",
@@ -91,34 +91,19 @@
             "pwd_rule_uppercase": "대문자 1자 이상 포함",
             "pwd_rule_number": "숫자 1자 이상 포함",
             "signing_up": "가입 중...",
-            "title": "Create your account",
-            "name_placeholder": "Full Name",
-            "submit": "Sign up with Email",
-            "already_have_account": "Already have an account?",
-            "login": "Login"
+            "title": "계정 만들기",
+            "name_placeholder": "이름",
+            "submit": "이메일로 가입",
+            "already_have_account": "이미 계정이 있으신가요?",
+            "login": "로그인"
         },
         "social": {
-            "google": "Continue with Google",
-            "github": "Continue with GitHub"
+            "google": "Google로 계속하기",
+            "github": "GitHub로 계속하기"
         }
     },
-    "page": {
-        "hello": "안녕하세요,",
-        "welcome": "@inquiry/client 에 오신 것을 환영합니다 👋",
-        "ready": "실행 준비가 완료되었습니다",
-        "whats_next": "다음 단계는?",
-        "learning": "학습 자료",
-        "docs": "공식 문서",
-        "docs_desc": "모든 내용이 담겨있습니다",
-        "blog": "블로그",
-        "blog_desc": "변경 사항, 기능 및 이벤트",
-        "youtube": "유튜브 채널",
-        "youtube_desc": "Nx 쇼, 강연 및 튜토리얼",
-        "interactive": "인터랙티브 튜토리얼",
-        "interactive_desc": "단계별 앱 만들기",
-        "video": "비디오 코스",
-        "video_desc": "Nx 맞춤형 코스",
-        "next_steps": "다음 단계",
-        "next_steps_desc": "Nx로 할 수 있는 작업들:"
+    "dashboard": {
+        "title": "대시보드",
+        "placeholder": "대시보드 콘텐츠가 여기에 표시됩니다."
     }
 }

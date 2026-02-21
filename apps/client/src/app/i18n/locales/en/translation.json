@@ -102,23 +102,8 @@
             "github": "Continue with GitHub"
         }
     },
-    "page": {
-        "hello": "Hello there,",
-        "welcome": "Welcome @inquiry/client 👋",
-        "ready": "You're up and running",
-        "whats_next": "What's next?",
-        "learning": "Learning materials",
-        "docs": "Documentation",
-        "docs_desc": "Everything is in there",
-        "blog": "Blog",
-        "blog_desc": "Changelog, features & events",
-        "youtube": "YouTube channel",
-        "youtube_desc": "Nx Show, talks & tutorials",
-        "interactive": "Interactive tutorials",
-        "interactive_desc": "Create an app, step-by-step",
-        "video": "Video courses",
-        "video_desc": "Nx custom courses",
-        "next_steps": "Next steps",
-        "next_steps_desc": "Here are some things you can do with Nx:"
+    "dashboard": {
+        "title": "Dashboard",
+        "placeholder": "Dashboard content will appear here."
     }
 }
