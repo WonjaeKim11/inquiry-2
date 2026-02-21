@@ -35,7 +35,7 @@ export function AuthCallback() {
     return (
       <div style={{ textAlign: 'center', padding: '2rem' }}>
         <p style={{ color: 'red' }}>{error}</p>
-        <a href="/login">로그인 페이지로 돌아가기</a>
+        <a href="/auth/login">로그인 페이지로 돌아가기</a>
       </div>
     );
   }

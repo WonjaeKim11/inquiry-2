@@ -6,6 +6,7 @@ import { ServerAuthService } from '../server-auth.service';
 /**
  * 이메일+비밀번호 로컬 인증 전략.
  * usernameField를 'email'로 매핑하여 email 기반 인증을 수행한다.
+ * validateUser가 에러 코드를 포함한 결과를 반환하므로 적절히 처리한다.
  */
 @Injectable()
 export class LocalStrategy extends PassportStrategy(Strategy) {
@@ -14,10 +15,13 @@ export class LocalStrategy extends PassportStrategy(Strategy) {
   }
 
   async validate(email: string, password: string) {
-    const user = await this.authService.validateUser(email, password);
-    if (!user) {
-      throw new UnauthorizedException('이메일 또는 비밀번호가 올바르지 않습니다.');
+    const result = await this.authService.validateUser(email, password);
+    if (!result.success) {
+      throw new UnauthorizedException({
+        message: result.message,
+        errorCode: result.errorCode,
+      });
     }
-    return user;
+    return result.user;
   }
 }

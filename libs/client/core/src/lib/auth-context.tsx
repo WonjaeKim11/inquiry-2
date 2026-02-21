@@ -9,7 +9,7 @@ interface User {
   email: string;
   name: string | null;
   image: string | null;
-  emailVerified: boolean;
+  emailVerified: string | null; // DateTime? → ISO string | null
 }
 
 /** AuthContext가 제공하는 값 */
@@ -17,7 +17,8 @@ interface AuthContextValue {
   user: User | null;
   loading: boolean;
   login: (email: string, password: string) => Promise<void>;
-  signup: (email: string, password: string, name?: string) => Promise<void>;
+  /** 회원가입 후 이메일 검증이 필요하므로 자동 로그인하지 않음 */
+  signup: (email: string, password: string, name: string) => Promise<void>;
   logout: () => Promise<void>;
   /** OAuth 콜백에서 받은 accessToken을 설정하고 사용자 정보를 불러온다 */
   handleOAuthCallback: (accessToken: string) => Promise<void>;
@@ -53,7 +54,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const init = async () => {
       if (!getAccessToken()) {
-        // 쿠키 기반 refresh 시도
         try {
           const res = await fetch(`${process.env['NEXT_PUBLIC_API_URL'] || 'http://localhost:3000/api'}/auth/refresh`, {
             method: 'POST',
@@ -92,8 +92,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     [fetchUser]
   );
 
+  /**
+   * 회원가입 요청.
+   * 서버는 토큰을 발급하지 않으므로 자동 로그인하지 않는다.
+   * 호출 측(SignupForm)에서 이메일 검증 안내를 표시해야 한다.
+   */
   const signup = useCallback(
-    async (email: string, password: string, name?: string) => {
+    async (email: string, password: string, name: string) => {
       const res = await apiFetch('/auth/signup', {
         method: 'POST',
         body: JSON.stringify({ email, password, name }),
@@ -102,11 +107,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         const error = await res.json();
         throw new Error(error.message || '회원가입에 실패했습니다.');
       }
-      const data = await res.json();
-      setAccessToken(data.accessToken);
-      await fetchUser();
+      // 토큰 미발급 → 자동 로그인 없음. 이메일 검증 후 로그인 필요.
     },
-    [fetchUser]
+    []
   );
 
   const logout = useCallback(async () => {

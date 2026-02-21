@@ -1,6 +1,6 @@
-import { LoginForm } from '@inquiry/client-auth';
+import { redirect } from 'next/navigation';
 
-/** 로그인 페이지 — libs에서 폼 컴포넌트만 import */
-export default function LoginPage() {
-  return <LoginForm />;
+/** 기존 /login 경로 → /auth/login 으로 리다이렉트 */
+export default function LoginRedirect() {
+  redirect('/auth/login');
 }

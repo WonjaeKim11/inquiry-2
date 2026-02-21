@@ -1,4 +1,4 @@
-// Prisma 스키마: 인증 관련 모델 (User, Account, RefreshToken)
+// Prisma 스키마: 인증, 조직, 감사 로그 모델
 
 generator client {
   provider = "prisma-client-js"
@@ -8,28 +8,52 @@ datasource db {
   provider = "postgresql"
 }
 
+/// 인증 제공자 종류
+enum IdentityProvider {
+  EMAIL
+  GOOGLE
+  GITHUB
+}
+
+/// 조직 내 멤버 역할
+enum MembershipRole {
+  OWNER
+  ADMIN
+  MEMBER
+}
+
 /// 사용자 계정 정보. OAuth 전용 사용자는 password가 null
 model User {
-  id            String    @id @default(cuid())
-  email         String    @unique
-  name          String?
-  password      String?   // nullable: OAuth 사용자는 비밀번호 없음
-  emailVerified Boolean   @default(false)
-  image         String?
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
+  id                        String           @id @default(cuid())
+  email                     String           @unique
+  name                      String           // 필수: 회원가입 시 입력
+  password                  String?          // nullable: OAuth 사용자는 비밀번호 없음
+  emailVerified             DateTime?        // null이면 미검증, 값이 있으면 검증된 시점
+  image                     String?
+  locale                    String           @default("en-US")
+  identityProvider          IdentityProvider @default(EMAIL)
+  identityProviderAccountId String?
+  lastLoginAt               DateTime?
+  isActive                  Boolean          @default(true)
+  twoFactorSecret           String?
+  twoFactorEnabled          Boolean          @default(false)
+  backupCodes               String?          // JSON 직렬화된 백업 코드
+  createdAt                 DateTime         @default(now())
+  updatedAt                 DateTime         @updatedAt
 
   accounts      Account[]
   refreshTokens RefreshToken[]
+  memberships   Membership[]
+  auditLogs     AuditLog[]
 
   @@map("users")
 }
 
 /// OAuth 프로바이더 연결 정보 (Google, GitHub 등)
 model Account {
-  id                String  @id @default(cuid())
+  id                String   @id @default(cuid())
   userId            String
-  provider          String  // "google" | "github"
+  provider          String   // "google" | "github"
   providerAccountId String
   accessToken       String?
   refreshToken      String?
@@ -58,4 +82,69 @@ model RefreshToken {
 
   @@index([userId])
   @@map("refresh_tokens")
+}
+
+/// 조직 (Multi-Org 지원)
+model Organization {
+  id        String   @id @default(cuid())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  memberships Membership[]
+  invites     Invite[]
+
+  @@map("organizations")
+}
+
+/// 조직 멤버십 (사용자-조직 연결)
+model Membership {
+  id             String         @id @default(cuid())
+  userId         String
+  organizationId String
+  role           MembershipRole @default(MEMBER)
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  user         User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, organizationId])
+  @@map("memberships")
+}
+
+/// 조직 초대
+model Invite {
+  id             String         @id @default(cuid())
+  email          String
+  organizationId String
+  role           MembershipRole @default(MEMBER)
+  token          String         @unique
+  expiresAt      DateTime
+  createdAt      DateTime       @default(now())
+
+  organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@index([email])
+  @@map("invites")
+}
+
+/// 감사 로그 (사용자 활동 추적)
+model AuditLog {
+  id        String   @id @default(cuid())
+  userId    String?
+  action    String   // e.g., "user.signup", "user.login", "password.reset"
+  entity    String   // e.g., "user", "organization"
+  entityId  String?
+  metadata  Json?
+  ipAddress String?
+  createdAt DateTime @default(now())
+
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([userId])
+  @@index([action])
+  @@index([entity, entityId])
+  @@index([createdAt])
+  @@map("audit_logs")
 }

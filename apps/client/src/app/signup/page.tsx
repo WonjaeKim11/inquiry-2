@@ -1,6 +1,6 @@
-import { SignupForm } from '@inquiry/client-auth';
+import { redirect } from 'next/navigation';
 
-/** 회원가입 페이지 — libs에서 폼 컴포넌트만 import */
-export default function SignupPage() {
-  return <SignupForm />;
+/** 기존 /signup 경로 → /auth/signup 으로 리다이렉트 */
+export default function SignupRedirect() {
+  redirect('/auth/signup');
 }
