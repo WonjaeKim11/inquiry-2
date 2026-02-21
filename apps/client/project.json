@@ -1,0 +1,12 @@
+{
+  "name": "@inquiry/client",
+  "targets": {
+    "dev": {
+      "continuous": true,
+      "options": {
+        "cwd": "apps/client",
+        "command": "next dev --port 4200"
+      }
+    }
+  }
+}
