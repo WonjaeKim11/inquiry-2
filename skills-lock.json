@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "i18n": {
+      "source": "lobehub/lobehub",
+      "sourceType": "github",
+      "computedHash": "4e91c43a6e48dcbc36456e284efef2e801873247e9f9d52be6877ca0f9edf318"
+    }
+  }
+}
