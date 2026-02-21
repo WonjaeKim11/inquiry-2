@@ -1,4 +1,8 @@
-export default function Index() {
+import { useTranslation } from '../i18n';
+
+export default async function Index(props: { params: Promise<{ lng: string }> }) {
+  const { lng } = await props.params;
+  const { t } = await useTranslation(lng, 'translation');
   /*
    * Replace the elements below with your own.
    *
@@ -10,8 +14,8 @@ export default function Index() {
         <div className="container">
           <div id="welcome">
             <h1>
-              <span> Hello there, </span>
-              Welcome @inquiry/client 👋
+              <span> {t('page.hello')} </span>
+              {t('page.welcome')}
             </h1>
           </div>
 
@@ -31,9 +35,9 @@ export default function Index() {
                     d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
                   />
                 </svg>
-                <span>You&apos;re up and running</span>
+                <span>{t('page.ready')}</span>
               </h2>
-              <a href="#commands"> What&apos;s next? </a>
+              <a href="#commands"> {t('page.whats_next')} </a>
             </div>
             <div className="logo-container">
               <svg
@@ -49,7 +53,7 @@ export default function Index() {
 
           <div id="middle-content">
             <div id="learning-materials" className="rounded shadow">
-              <h2>Learning materials</h2>
+              <h2>{t('page.learning')}</h2>
               <a
                 href="https://nx.dev/getting-started/intro?utm_source=nx-project"
                 target="_blank"
@@ -70,8 +74,8 @@ export default function Index() {
                   />
                 </svg>
                 <span>
-                  Documentation
-                  <span> Everything is in there </span>
+                  {t('page.docs')}
+                  <span> {t('page.docs_desc')} </span>
                 </span>
                 <svg
                   fill="none"
@@ -107,8 +111,8 @@ export default function Index() {
                   />
                 </svg>
                 <span>
-                  Blog
-                  <span> Changelog, features & events </span>
+                  {t('page.blog')}
+                  <span> {t('page.blog_desc')} </span>
                 </span>
                 <svg
                   fill="none"
@@ -140,8 +144,8 @@ export default function Index() {
                   <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
                 </svg>
                 <span>
-                  YouTube channel
-                  <span> Nx Show, talks & tutorials </span>
+                  {t('page.youtube')}
+                  <span> {t('page.youtube_desc')} </span>
                 </span>
                 <svg
                   fill="none"
@@ -177,8 +181,8 @@ export default function Index() {
                   />
                 </svg>
                 <span>
-                  Interactive tutorials
-                  <span> Create an app, step-by-step </span>
+                  {t('page.interactive')}
+                  <span> {t('page.interactive_desc')} </span>
                 </span>
                 <svg
                   fill="none"
@@ -216,8 +220,8 @@ export default function Index() {
                   />
                 </svg>
                 <span>
-                  Video courses
-                  <span> Nx custom courses </span>
+                  {t('page.video')}
+                  <span> {t('page.video_desc')} </span>
                 </span>
                 <svg
                   fill="none"
@@ -352,8 +356,8 @@ export default function Index() {
           </div>
 
           <div id="commands" className="rounded shadow">
-            <h2>Next steps</h2>
-            <p>Here are some things you can do with Nx:</p>
+            <h2>{t('page.next_steps')}</h2>
+            <p>{t('page.next_steps_desc')}</p>
             <details>
               <summary>
                 <svg

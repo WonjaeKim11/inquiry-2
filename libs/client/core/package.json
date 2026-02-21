@@ -17,6 +17,7 @@
     "name": "client-core"
   },
   "dependencies": {
-    "react": "^19.0.0"
+    "react": "^19.0.0",
+    "react-i18next": "^16.5.4"
   }
 }

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useAuth } from '@inquiry/client-core';
+import { useTranslation } from 'react-i18next';
 
 /**
  * 로그아웃 처리 컴포넌트.
@@ -10,6 +11,7 @@ import { useAuth } from '@inquiry/client-core';
 export function LogoutPage() {
   const { logout } = useAuth();
   const [done, setDone] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     logout().then(() => setDone(true)).catch(() => setDone(true));
@@ -18,17 +20,17 @@ export function LogoutPage() {
   if (!done) {
     return (
       <div style={{ textAlign: 'center', padding: '2rem' }}>
-        <p>로그아웃 처리 중...</p>
+        <p>{t('auth.logout.processing')}</p>
       </div>
     );
   }
 
   return (
     <div style={{ textAlign: 'center', padding: '2rem' }}>
-      <h1>로그아웃 완료</h1>
-      <p style={{ marginTop: '1rem' }}>성공적으로 로그아웃되었습니다.</p>
+      <h1>{t('auth.logout.complete')}</h1>
+      <p style={{ marginTop: '1rem' }}>{t('auth.logout.success_message')}</p>
       <p style={{ marginTop: '1.5rem' }}>
-        <a href="/auth/login">다시 로그인하기</a>
+        <a href="/auth/login">{t('auth.logout.relogin')}</a>
       </p>
     </div>
   );

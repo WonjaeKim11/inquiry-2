@@ -49,6 +49,9 @@ To help developers who are new to the project understand, we include:
 - TODO/FIXME: Mark areas that need future improvement
 - Comments should explain "why", not "what"
 
+### Client UI i18n Guidelines
+- All user-facing text in client UI must be internationalized using i18next — never hardcode display strings directly in TSX
+
 ### Documented Judgment Criteria
 - Add New Features → Documentation Required
 - Fix bugs (except simple fixes) → Documentation recommended

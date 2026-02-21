@@ -1,6 +1,7 @@
 'use client';
 
 import { createContext, useContext, useState, useEffect, useCallback, type ReactNode } from 'react';
+import { useTranslation } from 'react-i18next';
 import { apiFetch, setAccessToken, getAccessToken } from './api';
 
 /** 인증 사용자 정보 타입 */
@@ -33,6 +34,7 @@ const AuthContext = createContext<AuthContextValue | null>(null);
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
+  const { t } = useTranslation();
 
   /** 현재 사용자 정보를 서버에서 가져온다 */
   const fetchUser = useCallback(async () => {
@@ -83,13 +85,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       });
       if (!res.ok) {
         const error = await res.json();
-        throw new Error(error.message || '로그인에 실패했습니다.');
+        throw new Error(error.message || t('auth.context.login_fail'));
       }
       const data = await res.json();
       setAccessToken(data.accessToken);
       await fetchUser();
     },
-    [fetchUser]
+    [fetchUser, t]
   );
 
   /**
@@ -105,11 +107,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       });
       if (!res.ok) {
         const error = await res.json();
-        throw new Error(error.message || '회원가입에 실패했습니다.');
+        throw new Error(error.message || t('auth.context.signup_fail'));
       }
       // 토큰 미발급 → 자동 로그인 없음. 이메일 검증 후 로그인 필요.
     },
-    []
+    [t]
   );
 
   const logout = useCallback(async () => {
