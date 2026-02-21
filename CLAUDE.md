@@ -50,7 +50,7 @@ To help developers who are new to the project understand, we include:
 - Comments should explain "why", not "what"
 
 ### Client UI i18n Guidelines
-- All user-facing text in client UI must be internationalized using i18next — never hardcode display strings directly in TSX
+- All hardcoded user-facing strings (labels, placeholders, tooltips, alt texts, etc.) must be managed through i18next — never embed display text directly in TSX. Date and number formatting must also follow the active locale configuration.
 
 ### Documented Judgment Criteria
 - Add New Features → Documentation Required
