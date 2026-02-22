@@ -1,57 +1,28 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import i18next from 'i18next';
-import { initReactI18next, useTranslation as useTranslationOrg } from 'react-i18next';
-import { useCookies } from 'react-cookie';
-import resourcesToBackend from 'i18next-resources-to-backend';
-import LanguageDetector from 'i18next-browser-languagedetector';
-import { getOptions, languages, cookieName } from './settings';
+import { initReactI18next } from 'react-i18next';
+import { getOptions, languages } from './settings';
+import koTranslation from './locales/ko/translation.json';
+import enTranslation from './locales/en/translation.json';
 
 const runsOnServerSide = typeof window === 'undefined';
 
-i18next
-    .use(initReactI18next)
-    .use(LanguageDetector)
-    .use(
-        resourcesToBackend(
-            (language: string, namespace: string) =>
-                import(`./locales/${language}/${namespace}.json`)
-        )
-    )
-    .init({
-        ...getOptions(),
-        lng: undefined, // let detect the language on client side
-        detection: {
-            order: ['path', 'htmlTag', 'cookie', 'navigator'],
-        },
-        preload: runsOnServerSide ? languages : []
-    });
-
-export function useTranslation(lng: string, ns?: string | string[], options?: Record<string, any>) {
-    const [cookies, setCookie] = useCookies([cookieName]);
-    const ret = useTranslationOrg(ns, options);
-    const { i18n } = ret;
-    if (runsOnServerSide && lng && i18n.resolvedLanguage !== lng) {
-        i18n.changeLanguage(lng);
-    } else {
-        // eslint-disable-next-line react-hooks/rules-of-hooks
-        const [activeLng, setActiveLng] = useState(i18n.resolvedLanguage);
-        // eslint-disable-next-line react-hooks/rules-of-hooks
-        useEffect(() => {
-            if (activeLng === i18n.resolvedLanguage) return;
-            setActiveLng(i18n.resolvedLanguage);
-        }, [activeLng, i18n.resolvedLanguage]);
-        // eslint-disable-next-line react-hooks/rules-of-hooks
-        useEffect(() => {
-            if (!lng || i18n.resolvedLanguage === lng) return;
-            i18n.changeLanguage(lng);
-        }, [lng, i18n]);
-        // eslint-disable-next-line react-hooks/rules-of-hooks
-        useEffect(() => {
-            if (cookies.i18next === lng) return;
-            setCookie(cookieName, lng, { path: '/' });
-        }, [lng, cookies.i18next, setCookie]);
-    }
-    return ret;
+// 서버가 렌더링한 <html lang="..."> 속성에서 동기적으로 언어 감지
+function getInitialLng(): string | undefined {
+  if (runsOnServerSide) return undefined;
+  const htmlLang = document.documentElement.lang;
+  if (htmlLang && languages.includes(htmlLang)) return htmlLang;
+  return undefined;
 }
+
+i18next.use(initReactI18next).init({
+  ...getOptions(),
+  lng: getInitialLng(),
+  resources: {
+    ko: { translation: koTranslation },
+    en: { translation: enTranslation },
+  },
+});
+
+export default i18next;

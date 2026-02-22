@@ -2,6 +2,7 @@ import '../global.css';
 import { AuthProvider } from '@inquiry/client-core';
 import { dir } from 'i18next';
 import { languages } from '../i18n/settings';
+import { I18nProvider } from './i18n-provider';
 
 export async function generateStaticParams() {
   return languages.map((lng) => ({ lng }));
@@ -24,7 +25,9 @@ export default async function RootLayout(props: Props) {
   return (
     <html lang={lng} dir={dir(lng)}>
       <body>
-        <AuthProvider>{children}</AuthProvider>
+        <I18nProvider lng={lng}>
+          <AuthProvider>{children}</AuthProvider>
+        </I18nProvider>
       </body>
     </html>
   );
