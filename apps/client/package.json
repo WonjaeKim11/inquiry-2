@@ -5,6 +5,7 @@
   "dependencies": {
     "@inquiry/client-auth": "workspace:*",
     "@inquiry/client-core": "workspace:*",
+    "@inquiry/client-ui": "workspace:*",
     "@inquiry/db": "workspace:*",
     "accept-language": "^3.0.20",
     "i18next": "^25.8.13",
@@ -16,5 +17,8 @@
     "react-dom": "^19.0.0",
     "react-i18next": "^16.5.4",
     "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "tailwindcss-animate": "^1.0.7"
   }
 }

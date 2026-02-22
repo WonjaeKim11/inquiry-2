@@ -4,6 +4,18 @@ import { useState } from 'react';
 import { z } from 'zod';
 import { apiFetch } from '@inquiry/client-core';
 import { useTranslation } from 'react-i18next';
+import {
+  Button,
+  Input,
+  Label,
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+  CardFooter,
+  Alert,
+  AlertDescription,
+} from '@inquiry/client-ui';
 
 /**
  * 비밀번호 재설정 폼 검증 스키마.
@@ -73,58 +85,77 @@ export function ResetPasswordForm() {
 
   if (success) {
     return (
-      <div style={{ maxWidth: 400, margin: '0 auto', padding: '2rem', textAlign: 'center' }}>
-        <h1>{t('auth.reset_password.success_title')}</h1>
-        <p style={{ marginTop: '1rem', color: 'green' }}>
-          {t('auth.reset_password.success_message')}
-        </p>
-        <p style={{ marginTop: '1.5rem' }}>
-          <a href="/auth/login">{t('auth.reset_password.login_new_password')}</a>
-        </p>
+      <div className="flex min-h-screen flex-col items-center justify-center bg-[#e4f6f3] px-4 sm:px-6 lg:px-8">
+        <Card className="w-full max-w-md border-0 px-2 py-4 text-center shadow-[0_0_15px_rgba(0,0,0,0.05)]">
+          <CardHeader className="items-center">
+            <div className="mx-auto mb-2 flex h-16 w-16 items-center justify-center rounded-full bg-teal-50">
+              <svg className="h-8 w-8 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <CardTitle className="text-2xl">{t('auth.reset_password.success_title')}</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-sm text-teal-600">{t('auth.reset_password.success_message')}</p>
+          </CardContent>
+          <CardFooter className="justify-center">
+            <Button asChild className="w-full">
+              <a href="/auth/login">{t('auth.reset_password.login_new_password')}</a>
+            </Button>
+          </CardFooter>
+        </Card>
       </div>
     );
   }
 
   return (
-    <div style={{ maxWidth: 400, margin: '0 auto', padding: '2rem' }}>
-      <h1>{t('auth.reset_password.title')}</h1>
-      <form onSubmit={handleSubmit}>
-        <div style={{ marginBottom: '1rem' }}>
-          <label htmlFor="password">{t('auth.reset_password.new_password')}</label>
-          <input
-            id="password"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder={t('auth.reset_password.password_placeholder')}
-            required
-            style={{ width: '100%', padding: '0.5rem', marginTop: '0.25rem' }}
-          />
-        </div>
-        <div style={{ marginBottom: '1rem' }}>
-          <label htmlFor="confirmPassword">{t('auth.reset_password.confirm_password')}</label>
-          <input
-            id="confirmPassword"
-            type="password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            placeholder={t('auth.reset_password.confirm_password_placeholder')}
-            required
-            style={{ width: '100%', padding: '0.5rem', marginTop: '0.25rem' }}
-          />
-        </div>
-        {error && <p style={{ color: 'red', marginBottom: '1rem' }}>{error}</p>}
-        <button
-          type="submit"
-          disabled={loading}
-          style={{ width: '100%', padding: '0.75rem', cursor: loading ? 'not-allowed' : 'pointer' }}
-        >
-          {loading ? t('auth.reset_password.processing') : t('auth.reset_password.submit')}
-        </button>
-      </form>
-      <p style={{ textAlign: 'center', marginTop: '1rem' }}>
-        <a href="/auth/login">{t('auth.reset_password.back_to_login')}</a>
-      </p>
+    <div className="flex min-h-screen flex-col items-center justify-center bg-[#e4f6f3] px-4 sm:px-6 lg:px-8">
+      <Card className="w-full max-w-md border-0 px-2 py-4 shadow-[0_0_15px_rgba(0,0,0,0.05)]">
+        <CardHeader>
+          <CardTitle className="text-2xl">{t('auth.reset_password.title')}</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="password">{t('auth.reset_password.new_password')}</Label>
+              <Input
+                id="password"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder={t('auth.reset_password.password_placeholder')}
+                required
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="confirmPassword">{t('auth.reset_password.confirm_password')}</Label>
+              <Input
+                id="confirmPassword"
+                type="password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                placeholder={t('auth.reset_password.confirm_password_placeholder')}
+                required
+              />
+            </div>
+
+            {error && (
+              <Alert variant="destructive">
+                <AlertDescription>{error}</AlertDescription>
+              </Alert>
+            )}
+
+            <Button type="submit" disabled={loading} className="w-full">
+              {loading ? t('auth.reset_password.processing') : t('auth.reset_password.submit')}
+            </Button>
+          </form>
+        </CardContent>
+        <CardFooter className="justify-center">
+          <a href="/auth/login" className="text-sm text-muted-foreground hover:underline">
+            {t('auth.reset_password.back_to_login')}
+          </a>
+        </CardFooter>
+      </Card>
     </div>
   );
 }

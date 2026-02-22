@@ -1,5 +1,5 @@
 {
-  "name": "@inquiry/client-auth",
+  "name": "@inquiry/client-ui",
   "version": "0.0.1",
   "private": true,
   "type": "module",
@@ -14,13 +14,16 @@
     "./package.json": "./package.json"
   },
   "nx": {
-    "name": "client-auth"
+    "name": "client-ui"
   },
   "dependencies": {
-    "@inquiry/client-core": "workspace:*",
-    "@inquiry/client-ui": "workspace:*",
     "react": "^19.0.0",
-    "react-i18next": "^16.5.4",
-    "zod": "^4.3.6"
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.0.2",
+    "lucide-react": "^0.475.0",
+    "@radix-ui/react-label": "^2.1.2",
+    "@radix-ui/react-separator": "^1.1.2",
+    "@radix-ui/react-slot": "^1.1.2"
   }
 }

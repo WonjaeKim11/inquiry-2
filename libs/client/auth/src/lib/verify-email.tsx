@@ -3,6 +3,16 @@
 import { useState, useEffect } from 'react';
 import { apiFetch } from '@inquiry/client-core';
 import { useTranslation } from 'react-i18next';
+import {
+  Button,
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+  CardFooter,
+  Alert,
+  AlertDescription,
+} from '@inquiry/client-ui';
 
 /**
  * 이메일 검증 컴포넌트.
@@ -44,21 +54,44 @@ export function VerifyEmail() {
   }, [t]);
 
   return (
-    <div style={{ maxWidth: 400, margin: '0 auto', padding: '2rem', textAlign: 'center' }}>
-      <h1>{t('auth.verify_email.title')}</h1>
-      <p
-        style={{
-          marginTop: '1rem',
-          color: status === 'error' ? 'red' : status === 'success' ? 'green' : '#555',
-        }}
-      >
-        {message}
-      </p>
-      {status !== 'loading' && (
-        <p style={{ marginTop: '1.5rem' }}>
-          <a href="/auth/login">{t('auth.verify_email.to_login')}</a>
-        </p>
-      )}
+    <div className="flex min-h-screen flex-col items-center justify-center bg-[#e4f6f3] px-4 sm:px-6 lg:px-8">
+      <Card className="w-full max-w-md border-0 px-2 py-4 text-center shadow-[0_0_15px_rgba(0,0,0,0.05)]">
+        <CardHeader className="items-center">
+          <CardTitle className="text-2xl">{t('auth.verify_email.title')}</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          {status === 'loading' && (
+            <div className="flex justify-center">
+              <div className="h-8 w-8 animate-spin rounded-full border-4 border-slate-200 border-t-slate-900" />
+            </div>
+          )}
+
+          {status === 'success' && (
+            <>
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-teal-50">
+                <svg className="h-8 w-8 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <p className="text-sm text-teal-600">{message}</p>
+            </>
+          )}
+
+          {status === 'error' && (
+            <Alert variant="destructive">
+              <AlertDescription>{message}</AlertDescription>
+            </Alert>
+          )}
+        </CardContent>
+
+        {status !== 'loading' && (
+          <CardFooter className="justify-center">
+            <Button asChild variant="outline" className="w-full">
+              <a href="/auth/login">{t('auth.verify_email.to_login')}</a>
+            </Button>
+          </CardFooter>
+        )}
+      </Card>
     </div>
   );
 }

@@ -44,7 +44,7 @@ export default function DashboardPage({
   return (
     <div className="flex min-h-screen flex-col items-center justify-center p-8">
       <h1 className="text-3xl font-bold">{t('dashboard.title')}</h1>
-      <p className="mt-4 text-gray-500">{t('dashboard.placeholder')}</p>
+      <p className="mt-4 text-muted-foreground">{t('dashboard.placeholder')}</p>
     </div>
   );
 }

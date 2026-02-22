@@ -53,6 +53,9 @@
     },
     {
       "path": "../../libs/client/auth"
+    },
+    {
+      "path": "../../libs/client/ui"
     }
   ]
 }

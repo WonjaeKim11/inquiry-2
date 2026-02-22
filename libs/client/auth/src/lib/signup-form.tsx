@@ -4,6 +4,16 @@ import { useState } from 'react';
 import { z } from 'zod';
 import { useAuth } from '@inquiry/client-core';
 import { useTranslation } from 'react-i18next';
+import {
+  Button,
+  Input,
+  Card,
+  CardHeader,
+  CardContent,
+  CardFooter,
+  Alert,
+  AlertDescription,
+} from '@inquiry/client-ui';
 import { SocialLoginButtons } from './social-login-buttons';
 
 /**
@@ -79,34 +89,39 @@ export function SignupForm() {
   if (success) {
     return (
       <div className="flex min-h-screen flex-col items-center justify-center bg-[#e4f6f3] px-4 sm:px-6 lg:px-8">
-        <div className="w-full max-w-md rounded-xl bg-white px-8 py-10 text-center shadow-[0_0_15px_rgba(0,0,0,0.05)]">
-          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-teal-50">
-            <svg className="h-8 w-8 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-          </div>
-          <h1 className="text-2xl font-bold tracking-tight text-slate-900">{t('auth.signup_form.verify_email_title')}</h1>
-          <p className="mt-4 text-sm text-slate-500">
-            {t('auth.signup_form.verify_email_sent_1', { email: <strong>{email}</strong> })}
-            <br />
-            {t('auth.signup_form.verify_email_sent_2')}
-          </p>
-          <a
-            href="/auth/login"
-            className="mt-8 inline-block w-full rounded-md bg-slate-900 px-3 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-slate-800"
-          >
-            {t('auth.signup_form.to_login')}
-          </a>
-        </div>
+        <Card className="w-full max-w-md border-0 px-2 py-4 text-center shadow-[0_0_15px_rgba(0,0,0,0.05)]">
+          <CardHeader className="items-center">
+            <div className="mx-auto mb-2 flex h-16 w-16 items-center justify-center rounded-full bg-teal-50">
+              <svg className="h-8 w-8 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h1 className="text-2xl font-bold tracking-tight text-slate-900">{t('auth.signup_form.verify_email_title')}</h1>
+          </CardHeader>
+          <CardContent>
+            <p className="text-sm text-muted-foreground">
+              {t('auth.signup_form.verify_email_sent_1', { email: <strong>{email}</strong> })}
+              <br />
+              {t('auth.signup_form.verify_email_sent_2')}
+            </p>
+          </CardContent>
+          <CardFooter className="justify-center">
+            <Button asChild className="w-full">
+              <a href="/auth/login">
+                {t('auth.signup_form.to_login')}
+              </a>
+            </Button>
+          </CardFooter>
+        </Card>
       </div>
     );
   }
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-[#e4f6f3] px-4 sm:px-6 lg:px-8">
-      <div className="my-8 w-full max-w-md rounded-xl bg-white px-8 py-10 shadow-[0_0_15px_rgba(0,0,0,0.05)]">
-        <div className="mb-8 flex flex-col items-center justify-center gap-2">
-          {/* Formbricks-like Logo SVG */}
+      <Card className="my-8 w-full max-w-md border-0 px-2 py-4 shadow-[0_0_15px_rgba(0,0,0,0.05)]">
+        <CardHeader className="items-center gap-2 pb-6">
+          {/* Logo */}
           <div className="flex items-center gap-2">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M6 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H6C4.89543 21 4 20.1046 4 19V5C4 3.89543 4.89543 3 6 3Z" fill="#00E5B5" />
@@ -115,96 +130,93 @@ export function SignupForm() {
             </svg>
             <span className="text-2xl font-bold tracking-tight text-slate-900">Inquiry</span>
           </div>
-          <h2 className="mt-2 text-center text-sm font-medium text-slate-600">{t('auth.signup_form.title')}</h2>
-        </div>
+          <h2 className="text-center text-sm font-medium text-muted-foreground">{t('auth.signup_form.title')}</h2>
+        </CardHeader>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label htmlFor="name" className="sr-only">{t('auth.signup_form.name_label')}</label>
-            <input
-              id="name"
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder={t('auth.signup_form.name_placeholder')}
-              required
-              className="block w-full rounded-md border border-slate-200 px-3 py-2.5 text-sm outline-none placeholder:text-slate-400 focus:border-slate-400 focus:ring-1 focus:ring-slate-400"
-            />
-          </div>
-          <div>
-            <label htmlFor="email" className="sr-only">{t('auth.signup_form.email_label')}</label>
-            <input
-              id="email"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="email@example.com"
-              required
-              className="block w-full rounded-md border border-slate-200 px-3 py-2.5 text-sm outline-none placeholder:text-slate-400 focus:border-slate-400 focus:ring-1 focus:ring-slate-400"
-            />
-          </div>
-          <div>
-            <label htmlFor="password" className="sr-only">{t('auth.signup_form.password_label')}</label>
-            <input
-              id="password"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              onFocus={() => setIsPasswordFocused(true)}
-              onBlur={() => setIsPasswordFocused(false)}
-              placeholder="Password"
-              required
-              className="block w-full rounded-md border border-slate-200 px-3 py-2.5 text-sm outline-none placeholder:text-slate-400 focus:border-slate-400 focus:ring-1 focus:ring-slate-400"
-            />
-            {/* Realtime password validation feedback */}
-            {(isPasswordFocused || password.length > 0) && (
-              <div className="mt-2.5 space-y-1.5 text-[0.8rem]">
-                <p className={`${pwdRules.length ? 'text-teal-600' : 'text-slate-400'} flex items-center transition-colors`}>
-                  <svg className="mr-1.5 h-3.5 w-3.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  {t('auth.signup_form.pwd_rule_length')}
-                </p>
-                <p className={`${pwdRules.uppercase ? 'text-teal-600' : 'text-slate-400'} flex items-center transition-colors`}>
-                  <svg className="mr-1.5 h-3.5 w-3.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  {t('auth.signup_form.pwd_rule_uppercase')}
-                </p>
-                <p className={`${pwdRules.number ? 'text-teal-600' : 'text-slate-400'} flex items-center transition-colors`}>
-                  <svg className="mr-1.5 h-3.5 w-3.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  {t('auth.signup_form.pwd_rule_number')}
-                </p>
-              </div>
-            )}
-          </div>
-
-          {error && (
-            <div className="rounded-md bg-red-50 p-3 text-sm text-red-600">
-              {error}
+        <CardContent>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div>
+              <label htmlFor="name" className="sr-only">{t('auth.signup_form.name_label')}</label>
+              <Input
+                id="name"
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder={t('auth.signup_form.name_placeholder')}
+                required
+              />
             </div>
-          )}
+            <div>
+              <label htmlFor="email" className="sr-only">{t('auth.signup_form.email_label')}</label>
+              <Input
+                id="email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="email@example.com"
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="password" className="sr-only">{t('auth.signup_form.password_label')}</label>
+              <Input
+                id="password"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                onFocus={() => setIsPasswordFocused(true)}
+                onBlur={() => setIsPasswordFocused(false)}
+                placeholder="Password"
+                required
+              />
+              {/* 비밀번호 실시간 유효성 힌트 — shadcn 대응 컴포넌트 없으므로 커스텀 유지 */}
+              {(isPasswordFocused || password.length > 0) && (
+                <div className="mt-2.5 space-y-1.5 text-[0.8rem]">
+                  <p className={`${pwdRules.length ? 'text-teal-600' : 'text-muted-foreground'} flex items-center transition-colors`}>
+                    <svg className="mr-1.5 h-3.5 w-3.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    {t('auth.signup_form.pwd_rule_length')}
+                  </p>
+                  <p className={`${pwdRules.uppercase ? 'text-teal-600' : 'text-muted-foreground'} flex items-center transition-colors`}>
+                    <svg className="mr-1.5 h-3.5 w-3.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    {t('auth.signup_form.pwd_rule_uppercase')}
+                  </p>
+                  <p className={`${pwdRules.number ? 'text-teal-600' : 'text-muted-foreground'} flex items-center transition-colors`}>
+                    <svg className="mr-1.5 h-3.5 w-3.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    {t('auth.signup_form.pwd_rule_number')}
+                  </p>
+                </div>
+              )}
+            </div>
 
-          <button
-            type="submit"
-            disabled={loading}
-            className="mt-2 flex w-full justify-center rounded-md bg-slate-900 px-3 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 disabled:opacity-70"
-          >
-            {loading ? t('auth.signup_form.signing_up') : t('auth.signup_form.submit')}
-          </button>
-        </form>
+            {error && (
+              <Alert variant="destructive">
+                <AlertDescription>{error}</AlertDescription>
+              </Alert>
+            )}
 
-        <SocialLoginButtons />
+            <Button type="submit" disabled={loading} className="mt-2 w-full">
+              {loading ? t('auth.signup_form.signing_up') : t('auth.signup_form.submit')}
+            </Button>
+          </form>
 
-        <div className="mt-8 text-center text-xs text-slate-500">
-          {t('auth.signup_form.already_have_account')}{' '}
-          <a href="/auth/login" className="font-semibold text-slate-900 hover:underline">
-            {t('auth.signup_form.login')}
-          </a>
-        </div>
-      </div>
+          <SocialLoginButtons />
+        </CardContent>
+
+        <CardFooter className="justify-center">
+          <p className="text-xs text-muted-foreground">
+            {t('auth.signup_form.already_have_account')}{' '}
+            <a href="/auth/login" className="font-semibold text-slate-900 hover:underline">
+              {t('auth.signup_form.login')}
+            </a>
+          </p>
+        </CardFooter>
+      </Card>
     </div>
   );
 }
