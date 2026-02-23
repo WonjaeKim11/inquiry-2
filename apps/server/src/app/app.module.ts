@@ -14,6 +14,7 @@ import { OrganizationModule } from '@inquiry/server-organization';
 import { RbacModule } from '@inquiry/server-rbac';
 import { InviteModule } from '@inquiry/server-invite';
 import { MemberModule } from '@inquiry/server-member';
+import { ProjectModule } from '@inquiry/server-project';
 import { HealthModule } from './health/health.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -41,6 +42,7 @@ import { AppService } from './app.service';
     RbacModule,
     InviteModule,
     MemberModule,
+    ProjectModule,
     HealthModule,
   ],
   controllers: [AppController],

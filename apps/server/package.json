@@ -94,6 +94,7 @@
     "@inquiry/server-rbac": "workspace:*",
     "@inquiry/server-invite": "workspace:*",
     "@inquiry/server-member": "workspace:*",
+    "@inquiry/server-project": "workspace:*",
     "@nestjs/common": "^11.0.0",
     "@nestjs/config": "^4.0.3",
     "@nestjs/core": "^11.0.0",

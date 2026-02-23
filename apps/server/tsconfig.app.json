@@ -33,6 +33,9 @@
       "path": "../../libs/server/member/tsconfig.lib.json"
     },
     {
+      "path": "../../libs/server/project/tsconfig.lib.json"
+    },
+    {
       "path": "../../libs/server/audit-log/tsconfig.lib.json"
     },
     {

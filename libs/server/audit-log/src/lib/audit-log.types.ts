@@ -29,7 +29,14 @@ export type AuditAction =
   | 'response.submitted'
   | 'response.deleted'
   | 'apikey.created'
-  | 'apikey.revoked';
+  | 'apikey.revoked'
+  | 'project.created'
+  | 'project.updated'
+  | 'project.deleted'
+  | 'actionClass.created'
+  | 'actionClass.deleted'
+  | 'language.created'
+  | 'language.deleted';
 
 /** 감사 로그 대상 엔티티 - 감사 이벤트가 영향을 미치는 리소스 유형 */
 export type AuditTarget =
@@ -42,7 +49,10 @@ export type AuditTarget =
   | 'response'
   | 'answer'
   | 'api_key'
-  | 'environment';
+  | 'environment'
+  | 'project'
+  | 'actionClass'
+  | 'language';
 
 /** 감사 모드 - 이벤트 기록 방식 (DB 저장, 로그 출력, 또는 둘 다) */
 export type AuditMode = 'db' | 'log' | 'both';
