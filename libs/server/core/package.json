@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@nestjs/common": "^11.0.0",
+    "@paralleldrive/cuid2": "^2.2.2",
     "zod": "*"
   }
 }

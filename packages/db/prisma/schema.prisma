@@ -73,6 +73,21 @@ enum ActionClassType {
   noCode
 }
 
+/// API 키 권한 수준
+enum ApiKeyPermission {
+  READ
+  WRITE
+  MANAGE
+}
+
+/// 설문조사 상태
+enum SurveyStatus {
+  DRAFT
+  IN_PROGRESS
+  PAUSED
+  COMPLETED
+}
+
 /// 사용자 계정 정보. OAuth 전용 사용자는 password가 null
 model User {
   id                        String           @id @default(cuid())
@@ -152,6 +167,7 @@ model Organization {
   updatedAt   DateTime @updatedAt
 
   memberships Membership[]
+  apiKeys     ApiKey[]
   invites     Invite[]
   teams       Team[]
   projects    Project[]
@@ -228,18 +244,37 @@ model TeamUser {
   @@map("team_users")
 }
 
-/// API 키 (외부 연동용)
+/// API 키 (조직 스코프, 환경별 권한)
 model ApiKey {
-  id            String    @id @default(cuid())
-  label         String
-  hashedKey     String    @unique
-  environmentId String
-  lastUsedAt    DateTime?
-  expiresAt     DateTime?
-  createdAt     DateTime  @default(now())
+  id             String    @id @default(cuid())
+  label          String
+  hashedKey      String    @unique
+  organizationId String
+  lastUsedAt     DateTime?
+  expiresAt      DateTime?
+  createdAt      DateTime  @default(now())
 
+  organization           Organization                @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  environmentPermissions ApiKeyEnvironmentPermission[]
+
+  @@index([organizationId])
   @@index([hashedKey])
   @@map("api_keys")
+}
+
+/// API 키 - 환경 권한 매핑
+model ApiKeyEnvironmentPermission {
+  id            String           @id @default(cuid())
+  apiKeyId      String
+  environmentId String
+  permission    ApiKeyPermission
+
+  apiKey      ApiKey      @relation(fields: [apiKeyId], references: [id], onDelete: Cascade)
+  environment Environment @relation(fields: [environmentId], references: [id], onDelete: Cascade)
+
+  @@unique([apiKeyId, environmentId])
+  @@index([environmentId])
+  @@map("api_key_environment_permissions")
 }
 
 /// 감사 로그 (사용자 활동 추적)
@@ -301,8 +336,13 @@ model Environment {
   projectId         String
   appSetupCompleted Boolean         @default(false)
 
-  project       Project       @relation(fields: [projectId], references: [id], onDelete: Cascade)
-  actionClasses ActionClass[]
+  project           Project                      @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  actionClasses     ActionClass[]
+  apiKeyPermissions ApiKeyEnvironmentPermission[]
+  surveys           Survey[]
+  responses         Response[]
+  displays          Display[]
+  contacts          Contact[]
 
   @@index([projectId])
   @@map("environments")
@@ -343,4 +383,82 @@ model Language {
 
   @@unique([projectId, code])
   @@map("languages")
+}
+
+/// 설문조사 (스텁 - 핵심 필드만 포함)
+model Survey {
+  id            String       @id @default(cuid(2))
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+  name          String
+  status        SurveyStatus @default(DRAFT)
+  questions     Json         @default("[]")
+  environmentId String
+
+  environment Environment @relation(fields: [environmentId], references: [id], onDelete: Cascade)
+  responses   Response[]
+  displays    Display[]
+
+  @@index([environmentId])
+  @@map("surveys")
+}
+
+/// 설문 응답 (스텁)
+model Response {
+  id            String   @id @default(cuid(2))
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  finished      Boolean  @default(false)
+  data          Json     @default("{}")
+  meta          Json?
+  variables     Json?
+  ttc           Json?
+  hiddenFields  Json?
+  language      String?
+  surveyId      String
+  environmentId String
+  contactId     String?
+  displayId     String?
+  endingId      String?
+
+  survey      Survey       @relation(fields: [surveyId], references: [id], onDelete: Cascade)
+  environment Environment  @relation(fields: [environmentId], references: [id], onDelete: Cascade)
+  contact     Contact?     @relation(fields: [contactId], references: [id], onDelete: SetNull)
+  display     Display?     @relation(fields: [displayId], references: [id])
+
+  @@index([surveyId])
+  @@index([environmentId])
+  @@index([contactId])
+  @@map("responses")
+}
+
+/// 설문 노출 기록 (스텁)
+model Display {
+  id            String   @id @default(cuid(2))
+  createdAt     DateTime @default(now())
+  surveyId      String
+  environmentId String
+
+  survey      Survey      @relation(fields: [surveyId], references: [id], onDelete: Cascade)
+  environment Environment @relation(fields: [environmentId], references: [id], onDelete: Cascade)
+  responses   Response[]
+
+  @@index([surveyId])
+  @@index([environmentId])
+  @@map("displays")
+}
+
+/// 연락처/사용자 식별 정보 (스텁)
+model Contact {
+  id            String   @id @default(cuid(2))
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  attributes    Json     @default("{}")
+  environmentId String
+
+  environment Environment @relation(fields: [environmentId], references: [id], onDelete: Cascade)
+  responses   Response[]
+
+  @@index([environmentId])
+  @@map("contacts")
 }
