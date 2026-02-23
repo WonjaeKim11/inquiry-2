@@ -53,3 +53,11 @@ export function InviteAcceptRateLimit() {
     SetMetadata('throttler:name', 'invite-accept')
   );
 }
+
+/** API Rate Limit: 분당 100건 (Client/Management API 공통) */
+export function ApiRateLimit() {
+  return applyDecorators(
+    Throttle({ default: { ttl: 60000, limit: 100 } }),
+    SetMetadata('throttler:name', 'api')
+  );
+}

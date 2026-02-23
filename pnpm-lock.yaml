@@ -345,6 +345,21 @@ importers:
         specifier: ^1.0.38
         version: 1.0.38
 
+  libs/client/api-key:
+    dependencies:
+      '@inquiry/client-core':
+        specifier: workspace:*
+        version: link:../core
+      '@inquiry/client-ui':
+        specifier: workspace:*
+        version: link:../ui
+      react:
+        specifier: ^19.0.0
+        version: 19.2.4
+      react-i18next:
+        specifier: ^16.5.4
+        version: 16.5.4(i18next@25.8.13(typescript@5.9.3))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)
+
   libs/client/auth:
     dependencies:
       '@inquiry/client-core':
@@ -599,6 +614,33 @@ importers:
       passport-local:
         specifier: ^1.0.0
         version: 1.0.0
+
+  libs/server/client-api:
+    dependencies:
+      '@inquiry/db':
+        specifier: workspace:*
+        version: link:../../../packages/db
+      '@inquiry/server-core':
+        specifier: workspace:*
+        version: link:../core
+      '@inquiry/server-prisma':
+        specifier: workspace:*
+        version: link:../prisma
+      '@inquiry/server-rate-limit':
+        specifier: workspace:*
+        version: link:../rate-limit
+      '@nestjs/common':
+        specifier: ^11.0.0
+        version: 11.1.13(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2)
+      '@nestjs/config':
+        specifier: ^4.0.3
+        version: 4.0.3(@nestjs/common@11.1.13(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(rxjs@7.8.2)
+      '@nestjs/throttler':
+        specifier: ^6.5.0
+        version: 6.5.0(@nestjs/common@11.1.13(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.13)(reflect-metadata@0.2.2)
+      zod:
+        specifier: ^4.3.6
+        version: 4.3.6
 
   libs/server/core:
     dependencies:
