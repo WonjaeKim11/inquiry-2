@@ -18,7 +18,15 @@ interface User {
   name: string | null;
   image: string | null;
   emailVerified: string | null; // DateTime? → ISO string | null
+  isActive: boolean; // 계정 활성 상태 (비활성 시 기능 제한)
   locale: string; // 사용자 선호 언어 (BCP 47 형식, 예: 'en-US', 'ko-KR')
+}
+
+/** 회원가입 시 추가 옵션 (초대, locale, CAPTCHA) */
+interface SignupOptions {
+  inviteToken?: string;
+  userLocale?: string;
+  turnstileToken?: string;
 }
 
 /** AuthContext가 제공하는 값 */
@@ -27,7 +35,12 @@ interface AuthContextValue {
   loading: boolean;
   login: (email: string, password: string) => Promise<void>;
   /** 회원가입 후 이메일 검증이 필요하므로 자동 로그인하지 않음 */
-  signup: (email: string, password: string, name: string) => Promise<void>;
+  signup: (
+    email: string,
+    password: string,
+    name: string,
+    options?: SignupOptions
+  ) => Promise<void>;
   logout: () => Promise<void>;
   /** OAuth 콜백에서 받은 accessToken을 설정하고 사용자 정보를 불러온다 */
   handleOAuthCallback: (accessToken: string) => Promise<void>;
@@ -111,12 +124,27 @@ export function AuthProvider({ children }: { children: ReactNode }) {
    * 회원가입 요청.
    * 서버는 토큰을 발급하지 않으므로 자동 로그인하지 않는다.
    * 호출 측(SignupForm)에서 이메일 검증 안내를 표시해야 한다.
+   * options로 inviteToken, userLocale, turnstileToken을 선택적으로 전달할 수 있다.
    */
   const signup = useCallback(
-    async (email: string, password: string, name: string) => {
+    async (
+      email: string,
+      password: string,
+      name: string,
+      options?: SignupOptions
+    ) => {
       const res = await apiFetch('/auth/signup', {
         method: 'POST',
-        body: JSON.stringify({ email, password, name }),
+        body: JSON.stringify({
+          email,
+          password,
+          name,
+          ...(options?.inviteToken && { inviteToken: options.inviteToken }),
+          ...(options?.userLocale && { userLocale: options.userLocale }),
+          ...(options?.turnstileToken && {
+            turnstileToken: options.turnstileToken,
+          }),
+        }),
       });
       if (!res.ok) {
         const error = await res.json();

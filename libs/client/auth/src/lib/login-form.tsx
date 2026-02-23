@@ -68,7 +68,9 @@ export function LoginForm() {
     try {
       await login(email, password);
     } catch (err) {
-      setError(err instanceof Error ? err.message : t('auth.login_form.login_fail'));
+      setError(
+        err instanceof Error ? err.message : t('auth.login_form.login_fail')
+      );
     } finally {
       setLoading(false);
     }
@@ -80,20 +82,35 @@ export function LoginForm() {
         <CardHeader className="items-center gap-2 pb-6">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H6C4.89543 21 4 20.1046 4 19V5C4 3.89543 4.89543 3 6 3Z" fill="#00E5B5" />
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H6C4.89543 21 4 20.1046 4 19V5C4 3.89543 4.89543 3 6 3Z"
+                fill="#00E5B5"
+              />
               <path d="M9 8H16V10H9V8Z" fill="white" />
               <path d="M9 14H14V16H9V14Z" fill="white" />
             </svg>
-            <span className="text-2xl font-bold tracking-tight text-slate-900">Inquiry</span>
+            <span className="text-2xl font-bold tracking-tight text-slate-900">
+              Inquiry
+            </span>
           </div>
-          <h2 className="text-center text-sm font-medium text-muted-foreground">{t('auth.login_form.title')}</h2>
+          <h2 className="text-center text-sm font-medium text-muted-foreground">
+            {t('auth.login_form.title')}
+          </h2>
         </CardHeader>
 
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label htmlFor="email" className="sr-only">{t('auth.login_form.email_label')}</label>
+              <label htmlFor="email" className="sr-only">
+                {t('auth.login_form.email_label')}
+              </label>
               <Input
                 id="email"
                 type="email"
@@ -104,7 +121,9 @@ export function LoginForm() {
               />
             </div>
             <div>
-              <label htmlFor="password" className="sr-only">{t('auth.login_form.password_label')}</label>
+              <label htmlFor="password" className="sr-only">
+                {t('auth.login_form.password_label')}
+              </label>
               <Input
                 id="password"
                 type="password"
@@ -113,6 +132,15 @@ export function LoginForm() {
                 placeholder="Password"
                 required
               />
+              {/* 비밀번호 찾기 링크 — 비밀번호 필드 직후에 배치하여 접근성 향상 */}
+              <div className="mt-1.5 text-right">
+                <a
+                  href="/auth/forgot-password"
+                  className="text-xs text-muted-foreground hover:text-slate-900 hover:underline"
+                >
+                  {t('auth.login_form.forgot_password')}
+                </a>
+              </div>
             </div>
 
             {error && (
@@ -122,7 +150,9 @@ export function LoginForm() {
             )}
 
             <Button type="submit" disabled={loading} className="w-full">
-              {loading ? t('auth.login_form.logging_in') : t('auth.login_form.submit')}
+              {loading
+                ? t('auth.login_form.logging_in')
+                : t('auth.login_form.submit')}
             </Button>
           </form>
 
@@ -132,7 +162,10 @@ export function LoginForm() {
         <CardFooter className="justify-center">
           <p className="text-xs text-muted-foreground">
             {t('auth.login_form.new_user')}{' '}
-            <a href="/auth/signup" className="font-semibold text-slate-900 hover:underline">
+            <a
+              href="/auth/signup"
+              className="font-semibold text-slate-900 hover:underline"
+            >
               {t('auth.login_form.create_account')}
             </a>
           </p>

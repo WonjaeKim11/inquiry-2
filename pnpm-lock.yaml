@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@marsidev/react-turnstile':
+        specifier: ^1.4.2
+        version: 1.4.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@nestjs/common':
         specifier: ^11.0.0
         version: 11.1.13(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.1.14)(rxjs@7.8.2)
@@ -214,6 +217,9 @@ importers:
       '@inquiry/server-logger':
         specifier: workspace:*
         version: link:../../libs/server/logger
+      '@inquiry/server-organization':
+        specifier: workspace:*
+        version: link:../../libs/server/organization
       '@inquiry/server-prisma':
         specifier: workspace:*
         version: link:../../libs/server/prisma
@@ -506,6 +512,36 @@ importers:
       pino-pretty:
         specifier: '*'
         version: 13.1.3
+
+  libs/server/organization:
+    dependencies:
+      '@inquiry/db':
+        specifier: workspace:*
+        version: link:../../../packages/db
+      '@inquiry/server-audit-log':
+        specifier: workspace:*
+        version: link:../audit-log
+      '@inquiry/server-auth':
+        specifier: workspace:*
+        version: link:../auth
+      '@inquiry/server-core':
+        specifier: workspace:*
+        version: link:../core
+      '@inquiry/server-prisma':
+        specifier: workspace:*
+        version: link:../prisma
+      '@nestjs/common':
+        specifier: ^11.0.0
+        version: 11.1.13(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2)
+      '@nestjs/config':
+        specifier: ^4.0.3
+        version: 4.0.3(@nestjs/common@11.1.13(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(rxjs@7.8.2)
+      '@nestjs/passport':
+        specifier: ^11.0.5
+        version: 11.0.5(@nestjs/common@11.1.13(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0)
+      zod:
+        specifier: ^4.3.6
+        version: 4.3.6
 
   libs/server/prisma:
     dependencies:
@@ -1930,6 +1966,12 @@ packages:
   '@lukeed/csprng@1.1.0':
     resolution: {integrity: sha512-Z7C/xXCiGWsg0KuKsHTKJxbWhpI3Vs5GwLfOean7MGyVFGqdRgBbAjOCh6u4bbjPc/8MJ2pZmK/0DLdCbivLDA==}
     engines: {node: '>=8'}
+
+  '@marsidev/react-turnstile@1.4.2':
+    resolution: {integrity: sha512-xs1qOuyeMOz6t9BXXCXWiukC0/0+48vR08B7uwNdG05wCMnbcNgxiFmdFKDOFbM76qFYFRYlGeRfhfq1U/iZmA==}
+    peerDependencies:
+      react: ^17.0.2 || ^18.0.0 || ^19.0
+      react-dom: ^17.0.2 || ^18.0.0 || ^19.0
 
   '@module-federation/bridge-react-webpack-plugin@0.21.6':
     resolution: {integrity: sha512-lJMmdhD4VKVkeg8RHb+Jwe6Ou9zKVgjtb1inEURDG/sSS2ksdZA8pVKLYbRPRbdmjr193Y8gJfqFbI2dqoyc/g==}
@@ -10135,6 +10177,11 @@ snapshots:
   '@leichtgewicht/ip-codec@2.0.5': {}
 
   '@lukeed/csprng@1.1.0': {}
+
+  '@marsidev/react-turnstile@1.4.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
 
   '@module-federation/bridge-react-webpack-plugin@0.21.6':
     dependencies:

@@ -131,10 +131,8 @@ export class ServerAuthService implements OnModuleInit {
         });
       }
 
-      // Brevo 고객 생성 (fire-and-forget)
-      this.brevoService.createContact(user.email, user.name);
-
       // 감사 로그 (logEvent: Zod 검증 + PII Redaction + Feature Flag 적용)
+      // NOTE: Brevo createContact는 이메일 검증 완료(verifyEmail) 시에만 호출한다.
       this.auditLogService.logEvent({
         action: 'user.signup',
         userId: user.id,
@@ -552,7 +550,12 @@ export class ServerAuthService implements OnModuleInit {
       10
     );
 
-    const payload = { sub: userId, email };
+    // isActive를 JWT payload에 포함하여 클라이언트 세션에서 활성 상태를 확인할 수 있도록 한다
+    const user = await this.prisma.user.findUnique({
+      where: { id: userId },
+      select: { isActive: true },
+    });
+    const payload = { sub: userId, email, isActive: user?.isActive ?? true };
 
     const accessToken = this.jwtService.sign(payload, {
       secret: this.configService.getOrThrow<string>('JWT_ACCESS_SECRET'),
@@ -638,15 +641,34 @@ export class ServerAuthService implements OnModuleInit {
     }
   }
 
-  /** 개인 조직 자동 생성 */
+  /**
+   * 개인 조직 자동 생성.
+   * 회원가입 시 호출되며, free 플랜의 기본 Billing 값을 포함한다.
+   */
   private async createPersonalOrganization(
     userId: string,
     userName: string
   ): Promise<void> {
     try {
+      /** free 플랜 기본 Billing 값 */
+      const defaultBilling = {
+        plan: 'free',
+        period: 'monthly',
+        periodStart: null,
+        limits: {
+          projects: 3,
+          monthlyResponses: 1500,
+          monthlyMIU: 2000,
+        },
+        stripeCustomerId: null,
+      };
+
       await this.prisma.organization.create({
         data: {
           name: `${userName}의 조직`,
+          billing: defaultBilling,
+          whitelabel: {},
+          isAIEnabled: false,
           memberships: {
             create: {
               userId,
