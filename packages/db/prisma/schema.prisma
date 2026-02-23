@@ -86,11 +86,17 @@ model RefreshToken {
 }
 
 /// 조직 (Multi-Org 지원)
+/// billing: Plan/Period/Limits/Stripe 정보를 포함하는 JSON 필드
+/// whitelabel: 브랜딩(로고, 파비콘 등) 설정 JSON 필드
+/// isAIEnabled: AI 기능 활성화 여부
 model Organization {
-  id        String   @id @default(cuid())
-  name      String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id          String   @id @default(cuid())
+  name        String
+  billing     Json     @default("{\"plan\":\"free\",\"period\":\"monthly\",\"periodStart\":null,\"limits\":{\"projects\":3,\"monthlyResponses\":1500,\"monthlyMIU\":2000},\"stripeCustomerId\":null}")
+  whitelabel  Json     @default("{}")
+  isAIEnabled Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 
   memberships Membership[]
   invites     Invite[]

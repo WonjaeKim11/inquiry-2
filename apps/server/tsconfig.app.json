@@ -21,6 +21,9 @@
       "path": "../../libs/server/user/tsconfig.lib.json"
     },
     {
+      "path": "../../libs/server/organization/tsconfig.lib.json"
+    },
+    {
       "path": "../../libs/server/audit-log/tsconfig.lib.json"
     },
     {

@@ -10,6 +10,7 @@ import { RateLimitModule } from '@inquiry/server-rate-limit';
 import { EmailModule } from '@inquiry/server-email';
 import { AuditLogModule } from '@inquiry/server-audit-log';
 import { UserModule } from '@inquiry/server-user';
+import { OrganizationModule } from '@inquiry/server-organization';
 import { HealthModule } from './health/health.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -33,6 +34,7 @@ import { AppService } from './app.service';
     AuditLogModule,
     ServerAuthModule,
     UserModule,
+    OrganizationModule,
     HealthModule,
   ],
   controllers: [AppController],
