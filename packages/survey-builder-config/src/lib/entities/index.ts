@@ -1,2 +1,16 @@
 export { blockEntity } from './block.entity';
 export { openTextEntity } from './open-text.entity';
+export { multipleChoiceSingleEntity } from './multiple-choice-single.entity';
+export { multipleChoiceMultiEntity } from './multiple-choice-multi.entity';
+export { npsEntity } from './nps.entity';
+export { ctaEntity } from './cta.entity';
+export { ratingEntity } from './rating.entity';
+export { consentEntity } from './consent.entity';
+export { pictureSelectionEntity } from './picture-selection.entity';
+export { dateEntity } from './date.entity';
+export { fileUploadEntity } from './file-upload.entity';
+export { calEntity } from './cal.entity';
+export { matrixEntity } from './matrix.entity';
+export { addressEntity } from './address.entity';
+export { rankingEntity } from './ranking.entity';
+export { contactInfoEntity } from './contact-info.entity';

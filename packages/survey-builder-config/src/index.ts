@@ -1,8 +1,26 @@
 export { surveyBuilder } from './lib/survey-builder';
 export type { SurveyBuilderSchema } from './lib/survey-builder';
+export { ELEMENT_ENTITY_NAMES } from './lib/survey-builder';
 
-export { blockEntity } from './lib/entities/block.entity';
-export { openTextEntity } from './lib/entities/open-text.entity';
+// Entities
+export {
+  blockEntity,
+  openTextEntity,
+  multipleChoiceSingleEntity,
+  multipleChoiceMultiEntity,
+  npsEntity,
+  ctaEntity,
+  ratingEntity,
+  consentEntity,
+  pictureSelectionEntity,
+  dateEntity,
+  fileUploadEntity,
+  calEntity,
+  matrixEntity,
+  addressEntity,
+  rankingEntity,
+  contactInfoEntity,
+} from './lib/entities/index';
 
 // Attributes (전체 re-export)
 export {
