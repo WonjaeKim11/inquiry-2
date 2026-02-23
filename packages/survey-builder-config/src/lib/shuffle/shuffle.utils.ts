@@ -17,7 +17,9 @@ function fisherYatesShuffle<T>(array: T[]): T[] {
 
   for (let i = shuffled.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i]!, shuffled[j]!] = [shuffled[j]!, shuffled[i]!];
+    const temp = shuffled[i];
+    shuffled[i] = shuffled[j] as T;
+    shuffled[j] = temp as T;
   }
 
   return shuffled;
@@ -52,7 +54,7 @@ export function shuffleChoices<T>(
   }
 
   // exceptLast: 마지막 항목 고정, 나머지 셔플
-  const last = choices[choices.length - 1]!;
+  const last = choices[choices.length - 1] as T;
   const rest = fisherYatesShuffle(choices.slice(0, -1));
   return [...rest, last];
 }
