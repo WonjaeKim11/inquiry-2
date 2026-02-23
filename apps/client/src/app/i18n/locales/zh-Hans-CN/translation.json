@@ -162,5 +162,123 @@
       "load_fail": "加载 API 密钥失败",
       "not_found": "未找到 API 密钥"
     }
+  },
+  "survey": {
+    "title": "问卷调查",
+    "create": {
+      "title": "创建问卷",
+      "name_label": "问卷名称",
+      "name_placeholder": "请输入问卷名称",
+      "type_label": "问卷类型",
+      "type_link": "链接问卷",
+      "type_app": "应用内问卷",
+      "template_label": "模板（可选）",
+      "template_none": "空白问卷",
+      "submit": "创建",
+      "creating": "创建中...",
+      "success": "问卷创建成功",
+      "fail": "问卷创建失败"
+    },
+    "list": {
+      "empty": "暂无问卷。创建您的第一个问卷开始使用。",
+      "responses": "回复",
+      "displays": "展示",
+      "created": "创建时间",
+      "updated": "更新时间",
+      "edit": "编辑",
+      "delete": "删除"
+    },
+    "status": {
+      "DRAFT": "草稿",
+      "IN_PROGRESS": "进行中",
+      "PAUSED": "已暂停",
+      "COMPLETED": "已完成"
+    },
+    "actions": {
+      "publish": "发布",
+      "pause": "暂停",
+      "resume": "恢复",
+      "complete": "完成",
+      "save": "保存",
+      "auto_saved": "已自动保存",
+      "saving": "保存中..."
+    },
+    "editor": {
+      "title": "编辑问卷",
+      "back_to_list": "返回问卷列表",
+      "preview": "预览",
+      "settings": "设置",
+      "questions": "问题"
+    },
+    "display_option": {
+      "displayOnce": "仅显示一次",
+      "displayMultiple": "多次显示",
+      "respondMultiple": "允许多次回答",
+      "displaySome": "部分显示"
+    },
+    "delete": {
+      "title": "删除问卷",
+      "confirm": "确定要删除此问卷吗？此操作无法撤销。",
+      "cancel": "取消",
+      "submit": "删除",
+      "deleting": "删除中...",
+      "success": "问卷已删除",
+      "fail": "问卷删除失败"
+    },
+    "template": {
+      "title": "模板",
+      "nps": "净推荐值 (NPS)",
+      "csat": "客户满意度 (CSAT)",
+      "ces": "客户费力度 (CES)",
+      "blank": "空白问卷"
+    },
+    "errors": {
+      "load_fail": "加载问卷失败",
+      "not_found": "未找到问卷",
+      "publish_fail": "问卷发布失败",
+      "transition_fail": "状态更改失败"
+    },
+    "welcome_card": {
+      "title": "欢迎卡片",
+      "enabled": "启用欢迎卡片",
+      "headline": "标题",
+      "description": "描述"
+    },
+    "ending": {
+      "title": "结束页面",
+      "add": "添加结束页面",
+      "type_end_screen": "结束页面",
+      "type_redirect": "重定向至 URL"
+    },
+    "hidden_fields": {
+      "title": "隐藏字段",
+      "enabled": "启用隐藏字段",
+      "add_field": "添加字段"
+    },
+    "variables": {
+      "title": "变量",
+      "add": "添加变量",
+      "type_number": "数字",
+      "type_text": "文本"
+    },
+    "settings": {
+      "title": "问卷设置",
+      "display_option": "显示选项",
+      "delay": "显示延迟（秒）",
+      "auto_close": "自动关闭（秒）",
+      "auto_complete": "自动完成（回复数）",
+      "pin": "PIN 保护",
+      "single_use": "一次性使用",
+      "recontact_days": "再次联系天数"
+    },
+    "validation": {
+      "name_required": "问卷名称为必填项",
+      "min_one_block": "至少需要一个区块",
+      "min_one_question": "至少需要一个问题",
+      "min_one_ending": "至少需要一个结束页面",
+      "welcome_headline_required": "启用欢迎卡片时标题为必填项",
+      "pin_4_digits": "PIN 必须恰好为 4 位数字",
+      "display_limit_required": "'部分显示'选项需要设置显示限制"
+    }
   }
 }

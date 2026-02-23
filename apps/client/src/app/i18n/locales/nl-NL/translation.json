@@ -162,5 +162,123 @@
       "load_fail": "API-sleutels laden mislukt",
       "not_found": "API-sleutel niet gevonden"
     }
+  },
+  "survey": {
+    "title": "Enquêtes",
+    "create": {
+      "title": "Enquête aanmaken",
+      "name_label": "Enquêtenaam",
+      "name_placeholder": "Voer enquêtenaam in",
+      "type_label": "Enquêtetype",
+      "type_link": "Link-enquête",
+      "type_app": "App-enquête",
+      "template_label": "Sjabloon (Optioneel)",
+      "template_none": "Lege enquête",
+      "submit": "Aanmaken",
+      "creating": "Aanmaken...",
+      "success": "Enquête succesvol aangemaakt",
+      "fail": "Enquête aanmaken mislukt"
+    },
+    "list": {
+      "empty": "Nog geen enquêtes. Maak uw eerste enquête aan.",
+      "responses": "reacties",
+      "displays": "weergaven",
+      "created": "Aangemaakt",
+      "updated": "Bijgewerkt",
+      "edit": "Bewerken",
+      "delete": "Verwijderen"
+    },
+    "status": {
+      "DRAFT": "Concept",
+      "IN_PROGRESS": "Actief",
+      "PAUSED": "Gepauzeerd",
+      "COMPLETED": "Voltooid"
+    },
+    "actions": {
+      "publish": "Publiceren",
+      "pause": "Pauzeren",
+      "resume": "Hervatten",
+      "complete": "Voltooien",
+      "save": "Opslaan",
+      "auto_saved": "Automatisch opgeslagen",
+      "saving": "Opslaan..."
+    },
+    "editor": {
+      "title": "Enquête bewerken",
+      "back_to_list": "Terug naar enquêtes",
+      "preview": "Voorbeeld",
+      "settings": "Instellingen",
+      "questions": "Vragen"
+    },
+    "display_option": {
+      "displayOnce": "Eenmalig tonen",
+      "displayMultiple": "Meerdere keren tonen",
+      "respondMultiple": "Meerdere keren reageren",
+      "displaySome": "Gedeeltelijk tonen"
+    },
+    "delete": {
+      "title": "Enquête verwijderen",
+      "confirm": "Weet u zeker dat u deze enquête wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt.",
+      "cancel": "Annuleren",
+      "submit": "Verwijderen",
+      "deleting": "Verwijderen...",
+      "success": "Enquête succesvol verwijderd",
+      "fail": "Enquête verwijderen mislukt"
+    },
+    "template": {
+      "title": "Sjablonen",
+      "nps": "Net Promoter Score (NPS)",
+      "csat": "Klanttevredenheid (CSAT)",
+      "ces": "Customer Effort Score (CES)",
+      "blank": "Lege enquête"
+    },
+    "errors": {
+      "load_fail": "Enquêtes laden mislukt",
+      "not_found": "Enquête niet gevonden",
+      "publish_fail": "Enquête publiceren mislukt",
+      "transition_fail": "Statuswijziging mislukt"
+    },
+    "welcome_card": {
+      "title": "Welkomstkaart",
+      "enabled": "Welkomstkaart inschakelen",
+      "headline": "Koptekst",
+      "description": "Beschrijving"
+    },
+    "ending": {
+      "title": "Eindschermen",
+      "add": "Eindscherm toevoegen",
+      "type_end_screen": "Eindscherm",
+      "type_redirect": "Doorverwijzen naar URL"
+    },
+    "hidden_fields": {
+      "title": "Verborgen velden",
+      "enabled": "Verborgen velden inschakelen",
+      "add_field": "Veld toevoegen"
+    },
+    "variables": {
+      "title": "Variabelen",
+      "add": "Variabele toevoegen",
+      "type_number": "Getal",
+      "type_text": "Tekst"
+    },
+    "settings": {
+      "title": "Enquête-instellingen",
+      "display_option": "Weergaveoptie",
+      "delay": "Weergavevertraging (seconden)",
+      "auto_close": "Automatisch sluiten (seconden)",
+      "auto_complete": "Automatisch voltooien (reacties)",
+      "pin": "PIN-bescherming",
+      "single_use": "Eenmalig gebruik",
+      "recontact_days": "Dagen tot hercontact"
+    },
+    "validation": {
+      "name_required": "Enquêtenaam is verplicht",
+      "min_one_block": "Minimaal één blok is vereist",
+      "min_one_question": "Minimaal één vraag is vereist",
+      "min_one_ending": "Minimaal één eindscherm is vereist",
+      "welcome_headline_required": "Koptekst van welkomstkaart is verplicht wanneer ingeschakeld",
+      "pin_4_digits": "PIN moet precies 4 cijfers bevatten",
+      "display_limit_required": "Weergavelimiet is vereist voor de optie 'Gedeeltelijk tonen'"
+    }
   }
 }

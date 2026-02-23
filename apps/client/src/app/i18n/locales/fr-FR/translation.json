@@ -162,5 +162,123 @@
       "load_fail": "Échec du chargement des clés API",
       "not_found": "Clé API introuvable"
     }
+  },
+  "survey": {
+    "title": "Enquêtes",
+    "create": {
+      "title": "Créer une enquête",
+      "name_label": "Nom de l'enquête",
+      "name_placeholder": "Saisir le nom de l'enquête",
+      "type_label": "Type d'enquête",
+      "type_link": "Enquête par lien",
+      "type_app": "Enquête in-app",
+      "template_label": "Modèle (Optionnel)",
+      "template_none": "Enquête vierge",
+      "submit": "Créer",
+      "creating": "Création en cours...",
+      "success": "Enquête créée avec succès",
+      "fail": "Échec de la création de l'enquête"
+    },
+    "list": {
+      "empty": "Aucune enquête pour le moment. Créez votre première enquête.",
+      "responses": "réponses",
+      "displays": "affichages",
+      "created": "Créée",
+      "updated": "Mise à jour",
+      "edit": "Modifier",
+      "delete": "Supprimer"
+    },
+    "status": {
+      "DRAFT": "Brouillon",
+      "IN_PROGRESS": "En cours",
+      "PAUSED": "En pause",
+      "COMPLETED": "Terminée"
+    },
+    "actions": {
+      "publish": "Publier",
+      "pause": "Mettre en pause",
+      "resume": "Reprendre",
+      "complete": "Terminer",
+      "save": "Enregistrer",
+      "auto_saved": "Enregistré automatiquement",
+      "saving": "Enregistrement..."
+    },
+    "editor": {
+      "title": "Modifier l'enquête",
+      "back_to_list": "Retour aux enquêtes",
+      "preview": "Aperçu",
+      "settings": "Paramètres",
+      "questions": "Questions"
+    },
+    "display_option": {
+      "displayOnce": "Afficher une fois",
+      "displayMultiple": "Afficher plusieurs fois",
+      "respondMultiple": "Répondre plusieurs fois",
+      "displaySome": "Affichage partiel"
+    },
+    "delete": {
+      "title": "Supprimer l'enquête",
+      "confirm": "Êtes-vous sûr de vouloir supprimer cette enquête ? Cette action est irréversible.",
+      "cancel": "Annuler",
+      "submit": "Supprimer",
+      "deleting": "Suppression en cours...",
+      "success": "Enquête supprimée avec succès",
+      "fail": "Échec de la suppression de l'enquête"
+    },
+    "template": {
+      "title": "Modèles",
+      "nps": "Net Promoter Score (NPS)",
+      "csat": "Satisfaction client (CSAT)",
+      "ces": "Score d'effort client (CES)",
+      "blank": "Enquête vierge"
+    },
+    "errors": {
+      "load_fail": "Échec du chargement des enquêtes",
+      "not_found": "Enquête introuvable",
+      "publish_fail": "Échec de la publication de l'enquête",
+      "transition_fail": "Échec du changement de statut"
+    },
+    "welcome_card": {
+      "title": "Carte de bienvenue",
+      "enabled": "Activer la carte de bienvenue",
+      "headline": "Titre",
+      "description": "Description"
+    },
+    "ending": {
+      "title": "Écrans de fin",
+      "add": "Ajouter un écran de fin",
+      "type_end_screen": "Écran de fin",
+      "type_redirect": "Redirection vers URL"
+    },
+    "hidden_fields": {
+      "title": "Champs cachés",
+      "enabled": "Activer les champs cachés",
+      "add_field": "Ajouter un champ"
+    },
+    "variables": {
+      "title": "Variables",
+      "add": "Ajouter une variable",
+      "type_number": "Nombre",
+      "type_text": "Texte"
+    },
+    "settings": {
+      "title": "Paramètres de l'enquête",
+      "display_option": "Option d'affichage",
+      "delay": "Délai d'affichage (secondes)",
+      "auto_close": "Fermeture automatique (secondes)",
+      "auto_complete": "Complétion automatique (réponses)",
+      "pin": "Protection par PIN",
+      "single_use": "Usage unique",
+      "recontact_days": "Jours avant recontact"
+    },
+    "validation": {
+      "name_required": "Le nom de l'enquête est requis",
+      "min_one_block": "Au moins un bloc est requis",
+      "min_one_question": "Au moins une question est requise",
+      "min_one_ending": "Au moins un écran de fin est requis",
+      "welcome_headline_required": "Le titre de la carte de bienvenue est requis lorsqu'elle est activée",
+      "pin_4_digits": "Le PIN doit comporter exactement 4 chiffres",
+      "display_limit_required": "La limite d'affichage est requise pour l'option 'Affichage partiel'"
+    }
   }
 }

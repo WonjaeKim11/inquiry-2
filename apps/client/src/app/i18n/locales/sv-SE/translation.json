@@ -162,5 +162,123 @@
       "load_fail": "Kunde inte ladda API-nycklar",
       "not_found": "API-nyckel hittades inte"
     }
+  },
+  "survey": {
+    "title": "Enkäter",
+    "create": {
+      "title": "Skapa enkät",
+      "name_label": "Enkätnamn",
+      "name_placeholder": "Ange enkätnamn",
+      "type_label": "Enkättyp",
+      "type_link": "Länkenkät",
+      "type_app": "Appenkät",
+      "template_label": "Mall (Valfritt)",
+      "template_none": "Tom enkät",
+      "submit": "Skapa",
+      "creating": "Skapar...",
+      "success": "Enkät skapad",
+      "fail": "Kunde inte skapa enkät"
+    },
+    "list": {
+      "empty": "Inga enkäter ännu. Skapa din första enkät.",
+      "responses": "svar",
+      "displays": "visningar",
+      "created": "Skapad",
+      "updated": "Uppdaterad",
+      "edit": "Redigera",
+      "delete": "Ta bort"
+    },
+    "status": {
+      "DRAFT": "Utkast",
+      "IN_PROGRESS": "Pågående",
+      "PAUSED": "Pausad",
+      "COMPLETED": "Slutförd"
+    },
+    "actions": {
+      "publish": "Publicera",
+      "pause": "Pausa",
+      "resume": "Återuppta",
+      "complete": "Slutför",
+      "save": "Spara",
+      "auto_saved": "Automatiskt sparat",
+      "saving": "Sparar..."
+    },
+    "editor": {
+      "title": "Redigera enkät",
+      "back_to_list": "Tillbaka till enkäter",
+      "preview": "Förhandsgranskning",
+      "settings": "Inställningar",
+      "questions": "Frågor"
+    },
+    "display_option": {
+      "displayOnce": "Visa en gång",
+      "displayMultiple": "Visa flera gånger",
+      "respondMultiple": "Svara flera gånger",
+      "displaySome": "Delvis visning"
+    },
+    "delete": {
+      "title": "Ta bort enkät",
+      "confirm": "Är du säker på att du vill ta bort denna enkät? Denna åtgärd kan inte ångras.",
+      "cancel": "Avbryt",
+      "submit": "Ta bort",
+      "deleting": "Tar bort...",
+      "success": "Enkät borttagen",
+      "fail": "Kunde inte ta bort enkät"
+    },
+    "template": {
+      "title": "Mallar",
+      "nps": "Net Promoter Score (NPS)",
+      "csat": "Kundnöjdhet (CSAT)",
+      "ces": "Customer Effort Score (CES)",
+      "blank": "Tom enkät"
+    },
+    "errors": {
+      "load_fail": "Kunde inte ladda enkäter",
+      "not_found": "Enkät hittades inte",
+      "publish_fail": "Kunde inte publicera enkät",
+      "transition_fail": "Statusändring misslyckades"
+    },
+    "welcome_card": {
+      "title": "Välkomstkort",
+      "enabled": "Aktivera välkomstkort",
+      "headline": "Rubrik",
+      "description": "Beskrivning"
+    },
+    "ending": {
+      "title": "Slutskärmar",
+      "add": "Lägg till slutskärm",
+      "type_end_screen": "Slutskärm",
+      "type_redirect": "Omdirigera till URL"
+    },
+    "hidden_fields": {
+      "title": "Dolda fält",
+      "enabled": "Aktivera dolda fält",
+      "add_field": "Lägg till fält"
+    },
+    "variables": {
+      "title": "Variabler",
+      "add": "Lägg till variabel",
+      "type_number": "Nummer",
+      "type_text": "Text"
+    },
+    "settings": {
+      "title": "Enkätinställningar",
+      "display_option": "Visningsalternativ",
+      "delay": "Visningsfördröjning (sekunder)",
+      "auto_close": "Automatisk stängning (sekunder)",
+      "auto_complete": "Automatisk slutförande (svar)",
+      "pin": "PIN-skydd",
+      "single_use": "Engångsanvändning",
+      "recontact_days": "Dagar till återkontakt"
+    },
+    "validation": {
+      "name_required": "Enkätnamn krävs",
+      "min_one_block": "Minst ett block krävs",
+      "min_one_question": "Minst en fråga krävs",
+      "min_one_ending": "Minst en slutskärm krävs",
+      "welcome_headline_required": "Rubrik för välkomstkort krävs när det är aktiverat",
+      "pin_4_digits": "PIN måste vara exakt 4 siffror",
+      "display_limit_required": "Visningsgräns krävs för alternativet 'Delvis visning'"
+    }
   }
 }

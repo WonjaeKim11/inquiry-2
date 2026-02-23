@@ -9,10 +9,16 @@
     "@inquiry/client-member": "workspace:*",
     "@inquiry/client-organization": "workspace:*",
     "@inquiry/client-project": "workspace:*",
+    "@inquiry/client-survey": "workspace:*",
     "@inquiry/client-ui": "workspace:*",
     "@inquiry/db": "workspace:*",
     "@inquiry/shared-i18n": "workspace:*",
+    "@inquiry/survey-builder-config": "workspace:*",
+    "@coltorapps/builder-react": "^0.2.4",
+    "@dnd-kit/core": "^6.3.1",
+    "@dnd-kit/sortable": "^10.0.0",
     "accept-language": "^3.0.20",
+    "deep-equal": "^2.2.3",
     "i18next": "^25.8.13",
     "i18next-resources-to-backend": "^1.2.1",
     "next": "~16.0.1",
@@ -22,6 +28,7 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
+    "@types/deep-equal": "^1.0.4",
     "tailwindcss-animate": "^1.0.7"
   }
 }

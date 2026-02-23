@@ -162,5 +162,123 @@
       "load_fail": "Error al cargar las claves API",
       "not_found": "Clave API no encontrada"
     }
+  },
+  "survey": {
+    "title": "Encuestas",
+    "create": {
+      "title": "Crear encuesta",
+      "name_label": "Nombre de la encuesta",
+      "name_placeholder": "Ingrese el nombre de la encuesta",
+      "type_label": "Tipo de encuesta",
+      "type_link": "Encuesta por enlace",
+      "type_app": "Encuesta in-app",
+      "template_label": "Plantilla (Opcional)",
+      "template_none": "Encuesta en blanco",
+      "submit": "Crear",
+      "creating": "Creando...",
+      "success": "Encuesta creada exitosamente",
+      "fail": "Error al crear la encuesta"
+    },
+    "list": {
+      "empty": "Aún no hay encuestas. Cree su primera encuesta para comenzar.",
+      "responses": "respuestas",
+      "displays": "visualizaciones",
+      "created": "Creada",
+      "updated": "Actualizada",
+      "edit": "Editar",
+      "delete": "Eliminar"
+    },
+    "status": {
+      "DRAFT": "Borrador",
+      "IN_PROGRESS": "En progreso",
+      "PAUSED": "Pausada",
+      "COMPLETED": "Completada"
+    },
+    "actions": {
+      "publish": "Publicar",
+      "pause": "Pausar",
+      "resume": "Reanudar",
+      "complete": "Completar",
+      "save": "Guardar",
+      "auto_saved": "Guardado automáticamente",
+      "saving": "Guardando..."
+    },
+    "editor": {
+      "title": "Editar encuesta",
+      "back_to_list": "Volver a encuestas",
+      "preview": "Vista previa",
+      "settings": "Configuración",
+      "questions": "Preguntas"
+    },
+    "display_option": {
+      "displayOnce": "Mostrar una vez",
+      "displayMultiple": "Mostrar varias veces",
+      "respondMultiple": "Responder varias veces",
+      "displaySome": "Mostrar parcialmente"
+    },
+    "delete": {
+      "title": "Eliminar encuesta",
+      "confirm": "¿Está seguro de que desea eliminar esta encuesta? Esta acción no se puede deshacer.",
+      "cancel": "Cancelar",
+      "submit": "Eliminar",
+      "deleting": "Eliminando...",
+      "success": "Encuesta eliminada exitosamente",
+      "fail": "Error al eliminar la encuesta"
+    },
+    "template": {
+      "title": "Plantillas",
+      "nps": "Net Promoter Score (NPS)",
+      "csat": "Satisfacción del cliente (CSAT)",
+      "ces": "Puntuación de esfuerzo del cliente (CES)",
+      "blank": "Encuesta en blanco"
+    },
+    "errors": {
+      "load_fail": "Error al cargar las encuestas",
+      "not_found": "Encuesta no encontrada",
+      "publish_fail": "Error al publicar la encuesta",
+      "transition_fail": "Error en el cambio de estado"
+    },
+    "welcome_card": {
+      "title": "Tarjeta de bienvenida",
+      "enabled": "Activar tarjeta de bienvenida",
+      "headline": "Título",
+      "description": "Descripción"
+    },
+    "ending": {
+      "title": "Pantallas finales",
+      "add": "Agregar pantalla final",
+      "type_end_screen": "Pantalla final",
+      "type_redirect": "Redirigir a URL"
+    },
+    "hidden_fields": {
+      "title": "Campos ocultos",
+      "enabled": "Activar campos ocultos",
+      "add_field": "Agregar campo"
+    },
+    "variables": {
+      "title": "Variables",
+      "add": "Agregar variable",
+      "type_number": "Número",
+      "type_text": "Texto"
+    },
+    "settings": {
+      "title": "Configuración de la encuesta",
+      "display_option": "Opción de visualización",
+      "delay": "Retraso de visualización (segundos)",
+      "auto_close": "Cierre automático (segundos)",
+      "auto_complete": "Completar automáticamente (respuestas)",
+      "pin": "Protección por PIN",
+      "single_use": "Uso único",
+      "recontact_days": "Días para recontacto"
+    },
+    "validation": {
+      "name_required": "El nombre de la encuesta es obligatorio",
+      "min_one_block": "Se requiere al menos un bloque",
+      "min_one_question": "Se requiere al menos una pregunta",
+      "min_one_ending": "Se requiere al menos una pantalla final",
+      "welcome_headline_required": "El título de la tarjeta de bienvenida es obligatorio cuando está activada",
+      "pin_4_digits": "El PIN debe tener exactamente 4 dígitos",
+      "display_limit_required": "El límite de visualización es obligatorio para la opción 'Mostrar parcialmente'"
+    }
   }
 }

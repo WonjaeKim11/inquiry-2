@@ -171,6 +171,15 @@ importers:
 
   apps/client:
     dependencies:
+      '@coltorapps/builder-react':
+        specifier: ^0.2.4
+        version: 0.2.4(@coltorapps/builder@0.2.4)(react@19.2.4)
+      '@dnd-kit/core':
+        specifier: ^6.3.1
+        version: 6.3.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@dnd-kit/sortable':
+        specifier: ^10.0.0
+        version: 10.0.0(@dnd-kit/core@6.3.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@inquiry/client-api-key':
         specifier: workspace:*
         version: link:../../libs/client/api-key
@@ -189,6 +198,9 @@ importers:
       '@inquiry/client-project':
         specifier: workspace:*
         version: link:../../libs/client/project
+      '@inquiry/client-survey':
+        specifier: workspace:*
+        version: link:../../libs/client/survey
       '@inquiry/client-ui':
         specifier: workspace:*
         version: link:../../libs/client/ui
@@ -198,9 +210,15 @@ importers:
       '@inquiry/shared-i18n':
         specifier: workspace:*
         version: link:../../packages/shared-i18n
+      '@inquiry/survey-builder-config':
+        specifier: workspace:*
+        version: link:../../packages/survey-builder-config
       accept-language:
         specifier: ^3.0.20
         version: 3.0.20
+      deep-equal:
+        specifier: ^2.2.3
+        version: 2.2.3
       i18next:
         specifier: ^25.8.13
         version: 25.8.13(typescript@5.9.3)
@@ -223,6 +241,9 @@ importers:
         specifier: ^4.3.6
         version: 4.3.6
     devDependencies:
+      '@types/deep-equal':
+        specifier: ^1.0.4
+        version: 1.0.4
       tailwindcss-animate:
         specifier: ^1.0.7
         version: 1.0.7(tailwindcss@3.4.3)

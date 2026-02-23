@@ -88,6 +88,20 @@ enum SurveyStatus {
   COMPLETED
 }
 
+/// 설문 유형
+enum SurveyType {
+  link
+  app
+}
+
+/// 설문 표시 옵션
+enum SurveyDisplayOption {
+  displayOnce
+  displayMultiple
+  respondMultiple
+  displaySome
+}
+
 /// 사용자 계정 정보. OAuth 전용 사용자는 password가 null
 model User {
   id                        String           @id @default(cuid())
@@ -114,6 +128,7 @@ model User {
   teamUsers     TeamUser[]
   invitesCreated Invite[]  @relation("InviteCreator")
   invitesAccepted Invite[] @relation("InviteAcceptor")
+  surveys       Survey[]
 
   @@map("users")
 }
@@ -385,17 +400,67 @@ model Language {
   @@map("languages")
 }
 
-/// 설문조사 (스텁 - 핵심 필드만 포함)
+/// 설문조사 (완전 모델)
 model Survey {
   id            String       @id @default(cuid(2))
   createdAt     DateTime     @default(now())
   updatedAt     DateTime     @updatedAt
   name          String
+  type          SurveyType   @default(link)
   status        SurveyStatus @default(DRAFT)
-  questions     Json         @default("[]")
   environmentId String
+  creatorId     String?
 
+  // Builder 스키마 (질문 구조)
+  schema        Json         @default("{\"root\":[],\"entities\":{}}")
+
+  // Welcome Card & Ending
+  welcomeCard   Json         @default("{\"enabled\":false}")
+  endings       Json         @default("[]")
+
+  // Hidden Fields & Variables
+  hiddenFields  Json         @default("{\"enabled\":false,\"fieldIds\":[]}")
+  variables     Json         @default("[]")
+
+  // Follow-ups & Triggers
+  followUps     Json         @default("[]")
+  triggers      Json         @default("[]")
+
+  // 표시 설정
+  displayOption     SurveyDisplayOption @default(displayOnce)
+  displayLimit      Int?
+  displayPercentage Float?
+  delay             Int          @default(0)
+  autoClose         Int?
+  autoComplete      Int?
+  recontactDays     Int?
+
+  // 보안 & 접근
+  pin               String?
+  singleUse         Json?
+  slug              String?      @unique
+
+  // 외부 서비스 연동
+  recaptcha         Json?
+
+  // 스타일 & 설정
+  styling               Json?
+  projectOverwrites     Json?
+  surveyMetadata        Json?
+  customHeadScript      String?
+  segment               Json?
+  languages             Json         @default("[]")
+
+  // 기능 플래그
+  isVerifyEmailEnabled           Boolean @default(false)
+  isSingleResponsePerEmailEnabled Boolean @default(false)
+  isBackButtonHidden             Boolean @default(false)
+  isIpCollectionEnabled          Boolean @default(false)
+  showLanguageSwitch             Boolean?
+
+  // Relations
   environment Environment @relation(fields: [environmentId], references: [id], onDelete: Cascade)
+  creator     User?       @relation(fields: [creatorId], references: [id], onDelete: SetNull)
   responses   Response[]
   displays    Display[]
 

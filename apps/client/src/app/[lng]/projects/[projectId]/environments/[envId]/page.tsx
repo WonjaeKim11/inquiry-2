@@ -87,6 +87,16 @@ export default function EnvironmentDashboardPage({
             variant="outline"
             onClick={() =>
               router.push(
+                `/${lng}/projects/${projectId}/environments/${envId}/surveys`
+              )
+            }
+          >
+            {t('survey.title')}
+          </Button>
+          <Button
+            variant="outline"
+            onClick={() =>
+              router.push(
                 `/${lng}/projects/${projectId}/environments/${envId}/action-classes`
               )
             }
@@ -103,7 +113,7 @@ export default function EnvironmentDashboardPage({
       </div>
 
       {/* 환경 정보 */}
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <Card>
           <CardContent className="pt-6">
             <p className="text-sm text-muted-foreground">
@@ -112,6 +122,20 @@ export default function EnvironmentDashboardPage({
             <p className="mt-1 font-medium">
               {t(`project.environment.${environment.type}`)}
             </p>
+          </CardContent>
+        </Card>
+
+        <Card
+          className="cursor-pointer transition-shadow hover:shadow-md"
+          onClick={() =>
+            router.push(
+              `/${lng}/projects/${projectId}/environments/${envId}/surveys`
+            )
+          }
+        >
+          <CardContent className="pt-6">
+            <p className="text-sm text-muted-foreground">{t('survey.title')}</p>
+            <p className="mt-1 font-medium">{t('survey.title')}</p>
           </CardContent>
         </Card>
 

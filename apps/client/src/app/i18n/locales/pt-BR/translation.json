@@ -162,5 +162,123 @@
       "load_fail": "Falha ao carregar chaves API",
       "not_found": "Chave API não encontrada"
     }
+  },
+  "survey": {
+    "title": "Pesquisas",
+    "create": {
+      "title": "Criar pesquisa",
+      "name_label": "Nome da pesquisa",
+      "name_placeholder": "Insira o nome da pesquisa",
+      "type_label": "Tipo de pesquisa",
+      "type_link": "Pesquisa por link",
+      "type_app": "Pesquisa in-app",
+      "template_label": "Modelo (Opcional)",
+      "template_none": "Pesquisa em branco",
+      "submit": "Criar",
+      "creating": "Criando...",
+      "success": "Pesquisa criada com sucesso",
+      "fail": "Falha ao criar pesquisa"
+    },
+    "list": {
+      "empty": "Nenhuma pesquisa ainda. Crie sua primeira pesquisa para começar.",
+      "responses": "respostas",
+      "displays": "exibições",
+      "created": "Criada",
+      "updated": "Atualizada",
+      "edit": "Editar",
+      "delete": "Excluir"
+    },
+    "status": {
+      "DRAFT": "Rascunho",
+      "IN_PROGRESS": "Em andamento",
+      "PAUSED": "Pausada",
+      "COMPLETED": "Concluída"
+    },
+    "actions": {
+      "publish": "Publicar",
+      "pause": "Pausar",
+      "resume": "Retomar",
+      "complete": "Concluir",
+      "save": "Salvar",
+      "auto_saved": "Salvo automaticamente",
+      "saving": "Salvando..."
+    },
+    "editor": {
+      "title": "Editar pesquisa",
+      "back_to_list": "Voltar para pesquisas",
+      "preview": "Pré-visualização",
+      "settings": "Configurações",
+      "questions": "Perguntas"
+    },
+    "display_option": {
+      "displayOnce": "Exibir uma vez",
+      "displayMultiple": "Exibir várias vezes",
+      "respondMultiple": "Responder várias vezes",
+      "displaySome": "Exibição parcial"
+    },
+    "delete": {
+      "title": "Excluir pesquisa",
+      "confirm": "Tem certeza de que deseja excluir esta pesquisa? Esta ação não pode ser desfeita.",
+      "cancel": "Cancelar",
+      "submit": "Excluir",
+      "deleting": "Excluindo...",
+      "success": "Pesquisa excluída com sucesso",
+      "fail": "Falha ao excluir pesquisa"
+    },
+    "template": {
+      "title": "Modelos",
+      "nps": "Net Promoter Score (NPS)",
+      "csat": "Satisfação do cliente (CSAT)",
+      "ces": "Pontuação de esforço do cliente (CES)",
+      "blank": "Pesquisa em branco"
+    },
+    "errors": {
+      "load_fail": "Falha ao carregar pesquisas",
+      "not_found": "Pesquisa não encontrada",
+      "publish_fail": "Falha ao publicar pesquisa",
+      "transition_fail": "Falha na mudança de status"
+    },
+    "welcome_card": {
+      "title": "Cartão de boas-vindas",
+      "enabled": "Ativar cartão de boas-vindas",
+      "headline": "Título",
+      "description": "Descrição"
+    },
+    "ending": {
+      "title": "Telas finais",
+      "add": "Adicionar tela final",
+      "type_end_screen": "Tela final",
+      "type_redirect": "Redirecionar para URL"
+    },
+    "hidden_fields": {
+      "title": "Campos ocultos",
+      "enabled": "Ativar campos ocultos",
+      "add_field": "Adicionar campo"
+    },
+    "variables": {
+      "title": "Variáveis",
+      "add": "Adicionar variável",
+      "type_number": "Número",
+      "type_text": "Texto"
+    },
+    "settings": {
+      "title": "Configurações da pesquisa",
+      "display_option": "Opção de exibição",
+      "delay": "Atraso de exibição (segundos)",
+      "auto_close": "Fechar automaticamente (segundos)",
+      "auto_complete": "Completar automaticamente (respostas)",
+      "pin": "Proteção por PIN",
+      "single_use": "Uso único",
+      "recontact_days": "Dias para recontato"
+    },
+    "validation": {
+      "name_required": "O nome da pesquisa é obrigatório",
+      "min_one_block": "Pelo menos um bloco é obrigatório",
+      "min_one_question": "Pelo menos uma pergunta é obrigatória",
+      "min_one_ending": "Pelo menos uma tela final é obrigatória",
+      "welcome_headline_required": "O título do cartão de boas-vindas é obrigatório quando ativado",
+      "pin_4_digits": "O PIN deve ter exatamente 4 dígitos",
+      "display_limit_required": "O limite de exibição é obrigatório para a opção 'Exibição parcial'"
+    }
   }
 }

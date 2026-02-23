@@ -162,5 +162,123 @@
       "load_fail": "Az API kulcsok betöltése sikertelen",
       "not_found": "API kulcs nem található"
     }
+  },
+  "survey": {
+    "title": "Kérdőívek",
+    "create": {
+      "title": "Kérdőív létrehozása",
+      "name_label": "Kérdőív neve",
+      "name_placeholder": "Adja meg a kérdőív nevét",
+      "type_label": "Kérdőív típusa",
+      "type_link": "Linkes kérdőív",
+      "type_app": "Alkalmazáson belüli kérdőív",
+      "template_label": "Sablon (Opcionális)",
+      "template_none": "Üres kérdőív",
+      "submit": "Létrehozás",
+      "creating": "Létrehozás...",
+      "success": "Kérdőív sikeresen létrehozva",
+      "fail": "A kérdőív létrehozása sikertelen"
+    },
+    "list": {
+      "empty": "Még nincsenek kérdőívek. Hozza létre az első kérdőívet.",
+      "responses": "válasz",
+      "displays": "megjelenítés",
+      "created": "Létrehozva",
+      "updated": "Frissítve",
+      "edit": "Szerkesztés",
+      "delete": "Törlés"
+    },
+    "status": {
+      "DRAFT": "Piszkozat",
+      "IN_PROGRESS": "Folyamatban",
+      "PAUSED": "Szüneteltetve",
+      "COMPLETED": "Befejezve"
+    },
+    "actions": {
+      "publish": "Közzététel",
+      "pause": "Szüneteltetés",
+      "resume": "Folytatás",
+      "complete": "Befejezés",
+      "save": "Mentés",
+      "auto_saved": "Automatikusan mentve",
+      "saving": "Mentés..."
+    },
+    "editor": {
+      "title": "Kérdőív szerkesztése",
+      "back_to_list": "Vissza a kérdőívekhez",
+      "preview": "Előnézet",
+      "settings": "Beállítások",
+      "questions": "Kérdések"
+    },
+    "display_option": {
+      "displayOnce": "Egyszer megjelenítés",
+      "displayMultiple": "Többszöri megjelenítés",
+      "respondMultiple": "Többszöri válaszadás",
+      "displaySome": "Részleges megjelenítés"
+    },
+    "delete": {
+      "title": "Kérdőív törlése",
+      "confirm": "Biztosan törölni szeretné ezt a kérdőívet? Ez a művelet nem vonható vissza.",
+      "cancel": "Mégse",
+      "submit": "Törlés",
+      "deleting": "Törlés...",
+      "success": "Kérdőív sikeresen törölve",
+      "fail": "A kérdőív törlése sikertelen"
+    },
+    "template": {
+      "title": "Sablonok",
+      "nps": "Net Promoter Score (NPS)",
+      "csat": "Ügyfél-elégedettség (CSAT)",
+      "ces": "Ügyfél erőfeszítési pontszám (CES)",
+      "blank": "Üres kérdőív"
+    },
+    "errors": {
+      "load_fail": "A kérdőívek betöltése sikertelen",
+      "not_found": "Kérdőív nem található",
+      "publish_fail": "A kérdőív közzététele sikertelen",
+      "transition_fail": "Az állapotváltozás sikertelen"
+    },
+    "welcome_card": {
+      "title": "Üdvözlőkártya",
+      "enabled": "Üdvözlőkártya engedélyezése",
+      "headline": "Címsor",
+      "description": "Leírás"
+    },
+    "ending": {
+      "title": "Befejező képernyők",
+      "add": "Befejező képernyő hozzáadása",
+      "type_end_screen": "Befejező képernyő",
+      "type_redirect": "Átirányítás URL-re"
+    },
+    "hidden_fields": {
+      "title": "Rejtett mezők",
+      "enabled": "Rejtett mezők engedélyezése",
+      "add_field": "Mező hozzáadása"
+    },
+    "variables": {
+      "title": "Változók",
+      "add": "Változó hozzáadása",
+      "type_number": "Szám",
+      "type_text": "Szöveg"
+    },
+    "settings": {
+      "title": "Kérdőív beállításai",
+      "display_option": "Megjelenítési opció",
+      "delay": "Megjelenítési késleltetés (másodperc)",
+      "auto_close": "Automatikus bezárás (másodperc)",
+      "auto_complete": "Automatikus befejezés (válaszok)",
+      "pin": "PIN védelem",
+      "single_use": "Egyszeri használat",
+      "recontact_days": "Újra kapcsolatfelvétel napjai"
+    },
+    "validation": {
+      "name_required": "A kérdőív neve kötelező",
+      "min_one_block": "Legalább egy blokk szükséges",
+      "min_one_question": "Legalább egy kérdés szükséges",
+      "min_one_ending": "Legalább egy befejező képernyő szükséges",
+      "welcome_headline_required": "Az üdvözlőkártya címsora kötelező, ha engedélyezve van",
+      "pin_4_digits": "A PIN-nek pontosan 4 számjegyből kell állnia",
+      "display_limit_required": "A megjelenítési korlát szükséges a 'Részleges megjelenítés' opcióhoz"
+    }
   }
 }

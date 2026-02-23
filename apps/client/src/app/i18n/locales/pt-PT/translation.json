@@ -162,5 +162,123 @@
       "load_fail": "Falha ao carregar chaves API",
       "not_found": "Chave API não encontrada"
     }
+  },
+  "survey": {
+    "title": "Inquéritos",
+    "create": {
+      "title": "Criar inquérito",
+      "name_label": "Nome do inquérito",
+      "name_placeholder": "Introduza o nome do inquérito",
+      "type_label": "Tipo de inquérito",
+      "type_link": "Inquérito por ligação",
+      "type_app": "Inquérito na aplicação",
+      "template_label": "Modelo (Opcional)",
+      "template_none": "Inquérito em branco",
+      "submit": "Criar",
+      "creating": "A criar...",
+      "success": "Inquérito criado com sucesso",
+      "fail": "Falha ao criar inquérito"
+    },
+    "list": {
+      "empty": "Ainda não existem inquéritos. Crie o seu primeiro inquérito.",
+      "responses": "respostas",
+      "displays": "visualizações",
+      "created": "Criado",
+      "updated": "Atualizado",
+      "edit": "Editar",
+      "delete": "Eliminar"
+    },
+    "status": {
+      "DRAFT": "Rascunho",
+      "IN_PROGRESS": "Em curso",
+      "PAUSED": "Pausado",
+      "COMPLETED": "Concluído"
+    },
+    "actions": {
+      "publish": "Publicar",
+      "pause": "Pausar",
+      "resume": "Retomar",
+      "complete": "Concluir",
+      "save": "Guardar",
+      "auto_saved": "Guardado automaticamente",
+      "saving": "A guardar..."
+    },
+    "editor": {
+      "title": "Editar inquérito",
+      "back_to_list": "Voltar aos inquéritos",
+      "preview": "Pré-visualização",
+      "settings": "Definições",
+      "questions": "Perguntas"
+    },
+    "display_option": {
+      "displayOnce": "Apresentar uma vez",
+      "displayMultiple": "Apresentar várias vezes",
+      "respondMultiple": "Responder várias vezes",
+      "displaySome": "Apresentação parcial"
+    },
+    "delete": {
+      "title": "Eliminar inquérito",
+      "confirm": "Tem a certeza de que pretende eliminar este inquérito? Esta ação não pode ser revertida.",
+      "cancel": "Cancelar",
+      "submit": "Eliminar",
+      "deleting": "A eliminar...",
+      "success": "Inquérito eliminado com sucesso",
+      "fail": "Falha ao eliminar inquérito"
+    },
+    "template": {
+      "title": "Modelos",
+      "nps": "Net Promoter Score (NPS)",
+      "csat": "Satisfação do cliente (CSAT)",
+      "ces": "Pontuação de esforço do cliente (CES)",
+      "blank": "Inquérito em branco"
+    },
+    "errors": {
+      "load_fail": "Falha ao carregar inquéritos",
+      "not_found": "Inquérito não encontrado",
+      "publish_fail": "Falha ao publicar inquérito",
+      "transition_fail": "Falha na alteração de estado"
+    },
+    "welcome_card": {
+      "title": "Cartão de boas-vindas",
+      "enabled": "Ativar cartão de boas-vindas",
+      "headline": "Título",
+      "description": "Descrição"
+    },
+    "ending": {
+      "title": "Ecrãs finais",
+      "add": "Adicionar ecrã final",
+      "type_end_screen": "Ecrã final",
+      "type_redirect": "Redirecionar para URL"
+    },
+    "hidden_fields": {
+      "title": "Campos ocultos",
+      "enabled": "Ativar campos ocultos",
+      "add_field": "Adicionar campo"
+    },
+    "variables": {
+      "title": "Variáveis",
+      "add": "Adicionar variável",
+      "type_number": "Número",
+      "type_text": "Texto"
+    },
+    "settings": {
+      "title": "Definições do inquérito",
+      "display_option": "Opção de apresentação",
+      "delay": "Atraso de apresentação (segundos)",
+      "auto_close": "Fecho automático (segundos)",
+      "auto_complete": "Conclusão automática (respostas)",
+      "pin": "Proteção por PIN",
+      "single_use": "Utilização única",
+      "recontact_days": "Dias para recontacto"
+    },
+    "validation": {
+      "name_required": "O nome do inquérito é obrigatório",
+      "min_one_block": "É necessário pelo menos um bloco",
+      "min_one_question": "É necessária pelo menos uma pergunta",
+      "min_one_ending": "É necessário pelo menos um ecrã final",
+      "welcome_headline_required": "O título do cartão de boas-vindas é obrigatório quando ativado",
+      "pin_4_digits": "O PIN deve ter exatamente 4 dígitos",
+      "display_limit_required": "O limite de apresentação é obrigatório para a opção 'Apresentação parcial'"
+    }
   }
 }

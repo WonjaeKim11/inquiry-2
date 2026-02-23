@@ -162,5 +162,123 @@
       "load_fail": "API-Schlüssel konnten nicht geladen werden",
       "not_found": "API-Schlüssel nicht gefunden"
     }
+  },
+  "survey": {
+    "title": "Umfragen",
+    "create": {
+      "title": "Umfrage erstellen",
+      "name_label": "Umfragename",
+      "name_placeholder": "Umfragename eingeben",
+      "type_label": "Umfragetyp",
+      "type_link": "Link-Umfrage",
+      "type_app": "App-Umfrage",
+      "template_label": "Vorlage (Optional)",
+      "template_none": "Leere Umfrage",
+      "submit": "Erstellen",
+      "creating": "Wird erstellt...",
+      "success": "Umfrage erfolgreich erstellt",
+      "fail": "Umfrage konnte nicht erstellt werden"
+    },
+    "list": {
+      "empty": "Noch keine Umfragen. Erstellen Sie Ihre erste Umfrage.",
+      "responses": "Antworten",
+      "displays": "Anzeigen",
+      "created": "Erstellt",
+      "updated": "Aktualisiert",
+      "edit": "Bearbeiten",
+      "delete": "Löschen"
+    },
+    "status": {
+      "DRAFT": "Entwurf",
+      "IN_PROGRESS": "In Bearbeitung",
+      "PAUSED": "Pausiert",
+      "COMPLETED": "Abgeschlossen"
+    },
+    "actions": {
+      "publish": "Veröffentlichen",
+      "pause": "Pausieren",
+      "resume": "Fortsetzen",
+      "complete": "Abschließen",
+      "save": "Speichern",
+      "auto_saved": "Automatisch gespeichert",
+      "saving": "Wird gespeichert..."
+    },
+    "editor": {
+      "title": "Umfrage bearbeiten",
+      "back_to_list": "Zurück zu Umfragen",
+      "preview": "Vorschau",
+      "settings": "Einstellungen",
+      "questions": "Fragen"
+    },
+    "display_option": {
+      "displayOnce": "Einmal anzeigen",
+      "displayMultiple": "Mehrmals anzeigen",
+      "respondMultiple": "Mehrfach antworten",
+      "displaySome": "Teilweise anzeigen"
+    },
+    "delete": {
+      "title": "Umfrage löschen",
+      "confirm": "Möchten Sie diese Umfrage wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden.",
+      "cancel": "Abbrechen",
+      "submit": "Löschen",
+      "deleting": "Wird gelöscht...",
+      "success": "Umfrage erfolgreich gelöscht",
+      "fail": "Umfrage konnte nicht gelöscht werden"
+    },
+    "template": {
+      "title": "Vorlagen",
+      "nps": "Net Promoter Score (NPS)",
+      "csat": "Kundenzufriedenheit (CSAT)",
+      "ces": "Customer Effort Score (CES)",
+      "blank": "Leere Umfrage"
+    },
+    "errors": {
+      "load_fail": "Umfragen konnten nicht geladen werden",
+      "not_found": "Umfrage nicht gefunden",
+      "publish_fail": "Umfrage konnte nicht veröffentlicht werden",
+      "transition_fail": "Statusänderung fehlgeschlagen"
+    },
+    "welcome_card": {
+      "title": "Willkommenskarte",
+      "enabled": "Willkommenskarte aktivieren",
+      "headline": "Überschrift",
+      "description": "Beschreibung"
+    },
+    "ending": {
+      "title": "Endbildschirme",
+      "add": "Endbildschirm hinzufügen",
+      "type_end_screen": "Endbildschirm",
+      "type_redirect": "Weiterleitung zu URL"
+    },
+    "hidden_fields": {
+      "title": "Versteckte Felder",
+      "enabled": "Versteckte Felder aktivieren",
+      "add_field": "Feld hinzufügen"
+    },
+    "variables": {
+      "title": "Variablen",
+      "add": "Variable hinzufügen",
+      "type_number": "Zahl",
+      "type_text": "Text"
+    },
+    "settings": {
+      "title": "Umfrageeinstellungen",
+      "display_option": "Anzeigeoption",
+      "delay": "Anzeigeverzögerung (Sekunden)",
+      "auto_close": "Automatisch schließen (Sekunden)",
+      "auto_complete": "Automatisch abschließen (Antworten)",
+      "pin": "PIN-Schutz",
+      "single_use": "Einmalige Verwendung",
+      "recontact_days": "Tage bis zur erneuten Kontaktaufnahme"
+    },
+    "validation": {
+      "name_required": "Umfragename ist erforderlich",
+      "min_one_block": "Mindestens ein Block ist erforderlich",
+      "min_one_question": "Mindestens eine Frage ist erforderlich",
+      "min_one_ending": "Mindestens ein Endbildschirm ist erforderlich",
+      "welcome_headline_required": "Überschrift der Willkommenskarte ist erforderlich, wenn aktiviert",
+      "pin_4_digits": "PIN muss genau 4 Ziffern haben",
+      "display_limit_required": "Anzeigelimit ist für die Option 'Teilweise anzeigen' erforderlich"
+    }
   }
 }

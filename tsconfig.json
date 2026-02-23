@@ -95,6 +95,15 @@
     },
     {
       "path": "./libs/server/management-api"
+    },
+    {
+      "path": "./packages/survey-builder-config"
+    },
+    {
+      "path": "./libs/client/survey"
+    },
+    {
+      "path": "./libs/server/survey"
     }
   ]
 }

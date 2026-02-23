@@ -162,5 +162,123 @@
       "load_fail": "Încărcarea cheilor API a eșuat",
       "not_found": "Cheie API negăsită"
     }
+  },
+  "survey": {
+    "title": "Chestionare",
+    "create": {
+      "title": "Creați chestionar",
+      "name_label": "Numele chestionarului",
+      "name_placeholder": "Introduceți numele chestionarului",
+      "type_label": "Tipul chestionarului",
+      "type_link": "Chestionar prin link",
+      "type_app": "Chestionar în aplicație",
+      "template_label": "Șablon (Opțional)",
+      "template_none": "Chestionar gol",
+      "submit": "Creați",
+      "creating": "Se creează...",
+      "success": "Chestionar creat cu succes",
+      "fail": "Crearea chestionarului a eșuat"
+    },
+    "list": {
+      "empty": "Nu există încă chestionare. Creați primul chestionar.",
+      "responses": "răspunsuri",
+      "displays": "afișări",
+      "created": "Creat",
+      "updated": "Actualizat",
+      "edit": "Editați",
+      "delete": "Ștergeți"
+    },
+    "status": {
+      "DRAFT": "Ciornă",
+      "IN_PROGRESS": "În desfășurare",
+      "PAUSED": "Întrerupt",
+      "COMPLETED": "Finalizat"
+    },
+    "actions": {
+      "publish": "Publicați",
+      "pause": "Întrerupeți",
+      "resume": "Reluați",
+      "complete": "Finalizați",
+      "save": "Salvați",
+      "auto_saved": "Salvat automat",
+      "saving": "Se salvează..."
+    },
+    "editor": {
+      "title": "Editați chestionarul",
+      "back_to_list": "Înapoi la chestionare",
+      "preview": "Previzualizare",
+      "settings": "Setări",
+      "questions": "Întrebări"
+    },
+    "display_option": {
+      "displayOnce": "Afișare o singură dată",
+      "displayMultiple": "Afișare de mai multe ori",
+      "respondMultiple": "Răspuns multiplu",
+      "displaySome": "Afișare parțială"
+    },
+    "delete": {
+      "title": "Ștergeți chestionarul",
+      "confirm": "Sunteți sigur că doriți să ștergeți acest chestionar? Această acțiune nu poate fi anulată.",
+      "cancel": "Anulați",
+      "submit": "Ștergeți",
+      "deleting": "Se șterge...",
+      "success": "Chestionar șters cu succes",
+      "fail": "Ștergerea chestionarului a eșuat"
+    },
+    "template": {
+      "title": "Șabloane",
+      "nps": "Net Promoter Score (NPS)",
+      "csat": "Satisfacția clienților (CSAT)",
+      "ces": "Scorul efortului clientului (CES)",
+      "blank": "Chestionar gol"
+    },
+    "errors": {
+      "load_fail": "Încărcarea chestionarelor a eșuat",
+      "not_found": "Chestionar negăsit",
+      "publish_fail": "Publicarea chestionarului a eșuat",
+      "transition_fail": "Schimbarea stării a eșuat"
+    },
+    "welcome_card": {
+      "title": "Card de bun venit",
+      "enabled": "Activați cardul de bun venit",
+      "headline": "Titlu",
+      "description": "Descriere"
+    },
+    "ending": {
+      "title": "Ecrane finale",
+      "add": "Adăugați ecran final",
+      "type_end_screen": "Ecran final",
+      "type_redirect": "Redirecționare către URL"
+    },
+    "hidden_fields": {
+      "title": "Câmpuri ascunse",
+      "enabled": "Activați câmpurile ascunse",
+      "add_field": "Adăugați câmp"
+    },
+    "variables": {
+      "title": "Variabile",
+      "add": "Adăugați variabilă",
+      "type_number": "Număr",
+      "type_text": "Text"
+    },
+    "settings": {
+      "title": "Setări chestionar",
+      "display_option": "Opțiune de afișare",
+      "delay": "Întârziere afișare (secunde)",
+      "auto_close": "Închidere automată (secunde)",
+      "auto_complete": "Finalizare automată (răspunsuri)",
+      "pin": "Protecție PIN",
+      "single_use": "Utilizare unică",
+      "recontact_days": "Zile până la recontactare"
+    },
+    "validation": {
+      "name_required": "Numele chestionarului este obligatoriu",
+      "min_one_block": "Este necesar cel puțin un bloc",
+      "min_one_question": "Este necesară cel puțin o întrebare",
+      "min_one_ending": "Este necesar cel puțin un ecran final",
+      "welcome_headline_required": "Titlul cardului de bun venit este obligatoriu când este activat",
+      "pin_4_digits": "PIN-ul trebuie să aibă exact 4 cifre",
+      "display_limit_required": "Limita de afișare este necesară pentru opțiunea 'Afișare parțială'"
+    }
   }
 }

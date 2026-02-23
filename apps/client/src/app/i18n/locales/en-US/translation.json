@@ -449,5 +449,123 @@
       "load_fail": "Failed to load API keys",
       "not_found": "API key not found"
     }
+  },
+  "survey": {
+    "title": "Surveys",
+    "create": {
+      "title": "Create Survey",
+      "name_label": "Survey Name",
+      "name_placeholder": "Enter survey name",
+      "type_label": "Survey Type",
+      "type_link": "Link Survey",
+      "type_app": "App Survey",
+      "template_label": "Template (Optional)",
+      "template_none": "Blank Survey",
+      "submit": "Create",
+      "creating": "Creating...",
+      "success": "Survey created successfully",
+      "fail": "Failed to create survey"
+    },
+    "list": {
+      "empty": "No surveys yet. Create your first survey to get started.",
+      "responses": "responses",
+      "displays": "displays",
+      "created": "Created",
+      "updated": "Updated",
+      "edit": "Edit",
+      "delete": "Delete"
+    },
+    "status": {
+      "DRAFT": "Draft",
+      "IN_PROGRESS": "In Progress",
+      "PAUSED": "Paused",
+      "COMPLETED": "Completed"
+    },
+    "actions": {
+      "publish": "Publish",
+      "pause": "Pause",
+      "resume": "Resume",
+      "complete": "Complete",
+      "save": "Save",
+      "auto_saved": "Auto-saved",
+      "saving": "Saving..."
+    },
+    "editor": {
+      "title": "Edit Survey",
+      "back_to_list": "Back to Surveys",
+      "preview": "Preview",
+      "settings": "Settings",
+      "questions": "Questions"
+    },
+    "display_option": {
+      "displayOnce": "Display Once",
+      "displayMultiple": "Display Multiple Times",
+      "respondMultiple": "Respond Multiple Times",
+      "displaySome": "Display Some"
+    },
+    "delete": {
+      "title": "Delete Survey",
+      "confirm": "Are you sure you want to delete this survey? This action cannot be undone.",
+      "cancel": "Cancel",
+      "submit": "Delete",
+      "deleting": "Deleting...",
+      "success": "Survey deleted successfully",
+      "fail": "Failed to delete survey"
+    },
+    "template": {
+      "title": "Templates",
+      "nps": "Net Promoter Score (NPS)",
+      "csat": "Customer Satisfaction (CSAT)",
+      "ces": "Customer Effort Score (CES)",
+      "blank": "Blank Survey"
+    },
+    "errors": {
+      "load_fail": "Failed to load surveys",
+      "not_found": "Survey not found",
+      "publish_fail": "Failed to publish survey",
+      "transition_fail": "Status change failed"
+    },
+    "welcome_card": {
+      "title": "Welcome Card",
+      "enabled": "Enable Welcome Card",
+      "headline": "Headline",
+      "description": "Description"
+    },
+    "ending": {
+      "title": "Endings",
+      "add": "Add Ending",
+      "type_end_screen": "End Screen",
+      "type_redirect": "Redirect to URL"
+    },
+    "hidden_fields": {
+      "title": "Hidden Fields",
+      "enabled": "Enable Hidden Fields",
+      "add_field": "Add Field"
+    },
+    "variables": {
+      "title": "Variables",
+      "add": "Add Variable",
+      "type_number": "Number",
+      "type_text": "Text"
+    },
+    "settings": {
+      "title": "Survey Settings",
+      "display_option": "Display Option",
+      "delay": "Display Delay (seconds)",
+      "auto_close": "Auto Close (seconds)",
+      "auto_complete": "Auto Complete (responses)",
+      "pin": "PIN Protection",
+      "single_use": "Single Use",
+      "recontact_days": "Recontact Days"
+    },
+    "validation": {
+      "name_required": "Survey name is required",
+      "min_one_block": "At least one block is required",
+      "min_one_question": "At least one question is required",
+      "min_one_ending": "At least one ending is required",
+      "welcome_headline_required": "Welcome card headline is required when enabled",
+      "pin_4_digits": "PIN must be exactly 4 digits",
+      "display_limit_required": "Display limit is required for 'Display Some' option"
+    }
   }
 }

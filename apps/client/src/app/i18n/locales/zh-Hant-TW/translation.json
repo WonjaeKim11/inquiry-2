@@ -162,5 +162,123 @@
       "load_fail": "載入 API 金鑰失敗",
       "not_found": "找不到 API 金鑰"
     }
+  },
+  "survey": {
+    "title": "問卷調查",
+    "create": {
+      "title": "建立問卷",
+      "name_label": "問卷名稱",
+      "name_placeholder": "請輸入問卷名稱",
+      "type_label": "問卷類型",
+      "type_link": "連結問卷",
+      "type_app": "應用程式內問卷",
+      "template_label": "範本（選填）",
+      "template_none": "空白問卷",
+      "submit": "建立",
+      "creating": "建立中...",
+      "success": "問卷建立成功",
+      "fail": "問卷建立失敗"
+    },
+    "list": {
+      "empty": "尚無問卷。建立您的第一份問卷開始使用。",
+      "responses": "回覆",
+      "displays": "顯示",
+      "created": "建立時間",
+      "updated": "更新時間",
+      "edit": "編輯",
+      "delete": "刪除"
+    },
+    "status": {
+      "DRAFT": "草稿",
+      "IN_PROGRESS": "進行中",
+      "PAUSED": "已暫停",
+      "COMPLETED": "已完成"
+    },
+    "actions": {
+      "publish": "發佈",
+      "pause": "暫停",
+      "resume": "恢復",
+      "complete": "完成",
+      "save": "儲存",
+      "auto_saved": "已自動儲存",
+      "saving": "儲存中..."
+    },
+    "editor": {
+      "title": "編輯問卷",
+      "back_to_list": "返回問卷列表",
+      "preview": "預覽",
+      "settings": "設定",
+      "questions": "問題"
+    },
+    "display_option": {
+      "displayOnce": "僅顯示一次",
+      "displayMultiple": "多次顯示",
+      "respondMultiple": "允許多次回覆",
+      "displaySome": "部分顯示"
+    },
+    "delete": {
+      "title": "刪除問卷",
+      "confirm": "確定要刪除此問卷嗎？此操作無法復原。",
+      "cancel": "取消",
+      "submit": "刪除",
+      "deleting": "刪除中...",
+      "success": "問卷已刪除",
+      "fail": "問卷刪除失敗"
+    },
+    "template": {
+      "title": "範本",
+      "nps": "淨推薦值 (NPS)",
+      "csat": "客戶滿意度 (CSAT)",
+      "ces": "客戶費力度 (CES)",
+      "blank": "空白問卷"
+    },
+    "errors": {
+      "load_fail": "載入問卷失敗",
+      "not_found": "找不到問卷",
+      "publish_fail": "問卷發佈失敗",
+      "transition_fail": "狀態更改失敗"
+    },
+    "welcome_card": {
+      "title": "歡迎卡片",
+      "enabled": "啟用歡迎卡片",
+      "headline": "標題",
+      "description": "描述"
+    },
+    "ending": {
+      "title": "結束頁面",
+      "add": "新增結束頁面",
+      "type_end_screen": "結束頁面",
+      "type_redirect": "重新導向至 URL"
+    },
+    "hidden_fields": {
+      "title": "隱藏欄位",
+      "enabled": "啟用隱藏欄位",
+      "add_field": "新增欄位"
+    },
+    "variables": {
+      "title": "變數",
+      "add": "新增變數",
+      "type_number": "數字",
+      "type_text": "文字"
+    },
+    "settings": {
+      "title": "問卷設定",
+      "display_option": "顯示選項",
+      "delay": "顯示延遲（秒）",
+      "auto_close": "自動關閉（秒）",
+      "auto_complete": "自動完成（回覆數）",
+      "pin": "PIN 保護",
+      "single_use": "一次性使用",
+      "recontact_days": "再次聯繫天數"
+    },
+    "validation": {
+      "name_required": "問卷名稱為必填項",
+      "min_one_block": "至少需要一個區塊",
+      "min_one_question": "至少需要一個問題",
+      "min_one_ending": "至少需要一個結束頁面",
+      "welcome_headline_required": "啟用歡迎卡片時標題為必填項",
+      "pin_4_digits": "PIN 必須恰好為 4 位數字",
+      "display_limit_required": "'部分顯示'選項需要設定顯示限制"
+    }
   }
 }

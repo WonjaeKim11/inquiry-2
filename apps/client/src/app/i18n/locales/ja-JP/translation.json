@@ -162,5 +162,123 @@
       "load_fail": "APIキーの読み込みに失敗しました",
       "not_found": "APIキーが見つかりません"
     }
+  },
+  "survey": {
+    "title": "アンケート",
+    "create": {
+      "title": "アンケートを作成",
+      "name_label": "アンケート名",
+      "name_placeholder": "アンケート名を入力してください",
+      "type_label": "アンケートタイプ",
+      "type_link": "リンクアンケート",
+      "type_app": "アプリアンケート",
+      "template_label": "テンプレート（オプション）",
+      "template_none": "空のアンケート",
+      "submit": "作成",
+      "creating": "作成中...",
+      "success": "アンケートが作成されました",
+      "fail": "アンケートの作成に失敗しました"
+    },
+    "list": {
+      "empty": "まだアンケートがありません。最初のアンケートを作成してください。",
+      "responses": "回答",
+      "displays": "表示",
+      "created": "作成日",
+      "updated": "更新日",
+      "edit": "編集",
+      "delete": "削除"
+    },
+    "status": {
+      "DRAFT": "下書き",
+      "IN_PROGRESS": "進行中",
+      "PAUSED": "一時停止",
+      "COMPLETED": "完了"
+    },
+    "actions": {
+      "publish": "公開",
+      "pause": "一時停止",
+      "resume": "再開",
+      "complete": "完了",
+      "save": "保存",
+      "auto_saved": "自動保存済み",
+      "saving": "保存中..."
+    },
+    "editor": {
+      "title": "アンケートを編集",
+      "back_to_list": "アンケート一覧に戻る",
+      "preview": "プレビュー",
+      "settings": "設定",
+      "questions": "質問"
+    },
+    "display_option": {
+      "displayOnce": "一度だけ表示",
+      "displayMultiple": "複数回表示",
+      "respondMultiple": "複数回回答可能",
+      "displaySome": "一部のみ表示"
+    },
+    "delete": {
+      "title": "アンケートを削除",
+      "confirm": "このアンケートを削除してもよろしいですか？この操作は元に戻せません。",
+      "cancel": "キャンセル",
+      "submit": "削除",
+      "deleting": "削除中...",
+      "success": "アンケートが削除されました",
+      "fail": "アンケートの削除に失敗しました"
+    },
+    "template": {
+      "title": "テンプレート",
+      "nps": "ネットプロモータースコア (NPS)",
+      "csat": "顧客満足度 (CSAT)",
+      "ces": "カスタマーエフォートスコア (CES)",
+      "blank": "空のアンケート"
+    },
+    "errors": {
+      "load_fail": "アンケートの読み込みに失敗しました",
+      "not_found": "アンケートが見つかりません",
+      "publish_fail": "アンケートの公開に失敗しました",
+      "transition_fail": "ステータスの変更に失敗しました"
+    },
+    "welcome_card": {
+      "title": "ウェルカムカード",
+      "enabled": "ウェルカムカードを有効にする",
+      "headline": "見出し",
+      "description": "説明"
+    },
+    "ending": {
+      "title": "終了画面",
+      "add": "終了画面を追加",
+      "type_end_screen": "終了画面",
+      "type_redirect": "URLにリダイレクト"
+    },
+    "hidden_fields": {
+      "title": "非表示フィールド",
+      "enabled": "非表示フィールドを有効にする",
+      "add_field": "フィールドを追加"
+    },
+    "variables": {
+      "title": "変数",
+      "add": "変数を追加",
+      "type_number": "数値",
+      "type_text": "テキスト"
+    },
+    "settings": {
+      "title": "アンケート設定",
+      "display_option": "表示オプション",
+      "delay": "表示遅延（秒）",
+      "auto_close": "自動閉じ（秒）",
+      "auto_complete": "自動完了（回答数）",
+      "pin": "PIN保護",
+      "single_use": "使い切り",
+      "recontact_days": "再接触までの日数"
+    },
+    "validation": {
+      "name_required": "アンケート名は必須です",
+      "min_one_block": "最低1つのブロックが必要です",
+      "min_one_question": "最低1つの質問が必要です",
+      "min_one_ending": "最低1つの終了画面が必要です",
+      "welcome_headline_required": "ウェルカムカード有効時は見出しが必須です",
+      "pin_4_digits": "PINは正確に4桁である必要があります",
+      "display_limit_required": "'一部のみ表示'オプションには表示制限が必要です"
+    }
   }
 }
