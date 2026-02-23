@@ -80,6 +80,11 @@
   "dependencies": {
     "@inquiry/db": "workspace:*",
     "@inquiry/server-prisma": "workspace:*",
+    "@inquiry/server-redis": "workspace:*",
+    "@inquiry/server-core": "workspace:*",
+    "@inquiry/server-logger": "workspace:*",
+    "@inquiry/server-sentry": "workspace:*",
+    "@inquiry/server-license": "workspace:*",
     "@inquiry/server-auth": "workspace:*",
     "@inquiry/server-rate-limit": "workspace:*",
     "@inquiry/server-email": "workspace:*",

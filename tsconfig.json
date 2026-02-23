@@ -16,13 +16,22 @@
       "path": "./libs/server/prisma"
     },
     {
+      "path": "./libs/server/redis"
+    },
+    {
+      "path": "./libs/server/core"
+    },
+    {
+      "path": "./libs/server/logger"
+    },
+    {
+      "path": "./libs/server/sentry"
+    },
+    {
+      "path": "./libs/server/license"
+    },
+    {
       "path": "./libs/server/auth"
-    },
-    {
-      "path": "./libs/client/core"
-    },
-    {
-      "path": "./libs/client/auth"
     },
     {
       "path": "./libs/server/rate-limit"
@@ -32,6 +41,12 @@
     },
     {
       "path": "./libs/server/email"
+    },
+    {
+      "path": "./libs/client/core"
+    },
+    {
+      "path": "./libs/client/auth"
     },
     {
       "path": "./libs/client/ui"

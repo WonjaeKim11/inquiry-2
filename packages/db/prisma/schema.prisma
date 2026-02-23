@@ -20,6 +20,7 @@ enum MembershipRole {
   OWNER
   ADMIN
   MEMBER
+  BILLING
 }
 
 /// 사용자 계정 정보. OAuth 전용 사용자는 password가 null
@@ -127,6 +128,20 @@ model Invite {
 
   @@index([email])
   @@map("invites")
+}
+
+/// API 키 (외부 연동용)
+model ApiKey {
+  id            String    @id @default(cuid())
+  label         String
+  hashedKey     String    @unique
+  environmentId String
+  lastUsedAt    DateTime?
+  expiresAt     DateTime?
+  createdAt     DateTime  @default(now())
+
+  @@index([hashedKey])
+  @@map("api_keys")
 }
 
 /// 감사 로그 (사용자 활동 추적)

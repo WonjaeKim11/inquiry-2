@@ -1,15 +1,29 @@
 /**
  * NestJS 서버 부트스트랩.
- * CORS, 쿠키 파서, ValidationPipe를 글로벌로 설정한다.
+ * CORS, 쿠키 파서, ValidationPipe, Pino Logger, GlobalExceptionFilter를 설정한다.
  */
 
-import { Logger, ValidationPipe } from '@nestjs/common';
+import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import cookieParser from 'cookie-parser';
 import { AppModule } from './app/app.module';
+import { PinoLoggerService } from '@inquiry/server-logger';
+import { SentryService } from '@inquiry/server-sentry';
+import { GlobalExceptionFilter } from '@inquiry/server-core';
+import { validateEnv } from './app/config/env.validation';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  // 환경변수 검증
+  validateEnv();
+
+  const app = await NestFactory.create(AppModule, {
+    bufferLogs: true,
+  });
+
+  // Pino Logger로 교체
+  const logger = app.get(PinoLoggerService);
+  app.useLogger(logger);
+
   const globalPrefix = 'api';
   app.setGlobalPrefix(globalPrefix);
 
@@ -22,20 +36,24 @@ async function bootstrap() {
   // 쿠키 파서: refresh token 읽기용
   app.use(cookieParser());
 
+  // 글로벌 예외 필터: 표준 에러 응답 + Sentry 통합
+  const exceptionFilter = new GlobalExceptionFilter();
+  const sentryService = app.get(SentryService);
+  exceptionFilter.setSentry(sentryService);
+  app.useGlobalFilters(exceptionFilter);
+
   // 글로벌 ValidationPipe: class-validator 기반 DTO 검증
   app.useGlobalPipes(
     new ValidationPipe({
-      whitelist: true, // DTO에 정의되지 않은 속성 제거
-      forbidNonWhitelisted: true, // 정의되지 않은 속성이 있으면 에러
-      transform: true, // 요청 데이터를 DTO 인스턴스로 변환
+      whitelist: true,
+      forbidNonWhitelisted: true,
+      transform: true,
     })
   );
 
   const port = process.env['PORT'] || 3000;
   await app.listen(port);
-  Logger.log(
-    `Application is running on: http://localhost:${port}/${globalPrefix}`
-  );
+  logger.log(`서버가 실행 중입니다: http://localhost:${port}/${globalPrefix}`);
 }
 
 bootstrap();
