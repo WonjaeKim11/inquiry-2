@@ -92,6 +92,9 @@
     },
     {
       "path": "./libs/client/api-key"
+    },
+    {
+      "path": "./libs/server/management-api"
     }
   ]
 }

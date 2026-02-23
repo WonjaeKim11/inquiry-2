@@ -1,0 +1,26 @@
+{
+  "extends": "../../../tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true
+  },
+  "references": [
+    {
+      "path": "../core"
+    },
+    {
+      "path": "../../../packages/db"
+    },
+    {
+      "path": "../prisma"
+    },
+    {
+      "path": "../api-key"
+    },
+    {
+      "path": "../rate-limit"
+    },
+    {
+      "path": "./tsconfig.lib.json"
+    }
+  ]
+}
