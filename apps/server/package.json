@@ -89,6 +89,7 @@
     "@inquiry/server-rate-limit": "workspace:*",
     "@inquiry/server-email": "workspace:*",
     "@inquiry/server-audit-log": "workspace:*",
+    "@inquiry/server-user": "workspace:*",
     "@nestjs/common": "^11.0.0",
     "@nestjs/config": "^4.0.3",
     "@nestjs/core": "^11.0.0",

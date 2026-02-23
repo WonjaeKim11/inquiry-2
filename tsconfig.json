@@ -52,6 +52,9 @@
       "path": "./libs/client/ui"
     },
     {
+      "path": "./libs/server/user"
+    },
+    {
       "path": "./packages/shared-i18n"
     }
   ]

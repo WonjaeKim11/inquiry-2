@@ -38,6 +38,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
         image: true,
         emailVerified: true,
         isActive: true,
+        locale: true,
       },
     });
 
@@ -55,6 +56,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
       name: user.name,
       image: user.image,
       emailVerified: user.emailVerified,
+      locale: user.locale,
     };
   }
 }

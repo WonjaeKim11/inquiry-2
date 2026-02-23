@@ -42,11 +42,15 @@ export class EmailService implements OnModuleInit {
     return this.transporter !== null;
   }
 
-  /** 이메일 검증 메일 발송 */
+  /**
+   * 이메일 검증 메일 발송.
+   * @param locale - 사용자 언어 (향후 다국어 이메일 템플릿에 사용)
+   */
   async sendVerificationEmail(
     to: string,
     name: string,
-    token: string
+    token: string,
+    locale?: string
   ): Promise<void> {
     const clientUrl = this.configService.get<string>(
       'CLIENT_URL',
@@ -67,11 +71,15 @@ export class EmailService implements OnModuleInit {
     });
   }
 
-  /** 비밀번호 재설정 메일 발송 */
+  /**
+   * 비밀번호 재설정 메일 발송.
+   * @param locale - 사용자 언어 (향후 다국어 이메일 템플릿에 사용)
+   */
   async sendPasswordResetEmail(
     to: string,
     name: string,
-    token: string
+    token: string,
+    locale?: string
   ): Promise<void> {
     const clientUrl = this.configService.get<string>(
       'CLIENT_URL',
@@ -92,10 +100,14 @@ export class EmailService implements OnModuleInit {
     });
   }
 
-  /** 비밀번호 변경 완료 알림 메일 발송 */
+  /**
+   * 비밀번호 변경 완료 알림 메일 발송.
+   * @param locale - 사용자 언어 (향후 다국어 이메일 템플릿에 사용)
+   */
   async sendPasswordChangedNotification(
     to: string,
-    name: string
+    name: string,
+    locale?: string
   ): Promise<void> {
     await this.send({
       to,

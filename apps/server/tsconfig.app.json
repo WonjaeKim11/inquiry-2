@@ -18,6 +18,9 @@
   "exclude": [],
   "references": [
     {
+      "path": "../../libs/server/user/tsconfig.lib.json"
+    },
+    {
       "path": "../../libs/server/audit-log/tsconfig.lib.json"
     },
     {
@@ -30,22 +33,22 @@
       "path": "../../libs/server/auth/tsconfig.lib.json"
     },
     {
-      "path": "../../libs/server/prisma/tsconfig.lib.json"
-    },
-    {
-      "path": "../../libs/server/redis/tsconfig.lib.json"
-    },
-    {
-      "path": "../../libs/server/core/tsconfig.lib.json"
-    },
-    {
-      "path": "../../libs/server/logger/tsconfig.lib.json"
+      "path": "../../libs/server/license/tsconfig.lib.json"
     },
     {
       "path": "../../libs/server/sentry/tsconfig.lib.json"
     },
     {
-      "path": "../../libs/server/license/tsconfig.lib.json"
+      "path": "../../libs/server/logger/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/server/core/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/server/redis/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/server/prisma/tsconfig.lib.json"
     },
     {
       "path": "../../packages/db/tsconfig.lib.json"
