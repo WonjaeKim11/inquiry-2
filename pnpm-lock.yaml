@@ -153,6 +153,9 @@ importers:
 
   apps/client:
     dependencies:
+      '@inquiry/client-api-key':
+        specifier: workspace:*
+        version: link:../../libs/client/api-key
       '@inquiry/client-auth':
         specifier: workspace:*
         version: link:../../libs/client/auth
@@ -220,6 +223,9 @@ importers:
       '@inquiry/server-auth':
         specifier: workspace:*
         version: link:../../libs/server/auth
+      '@inquiry/server-client-api':
+        specifier: workspace:*
+        version: link:../../libs/server/client-api
       '@inquiry/server-core':
         specifier: workspace:*
         version: link:../../libs/server/core
@@ -238,6 +244,9 @@ importers:
       '@inquiry/server-logger':
         specifier: workspace:*
         version: link:../../libs/server/logger
+      '@inquiry/server-management-api':
+        specifier: workspace:*
+        version: link:../../libs/server/management-api
       '@inquiry/server-member':
         specifier: workspace:*
         version: link:../../libs/server/member

@@ -21,6 +21,12 @@
       "path": "../../libs/server/api-key/tsconfig.lib.json"
     },
     {
+      "path": "../../libs/server/client-api/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/server/management-api/tsconfig.lib.json"
+    },
+    {
       "path": "../../libs/server/project/tsconfig.lib.json"
     },
     {

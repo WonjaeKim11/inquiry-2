@@ -46,13 +46,19 @@
   ],
   "references": [
     {
+      "path": "../../libs/client/api-key"
+    },
+    {
+      "path": "../../packages/shared-i18n"
+    },
+    {
       "path": "../../packages/db"
     },
     {
-      "path": "../../libs/client/core"
+      "path": "../../libs/client/ui"
     },
     {
-      "path": "../../libs/client/auth"
+      "path": "../../libs/client/project"
     },
     {
       "path": "../../libs/client/organization"
@@ -61,13 +67,10 @@
       "path": "../../libs/client/member"
     },
     {
-      "path": "../../libs/client/project"
+      "path": "../../libs/client/core"
     },
     {
-      "path": "../../libs/client/ui"
-    },
-    {
-      "path": "../../packages/shared-i18n"
+      "path": "../../libs/client/auth"
     }
   ]
 }

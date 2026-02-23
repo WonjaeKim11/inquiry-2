@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
+import { RouterModule } from '@nestjs/core';
 import { ServerPrismaModule } from '@inquiry/server-prisma';
 import { RedisModule } from '@inquiry/server-redis';
 import { LoggerModule } from '@inquiry/server-logger';
@@ -17,7 +18,10 @@ import { InviteModule } from '@inquiry/server-invite';
 import { MemberModule } from '@inquiry/server-member';
 import { ProjectModule } from '@inquiry/server-project';
 import { ApiKeyModule } from '@inquiry/server-api-key';
+import { ClientApiModule } from '@inquiry/server-client-api';
+import { ManagementApiModule } from '@inquiry/server-management-api';
 import { HealthModule } from './health/health.module';
+import { V2HealthModule } from './v2-health/v2-health.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
@@ -26,6 +30,11 @@ import { AppService } from './app.service';
  * libs에서 제공하는 모듈들을 import하여 조합한다.
  * @Global() 모듈: ServerPrismaModule, RedisModule, LoggerModule, SentryModule,
  *   LicenseModule, CryptoModule, EmailModule, AuditLogModule, RbacModule
+ *
+ * API 라우팅:
+ * - /api/v1/client/:environmentId/... → ClientApiModule (인증 불필요)
+ * - /api/v1/management/... → ManagementApiModule (API Key 인증)
+ * - /api/v2/health → V2HealthModule (v2 스텁)
  */
 @Module({
   imports: [
@@ -47,7 +56,16 @@ import { AppService } from './app.service';
     MemberModule,
     ProjectModule,
     ApiKeyModule,
+    ClientApiModule,
+    ManagementApiModule,
+    V2HealthModule,
     HealthModule,
+    // API 버전 라우팅: Client API와 Management API를 v1 경로에 마운트
+    RouterModule.register([
+      { path: 'v1/client', module: ClientApiModule },
+      { path: 'v1/management', module: ManagementApiModule },
+      { path: 'v2', module: V2HealthModule },
+    ]),
   ],
   controllers: [AppController],
   providers: [AppService],

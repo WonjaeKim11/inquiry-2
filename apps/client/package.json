@@ -5,6 +5,7 @@
   "dependencies": {
     "@inquiry/client-auth": "workspace:*",
     "@inquiry/client-core": "workspace:*",
+    "@inquiry/client-api-key": "workspace:*",
     "@inquiry/client-member": "workspace:*",
     "@inquiry/client-organization": "workspace:*",
     "@inquiry/client-project": "workspace:*",

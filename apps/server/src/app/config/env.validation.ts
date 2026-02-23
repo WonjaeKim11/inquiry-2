@@ -23,10 +23,7 @@ const envSchema = z.object({
   REDIS_URL: z.string().optional(),
 
   // 선택: Rate Limiting 비활성화
-  RATE_LIMIT_DISABLED: z
-    .enum(['true', 'false'])
-    .optional()
-    .default('false'),
+  RATE_LIMIT_DISABLED: z.enum(['true', 'false']).optional().default('false'),
 
   // 선택: OAuth - Google
   GOOGLE_CLIENT_ID: z.string().optional(),
@@ -55,10 +52,7 @@ const envSchema = z.object({
   LICENSE_KEY: z.string().optional(),
 
   // 선택: 기능 토글
-  MULTI_ORG_ENABLED: z
-    .enum(['true', 'false'])
-    .optional()
-    .default('true'),
+  MULTI_ORG_ENABLED: z.enum(['true', 'false']).optional().default('true'),
   EMAIL_VERIFICATION_DISABLED: z
     .enum(['true', 'false'])
     .optional()
@@ -68,6 +62,12 @@ const envSchema = z.object({
   // 선택: 외부 서비스
   TURNSTILE_SECRET_KEY: z.string().optional(),
   BREVO_API_KEY: z.string().optional(),
+
+  // 선택: CORS 추가 허용 도메인 (쉼표 구분)
+  CORS_ALLOWED_ORIGINS: z.string().optional(),
+
+  // 선택: 파일 저장 경로 (기본: ./uploads)
+  STORAGE_PATH: z.string().optional().default('./uploads'),
 
   // 노드 환경
   NODE_ENV: z
