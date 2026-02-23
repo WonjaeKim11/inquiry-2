@@ -42,5 +42,18 @@ export {
   DropdownMenuGroup,
 } from './components/ui/dropdown-menu';
 
+export {
+  Select,
+  SelectGroup,
+  SelectValue,
+  SelectTrigger,
+  SelectContent,
+  SelectLabel,
+  SelectItem,
+  SelectSeparator,
+} from './components/ui/select';
+export { Textarea } from './components/ui/textarea';
+export type { TextareaProps } from './components/ui/textarea';
+
 // 언어 선택 컴포넌트
 export { LanguageSelector } from './components/language-selector';

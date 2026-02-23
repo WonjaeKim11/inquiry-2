@@ -60,19 +60,23 @@ export default function DashboardPage({
       <h1 className="text-3xl font-bold">{t('dashboard.title')}</h1>
       <p className="mt-4 text-muted-foreground">{t('dashboard.placeholder')}</p>
 
-      {/* 현재 조직이 있으면 설정 페이지 링크를 표시한다 */}
+      {/* 현재 조직이 있으면 설정 및 프로젝트 페이지 링크를 표시한다 */}
       {currentOrganization && (
-        <Button
-          variant="outline"
-          className="mt-6"
-          onClick={() =>
-            router.push(
-              `/${lng}/organizations/${currentOrganization.id}/settings`
-            )
-          }
-        >
-          {t('organization.settings.title')}
-        </Button>
+        <div className="mt-6 flex gap-3">
+          <Button
+            variant="outline"
+            onClick={() =>
+              router.push(
+                `/${lng}/organizations/${currentOrganization.id}/settings`
+              )
+            }
+          >
+            {t('organization.settings.title')}
+          </Button>
+          <Button onClick={() => router.push(`/${lng}/projects`)}>
+            {t('project.title')}
+          </Button>
+        </div>
       )}
     </div>
   );

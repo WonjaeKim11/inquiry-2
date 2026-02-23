@@ -4,6 +4,7 @@ import { OrganizationProvider } from '@inquiry/client-organization';
 import { dir } from 'i18next';
 import { languages } from '../i18n/settings';
 import { I18nProvider } from './i18n-provider';
+import { ProjectProviderWrapper } from './project-provider-wrapper';
 
 export async function generateStaticParams() {
   return languages.map((lng) => ({ lng }));
@@ -28,7 +29,9 @@ export default async function RootLayout(props: Props) {
       <body>
         <I18nProvider lng={lng}>
           <AuthProvider>
-            <OrganizationProvider>{children}</OrganizationProvider>
+            <OrganizationProvider>
+              <ProjectProviderWrapper>{children}</ProjectProviderWrapper>
+            </OrganizationProvider>
           </AuthProvider>
         </I18nProvider>
       </body>

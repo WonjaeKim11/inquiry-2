@@ -7,6 +7,7 @@
     "@inquiry/client-core": "workspace:*",
     "@inquiry/client-member": "workspace:*",
     "@inquiry/client-organization": "workspace:*",
+    "@inquiry/client-project": "workspace:*",
     "@inquiry/client-ui": "workspace:*",
     "@inquiry/db": "workspace:*",
     "@inquiry/shared-i18n": "workspace:*",

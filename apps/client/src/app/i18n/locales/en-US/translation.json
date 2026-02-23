@@ -189,6 +189,113 @@
       "load_fail": "Failed to load organizations."
     }
   },
+  "project": {
+    "title": "Projects",
+    "create": {
+      "title": "Create Project",
+      "name": "Project Name",
+      "name_placeholder": "Enter project name",
+      "submit": "Create",
+      "creating": "Creating...",
+      "success": "Project created successfully",
+      "fail": "Failed to create project"
+    },
+    "list": {
+      "empty": "No projects yet",
+      "environments": "Environments",
+      "languages": "Languages"
+    },
+    "settings": {
+      "title": "Project Settings",
+      "general": "General",
+      "styling": "Styling",
+      "languages": "Languages",
+      "danger": "Danger Zone",
+      "name": "Project Name",
+      "recontact_days": "Recontact Days",
+      "placement": "Widget Placement",
+      "dark_overlay": "Dark Overlay",
+      "click_outside_close": "Close on Outside Click",
+      "in_app_branding": "In-App Survey Branding",
+      "link_branding": "Link Survey Branding",
+      "save": "Save Changes",
+      "saving": "Saving...",
+      "save_success": "Settings saved",
+      "save_fail": "Failed to save settings"
+    },
+    "styling": {
+      "brand_color": "Brand Color",
+      "card_background": "Card Background",
+      "card_border": "Card Border",
+      "roundness": "Roundness",
+      "hide_progress": "Hide Progress Bar",
+      "hide_logo": "Hide Logo",
+      "allow_override": "Allow Style Override"
+    },
+    "environment": {
+      "production": "Production",
+      "development": "Development",
+      "switch": "Switch Environment"
+    },
+    "action_class": {
+      "title": "Action Classes",
+      "create": "Create Action Class",
+      "creating": "Creating...",
+      "create_fail": "Failed to create action class",
+      "name": "Name",
+      "name_required": "Action class name is required",
+      "name_too_long": "Name must be 128 characters or less",
+      "type": "Type",
+      "key": "Key",
+      "key_required": "Key is required for code type",
+      "description": "Description",
+      "code": "Code",
+      "no_code": "No Code",
+      "no_code_type": "Trigger Type",
+      "url_filters": "URL Filters",
+      "add_filter": "Add Filter",
+      "css_selector": "CSS Selector",
+      "inner_html": "Inner HTML",
+      "empty": "No action classes",
+      "delete": "Delete",
+      "delete_confirm": "Delete this action class?",
+      "delete_fail": "Failed to delete action class",
+      "load_fail": "Failed to load action classes",
+      "success": "Action class created"
+    },
+    "language": {
+      "title": "Languages",
+      "code": "Language Code",
+      "alias": "Alias",
+      "add": "Add Language",
+      "adding": "Adding...",
+      "add_fail": "Failed to add language",
+      "edit": "Edit",
+      "edit_fail": "Failed to update language",
+      "delete": "Delete",
+      "delete_fail": "Failed to delete language",
+      "empty": "No languages configured",
+      "delete_confirm": "Delete this language?",
+      "invalid_code": "Please enter a valid language code (2-10 characters)",
+      "success": "Language added",
+      "load_fail": "Failed to load languages"
+    },
+    "delete": {
+      "title": "Delete Project",
+      "warning": "This will permanently delete the project and all its environments, action classes, and languages.",
+      "confirm_name": "Type the project name to confirm",
+      "submit": "Delete Project",
+      "deleting": "Deleting...",
+      "cancel": "Cancel",
+      "success": "Project deleted",
+      "fail": "Failed to delete project"
+    },
+    "errors": {
+      "name_required": "Project name is required",
+      "name_too_long": "Project name must be 64 characters or less",
+      "load_fail": "Failed to load projects"
+    }
+  },
   "member": {
     "title": "Members",
     "invite": {
