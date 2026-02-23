@@ -50,6 +50,9 @@
     },
     {
       "path": "./libs/client/ui"
+    },
+    {
+      "path": "./packages/shared-i18n"
     }
   ]
 }

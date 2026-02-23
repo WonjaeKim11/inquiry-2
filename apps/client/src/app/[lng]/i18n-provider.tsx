@@ -11,8 +11,8 @@ type I18nProviderProps = {
 };
 
 export function I18nProvider({ children, lng }: I18nProviderProps) {
-  // SSR/SSG에서도 올바른 언어로 렌더링하기 위해 동기적으로 언어 설정
-  // 리소스가 static import로 이미 로드되어 있으므로 changeLanguage가 즉시 적용됨
+  // SSR/SSG에서도 올바른 언어로 렌더링하기 위해 언어 설정
+  // resourcesToBackend를 통해 동적으로 번역 리소스를 로드한다
   if (i18next.resolvedLanguage !== lng) {
     i18next.changeLanguage(lng);
   }

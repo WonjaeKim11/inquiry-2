@@ -16,3 +16,6 @@ export {
 } from './components/ui/card';
 export { Alert, AlertTitle, AlertDescription } from './components/ui/alert';
 export { Separator } from './components/ui/separator';
+
+// 언어 선택 컴포넌트
+export { LanguageSelector } from './components/language-selector';

@@ -7,6 +7,7 @@
     "@inquiry/client-core": "workspace:*",
     "@inquiry/client-ui": "workspace:*",
     "@inquiry/db": "workspace:*",
+    "@inquiry/shared-i18n": "workspace:*",
     "accept-language": "^3.0.20",
     "i18next": "^25.8.13",
     "i18next-resources-to-backend": "^1.2.1",

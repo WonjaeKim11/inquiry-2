@@ -1,6 +1,13 @@
 'use client';
 
-import { createContext, useContext, useState, useEffect, useCallback, type ReactNode } from 'react';
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useCallback,
+  type ReactNode,
+} from 'react';
 import { useTranslation } from 'react-i18next';
 import { apiFetch, setAccessToken, getAccessToken } from './api';
 
@@ -11,6 +18,7 @@ interface User {
   name: string | null;
   image: string | null;
   emailVerified: string | null; // DateTime? → ISO string | null
+  locale: string; // 사용자 선호 언어 (BCP 47 형식, 예: 'en-US', 'ko-KR')
 }
 
 /** AuthContext가 제공하는 값 */
@@ -57,10 +65,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const init = async () => {
       if (!getAccessToken()) {
         try {
-          const res = await fetch(`${process.env['NEXT_PUBLIC_API_URL'] || 'http://localhost:3000/api'}/auth/refresh`, {
-            method: 'POST',
-            credentials: 'include',
-          });
+          const res = await fetch(
+            `${
+              process.env['NEXT_PUBLIC_API_URL'] || 'http://localhost:3000/api'
+            }/auth/refresh`,
+            {
+              method: 'POST',
+              credentials: 'include',
+            }
+          );
           if (res.ok) {
             const data = await res.json();
             setAccessToken(data.accessToken);
@@ -129,7 +142,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   );
 
   return (
-    <AuthContext.Provider value={{ user, loading, login, signup, logout, handleOAuthCallback }}>
+    <AuthContext.Provider
+      value={{ user, loading, login, signup, logout, handleOAuthCallback }}
+    >
       {children}
     </AuthContext.Provider>
   );

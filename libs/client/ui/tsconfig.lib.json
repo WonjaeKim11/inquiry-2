@@ -13,5 +13,9 @@
     "moduleResolution": "bundler"
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "references": []
+  "references": [
+    {
+      "path": "../../../packages/shared-i18n"
+    }
+  ]
 }
