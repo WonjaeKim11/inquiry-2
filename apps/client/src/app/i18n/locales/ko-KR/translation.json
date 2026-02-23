@@ -101,9 +101,40 @@
       "captcha_loading": "보안 인증 로딩 중...",
       "captcha_error": "보안 인증 로딩에 실패했습니다. 페이지를 새로고침해주세요."
     },
+    "two_factor": {
+      "title": "2단계 인증",
+      "description": "계정에 추가 보안 계층을 추가합니다",
+      "enabled": "2단계 인증이 활성화되어 있습니다",
+      "disabled": "2단계 인증이 활성화되어 있지 않습니다",
+      "enable_button": "2FA 활성화",
+      "disable_button": "2FA 비활성화",
+      "setup_title": "2단계 인증 설정",
+      "scan_qr": "인증기 앱으로 QR 코드를 스캔하세요",
+      "manual_entry": "또는 이 코드를 직접 입력하세요",
+      "backup_codes_title": "백업 코드",
+      "backup_codes_description": "이 코드를 안전한 곳에 보관하세요. 각 코드는 한 번만 사용할 수 있습니다.",
+      "done": "완료",
+      "confirm_disable": "2단계 인증을 비활성화하시겠습니까?",
+      "feature_unavailable": "현재 플랜에서는 2단계 인증을 사용할 수 없습니다"
+    },
+    "two_factor_input": {
+      "title": "2단계 인증 필요",
+      "description": "인증기 앱의 6자리 코드를 입력하세요",
+      "code_label": "인증 코드",
+      "code_placeholder": "000000",
+      "use_backup": "백업 코드 사용",
+      "use_totp": "인증기 앱 사용",
+      "backup_label": "백업 코드",
+      "backup_placeholder": "xxxx-xxxx",
+      "verify": "확인",
+      "back": "로그인으로 돌아가기",
+      "invalid_code": "잘못된 인증 코드입니다"
+    },
     "social": {
       "google": "Google로 계속하기",
-      "github": "GitHub로 계속하기"
+      "github": "GitHub로 계속하기",
+      "azure_ad": "Microsoft로 계속",
+      "openid": "SSO로 계속"
     }
   },
   "dashboard": {
@@ -354,6 +385,12 @@
       "expired": "이 초대는 만료되었습니다",
       "invalid": "유효하지 않은 초대 링크입니다",
       "go_to_dashboard": "대시보드로 이동"
+    }
+  },
+  "settings": {
+    "security": {
+      "title": "보안 설정",
+      "description": "계정 보안을 관리합니다"
     }
   }
 }

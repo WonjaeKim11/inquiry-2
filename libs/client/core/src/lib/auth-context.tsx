@@ -29,11 +29,30 @@ interface SignupOptions {
   turnstileToken?: string;
 }
 
+/**
+ * 로그인 결과 타입.
+ * 2FA가 필요한 경우 requiresTwoFactor: true를 반환하고,
+ * 성공 시 success: true를 반환한다.
+ */
+export type LoginResult =
+  | { success: true }
+  | { success: false; requiresTwoFactor: true };
+
 /** AuthContext가 제공하는 값 */
 interface AuthContextValue {
   user: User | null;
   loading: boolean;
-  login: (email: string, password: string) => Promise<void>;
+  /**
+   * 이메일+비밀번호 로그인.
+   * 2FA 활성 사용자의 경우 totpCode 또는 backupCode를 함께 전달해야 한다.
+   * 2FA 필요 시 throw 대신 { success: false, requiresTwoFactor: true }를 반환한다.
+   */
+  login: (
+    email: string,
+    password: string,
+    totpCode?: string,
+    backupCode?: string
+  ) => Promise<LoginResult>;
   /** 회원가입 후 이메일 검증이 필요하므로 자동 로그인하지 않음 */
   signup: (
     email: string,
@@ -104,18 +123,36 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, [fetchUser]);
 
   const login = useCallback(
-    async (email: string, password: string) => {
+    async (
+      email: string,
+      password: string,
+      totpCode?: string,
+      backupCode?: string
+    ): Promise<LoginResult> => {
+      const body: Record<string, string> = { email, password };
+      if (totpCode) body['totpCode'] = totpCode;
+      if (backupCode) body['backupCode'] = backupCode;
+
       const res = await apiFetch('/auth/login', {
         method: 'POST',
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify(body),
       });
+
       if (!res.ok) {
         const error = await res.json();
+
+        // 2FA 필요 시 throw 대신 결과 객체를 반환하여 LoginForm이 2FA 단계로 전환할 수 있게 한다
+        if (error.errorCode === 'second-factor-required') {
+          return { success: false, requiresTwoFactor: true };
+        }
+
         throw new Error(error.message || t('auth.context.login_fail'));
       }
+
       const data = await res.json();
       setAccessToken(data.accessToken);
       await fetchUser();
+      return { success: true };
     },
     [fetchUser, t]
   );

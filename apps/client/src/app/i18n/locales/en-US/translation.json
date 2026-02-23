@@ -101,9 +101,40 @@
       "captcha_loading": "Loading security verification...",
       "captcha_error": "Failed to load security verification. Please refresh the page."
     },
+    "two_factor": {
+      "title": "Two-Factor Authentication",
+      "description": "Add an extra layer of security to your account",
+      "enabled": "Two-factor authentication is enabled",
+      "disabled": "Two-factor authentication is not enabled",
+      "enable_button": "Enable 2FA",
+      "disable_button": "Disable 2FA",
+      "setup_title": "Set up Two-Factor Authentication",
+      "scan_qr": "Scan the QR code with your authenticator app",
+      "manual_entry": "Or enter this code manually",
+      "backup_codes_title": "Backup Codes",
+      "backup_codes_description": "Save these codes in a safe place. Each code can only be used once.",
+      "done": "Done",
+      "confirm_disable": "Are you sure you want to disable two-factor authentication?",
+      "feature_unavailable": "Two-factor authentication is not available on your current plan"
+    },
+    "two_factor_input": {
+      "title": "Two-Factor Authentication Required",
+      "description": "Enter the 6-digit code from your authenticator app",
+      "code_label": "Authentication Code",
+      "code_placeholder": "000000",
+      "use_backup": "Use a backup code instead",
+      "use_totp": "Use authenticator app instead",
+      "backup_label": "Backup Code",
+      "backup_placeholder": "xxxx-xxxx",
+      "verify": "Verify",
+      "back": "Back to login",
+      "invalid_code": "Invalid authentication code"
+    },
     "social": {
       "google": "Continue with Google",
-      "github": "Continue with GitHub"
+      "github": "Continue with GitHub",
+      "azure_ad": "Continue with Microsoft",
+      "openid": "Continue with SSO"
     }
   },
   "dashboard": {
@@ -354,6 +385,12 @@
       "expired": "This invitation has expired",
       "invalid": "Invalid invitation link",
       "go_to_dashboard": "Go to Dashboard"
+    }
+  },
+  "settings": {
+    "security": {
+      "title": "Security Settings",
+      "description": "Manage your account security"
     }
   }
 }
