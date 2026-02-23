@@ -134,12 +134,12 @@ export class ServerAuthService implements OnModuleInit {
       // Brevo 고객 생성 (fire-and-forget)
       this.brevoService.createContact(user.email, user.name);
 
-      // 감사 로그
-      this.auditLogService.log({
-        userId: user.id,
+      // 감사 로그 (logEvent: Zod 검증 + PII Redaction + Feature Flag 적용)
+      this.auditLogService.logEvent({
         action: 'user.signup',
-        entity: 'user',
-        entityId: user.id,
+        userId: user.id,
+        targetType: 'user',
+        targetId: user.id,
         ipAddress,
       });
 
@@ -260,11 +260,12 @@ export class ServerAuthService implements OnModuleInit {
 
   /** 로그인: 검증된 사용자에 대해 토큰 페어를 발급하고 감사 로그 기록 */
   async login(user: { id: string; email: string }, ipAddress?: string) {
-    this.auditLogService.log({
-      userId: user.id,
+    // 감사 로그 (logEvent: Zod 검증 + PII Redaction + Feature Flag 적용)
+    this.auditLogService.logEvent({
       action: 'user.login',
-      entity: 'user',
-      entityId: user.id,
+      userId: user.id,
+      targetType: 'user',
+      targetId: user.id,
       ipAddress,
     });
 
@@ -313,11 +314,12 @@ export class ServerAuthService implements OnModuleInit {
     // Brevo 고객 생성 (이메일 검증 완료 후)
     this.brevoService.createContact(user.email, user.name);
 
-    this.auditLogService.log({
-      userId: user.id,
+    // 감사 로그 (logEvent: Zod 검증 + PII Redaction + Feature Flag 적용)
+    this.auditLogService.logEvent({
       action: 'user.email-verified',
-      entity: 'user',
-      entityId: user.id,
+      userId: user.id,
+      targetType: 'user',
+      targetId: user.id,
       ipAddress,
     });
 
@@ -342,11 +344,12 @@ export class ServerAuthService implements OnModuleInit {
         token
       );
 
-      this.auditLogService.log({
-        userId: user.id,
+      // 감사 로그 (logEvent: Zod 검증 + PII Redaction + Feature Flag 적용)
+      this.auditLogService.logEvent({
         action: 'password.reset-requested',
-        entity: 'user',
-        entityId: user.id,
+        userId: user.id,
+        targetType: 'user',
+        targetId: user.id,
         ipAddress,
       });
     }
@@ -402,11 +405,12 @@ export class ServerAuthService implements OnModuleInit {
       user.name
     );
 
-    this.auditLogService.log({
-      userId: user.id,
+    // 감사 로그 (logEvent: Zod 검증 + PII Redaction + Feature Flag 적용)
+    this.auditLogService.logEvent({
       action: 'password.reset-completed',
-      entity: 'user',
-      entityId: user.id,
+      userId: user.id,
+      targetType: 'user',
+      targetId: user.id,
       ipAddress,
     });
 

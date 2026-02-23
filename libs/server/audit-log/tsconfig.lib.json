@@ -18,11 +18,9 @@
   },
   "include": ["src/**/*.ts"],
   "references": [
-    {
-      "path": "../prisma/tsconfig.lib.json"
-    },
-    {
-      "path": "../../../packages/db/tsconfig.lib.json"
-    }
+    { "path": "../prisma/tsconfig.lib.json" },
+    { "path": "../../../packages/db/tsconfig.lib.json" },
+    { "path": "../logger/tsconfig.lib.json" },
+    { "path": "../license/tsconfig.lib.json" }
   ]
 }
