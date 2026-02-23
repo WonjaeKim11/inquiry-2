@@ -58,6 +58,9 @@
       "path": "../../libs/client/organization"
     },
     {
+      "path": "../../libs/client/member"
+    },
+    {
       "path": "../../libs/client/ui"
     },
     {

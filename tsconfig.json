@@ -64,6 +64,9 @@
       "path": "./libs/client/organization"
     },
     {
+      "path": "./libs/client/member"
+    },
+    {
       "path": "./libs/server/invite"
     },
     {
@@ -71,6 +74,9 @@
     },
     {
       "path": "./libs/server/rbac"
+    },
+    {
+      "path": "./libs/server/project"
     }
   ]
 }

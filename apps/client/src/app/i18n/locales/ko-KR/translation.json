@@ -188,5 +188,65 @@
       "name_too_short": "조직 이름은 최소 1자 이상이어야 합니다.",
       "load_fail": "조직 목록을 불러오는데 실패했습니다."
     }
+  },
+  "member": {
+    "title": "멤버",
+    "invite": {
+      "title": "멤버 초대",
+      "email": "이메일 주소",
+      "email_placeholder": "user@example.com",
+      "name": "이름",
+      "name_placeholder": "이름을 입력하세요",
+      "role": "역할",
+      "submit": "초대 보내기",
+      "submitting": "전송 중...",
+      "success": "초대가 성공적으로 전송되었습니다",
+      "error": "초대 전송에 실패했습니다"
+    },
+    "invite_list": {
+      "title": "대기 중인 초대",
+      "empty": "대기 중인 초대가 없습니다",
+      "resend": "재발송",
+      "resend_success": "초대가 재발송되었습니다",
+      "delete": "삭제",
+      "delete_confirm": "이 초대를 삭제하시겠습니까?",
+      "expires": "만료",
+      "expired": "만료됨",
+      "role": "역할"
+    },
+    "member_list": {
+      "title": "멤버",
+      "empty": "멤버가 없습니다",
+      "change_role": "역할 변경",
+      "remove": "삭제",
+      "remove_confirm": "이 멤버를 삭제하시겠습니까?",
+      "remove_success": "멤버가 삭제되었습니다",
+      "role_changed": "역할이 성공적으로 변경되었습니다",
+      "you": "(나)"
+    },
+    "role": {
+      "OWNER": "소유자",
+      "ADMIN": "관리자",
+      "MEMBER": "멤버",
+      "BILLING": "결제 담당"
+    },
+    "leave": {
+      "title": "조직 탈퇴",
+      "description": "이 조직의 모든 프로젝트와 데이터에 대한 접근 권한을 잃게 됩니다.",
+      "confirm": "탈퇴",
+      "cancel": "취소",
+      "leaving": "탈퇴 중...",
+      "success": "조직에서 성공적으로 탈퇴했습니다",
+      "owner_warning": "소유자는 조직을 탈퇴할 수 없습니다. 먼저 소유권을 이전하세요."
+    },
+    "accept": {
+      "title": "초대 수락",
+      "loading": "초대를 처리하고 있습니다...",
+      "success": "환영합니다! {{organizationName}}에 가입되었습니다",
+      "error": "초대 수락에 실패했습니다",
+      "expired": "이 초대는 만료되었습니다",
+      "invalid": "유효하지 않은 초대 링크입니다",
+      "go_to_dashboard": "대시보드로 이동"
+    }
   }
 }

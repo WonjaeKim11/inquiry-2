@@ -156,6 +156,9 @@ importers:
       '@inquiry/client-core':
         specifier: workspace:*
         version: link:../../libs/client/core
+      '@inquiry/client-member':
+        specifier: workspace:*
+        version: link:../../libs/client/member
       '@inquiry/client-organization':
         specifier: workspace:*
         version: link:../../libs/client/organization
@@ -353,6 +356,24 @@ importers:
       react-i18next:
         specifier: ^16.5.4
         version: 16.5.4(i18next@25.8.13(typescript@5.9.3))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)
+
+  libs/client/member:
+    dependencies:
+      '@inquiry/client-core':
+        specifier: workspace:*
+        version: link:../core
+      '@inquiry/client-ui':
+        specifier: workspace:*
+        version: link:../ui
+      react:
+        specifier: ^19.0.0
+        version: 19.2.4
+      react-i18next:
+        specifier: ^16.5.4
+        version: 16.5.4(i18next@25.8.13(typescript@5.9.3))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)
+      zod:
+        specifier: ^4.3.6
+        version: 4.3.6
 
   libs/client/organization:
     dependencies:
@@ -671,6 +692,33 @@ importers:
       '@prisma/client':
         specifier: ^7.4.0
         version: 7.4.0(prisma@7.4.0(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3))(typescript@5.9.3)
+
+  libs/server/project:
+    dependencies:
+      '@inquiry/db':
+        specifier: workspace:*
+        version: link:../../../packages/db
+      '@inquiry/server-audit-log':
+        specifier: workspace:*
+        version: link:../audit-log
+      '@inquiry/server-core':
+        specifier: workspace:*
+        version: link:../core
+      '@inquiry/server-license':
+        specifier: workspace:*
+        version: link:../license
+      '@inquiry/server-prisma':
+        specifier: workspace:*
+        version: link:../prisma
+      '@nestjs/common':
+        specifier: ^11.0.0
+        version: 11.1.13(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2)
+      '@nestjs/passport':
+        specifier: ^11.0.5
+        version: 11.0.5(@nestjs/common@11.1.13(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0)
+      zod:
+        specifier: ^4.3.6
+        version: 4.3.6
 
   libs/server/rate-limit:
     dependencies:

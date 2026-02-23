@@ -93,12 +93,22 @@ export default function OrganizationSettingsPage({
             {organization.name}
           </p>
         </div>
-        <Button
-          variant="outline"
-          onClick={() => router.push(`/${lng}/organizations`)}
-        >
-          {t('organization.list.title')}
-        </Button>
+        <div className="flex gap-2">
+          <Button
+            variant="outline"
+            onClick={() =>
+              router.push(`/${lng}/organizations/${orgId}/members`)
+            }
+          >
+            {t('member.title')}
+          </Button>
+          <Button
+            variant="outline"
+            onClick={() => router.push(`/${lng}/organizations`)}
+          >
+            {t('organization.list.title')}
+          </Button>
+        </div>
       </div>
 
       {/* 설정 탭 */}

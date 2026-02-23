@@ -188,5 +188,65 @@
       "name_too_short": "Organization name must be at least 1 character.",
       "load_fail": "Failed to load organizations."
     }
+  },
+  "member": {
+    "title": "Members",
+    "invite": {
+      "title": "Invite Member",
+      "email": "Email address",
+      "email_placeholder": "user@example.com",
+      "name": "Name",
+      "name_placeholder": "Enter name",
+      "role": "Role",
+      "submit": "Send Invite",
+      "submitting": "Sending...",
+      "success": "Invitation sent successfully",
+      "error": "Failed to send invitation"
+    },
+    "invite_list": {
+      "title": "Pending Invitations",
+      "empty": "No pending invitations",
+      "resend": "Resend",
+      "resend_success": "Invitation resent",
+      "delete": "Delete",
+      "delete_confirm": "Are you sure you want to delete this invitation?",
+      "expires": "Expires",
+      "expired": "Expired",
+      "role": "Role"
+    },
+    "member_list": {
+      "title": "Members",
+      "empty": "No members",
+      "change_role": "Change Role",
+      "remove": "Remove",
+      "remove_confirm": "Are you sure you want to remove this member?",
+      "remove_success": "Member removed",
+      "role_changed": "Role changed successfully",
+      "you": "(You)"
+    },
+    "role": {
+      "OWNER": "Owner",
+      "ADMIN": "Admin",
+      "MEMBER": "Member",
+      "BILLING": "Billing"
+    },
+    "leave": {
+      "title": "Leave Organization",
+      "description": "You will lose access to all projects and data in this organization.",
+      "confirm": "Leave",
+      "cancel": "Cancel",
+      "leaving": "Leaving...",
+      "success": "Left organization successfully",
+      "owner_warning": "Owners cannot leave the organization. Transfer ownership first."
+    },
+    "accept": {
+      "title": "Accept Invitation",
+      "loading": "Processing invitation...",
+      "success": "Welcome! You've joined {{organizationName}}",
+      "error": "Failed to accept invitation",
+      "expired": "This invitation has expired",
+      "invalid": "Invalid invitation link",
+      "go_to_dashboard": "Go to Dashboard"
+    }
   }
 }
