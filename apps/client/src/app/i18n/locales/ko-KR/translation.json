@@ -392,5 +392,62 @@
       "title": "보안 설정",
       "description": "계정 보안을 관리합니다"
     }
+  },
+  "apiKey": {
+    "title": "API 키",
+    "description": "조직의 프로그래밍 방식 접근을 위한 API 키를 관리합니다",
+    "create": {
+      "title": "API 키 생성",
+      "label": "라벨",
+      "label_placeholder": "예: 프로덕션 SDK",
+      "environment_id": "환경 ID",
+      "environment_id_placeholder": "환경 ID를 입력하세요",
+      "permission": "권한",
+      "expires_at": "만료일",
+      "expires_at_placeholder": "선택적 만료일",
+      "add_permission": "환경 권한 추가",
+      "remove_permission": "삭제",
+      "submit": "API 키 생성",
+      "creating": "생성 중...",
+      "success": "API 키가 생성되었습니다",
+      "fail": "API 키 생성에 실패했습니다"
+    },
+    "secret": {
+      "title": "API 키 생성 완료",
+      "description": "지금 API 키를 복사하세요. 다시 볼 수 없습니다.",
+      "warning": "이 키는 다시 표시되지 않습니다. 안전하게 보관하세요.",
+      "copy": "클립보드에 복사",
+      "copied": "복사됨!",
+      "close": "키를 저장했습니다"
+    },
+    "list": {
+      "empty": "아직 API 키가 없습니다",
+      "last_used": "마지막 사용",
+      "never_used": "사용한 적 없음",
+      "expires": "만료",
+      "no_expiry": "만료 없음",
+      "created": "생성일",
+      "environments": "환경",
+      "delete": "삭제"
+    },
+    "delete": {
+      "title": "API 키 삭제",
+      "description": "이 API 키를 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.",
+      "warning": "이 키를 사용하는 모든 애플리케이션의 접근이 즉시 차단됩니다.",
+      "submit": "API 키 삭제",
+      "deleting": "삭제 중...",
+      "cancel": "취소",
+      "success": "API 키가 삭제되었습니다",
+      "fail": "API 키 삭제에 실패했습니다"
+    },
+    "permission": {
+      "READ": "읽기",
+      "WRITE": "쓰기",
+      "MANAGE": "관리"
+    },
+    "errors": {
+      "load_fail": "API 키 목록을 불러오지 못했습니다",
+      "not_found": "API 키를 찾을 수 없습니다"
+    }
   }
 }

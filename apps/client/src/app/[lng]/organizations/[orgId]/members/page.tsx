@@ -136,6 +136,14 @@ export default function MembersPage({
           >
             {t('organization.settings.title')}
           </Button>
+          <Button
+            variant="outline"
+            onClick={() =>
+              router.push(`/${lng}/organizations/${orgId}/api-keys`)
+            }
+          >
+            {t('apiKey.title')}
+          </Button>
         </div>
       </div>
 

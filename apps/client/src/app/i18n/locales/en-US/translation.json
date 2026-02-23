@@ -392,5 +392,62 @@
       "title": "Security Settings",
       "description": "Manage your account security"
     }
+  },
+  "apiKey": {
+    "title": "API Keys",
+    "description": "Manage API keys for programmatic access to your organization",
+    "create": {
+      "title": "Create API Key",
+      "label": "Label",
+      "label_placeholder": "e.g., Production SDK",
+      "environment_id": "Environment ID",
+      "environment_id_placeholder": "Enter environment ID",
+      "permission": "Permission",
+      "expires_at": "Expires At",
+      "expires_at_placeholder": "Optional expiration date",
+      "add_permission": "Add Environment Permission",
+      "remove_permission": "Remove",
+      "submit": "Create API Key",
+      "creating": "Creating...",
+      "success": "API key created successfully",
+      "fail": "Failed to create API key"
+    },
+    "secret": {
+      "title": "API Key Created",
+      "description": "Copy your API key now. You won't be able to see it again.",
+      "warning": "This key will not be displayed again. Store it securely.",
+      "copy": "Copy to Clipboard",
+      "copied": "Copied!",
+      "close": "I've saved my key"
+    },
+    "list": {
+      "empty": "No API keys yet",
+      "last_used": "Last used",
+      "never_used": "Never used",
+      "expires": "Expires",
+      "no_expiry": "No expiration",
+      "created": "Created",
+      "environments": "Environments",
+      "delete": "Delete"
+    },
+    "delete": {
+      "title": "Delete API Key",
+      "description": "Are you sure you want to delete this API key? This action cannot be undone.",
+      "warning": "Any applications using this key will lose access immediately.",
+      "submit": "Delete API Key",
+      "deleting": "Deleting...",
+      "cancel": "Cancel",
+      "success": "API key deleted",
+      "fail": "Failed to delete API key"
+    },
+    "permission": {
+      "READ": "Read",
+      "WRITE": "Write",
+      "MANAGE": "Manage"
+    },
+    "errors": {
+      "load_fail": "Failed to load API keys",
+      "not_found": "API key not found"
+    }
   }
 }

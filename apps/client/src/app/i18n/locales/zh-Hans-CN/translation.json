@@ -1,109 +1,166 @@
 {
-    "auth": {
-        "login": {
-            "oauth_or": "or"
-        },
-        "logout": {
-            "processing": "Logging out...",
-            "complete": "Logout Complete",
-            "success_message": "You have successfully logged out.",
-            "relogin": "Log in again"
-        },
-        "verify_email": {
-            "processing": "Verifying email...",
-            "missing_token": "Verification token is missing. Please check if the link is valid.",
-            "success_default": "Email verification is complete.",
-            "fail_default": "Email verification failed.",
-            "error": "An error occurred during email verification.",
-            "title": "Email Verification",
-            "to_login": "Go to Login Page"
-        },
-        "context": {
-            "login_fail": "Login failed.",
-            "signup_fail": "Signup failed."
-        },
-        "callback": {
-            "no_token": "Authentication token is missing. Please try again.",
-            "error": "An error occurred during authentication processing.",
-            "back_to_login": "Return to login page",
-            "processing": "Processing authentication..."
-        },
-        "reset_password": {
-            "min_length": "Password must be at least 8 characters long.",
-            "max_length": "Password can be up to 128 characters.",
-            "require_uppercase": "Password must contain at least 1 uppercase letter.",
-            "require_number": "Password must contain at least 1 number.",
-            "password_mismatch": "Passwords do not match.",
-            "no_token": "Reset token is missing. Please check if the link is valid.",
-            "fail": "Failed to reset password.",
-            "success_title": "Password Changed Successfully",
-            "success_message": "Your password has been successfully changed.",
-            "login_new_password": "Login with new password",
-            "title": "Set New Password",
-            "new_password": "New Password",
-            "password_placeholder": "8+ chars, uppercase, number",
-            "confirm_password": "Confirm Password",
-            "confirm_password_placeholder": "Re-enter password",
-            "processing": "Processing...",
-            "submit": "Change Password",
-            "back_to_login": "Return to login page"
-        },
-        "forgot_password": {
-            "invalid_email": "Please enter a valid email format.",
-            "fail": "Failed to process the request.",
-            "check_email_title": "Please Check Your Email",
-            "email_sent_1": "We have sent a password reset link to {{email}}.",
-            "email_sent_2": "Please check your inbox.",
-            "back_to_login": "Return to login page",
-            "title": "Reset Password",
-            "description": "Enter the email you used to register and we will send you a password reset link.",
-            "email_label": "Email",
-            "processing": "Processing...",
-            "submit": "Send Reset Link"
-        },
-        "login_form": {
-            "invalid_email": "Please enter a valid email format.",
-            "password_required": "Please enter your password.",
-            "error_email_verification": "Email verification is required. Please check your inbox.",
-            "error_account_inactive": "Account is inactive. Please contact the administrator.",
-            "error_invalid_credentials": "Email or password is incorrect.",
-            "login_fail": "Login failed.",
-            "email_label": "Email",
-            "password_label": "Password",
-            "logging_in": "Logging in...",
-            "title": "Login to your account",
-            "submit": "Login with Email",
-            "new_user": "New to Inquiry?",
-            "create_account": "Create an account"
-        },
-        "signup_form": {
-            "name_required": "Name is required.",
-            "name_invalid": "Name contains invalid characters.",
-            "signup_fail": "Signup failed.",
-            "verify_email_title": "Please Check Your Email",
-            "verify_email_sent_1": "We have sent a verification email to {{email}}.",
-            "verify_email_sent_2": "Please click the link in the email to activate your account.",
-            "to_login": "Go to login page",
-            "name_label": "Name",
-            "email_label": "Email",
-            "password_label": "Password",
-            "pwd_rule_length": "At least 8 characters",
-            "pwd_rule_uppercase": "Contains uppercase",
-            "pwd_rule_number": "Contains number",
-            "signing_up": "Signing up...",
-            "title": "Create your account",
-            "name_placeholder": "Full Name",
-            "submit": "Sign up with Email",
-            "already_have_account": "Already have an account?",
-            "login": "Login"
-        },
-        "social": {
-            "google": "Continue with Google",
-            "github": "Continue with GitHub"
-        }
+  "auth": {
+    "login": {
+      "oauth_or": "or"
     },
-    "dashboard": {
-        "title": "Dashboard",
-        "placeholder": "Dashboard content will appear here."
+    "logout": {
+      "processing": "Logging out...",
+      "complete": "Logout Complete",
+      "success_message": "You have successfully logged out.",
+      "relogin": "Log in again"
+    },
+    "verify_email": {
+      "processing": "Verifying email...",
+      "missing_token": "Verification token is missing. Please check if the link is valid.",
+      "success_default": "Email verification is complete.",
+      "fail_default": "Email verification failed.",
+      "error": "An error occurred during email verification.",
+      "title": "Email Verification",
+      "to_login": "Go to Login Page"
+    },
+    "context": {
+      "login_fail": "Login failed.",
+      "signup_fail": "Signup failed."
+    },
+    "callback": {
+      "no_token": "Authentication token is missing. Please try again.",
+      "error": "An error occurred during authentication processing.",
+      "back_to_login": "Return to login page",
+      "processing": "Processing authentication..."
+    },
+    "reset_password": {
+      "min_length": "Password must be at least 8 characters long.",
+      "max_length": "Password can be up to 128 characters.",
+      "require_uppercase": "Password must contain at least 1 uppercase letter.",
+      "require_number": "Password must contain at least 1 number.",
+      "password_mismatch": "Passwords do not match.",
+      "no_token": "Reset token is missing. Please check if the link is valid.",
+      "fail": "Failed to reset password.",
+      "success_title": "Password Changed Successfully",
+      "success_message": "Your password has been successfully changed.",
+      "login_new_password": "Login with new password",
+      "title": "Set New Password",
+      "new_password": "New Password",
+      "password_placeholder": "8+ chars, uppercase, number",
+      "confirm_password": "Confirm Password",
+      "confirm_password_placeholder": "Re-enter password",
+      "processing": "Processing...",
+      "submit": "Change Password",
+      "back_to_login": "Return to login page"
+    },
+    "forgot_password": {
+      "invalid_email": "Please enter a valid email format.",
+      "fail": "Failed to process the request.",
+      "check_email_title": "Please Check Your Email",
+      "email_sent_1": "We have sent a password reset link to {{email}}.",
+      "email_sent_2": "Please check your inbox.",
+      "back_to_login": "Return to login page",
+      "title": "Reset Password",
+      "description": "Enter the email you used to register and we will send you a password reset link.",
+      "email_label": "Email",
+      "processing": "Processing...",
+      "submit": "Send Reset Link"
+    },
+    "login_form": {
+      "invalid_email": "Please enter a valid email format.",
+      "password_required": "Please enter your password.",
+      "error_email_verification": "Email verification is required. Please check your inbox.",
+      "error_account_inactive": "Account is inactive. Please contact the administrator.",
+      "error_invalid_credentials": "Email or password is incorrect.",
+      "login_fail": "Login failed.",
+      "email_label": "Email",
+      "password_label": "Password",
+      "logging_in": "Logging in...",
+      "title": "Login to your account",
+      "submit": "Login with Email",
+      "new_user": "New to Inquiry?",
+      "create_account": "Create an account"
+    },
+    "signup_form": {
+      "name_required": "Name is required.",
+      "name_invalid": "Name contains invalid characters.",
+      "signup_fail": "Signup failed.",
+      "verify_email_title": "Please Check Your Email",
+      "verify_email_sent_1": "We have sent a verification email to {{email}}.",
+      "verify_email_sent_2": "Please click the link in the email to activate your account.",
+      "to_login": "Go to login page",
+      "name_label": "Name",
+      "email_label": "Email",
+      "password_label": "Password",
+      "pwd_rule_length": "At least 8 characters",
+      "pwd_rule_uppercase": "Contains uppercase",
+      "pwd_rule_number": "Contains number",
+      "signing_up": "Signing up...",
+      "title": "Create your account",
+      "name_placeholder": "Full Name",
+      "submit": "Sign up with Email",
+      "already_have_account": "Already have an account?",
+      "login": "Login"
+    },
+    "social": {
+      "google": "Continue with Google",
+      "github": "Continue with GitHub"
     }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "placeholder": "Dashboard content will appear here."
+  },
+  "apiKey": {
+    "title": "API 密钥",
+    "description": "管理用于以编程方式访问组织的 API 密钥",
+    "create": {
+      "title": "创建 API 密钥",
+      "label": "标签",
+      "label_placeholder": "例如：生产环境 SDK",
+      "environment_id": "环境 ID",
+      "environment_id_placeholder": "输入环境 ID",
+      "permission": "权限",
+      "expires_at": "过期时间",
+      "expires_at_placeholder": "可选的过期日期",
+      "add_permission": "添加环境权限",
+      "remove_permission": "移除",
+      "submit": "创建 API 密钥",
+      "creating": "创建中...",
+      "success": "API 密钥创建成功",
+      "fail": "创建 API 密钥失败"
+    },
+    "secret": {
+      "title": "API 密钥已创建",
+      "description": "请立即复制您的 API 密钥。您将无法再次查看。",
+      "warning": "此密钥不会再次显示。请安全保存。",
+      "copy": "复制到剪贴板",
+      "copied": "已复制！",
+      "close": "我已保存密钥"
+    },
+    "list": {
+      "empty": "暂无 API 密钥",
+      "last_used": "最近使用",
+      "never_used": "从未使用",
+      "expires": "过期时间",
+      "no_expiry": "无过期时间",
+      "created": "创建时间",
+      "environments": "环境",
+      "delete": "删除"
+    },
+    "delete": {
+      "title": "删除 API 密钥",
+      "description": "确定要删除此 API 密钥吗？此操作无法撤销。",
+      "warning": "使用此密钥的所有应用程序将立即失去访问权限。",
+      "submit": "删除 API 密钥",
+      "deleting": "删除中...",
+      "cancel": "取消",
+      "success": "API 密钥已删除",
+      "fail": "删除 API 密钥失败"
+    },
+    "permission": {
+      "READ": "读取",
+      "WRITE": "写入",
+      "MANAGE": "管理"
+    },
+    "errors": {
+      "load_fail": "加载 API 密钥失败",
+      "not_found": "未找到 API 密钥"
+    }
+  }
 }

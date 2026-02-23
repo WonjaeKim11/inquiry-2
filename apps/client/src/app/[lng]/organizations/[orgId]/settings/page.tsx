@@ -104,6 +104,14 @@ export default function OrganizationSettingsPage({
           </Button>
           <Button
             variant="outline"
+            onClick={() =>
+              router.push(`/${lng}/organizations/${orgId}/api-keys`)
+            }
+          >
+            {t('apiKey.title')}
+          </Button>
+          <Button
+            variant="outline"
             onClick={() => router.push(`/${lng}/organizations`)}
           >
             {t('organization.list.title')}
