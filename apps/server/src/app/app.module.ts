@@ -16,6 +16,7 @@ import { RbacModule } from '@inquiry/server-rbac';
 import { InviteModule } from '@inquiry/server-invite';
 import { MemberModule } from '@inquiry/server-member';
 import { ProjectModule } from '@inquiry/server-project';
+import { ApiKeyModule } from '@inquiry/server-api-key';
 import { HealthModule } from './health/health.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -45,6 +46,7 @@ import { AppService } from './app.service';
     InviteModule,
     MemberModule,
     ProjectModule,
+    ApiKeyModule,
     HealthModule,
   ],
   controllers: [AppController],

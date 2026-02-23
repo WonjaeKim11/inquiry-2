@@ -79,6 +79,9 @@
       "path": "./libs/server/project"
     },
     {
+      "path": "./libs/server/api-key"
+    },
+    {
       "path": "./libs/client/project"
     },
     {

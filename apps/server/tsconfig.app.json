@@ -18,6 +18,9 @@
   "exclude": [],
   "references": [
     {
+      "path": "../../libs/server/api-key/tsconfig.lib.json"
+    },
+    {
       "path": "../../libs/server/project/tsconfig.lib.json"
     },
     {
