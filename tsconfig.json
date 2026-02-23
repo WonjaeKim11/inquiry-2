@@ -59,6 +59,18 @@
     },
     {
       "path": "./libs/server/organization"
+    },
+    {
+      "path": "./libs/client/organization"
+    },
+    {
+      "path": "./libs/server/invite"
+    },
+    {
+      "path": "./libs/server/member"
+    },
+    {
+      "path": "./libs/server/rbac"
     }
   ]
 }

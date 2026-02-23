@@ -1,5 +1,6 @@
 import '../global.css';
 import { AuthProvider } from '@inquiry/client-core';
+import { OrganizationProvider } from '@inquiry/client-organization';
 import { dir } from 'i18next';
 import { languages } from '../i18n/settings';
 import { I18nProvider } from './i18n-provider';
@@ -26,7 +27,9 @@ export default async function RootLayout(props: Props) {
     <html lang={lng} dir={dir(lng)}>
       <body>
         <I18nProvider lng={lng}>
-          <AuthProvider>{children}</AuthProvider>
+          <AuthProvider>
+            <OrganizationProvider>{children}</OrganizationProvider>
+          </AuthProvider>
         </I18nProvider>
       </body>
     </html>

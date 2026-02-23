@@ -109,5 +109,84 @@
   "dashboard": {
     "title": "Dashboard",
     "placeholder": "Dashboard content will appear here."
+  },
+  "organization": {
+    "create": {
+      "title": "Create New Organization",
+      "name_label": "Organization Name",
+      "name_placeholder": "Enter organization name",
+      "name_required": "Organization name is required.",
+      "submit": "Create Organization",
+      "creating": "Creating...",
+      "success": "Organization created successfully.",
+      "fail": "Failed to create organization."
+    },
+    "list": {
+      "title": "My Organizations",
+      "empty": "You are not a member of any organization.",
+      "create_new": "Create New Organization"
+    },
+    "switcher": {
+      "label": "Switch Organization",
+      "current": "Current Organization",
+      "create_new": "Create New Organization"
+    },
+    "settings": {
+      "title": "Organization Settings",
+      "general": "General",
+      "name_label": "Organization Name",
+      "ai_enabled": "AI Features",
+      "ai_enabled_description": "Enable AI-powered features for this organization.",
+      "save": "Save",
+      "saving": "Saving...",
+      "save_success": "Settings saved successfully.",
+      "save_fail": "Failed to save settings."
+    },
+    "billing": {
+      "title": "Billing",
+      "current_plan": "Current Plan",
+      "plan_free": "Free",
+      "plan_startup": "Startup",
+      "plan_custom": "Custom",
+      "period": "Billing Period",
+      "period_monthly": "Monthly",
+      "period_yearly": "Yearly",
+      "limits": "Usage Limits",
+      "projects_limit": "Projects",
+      "responses_limit": "Monthly Responses",
+      "miu_limit": "Monthly Identified Users",
+      "unlimited": "Unlimited",
+      "usage": "Usage",
+      "of": "of",
+      "monthly_responses": "Monthly Responses",
+      "current_usage": "Current Usage"
+    },
+    "whitelabel": {
+      "title": "Branding",
+      "logo_url": "Logo URL",
+      "logo_url_placeholder": "https://example.com/logo.png",
+      "favicon_url": "Favicon URL",
+      "favicon_url_placeholder": "https://example.com/favicon.ico",
+      "preview": "Preview",
+      "no_preview": "No image URL provided"
+    },
+    "delete": {
+      "title": "Delete Organization",
+      "warning": "This action cannot be undone.",
+      "cascade_warning": "All projects, members, and invitations in this organization will be permanently deleted.",
+      "confirm_label": "Type the organization name to confirm",
+      "confirm_placeholder": "Organization name",
+      "confirm_button": "Delete Organization",
+      "deleting": "Deleting...",
+      "success": "Organization deleted successfully.",
+      "fail": "Failed to delete organization.",
+      "cancel": "Cancel"
+    },
+    "errors": {
+      "not_found": "Organization not found.",
+      "forbidden": "You do not have permission to perform this action.",
+      "name_too_short": "Organization name must be at least 1 character.",
+      "load_fail": "Failed to load organizations."
+    }
   }
 }
