@@ -605,19 +605,42 @@ export class ServerAuthService implements OnModuleInit {
     );
   }
 
-  /** 초대 토큰 처리: Membership 생성 + Invite 삭제 */
+  /**
+   * 초대 토큰 처리: JWT 검증 후 Membership + TeamUser 생성 + Invite 삭제.
+   * JWT_INVITE_SECRET으로 서명된 토큰을 검증하고, purpose 클레임을 확인한다.
+   * 호환성: 기존 랜덤 문자열 토큰도 token 필드로 fallback 조회한다.
+   */
   private async processInviteToken(
     inviteToken: string,
     userId: string,
     userEmail: string
   ): Promise<void> {
     try {
-      const invite = await this.prisma.invite.findUnique({
-        where: { token: inviteToken },
-      });
+      // JWT 검증 시도
+      let inviteId: string | null = null;
+      try {
+        const secret = this.configService.get<string>(
+          'JWT_INVITE_SECRET',
+          this.configService.getOrThrow<string>('JWT_ACCESS_SECRET')
+        );
+        const payload = this.jwtService.verify(inviteToken, { secret });
+        if (payload.purpose === 'invite' && payload.sub) {
+          inviteId = payload.sub;
+        }
+      } catch {
+        // JWT 검증 실패: 기존 토큰 형식으로 fallback
+        this.logger.debug('초대 토큰 JWT 검증 실패, token 필드로 조회 시도');
+      }
+
+      // Invite 조회: JWT에서 ID를 추출했으면 ID로, 아니면 token 필드로 조회
+      const invite = inviteId
+        ? await this.prisma.invite.findUnique({ where: { id: inviteId } })
+        : await this.prisma.invite.findUnique({
+            where: { token: inviteToken },
+          });
 
       if (!invite || invite.expiresAt < new Date()) {
-        this.logger.warn(`유효하지 않은 초대 토큰: ${inviteToken}`);
+        this.logger.warn('유효하지 않거나 만료된 초대 토큰');
         return;
       }
 
@@ -626,16 +649,39 @@ export class ServerAuthService implements OnModuleInit {
         return;
       }
 
-      await this.prisma.$transaction([
+      // 트랜잭션: Membership 생성 + TeamUser 생성(있는 경우) + Invite 삭제
+      const transactionOps = [];
+
+      transactionOps.push(
         this.prisma.membership.create({
           data: {
             userId,
             organizationId: invite.organizationId,
             role: invite.role,
           },
-        }),
-        this.prisma.invite.delete({ where: { id: invite.id } }),
-      ]);
+        })
+      );
+
+      // 초대에 teamIds가 있으면 TeamUser도 생성
+      if (invite.teamIds && invite.teamIds.length > 0) {
+        for (const teamId of invite.teamIds) {
+          transactionOps.push(
+            this.prisma.teamUser.create({
+              data: {
+                teamId,
+                userId,
+                role: 'CONTRIBUTOR',
+              },
+            })
+          );
+        }
+      }
+
+      transactionOps.push(
+        this.prisma.invite.delete({ where: { id: invite.id } })
+      );
+
+      await this.prisma.$transaction(transactionOps);
     } catch (error) {
       this.logger.error('초대 토큰 처리 실패', error);
     }

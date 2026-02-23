@@ -37,3 +37,19 @@ export function PasswordResetRateLimit() {
     SetMetadata('throttler:name', 'password-reset')
   );
 }
+
+/** 초대 생성: 시간당 50회 */
+export function InviteCreateRateLimit() {
+  return applyDecorators(
+    Throttle({ default: { ttl: 3600000, limit: 50 } }),
+    SetMetadata('throttler:name', 'invite-create')
+  );
+}
+
+/** 초대 수락: 15분당 10회 */
+export function InviteAcceptRateLimit() {
+  return applyDecorators(
+    Throttle({ default: { ttl: 900000, limit: 10 } }),
+    SetMetadata('throttler:name', 'invite-accept')
+  );
+}

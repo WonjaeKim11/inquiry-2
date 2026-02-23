@@ -1,0 +1,26 @@
+{
+  "extends": "../../../tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true
+  },
+  "references": [
+    {
+      "path": "../core"
+    },
+    {
+      "path": "../../../packages/db"
+    },
+    {
+      "path": "../audit-log"
+    },
+    {
+      "path": "../prisma"
+    },
+    {
+      "path": "../rbac"
+    },
+    {
+      "path": "./tsconfig.lib.json"
+    }
+  ]
+}

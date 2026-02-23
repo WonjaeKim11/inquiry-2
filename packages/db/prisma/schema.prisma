@@ -23,6 +23,19 @@ enum MembershipRole {
   BILLING
 }
 
+/// 팀 내 사용자 역할
+enum TeamUserRole {
+  CONTRIBUTOR
+  ADMIN
+}
+
+/// 프로젝트-팀 권한 (Project 모델은 FSD-006에서 추가)
+enum ProjectTeamPermission {
+  READ
+  READ_WRITE
+  MANAGE
+}
+
 /// 사용자 계정 정보. OAuth 전용 사용자는 password가 null
 model User {
   id                        String           @id @default(cuid())
@@ -46,6 +59,9 @@ model User {
   refreshTokens RefreshToken[]
   memberships   Membership[]
   auditLogs     AuditLog[]
+  teamUsers     TeamUser[]
+  invitesCreated Invite[]  @relation("InviteCreator")
+  invitesAccepted Invite[] @relation("InviteAcceptor")
 
   @@map("users")
 }
@@ -100,6 +116,7 @@ model Organization {
 
   memberships Membership[]
   invites     Invite[]
+  teams       Team[]
 
   @@map("organizations")
 }
@@ -120,20 +137,57 @@ model Membership {
   @@map("memberships")
 }
 
-/// 조직 초대
+/// 조직 초대 (UUID ID, JWT 기반 토큰, 팀 할당 지원)
 model Invite {
-  id             String         @id @default(cuid())
+  id             String         @id @default(uuid())
   email          String
+  name           String?
   organizationId String
+  creatorId      String
+  acceptorId     String?
   role           MembershipRole @default(MEMBER)
   token          String         @unique
+  teamIds        String[]       @default([])
   expiresAt      DateTime
   createdAt      DateTime       @default(now())
 
   organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  creator      User         @relation("InviteCreator", fields: [creatorId], references: [id], onDelete: Cascade)
+  acceptor     User?        @relation("InviteAcceptor", fields: [acceptorId], references: [id])
 
-  @@index([email])
+  @@index([email, organizationId])
+  @@index([organizationId])
   @@map("invites")
+}
+
+/// 팀 (조직 내 그룹)
+model Team {
+  id             String   @id @default(cuid())
+  name           String
+  organizationId String
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  teamUsers    TeamUser[]
+
+  @@unique([organizationId, name])
+  @@map("teams")
+}
+
+/// 팀 사용자 (팀-사용자 연결, 복합 PK)
+model TeamUser {
+  teamId    String
+  userId    String
+  role      TeamUserRole @default(CONTRIBUTOR)
+  createdAt DateTime     @default(now())
+
+  team Team @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([teamId, userId])
+  @@index([userId])
+  @@map("team_users")
 }
 
 /// API 키 (외부 연동용)

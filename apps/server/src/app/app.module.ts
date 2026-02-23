@@ -11,6 +11,9 @@ import { EmailModule } from '@inquiry/server-email';
 import { AuditLogModule } from '@inquiry/server-audit-log';
 import { UserModule } from '@inquiry/server-user';
 import { OrganizationModule } from '@inquiry/server-organization';
+import { RbacModule } from '@inquiry/server-rbac';
+import { InviteModule } from '@inquiry/server-invite';
+import { MemberModule } from '@inquiry/server-member';
 import { HealthModule } from './health/health.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -19,7 +22,7 @@ import { AppService } from './app.service';
  * 루트 애플리케이션 모듈.
  * libs에서 제공하는 모듈들을 import하여 조합한다.
  * @Global() 모듈: ServerPrismaModule, RedisModule, LoggerModule, SentryModule,
- *   LicenseModule, EmailModule, AuditLogModule
+ *   LicenseModule, EmailModule, AuditLogModule, RbacModule
  */
 @Module({
   imports: [
@@ -35,6 +38,9 @@ import { AppService } from './app.service';
     ServerAuthModule,
     UserModule,
     OrganizationModule,
+    RbacModule,
+    InviteModule,
+    MemberModule,
     HealthModule,
   ],
   controllers: [AppController],

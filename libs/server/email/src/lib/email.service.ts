@@ -120,6 +120,70 @@ export class EmailService implements OnModuleInit {
     });
   }
 
+  /**
+   * 초대 이메일 발송.
+   * JWT 초대 토큰이 포함된 수락 링크를 제공한다.
+   *
+   * @param to - 초대 대상 이메일
+   * @param name - 초대 대상자 이름 (없으면 이메일 사용)
+   * @param token - JWT 초대 토큰
+   * @param organizationName - 초대하는 조직 이름
+   */
+  async sendInviteEmail(
+    to: string,
+    name: string | undefined,
+    token: string,
+    organizationName: string
+  ): Promise<void> {
+    const clientUrl = this.configService.get<string>(
+      'CLIENT_URL',
+      'http://localhost:4200'
+    );
+    const acceptUrl = `${clientUrl}/invite/accept?token=${encodeURIComponent(
+      token
+    )}`;
+    const displayName = name || to;
+
+    await this.send({
+      to,
+      subject: `${organizationName}에 초대되었습니다`,
+      html: `
+        <h2>안녕하세요, ${displayName}님!</h2>
+        <p><strong>${organizationName}</strong> 조직에 멤버로 초대되었습니다.</p>
+        <p>아래 버튼을 클릭하여 초대를 수락해주세요:</p>
+        <p><a href="${acceptUrl}" style="padding: 12px 24px; background: #0070f3; color: white; text-decoration: none; border-radius: 4px;">초대 수락하기</a></p>
+        <p>이 초대 링크는 7일 후 만료됩니다.</p>
+        <p>본인이 요청하지 않았다면 이 메일을 무시해주세요.</p>
+      `,
+    });
+  }
+
+  /**
+   * 초대 수락 알림 이메일 발송.
+   * 초대 생성자에게 대상자가 초대를 수락했음을 알린다.
+   *
+   * @param to - 초대 생성자 이메일
+   * @param creatorName - 초대 생성자 이름
+   * @param acceptorEmail - 수락한 사용자 이메일
+   * @param organizationName - 조직 이름
+   */
+  async sendInviteAcceptedNotification(
+    to: string,
+    creatorName: string,
+    acceptorEmail: string,
+    organizationName: string
+  ): Promise<void> {
+    await this.send({
+      to,
+      subject: `${acceptorEmail}님이 초대를 수락했습니다`,
+      html: `
+        <h2>안녕하세요, ${creatorName}님!</h2>
+        <p><strong>${acceptorEmail}</strong>님이 <strong>${organizationName}</strong> 조직 초대를 수락했습니다.</p>
+        <p>이제 해당 사용자가 조직의 멤버로 활동할 수 있습니다.</p>
+      `,
+    });
+  }
+
   /** 공통 이메일 발송 메서드. SMTP 미설정 시 로그만 남기고 반환 */
   private async send(options: {
     to: string;
