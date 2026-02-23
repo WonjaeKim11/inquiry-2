@@ -1,0 +1,52 @@
+/**
+ * 질문 유형별 허용 검증 규칙 매핑.
+ * 각 엔티티 타입에 대해 적용 가능한 ValidationRuleType 배열을 정의한다.
+ */
+export const VALIDATION_RULE_MAP: Record<string, string[]> = {
+  openText: [
+    'minLength',
+    'maxLength',
+    'pattern',
+    'email',
+    'url',
+    'phone',
+    'equals',
+    'doesNotEqual',
+    'contains',
+    'doesNotContain',
+    'minValue',
+    'maxValue',
+    'isGreaterThan',
+    'isLessThan',
+  ],
+  multipleChoiceMulti: ['minSelections', 'maxSelections'],
+  pictureSelection: ['minSelections', 'maxSelections'],
+  date: ['isLaterThan', 'isEarlierThan', 'isBetween', 'isNotBetween'],
+  fileUpload: ['fileExtensionIs', 'fileExtensionIsNot'],
+  matrix: ['minRowsAnswered', 'answerAllRows'],
+  ranking: ['minRanked', 'rankAll'],
+  address: [
+    'minLength',
+    'maxLength',
+    'pattern',
+    'email',
+    'url',
+    'phone',
+    'equals',
+    'doesNotEqual',
+    'contains',
+    'doesNotContain',
+  ],
+  contactInfo: [
+    'minLength',
+    'maxLength',
+    'pattern',
+    'email',
+    'url',
+    'phone',
+    'equals',
+    'doesNotEqual',
+    'contains',
+    'doesNotContain',
+  ],
+};
