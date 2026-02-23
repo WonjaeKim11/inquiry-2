@@ -12,6 +12,7 @@ import {
 import { ConfigService } from '@nestjs/config';
 import { Request, Response } from 'express';
 import { ServerAuthService } from './server-auth.service';
+import { TwoFactorService } from './two-factor.service';
 import { SignupDto } from './dto/signup.dto';
 import { VerifyEmailDto } from './dto/verify-email.dto';
 import { ForgotPasswordDto } from './dto/forgot-password.dto';
@@ -28,6 +29,7 @@ import {
   EmailVerifyRateLimit,
   PasswordResetRateLimit,
 } from '@inquiry/server-rate-limit';
+import { LicenseService } from '@inquiry/server-license';
 
 /** Refresh token 쿠키 설정을 위한 상수 */
 const REFRESH_TOKEN_COOKIE = 'refresh_token';
@@ -48,7 +50,9 @@ function getIpAddress(req: Request): string {
 export class ServerAuthController {
   constructor(
     private readonly authService: ServerAuthService,
-    private readonly configService: ConfigService
+    private readonly configService: ConfigService,
+    private readonly twoFactorService: TwoFactorService,
+    private readonly licenseService: LicenseService
   ) {}
 
   /**
@@ -182,6 +186,61 @@ export class ServerAuthController {
   @Get('me')
   getMe(@CurrentUser() user: Record<string, unknown>) {
     return user;
+  }
+
+  /**
+   * POST /api/auth/2fa/enable - 2FA 활성화.
+   * JWT 인증 필수. 라이선스 feature 'twoFactorAuth' 확인.
+   * TOTP Secret과 QR 코드 URI, Backup Codes를 반환한다.
+   */
+  @UseGuards(JwtAuthGuard)
+  @Post('2fa/enable')
+  @HttpCode(HttpStatus.OK)
+  async enableTwoFactor(@CurrentUser('sub') userId: string) {
+    // Feature Flag 확인: twoFactorAuth 기능이 라이선스에 포함되어 있는지 검증
+    const hasFeature = await this.licenseService.hasFeature('twoFactorAuth');
+    if (!hasFeature) {
+      return {
+        success: false,
+        message: '2단계 인증 기능은 현재 플랜에서 사용할 수 없습니다.',
+      };
+    }
+
+    const result = await this.twoFactorService.enableTwoFactor(userId);
+    return {
+      success: true,
+      message: '2단계 인증이 활성화되었습니다.',
+      data: result,
+    };
+  }
+
+  /**
+   * POST /api/auth/2fa/disable - 2FA 비활성화.
+   * JWT 인증 필수.
+   */
+  @UseGuards(JwtAuthGuard)
+  @Post('2fa/disable')
+  @HttpCode(HttpStatus.OK)
+  async disableTwoFactor(@CurrentUser('sub') userId: string) {
+    await this.twoFactorService.disableTwoFactor(userId);
+    return {
+      success: true,
+      message: '2단계 인증이 비활성화되었습니다.',
+    };
+  }
+
+  /**
+   * GET /api/auth/2fa/status - 2FA 상태 조회.
+   * JWT 인증 필수.
+   */
+  @UseGuards(JwtAuthGuard)
+  @Get('2fa/status')
+  async getTwoFactorStatus(@CurrentUser('sub') userId: string) {
+    const status = await this.twoFactorService.getTwoFactorStatus(userId);
+    return {
+      success: true,
+      data: status,
+    };
   }
 
   /** Refresh token을 HTTP-only 쿠키에 설정 */

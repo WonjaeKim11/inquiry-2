@@ -5,6 +5,7 @@ import { RedisModule } from '@inquiry/server-redis';
 import { LoggerModule } from '@inquiry/server-logger';
 import { SentryModule } from '@inquiry/server-sentry';
 import { LicenseModule } from '@inquiry/server-license';
+import { CryptoModule } from '@inquiry/server-crypto';
 import { ServerAuthModule } from '@inquiry/server-auth';
 import { RateLimitModule } from '@inquiry/server-rate-limit';
 import { EmailModule } from '@inquiry/server-email';
@@ -23,7 +24,7 @@ import { AppService } from './app.service';
  * 루트 애플리케이션 모듈.
  * libs에서 제공하는 모듈들을 import하여 조합한다.
  * @Global() 모듈: ServerPrismaModule, RedisModule, LoggerModule, SentryModule,
- *   LicenseModule, EmailModule, AuditLogModule, RbacModule
+ *   LicenseModule, CryptoModule, EmailModule, AuditLogModule, RbacModule
  */
 @Module({
   imports: [
@@ -33,6 +34,7 @@ import { AppService } from './app.service';
     LoggerModule,
     SentryModule,
     LicenseModule,
+    CryptoModule,
     RateLimitModule,
     EmailModule,
     AuditLogModule,

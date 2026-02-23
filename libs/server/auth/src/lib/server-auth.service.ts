@@ -14,6 +14,7 @@ import { EmailService } from '@inquiry/server-email';
 import { AuditLogService } from '@inquiry/server-audit-log';
 import { TurnstileService } from './services/turnstile.service';
 import { BrevoService } from './services/brevo.service';
+import { TwoFactorService } from './two-factor.service';
 import { SignupDto } from './dto/signup.dto';
 
 /** OAuth 사용자 검증에 필요한 프로바이더 정보 */
@@ -62,7 +63,8 @@ export class ServerAuthService implements OnModuleInit {
     private readonly emailService: EmailService,
     private readonly auditLogService: AuditLogService,
     private readonly turnstileService: TurnstileService,
-    private readonly brevoService: BrevoService
+    private readonly brevoService: BrevoService,
+    private readonly twoFactorService: TwoFactorService
   ) {}
 
   /** 모듈 초기화 시 Timing Attack 방지용 CONTROL_HASH 생성 */
@@ -168,10 +170,17 @@ export class ServerAuthService implements OnModuleInit {
   /**
    * 이메일+비밀번호 검증 (보안 강화 버전).
    * Timing Attack 방지, User Enumeration 방지, 이메일 검증/계정 활성 확인.
+   * 2FA가 활성화된 경우 totpCode 또는 backupCode 검증을 추가 수행한다.
+   * @param email - 로그인 이메일
+   * @param password - 비밀번호
+   * @param totpCode - 2FA TOTP 코드 (선택)
+   * @param backupCode - 2FA Backup Code (선택)
    */
   async validateUser(
     email: string,
-    password: string
+    password: string,
+    totpCode?: string,
+    backupCode?: string
   ): Promise<ValidateUserResult> {
     // bcrypt DoS 방지: 128자 초과 시 즉시 거부
     if (password.length > 128) {
@@ -233,6 +242,76 @@ export class ServerAuthService implements OnModuleInit {
         errorCode: 'email-verification-required',
         message: '이메일 인증이 필요합니다. 메일함을 확인해주세요.',
       };
+    }
+
+    // 2FA 검증: 사용자가 2FA를 활성화한 경우
+    if (user.twoFactorEnabled) {
+      // 2FA 코드가 제공되지 않으면 클라이언트에 2단계 인증을 요청
+      if (!totpCode && !backupCode) {
+        return {
+          success: false,
+          errorCode: 'second-factor-required',
+          message: '2단계 인증이 필요합니다.',
+        };
+      }
+
+      // TOTP 코드 검증
+      if (totpCode) {
+        if (!user.twoFactorSecret) {
+          return {
+            success: false,
+            errorCode: 'invalid-two-factor-code',
+            message: '2단계 인증 설정이 올바르지 않습니다.',
+          };
+        }
+
+        const isValidTotp = this.twoFactorService.verifyTotpCode(
+          user.twoFactorSecret,
+          totpCode
+        );
+        if (!isValidTotp) {
+          return {
+            success: false,
+            errorCode: 'invalid-two-factor-code',
+            message: '2단계 인증 코드가 올바르지 않습니다.',
+          };
+        }
+      }
+
+      // Backup Code 검증
+      if (backupCode && !totpCode) {
+        if (!user.backupCodes) {
+          return {
+            success: false,
+            errorCode: 'invalid-two-factor-code',
+            message: '사용 가능한 백업 코드가 없습니다.',
+          };
+        }
+
+        const backupResult = this.twoFactorService.verifyBackupCode(
+          user.backupCodes,
+          backupCode
+        );
+        if (!backupResult.valid) {
+          return {
+            success: false,
+            errorCode: 'invalid-two-factor-code',
+            message: '백업 코드가 올바르지 않습니다.',
+          };
+        }
+
+        // Backup Code 소진 처리 (fire-and-forget)
+        if (backupResult.updatedEncryptedCodes !== null) {
+          this.prisma.user
+            .update({
+              where: { id: user.id },
+              data: { backupCodes: backupResult.updatedEncryptedCodes },
+            })
+            .catch((err) => {
+              this.logger.error('Backup Code 업데이트 실패', err);
+            });
+        }
+      }
     }
 
     // lastLoginAt 업데이트 (fire-and-forget)

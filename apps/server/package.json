@@ -82,6 +82,7 @@
     "@inquiry/server-prisma": "workspace:*",
     "@inquiry/server-redis": "workspace:*",
     "@inquiry/server-core": "workspace:*",
+    "@inquiry/server-crypto": "workspace:*",
     "@inquiry/server-logger": "workspace:*",
     "@inquiry/server-sentry": "workspace:*",
     "@inquiry/server-license": "workspace:*",

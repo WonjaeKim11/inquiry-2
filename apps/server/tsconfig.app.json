@@ -18,22 +18,22 @@
   "exclude": [],
   "references": [
     {
-      "path": "../../libs/server/user/tsconfig.lib.json"
-    },
-    {
-      "path": "../../libs/server/organization/tsconfig.lib.json"
-    },
-    {
-      "path": "../../libs/server/rbac/tsconfig.lib.json"
-    },
-    {
-      "path": "../../libs/server/invite/tsconfig.lib.json"
+      "path": "../../libs/server/project/tsconfig.lib.json"
     },
     {
       "path": "../../libs/server/member/tsconfig.lib.json"
     },
     {
-      "path": "../../libs/server/project/tsconfig.lib.json"
+      "path": "../../libs/server/invite/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/server/rbac/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/server/organization/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/server/user/tsconfig.lib.json"
     },
     {
       "path": "../../libs/server/audit-log/tsconfig.lib.json"
@@ -55,6 +55,9 @@
     },
     {
       "path": "../../libs/server/logger/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/server/crypto/tsconfig.lib.json"
     },
     {
       "path": "../../libs/server/core/tsconfig.lib.json"

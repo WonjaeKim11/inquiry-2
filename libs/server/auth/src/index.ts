@@ -1,6 +1,8 @@
 export * from './lib/server-auth.module';
 export * from './lib/server-auth.service';
 export * from './lib/server-auth.controller';
+export * from './lib/two-factor.service';
+export * from './lib/sso-callback.service';
 export * from './lib/guards/jwt-auth.guard';
 export * from './lib/guards/local-auth.guard';
 export * from './lib/guards/google-auth.guard';
@@ -11,3 +13,5 @@ export * from './lib/decorators/current-user.decorator';
 export * from './lib/decorators/roles.decorator';
 export * from './lib/services/api-key.service';
 export * from './lib/dto/create-api-key.dto';
+export * from './lib/strategies/azure-ad.strategy';
+export * from './lib/strategies/openid.strategy';

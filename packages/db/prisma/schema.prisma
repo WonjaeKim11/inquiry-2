@@ -13,6 +13,9 @@ enum IdentityProvider {
   EMAIL
   GOOGLE
   GITHUB
+  AZUREAD
+  OPENID
+  SAML
 }
 
 /// 조직 내 멤버 역할

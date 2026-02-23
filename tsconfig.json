@@ -77,6 +77,12 @@
     },
     {
       "path": "./libs/server/project"
+    },
+    {
+      "path": "./libs/client/project"
+    },
+    {
+      "path": "./libs/server/crypto"
     }
   ]
 }

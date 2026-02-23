@@ -17,27 +17,5 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": ["src/**/*.ts"],
-  "references": [
-    {
-      "path": "../../../packages/db/tsconfig.lib.json"
-    },
-    {
-      "path": "../rate-limit/tsconfig.lib.json"
-    },
-    {
-      "path": "../audit-log/tsconfig.lib.json"
-    },
-    {
-      "path": "../email/tsconfig.lib.json"
-    },
-    {
-      "path": "../prisma/tsconfig.lib.json"
-    },
-    {
-      "path": "../crypto/tsconfig.lib.json"
-    },
-    {
-      "path": "../license/tsconfig.lib.json"
-    }
-  ]
+  "references": []
 }
