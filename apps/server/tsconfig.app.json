@@ -30,6 +30,9 @@
       "path": "../../libs/server/project/tsconfig.lib.json"
     },
     {
+      "path": "../../libs/server/survey/tsconfig.lib.json"
+    },
+    {
       "path": "../../libs/server/member/tsconfig.lib.json"
     },
     {

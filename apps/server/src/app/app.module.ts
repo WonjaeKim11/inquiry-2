@@ -17,6 +17,7 @@ import { RbacModule } from '@inquiry/server-rbac';
 import { InviteModule } from '@inquiry/server-invite';
 import { MemberModule } from '@inquiry/server-member';
 import { ProjectModule } from '@inquiry/server-project';
+import { SurveyModule } from '@inquiry/server-survey';
 import { ApiKeyModule } from '@inquiry/server-api-key';
 import { ClientApiModule } from '@inquiry/server-client-api';
 import { ManagementApiModule } from '@inquiry/server-management-api';
@@ -55,6 +56,7 @@ import { AppService } from './app.service';
     InviteModule,
     MemberModule,
     ProjectModule,
+    SurveyModule,
     ApiKeyModule,
     ClientApiModule,
     ManagementApiModule,
