@@ -97,6 +97,7 @@
     "@inquiry/server-member": "workspace:*",
     "@inquiry/server-project": "workspace:*",
     "@inquiry/server-survey": "workspace:*",
+    "@inquiry/server-quota": "workspace:*",
     "@inquiry/server-api-key": "workspace:*",
     "@inquiry/server-client-api": "workspace:*",
     "@inquiry/server-management-api": "workspace:*",

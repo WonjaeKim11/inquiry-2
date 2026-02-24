@@ -4,22 +4,28 @@ import {
   surveyBuilder,
   validateSurveyLogic,
   validateSurveyVariablesAndFields,
+  validateQuotas,
 } from '@inquiry/survey-builder-config';
 import type {
   WelcomeCard,
   HiddenFields,
   SurveyVariable,
   LogicItem,
+  QuotaDefinition,
+  SurveyEnding,
 } from '@inquiry/survey-builder-config';
+import { ServerPrismaService } from '@inquiry/server-prisma';
 import { HIDDEN_FIELD_FORBIDDEN_IDS } from '../constants/hidden-field-forbidden-ids.js';
 
 /**
  * 설문 발행 전 검증 서비스.
- * Builder 스키마 구조 + 비즈니스 규칙 + 조건부 로직 + 변수/히든 필드를 4단계로 검증한다.
+ * Builder 스키마 구조 + 비즈니스 규칙 + 조건부 로직 + 변수/히든 필드 + 쿼터를 5단계로 검증한다.
  */
 @Injectable()
 export class SurveyValidationService {
   private readonly logger = new Logger(SurveyValidationService.name);
+
+  constructor(private readonly prisma: ServerPrismaService) {}
 
   /**
    * 발행 전 전체 검증을 수행한다.
@@ -27,11 +33,13 @@ export class SurveyValidationService {
    * 2) 비즈니스 규칙 검증 (ending, welcomeCard, PIN, hiddenField, displayOption)
    * 3) 조건부 로직 검증 (블록 로직 구조 + 순환 검출)
    * 4) 변수/히든 필드 검증 (ID 유일성, 이름 패턴, 참조 무결성, recall fallback)
+   * 5) 쿼터 검증 (이름/limit/조건/endingCard 유효성)
    *
    * @param survey - Prisma에서 조회한 설문 객체
    * @throws BadRequestException - 검증 실패 시
    */
   async validateForPublish(survey: {
+    id: string;
     schema: unknown;
     endings: unknown;
     welcomeCard: unknown;
@@ -52,6 +60,9 @@ export class SurveyValidationService {
 
     // 4단계: 변수/히든 필드 검증
     this.validateVariablesAndHiddenFields(survey);
+
+    // 5단계: 쿼터 검증
+    await this.validateQuotas(survey);
   }
 
   /**
@@ -326,6 +337,51 @@ export class SurveyValidationService {
     }
 
     // 오류가 있으면 발행 차단
+    if (!result.valid) {
+      throw new BadRequestException(result.errors.join(' '));
+    }
+  }
+
+  /**
+   * 설문 쿼터를 검증한다 (5단계).
+   * DB에서 쿼터 목록을 조회하여 이름/limit/조건/endingCard를 검증한다.
+   * ServerPrismaService로 직접 조회하여 순환 의존을 방지한다.
+   *
+   * @param survey - 설문 데이터
+   */
+  private async validateQuotas(survey: {
+    id: string;
+    schema: unknown;
+    endings: unknown;
+  }): Promise<void> {
+    // DB에서 쿼터 목록 조회
+    const quotas = await this.prisma.quota.findMany({
+      where: { surveyId: survey.id },
+    });
+
+    // 쿼터가 없으면 검증 건너뛰기
+    if (quotas.length === 0) return;
+
+    // QuotaDefinition 형태로 변환
+    const quotaDefinitions: QuotaDefinition[] = quotas.map((q) => ({
+      id: q.id,
+      name: q.name,
+      limit: q.limit,
+      logic: (q.logic ?? {}) as QuotaDefinition['logic'],
+      action: q.action as QuotaDefinition['action'],
+      endingCardId: q.endingCardId,
+      countPartialSubmissions: q.countPartialSubmissions,
+    }));
+
+    // endings에서 ID 추출
+    const endings = Array.isArray(survey.endings)
+      ? (survey.endings as SurveyEnding[])
+      : [];
+    const endingCardIds = endings.map((e) => e.id);
+
+    // 통합 검증 수행
+    const result = validateQuotas(quotaDefinitions, endingCardIds);
+
     if (!result.valid) {
       throw new BadRequestException(result.errors.join(' '));
     }

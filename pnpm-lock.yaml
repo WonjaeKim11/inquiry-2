@@ -298,6 +298,9 @@ importers:
       '@inquiry/server-project':
         specifier: workspace:*
         version: link:../../libs/server/project
+      '@inquiry/server-quota':
+        specifier: workspace:*
+        version: link:../../libs/server/quota
       '@inquiry/server-rate-limit':
         specifier: workspace:*
         version: link:../../libs/server/rate-limit
