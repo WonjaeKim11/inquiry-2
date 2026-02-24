@@ -1,0 +1,103 @@
+/**
+ * ISO 639-1 언어 코드 항목 인터페이스.
+ * 각 항목은 ISO 639-1 코드, 영어 이름, 해당 언어의 원어 이름을 포함한다.
+ */
+export interface IsoLanguageCode {
+  /** ISO 639-1 언어 코드 (예: "ko", "en") */
+  code: string;
+  /** 영어 이름 (예: "Korean", "English") */
+  name: string;
+  /** 해당 언어의 원어 이름 (예: "한국어", "English") */
+  nativeName: string;
+}
+
+/**
+ * ISO 639-1 주요 언어 코드 목록.
+ * 전 세계 주요 언어 50개 이상을 포함하며, 알파벳순으로 정렬되어 있다.
+ */
+export const ISO_LANGUAGE_CODES: IsoLanguageCode[] = [
+  { code: 'af', name: 'Afrikaans', nativeName: 'Afrikaans' },
+  { code: 'am', name: 'Amharic', nativeName: 'አማርኛ' },
+  { code: 'ar', name: 'Arabic', nativeName: 'العربية' },
+  { code: 'az', name: 'Azerbaijani', nativeName: 'Azərbaycan dili' },
+  { code: 'be', name: 'Belarusian', nativeName: 'Беларуская' },
+  { code: 'bg', name: 'Bulgarian', nativeName: 'Български' },
+  { code: 'bn', name: 'Bengali', nativeName: 'বাংলা' },
+  { code: 'bs', name: 'Bosnian', nativeName: 'Bosanski' },
+  { code: 'ca', name: 'Catalan', nativeName: 'Català' },
+  { code: 'cs', name: 'Czech', nativeName: 'Čeština' },
+  { code: 'cy', name: 'Welsh', nativeName: 'Cymraeg' },
+  { code: 'da', name: 'Danish', nativeName: 'Dansk' },
+  { code: 'de', name: 'German', nativeName: 'Deutsch' },
+  { code: 'el', name: 'Greek', nativeName: 'Ελληνικά' },
+  { code: 'en', name: 'English', nativeName: 'English' },
+  { code: 'es', name: 'Spanish', nativeName: 'Español' },
+  { code: 'et', name: 'Estonian', nativeName: 'Eesti' },
+  { code: 'eu', name: 'Basque', nativeName: 'Euskara' },
+  { code: 'fa', name: 'Persian', nativeName: 'فارسی' },
+  { code: 'fi', name: 'Finnish', nativeName: 'Suomi' },
+  { code: 'fil', name: 'Filipino', nativeName: 'Filipino' },
+  { code: 'fr', name: 'French', nativeName: 'Français' },
+  { code: 'ga', name: 'Irish', nativeName: 'Gaeilge' },
+  { code: 'gl', name: 'Galician', nativeName: 'Galego' },
+  { code: 'gu', name: 'Gujarati', nativeName: 'ગુજરાતી' },
+  { code: 'ha', name: 'Hausa', nativeName: 'Hausa' },
+  { code: 'he', name: 'Hebrew', nativeName: 'עברית' },
+  { code: 'hi', name: 'Hindi', nativeName: 'हिन्दी' },
+  { code: 'hr', name: 'Croatian', nativeName: 'Hrvatski' },
+  { code: 'hu', name: 'Hungarian', nativeName: 'Magyar' },
+  { code: 'hy', name: 'Armenian', nativeName: 'Հայերեն' },
+  { code: 'id', name: 'Indonesian', nativeName: 'Bahasa Indonesia' },
+  { code: 'is', name: 'Icelandic', nativeName: 'Íslenska' },
+  { code: 'it', name: 'Italian', nativeName: 'Italiano' },
+  { code: 'ja', name: 'Japanese', nativeName: '日本語' },
+  { code: 'ka', name: 'Georgian', nativeName: 'ქართული' },
+  { code: 'kk', name: 'Kazakh', nativeName: 'Қазақ тілі' },
+  { code: 'km', name: 'Khmer', nativeName: 'ភាសាខ្មែរ' },
+  { code: 'kn', name: 'Kannada', nativeName: 'ಕನ್ನಡ' },
+  { code: 'ko', name: 'Korean', nativeName: '한국어' },
+  { code: 'ku', name: 'Kurdish', nativeName: 'Kurdî' },
+  { code: 'ky', name: 'Kyrgyz', nativeName: 'Кыргызча' },
+  { code: 'lo', name: 'Lao', nativeName: 'ລາວ' },
+  { code: 'lt', name: 'Lithuanian', nativeName: 'Lietuvių' },
+  { code: 'lv', name: 'Latvian', nativeName: 'Latviešu' },
+  { code: 'mk', name: 'Macedonian', nativeName: 'Македонски' },
+  { code: 'ml', name: 'Malayalam', nativeName: 'മലയാളം' },
+  { code: 'mn', name: 'Mongolian', nativeName: 'Монгол' },
+  { code: 'mr', name: 'Marathi', nativeName: 'मराठी' },
+  { code: 'ms', name: 'Malay', nativeName: 'Bahasa Melayu' },
+  { code: 'mt', name: 'Maltese', nativeName: 'Malti' },
+  { code: 'my', name: 'Burmese', nativeName: 'မြန်မာဘာသာ' },
+  { code: 'nb', name: 'Norwegian Bokmal', nativeName: 'Norsk Bokmål' },
+  { code: 'ne', name: 'Nepali', nativeName: 'नेपाली' },
+  { code: 'nl', name: 'Dutch', nativeName: 'Nederlands' },
+  { code: 'nn', name: 'Norwegian Nynorsk', nativeName: 'Norsk Nynorsk' },
+  { code: 'pa', name: 'Punjabi', nativeName: 'ਪੰਜਾਬੀ' },
+  { code: 'pl', name: 'Polish', nativeName: 'Polski' },
+  { code: 'ps', name: 'Pashto', nativeName: 'پښتو' },
+  { code: 'pt', name: 'Portuguese', nativeName: 'Português' },
+  { code: 'ro', name: 'Romanian', nativeName: 'Română' },
+  { code: 'ru', name: 'Russian', nativeName: 'Русский' },
+  { code: 'sd', name: 'Sindhi', nativeName: 'سنڌي' },
+  { code: 'si', name: 'Sinhala', nativeName: 'සිංහල' },
+  { code: 'sk', name: 'Slovak', nativeName: 'Slovenčina' },
+  { code: 'sl', name: 'Slovenian', nativeName: 'Slovenščina' },
+  { code: 'sq', name: 'Albanian', nativeName: 'Shqip' },
+  { code: 'sr', name: 'Serbian', nativeName: 'Српски' },
+  { code: 'sv', name: 'Swedish', nativeName: 'Svenska' },
+  { code: 'sw', name: 'Swahili', nativeName: 'Kiswahili' },
+  { code: 'ta', name: 'Tamil', nativeName: 'தமிழ்' },
+  { code: 'te', name: 'Telugu', nativeName: 'తెలుగు' },
+  { code: 'th', name: 'Thai', nativeName: 'ไทย' },
+  { code: 'tl', name: 'Tagalog', nativeName: 'Tagalog' },
+  { code: 'tr', name: 'Turkish', nativeName: 'Türkçe' },
+  { code: 'ug', name: 'Uyghur', nativeName: 'ئۇيغۇرچە' },
+  { code: 'uk', name: 'Ukrainian', nativeName: 'Українська' },
+  { code: 'ur', name: 'Urdu', nativeName: 'اردو' },
+  { code: 'uz', name: 'Uzbek', nativeName: 'Oʻzbekcha' },
+  { code: 'vi', name: 'Vietnamese', nativeName: 'Tiếng Việt' },
+  { code: 'yi', name: 'Yiddish', nativeName: 'ייִדיש' },
+  { code: 'yo', name: 'Yoruba', nativeName: 'Yorùbá' },
+  { code: 'zh', name: 'Chinese', nativeName: '中文' },
+  { code: 'zu', name: 'Zulu', nativeName: 'isiZulu' },
+];

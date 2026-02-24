@@ -298,3 +298,32 @@ export {
   validateQuotaConditions,
   validateQuotas,
 } from './lib/quota/index';
+
+// Multilingual 모듈
+export type {
+  TI18nString,
+  SurveyLanguage,
+  SurveyLanguageConfig,
+} from './lib/multilingual/index';
+export {
+  ti18nStringSchema,
+  surveyLanguageSchema,
+  surveyLanguageArraySchema,
+  surveyLanguageConfigSchema,
+  RTL_LANGUAGE_CODES,
+  RTL_LANGUAGE_FULL_CODES,
+  MAX_SURVEY_LANGUAGES,
+  ISO_LANGUAGE_CODES,
+  isRtlLanguage,
+  detectTextDirection,
+  normalizeToI18nString,
+  addLanguageKey,
+  stripTranslations,
+  getLocalizedText,
+  isI18nString,
+  validateTI18nString,
+  validateSurveyLanguages,
+  validateTranslationCompleteness,
+  stripHtmlAndCheckEmpty,
+} from './lib/multilingual/index';
+export type { IsoLanguageCode } from './lib/multilingual/index';
