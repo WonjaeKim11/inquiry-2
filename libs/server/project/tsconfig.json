@@ -5,19 +5,22 @@
   },
   "references": [
     {
-      "path": "../core"
+      "path": "../../../packages/survey-builder-config"
     },
     {
       "path": "../../../packages/db"
+    },
+    {
+      "path": "../license"
+    },
+    {
+      "path": "../core"
     },
     {
       "path": "../audit-log"
     },
     {
       "path": "../prisma"
-    },
-    {
-      "path": "../license"
     },
     {
       "path": "./tsconfig.lib.json"

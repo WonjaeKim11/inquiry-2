@@ -1,5 +1,9 @@
 import { z } from 'zod';
 import {
+  projectStylingSchema,
+  surveyLogoSchema,
+} from '@inquiry/survey-builder-config';
+import {
   PROJECT_NAME_MIN_LENGTH,
   PROJECT_NAME_MAX_LENGTH,
   PROJECT_MODES,
@@ -37,10 +41,10 @@ export const UpdateProjectSchema = z.object({
   clickOutsideClose: z.boolean().optional(),
   /** 다크 오버레이 설정 */
   darkOverlay: z.enum(DARK_OVERLAYS).optional(),
-  /** 스타일링 설정 (JSON) */
-  styling: z.record(z.unknown()).optional(),
-  /** 로고 설정 (JSON) */
-  logo: z.record(z.unknown()).nullable().optional(),
+  /** 스타일링 설정 — projectStylingSchema 기반 검증, passthrough로 레거시 필드 호환 */
+  styling: projectStylingSchema.passthrough().optional(),
+  /** 로고 설정 — surveyLogoSchema 기반 검증, passthrough로 레거시 필드 호환 */
+  logo: surveyLogoSchema.passthrough().nullable().optional(),
   /** 추가 설정 (JSON) */
   config: z.record(z.unknown()).nullable().optional(),
   /** 커스텀 헤드 스크립트 (Self-hosted 전용) */

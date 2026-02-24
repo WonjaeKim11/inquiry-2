@@ -5,6 +5,7 @@ import {
   HiddenFieldsSchema,
   SurveyVariableSchema,
   surveyLanguageArraySchema,
+  surveyStylingSchema,
 } from '@inquiry/survey-builder-config';
 
 /**
@@ -57,8 +58,8 @@ export const CreateSurveySchema = z.object({
   followUps: z.unknown().optional(),
   /** Triggers (JSON) */
   triggers: z.unknown().optional(),
-  /** 스타일 설정 (JSON) */
-  styling: z.record(z.unknown()).nullable().optional(),
+  /** 스타일 설정 — surveyStylingSchema 기반 검증, passthrough로 레거시 필드 호환 */
+  styling: surveyStylingSchema.passthrough().nullable().optional(),
   /** 프로젝트 설정 덮어쓰기 (JSON) */
   projectOverwrites: z.record(z.unknown()).nullable().optional(),
   /** 설문 메타데이터 (JSON) */

@@ -20,6 +20,7 @@
     "@inquiry/server-audit-log": "workspace:*",
     "@inquiry/server-core": "workspace:*",
     "@inquiry/server-license": "workspace:*",
+    "@inquiry/survey-builder-config": "workspace:*",
     "@inquiry/db": "workspace:*",
     "@nestjs/common": "^11.0.0",
     "@nestjs/config": "^4.0.3",
