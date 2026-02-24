@@ -102,6 +102,18 @@ enum SurveyDisplayOption {
   displaySome
 }
 
+/// 쿼터 한도 초과 시 액션
+enum QuotaAction {
+  endSurvey
+  continueSurvey
+}
+
+/// 응답-쿼터 상태
+enum ResponseQuotaStatus {
+  screenedIn
+  screenedOut
+}
+
 /// 사용자 계정 정보. OAuth 전용 사용자는 password가 null
 model User {
   id                        String           @id @default(cuid())
@@ -463,6 +475,7 @@ model Survey {
   creator     User?       @relation(fields: [creatorId], references: [id], onDelete: SetNull)
   responses   Response[]
   displays    Display[]
+  quotas      Quota[]
 
   @@index([environmentId])
   @@map("surveys")
@@ -486,15 +499,51 @@ model Response {
   displayId     String?
   endingId      String?
 
-  survey      Survey       @relation(fields: [surveyId], references: [id], onDelete: Cascade)
-  environment Environment  @relation(fields: [environmentId], references: [id], onDelete: Cascade)
-  contact     Contact?     @relation(fields: [contactId], references: [id], onDelete: SetNull)
-  display     Display?     @relation(fields: [displayId], references: [id])
+  survey         Survey          @relation(fields: [surveyId], references: [id], onDelete: Cascade)
+  environment    Environment     @relation(fields: [environmentId], references: [id], onDelete: Cascade)
+  contact        Contact?        @relation(fields: [contactId], references: [id], onDelete: SetNull)
+  display        Display?        @relation(fields: [displayId], references: [id])
+  responseQuotas ResponseQuota[]
 
   @@index([surveyId])
   @@index([environmentId])
   @@index([contactId])
   @@map("responses")
+}
+
+/// 설문 쿼터 (응답 수 제한)
+model Quota {
+  id                      String      @id @default(cuid(2))
+  createdAt               DateTime    @default(now())
+  updatedAt               DateTime    @updatedAt
+  surveyId                String
+  name                    String
+  limit                   Int
+  logic                   Json        @default("{}")
+  action                  QuotaAction
+  endingCardId            String?
+  countPartialSubmissions Boolean     @default(false)
+
+  survey          Survey          @relation(fields: [surveyId], references: [id], onDelete: Cascade)
+  responseQuotas  ResponseQuota[]
+
+  @@unique([surveyId, name])
+  @@index([surveyId])
+  @@map("quotas")
+}
+
+/// 응답-쿼터 매핑 (screenedIn/screenedOut 상태 기록)
+model ResponseQuota {
+  responseId String
+  quotaId    String
+  status     ResponseQuotaStatus
+
+  response Response @relation(fields: [responseId], references: [id], onDelete: Cascade)
+  quota    Quota    @relation(fields: [quotaId], references: [id], onDelete: Cascade)
+
+  @@id([responseId, quotaId])
+  @@index([quotaId, status])
+  @@map("response_quotas")
 }
 
 /// 설문 노출 기록 (스텁)
