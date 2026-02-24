@@ -113,6 +113,9 @@
     },
     {
       "path": "./libs/client/multilingual"
+    },
+    {
+      "path": "./libs/client/styling"
     }
   ]
 }
