@@ -576,6 +576,45 @@ importers:
         specifier: ^16.5.4
         version: 16.5.4(i18next@25.8.13(typescript@5.9.3))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)
 
+  libs/client/survey-editor:
+    dependencies:
+      '@coltorapps/builder-react':
+        specifier: ^0.2.4
+        version: 0.2.4(@coltorapps/builder@0.2.4)(react@19.2.4)
+      '@dnd-kit/core':
+        specifier: ^6.3.1
+        version: 6.3.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@dnd-kit/sortable':
+        specifier: ^10.0.0
+        version: 10.0.0(@dnd-kit/core@6.3.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+      '@inquiry/client-core':
+        specifier: workspace:*
+        version: link:../core
+      '@inquiry/client-multilingual':
+        specifier: workspace:*
+        version: link:../multilingual
+      '@inquiry/client-styling':
+        specifier: workspace:*
+        version: link:../styling
+      '@inquiry/client-survey':
+        specifier: workspace:*
+        version: link:../survey
+      '@inquiry/client-ui':
+        specifier: workspace:*
+        version: link:../ui
+      '@inquiry/survey-builder-config':
+        specifier: workspace:*
+        version: link:../../../packages/survey-builder-config
+      lucide-react:
+        specifier: ^0.475.0
+        version: 0.475.0(react@19.2.4)
+      react:
+        specifier: ^19.0.0
+        version: 19.2.4
+      react-i18next:
+        specifier: ^16.5.4
+        version: 16.5.4(i18next@25.8.13(typescript@5.9.3))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)
+
   libs/client/ui:
     dependencies:
       '@inquiry/shared-i18n':
