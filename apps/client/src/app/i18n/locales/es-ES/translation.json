@@ -208,7 +208,9 @@
       "back_to_list": "Volver a encuestas",
       "preview": "Vista previa",
       "settings": "Configuración",
-      "questions": "Preguntas"
+      "questions": "Preguntas",
+      "tab_edit": "Editar",
+      "tab_styling": "Estilo"
     },
     "display_option": {
       "displayOnce": "Mostrar una vez",

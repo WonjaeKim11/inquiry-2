@@ -208,7 +208,9 @@
       "back_to_list": "Voltar para pesquisas",
       "preview": "Pré-visualização",
       "settings": "Configurações",
-      "questions": "Perguntas"
+      "questions": "Perguntas",
+      "tab_edit": "Editar",
+      "tab_styling": "Estilo"
     },
     "display_option": {
       "displayOnce": "Exibir uma vez",

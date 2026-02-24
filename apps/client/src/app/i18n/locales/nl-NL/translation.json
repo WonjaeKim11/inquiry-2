@@ -208,7 +208,9 @@
       "back_to_list": "Terug naar enquêtes",
       "preview": "Voorbeeld",
       "settings": "Instellingen",
-      "questions": "Vragen"
+      "questions": "Vragen",
+      "tab_edit": "Bewerken",
+      "tab_styling": "Stijl"
     },
     "display_option": {
       "displayOnce": "Eenmalig tonen",

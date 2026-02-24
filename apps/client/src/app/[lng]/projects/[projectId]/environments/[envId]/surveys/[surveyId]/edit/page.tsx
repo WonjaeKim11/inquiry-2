@@ -13,7 +13,13 @@ import {
   CardTitle,
   Alert,
   AlertDescription,
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
 } from '@inquiry/client-ui';
+import { SurveyStylingTab } from '@inquiry/client-styling';
+import { useProject } from '@inquiry/client-project';
 import {
   useSurvey,
   useAutoSave,
@@ -93,6 +99,18 @@ export default function SurveyEditPage({
       } catch {
         // MultiLanguageCard 내부에서 에러를 처리하므로 여기서는 무시
       }
+    },
+    [surveyId, refetch]
+  );
+
+  // 현재 프로젝트 정보 — 스타일 오버라이드 허용 여부 확인에 사용
+  const { currentProject } = useProject();
+
+  /** 설문 스타일링 저장 핸들러 */
+  const handleSaveStyling = useCallback(
+    async (styling: Record<string, unknown> | null) => {
+      await updateSurvey(surveyId, { styling });
+      await refetch();
     },
     [surveyId, refetch]
   );
@@ -240,45 +258,73 @@ export default function SurveyEditPage({
         />
       </div>
 
-      {/* 설문 이름 편집 */}
-      <Card className="mb-6">
-        <CardHeader>
-          <CardTitle>{t('survey.create.name_label')}</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <Input
-            type="text"
-            value={name}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setName(e.target.value)
+      {/* 탭 구성: 편집 / 스타일링 */}
+      <Tabs defaultValue="edit" className="w-full">
+        <TabsList className="mb-6">
+          <TabsTrigger value="edit">
+            {t('survey.editor.tab_edit', 'Edit')}
+          </TabsTrigger>
+          <TabsTrigger value="styling">
+            {t('survey.editor.tab_styling', 'Styling')}
+          </TabsTrigger>
+        </TabsList>
+
+        {/* 편집 탭 — 기존 콘텐츠 */}
+        <TabsContent value="edit">
+          {/* 설문 이름 편집 */}
+          <Card className="mb-6">
+            <CardHeader>
+              <CardTitle>{t('survey.create.name_label')}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <Input
+                type="text"
+                value={name}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                  setName(e.target.value)
+                }
+                placeholder={t('survey.create.name_placeholder')}
+              />
+            </CardContent>
+          </Card>
+
+          {/* 스키마 편집 (JSON) */}
+          <Card className="mb-6">
+            <CardHeader>
+              <CardTitle>{t('survey.editor.questions')}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <textarea
+                className="min-h-[300px] w-full rounded-md border bg-transparent p-3 font-mono text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+                value={schemaText}
+                onChange={(e) => setSchemaText(e.target.value)}
+                spellCheck={false}
+              />
+            </CardContent>
+          </Card>
+
+          {/* 다국어 설정 카드 */}
+          <MultiLanguageCard
+            projectId={projectId}
+            survey={survey}
+            onUpdate={handleMultilingualUpdate}
+            lng={lng}
+          />
+        </TabsContent>
+
+        {/* 스타일링 탭 */}
+        <TabsContent value="styling">
+          <SurveyStylingTab
+            surveyStyling={(survey.styling as Record<string, unknown>) ?? null}
+            surveyType={survey.type}
+            allowStyleOverride={
+              (currentProject?.styling as Record<string, unknown>)
+                ?.allowStyleOverride !== false
             }
-            placeholder={t('survey.create.name_placeholder')}
+            onSave={handleSaveStyling}
           />
-        </CardContent>
-      </Card>
-
-      {/* 스키마 편집 (JSON) */}
-      <Card className="mb-6">
-        <CardHeader>
-          <CardTitle>{t('survey.editor.questions')}</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <textarea
-            className="min-h-[300px] w-full rounded-md border bg-transparent p-3 font-mono text-sm focus:outline-none focus:ring-2 focus:ring-ring"
-            value={schemaText}
-            onChange={(e) => setSchemaText(e.target.value)}
-            spellCheck={false}
-          />
-        </CardContent>
-      </Card>
-
-      {/* 다국어 설정 카드 */}
-      <MultiLanguageCard
-        projectId={projectId}
-        survey={survey}
-        onUpdate={handleMultilingualUpdate}
-        lng={lng}
-      />
+        </TabsContent>
+      </Tabs>
     </div>
   );
 }

@@ -48,6 +48,8 @@ export interface SurveyDetail extends SurveyListItem {
   projectId: string;
   languages: SurveyLanguage[];
   showLanguageSwitch: boolean | null;
+  /** 설문 개별 스타일링 (프로젝트 테마 오버라이드) */
+  styling?: Record<string, unknown> | null;
 }
 
 /** 설문 생성 요청 바디 */
@@ -73,6 +75,8 @@ export interface UpdateSurveyInput {
   recontactDays?: number | null;
   languages?: SurveyLanguage[];
   showLanguageSwitch?: boolean;
+  /** 설문 개별 스타일링 (null이면 프로젝트 테마 사용) */
+  styling?: Record<string, unknown> | null;
 }
 
 /** 설문 템플릿 */

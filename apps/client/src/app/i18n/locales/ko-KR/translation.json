@@ -579,7 +579,9 @@
       "back_to_list": "설문 목록으로",
       "preview": "미리보기",
       "settings": "설정",
-      "questions": "질문"
+      "questions": "질문",
+      "tab_edit": "편집",
+      "tab_styling": "스타일링"
     },
     "display_option": {
       "displayOnce": "한 번만 표시",

@@ -10,6 +10,7 @@ export { ProgressBarSection } from './lib/components/progress-bar-section';
 export { CardLayoutSection } from './lib/components/card-layout-section';
 export { BackgroundSection } from './lib/components/background-section';
 export { StylingForm } from './lib/components/styling-form';
+export { SurveyStylingTab } from './lib/components/survey-styling-tab';
 
 // 훅
 export { useStylingForm } from './lib/hooks/use-styling-form';

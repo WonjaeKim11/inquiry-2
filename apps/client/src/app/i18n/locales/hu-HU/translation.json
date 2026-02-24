@@ -208,7 +208,9 @@
       "back_to_list": "Vissza a kérdőívekhez",
       "preview": "Előnézet",
       "settings": "Beállítások",
-      "questions": "Kérdések"
+      "questions": "Kérdések",
+      "tab_edit": "Szerkesztés",
+      "tab_styling": "Stílus"
     },
     "display_option": {
       "displayOnce": "Egyszer megjelenítés",

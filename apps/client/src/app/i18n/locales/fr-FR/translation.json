@@ -208,7 +208,9 @@
       "back_to_list": "Retour aux enquêtes",
       "preview": "Aperçu",
       "settings": "Paramètres",
-      "questions": "Questions"
+      "questions": "Questions",
+      "tab_edit": "Modifier",
+      "tab_styling": "Style"
     },
     "display_option": {
       "displayOnce": "Afficher une fois",

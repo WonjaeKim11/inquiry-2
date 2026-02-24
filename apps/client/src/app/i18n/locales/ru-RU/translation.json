@@ -208,7 +208,9 @@
       "back_to_list": "Назад к опросам",
       "preview": "Предпросмотр",
       "settings": "Настройки",
-      "questions": "Вопросы"
+      "questions": "Вопросы",
+      "tab_edit": "Редактирование",
+      "tab_styling": "Стиль"
     },
     "display_option": {
       "displayOnce": "Показать один раз",

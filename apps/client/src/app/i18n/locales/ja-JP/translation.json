@@ -208,7 +208,9 @@
       "back_to_list": "アンケート一覧に戻る",
       "preview": "プレビュー",
       "settings": "設定",
-      "questions": "質問"
+      "questions": "質問",
+      "tab_edit": "編集",
+      "tab_styling": "スタイリング"
     },
     "display_option": {
       "displayOnce": "一度だけ表示",

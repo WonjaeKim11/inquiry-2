@@ -208,7 +208,9 @@
       "back_to_list": "Înapoi la chestionare",
       "preview": "Previzualizare",
       "settings": "Setări",
-      "questions": "Întrebări"
+      "questions": "Întrebări",
+      "tab_edit": "Editare",
+      "tab_styling": "Stil"
     },
     "display_option": {
       "displayOnce": "Afișare o singură dată",
