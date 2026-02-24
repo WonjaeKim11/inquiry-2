@@ -201,6 +201,9 @@ importers:
       '@inquiry/client-project':
         specifier: workspace:*
         version: link:../../libs/client/project
+      '@inquiry/client-styling':
+        specifier: workspace:*
+        version: link:../../libs/client/styling
       '@inquiry/client-survey':
         specifier: workspace:*
         version: link:../../libs/client/survey
@@ -515,6 +518,9 @@ importers:
       '@inquiry/client-core':
         specifier: workspace:*
         version: link:../core
+      '@inquiry/client-styling':
+        specifier: workspace:*
+        version: link:../styling
       '@inquiry/client-ui':
         specifier: workspace:*
         version: link:../ui
@@ -533,9 +539,6 @@ importers:
       '@inquiry/client-core':
         specifier: workspace:*
         version: link:../core
-      '@inquiry/client-project':
-        specifier: workspace:*
-        version: link:../project
       '@inquiry/client-ui':
         specifier: workspace:*
         version: link:../ui

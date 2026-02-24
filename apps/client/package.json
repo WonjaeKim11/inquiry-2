@@ -9,6 +9,7 @@
     "@inquiry/client-member": "workspace:*",
     "@inquiry/client-organization": "workspace:*",
     "@inquiry/client-project": "workspace:*",
+    "@inquiry/client-styling": "workspace:*",
     "@inquiry/client-multilingual": "workspace:*",
     "@inquiry/client-survey": "workspace:*",
     "@inquiry/client-ui": "workspace:*",

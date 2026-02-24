@@ -19,7 +19,6 @@
   "dependencies": {
     "@inquiry/client-core": "workspace:*",
     "@inquiry/client-ui": "workspace:*",
-    "@inquiry/client-project": "workspace:*",
     "@inquiry/survey-builder-config": "workspace:*",
     "react": "^19.0.0",
     "react-i18next": "^16.5.4",

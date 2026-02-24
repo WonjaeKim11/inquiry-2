@@ -28,16 +28,8 @@ export interface Environment {
   updatedAt: string;
 }
 
-/** Product 스타일링 설정 타입 — 서버 Project.styling JSON 필드에 대응 */
-export interface ProjectStyling {
-  brandColor?: string | null;
-  cardBackgroundColor?: string | null;
-  cardBorderColor?: string | null;
-  roundness?: number | null;
-  hideProgressBar?: boolean;
-  isLogoHidden?: boolean;
-  allowStyleOverride?: boolean;
-}
+/** Product 스타일링 설정 타입 — 서버 Project.styling JSON 필드에 대응. 40+ 속성을 지원한다. */
+export type ProjectStyling = Record<string, unknown>;
 
 /** Language 엔티티 타입 */
 export interface ProjectLanguage {
