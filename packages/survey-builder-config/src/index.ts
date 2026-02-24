@@ -276,3 +276,25 @@ export {
 } from './lib/validators/index';
 export type { ReferenceCheckResult } from './lib/validators/index';
 export { validateSurveyVariablesAndFields } from './lib/validators/index';
+
+// Quota 모듈
+export type {
+  QuotaAction,
+  QuotaDefinition,
+  QuotaEvaluationInput,
+  QuotaEvaluationResult,
+  QuotaCheckSummary,
+  QuotaNameValidationResult,
+  QuotaValidationResult,
+} from './lib/quota/index';
+export {
+  DEFAULT_EVALUATION_RESULT,
+  quotaActionSchema,
+  quotaDefinitionSchema,
+  MAX_QUOTAS_PER_SURVEY,
+  QUOTA_NAME_MAX_LENGTH,
+  QUOTA_NAME_PATTERN,
+  validateQuotaName,
+  validateQuotaConditions,
+  validateQuotas,
+} from './lib/quota/index';
