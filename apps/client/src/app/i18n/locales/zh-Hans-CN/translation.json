@@ -664,7 +664,43 @@
       "calHost": "Cal.com 主机",
       "calHostPlaceholder": "cal.com",
       "calHostHint": "留空以使用默认的Cal.com主机",
-      "advancedSettings": "高级设置"
+      "advancedSettings": "高级设置",
+      "choices": "选项",
+      "choiceLabelPlaceholder": "选项标签",
+      "addChoice": "添加选项",
+      "removeChoice": "删除选项",
+      "displayType": "显示类型",
+      "displayTypes": {
+        "list": "列表",
+        "grid": "网格"
+      },
+      "shuffleOption": "随机排序",
+      "shuffleOptions": {
+        "none": "无",
+        "all": "全部",
+        "exceptLast": "除最后一项外"
+      },
+      "otherOptionPlaceholder": "其他选项占位符",
+      "otherOptionPlaceholderHint": "例如：请说明...",
+      "npsScaleDescription": "量表：{{min}} - {{max}}（固定）",
+      "lowerLabel": "下方标签",
+      "lowerLabelPlaceholder": "例如：完全不可能",
+      "upperLabel": "上方标签",
+      "upperLabelPlaceholder": "例如：非常有可能",
+      "scaleType": "量表类型",
+      "scaleTypes": {
+        "smiley": "表情",
+        "star": "星级",
+        "number": "数字"
+      },
+      "range": "范围",
+      "colorCoding": "颜色编码",
+      "pictureChoices": "图片选项",
+      "imageUrlPlaceholder": "图片URL",
+      "addPictureChoice": "添加图片选项",
+      "removePictureChoice": "删除图片选项",
+      "allowMulti": "允许多选",
+      "shuffleChoices": "随机排列选项"
     }
   }
 }

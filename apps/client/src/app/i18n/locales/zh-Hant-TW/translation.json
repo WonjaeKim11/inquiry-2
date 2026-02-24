@@ -626,7 +626,13 @@
         "consent": "同意",
         "cta": "CTA",
         "date": "日期",
-        "cal": "Cal.com"
+        "cal": "Cal.com",
+        "multipleChoiceSingle": "多選題（單選）",
+        "multipleChoiceMulti": "多選題（多選）",
+        "nps": "NPS",
+        "rating": "評分",
+        "pictureSelection": "圖片選擇",
+        "ranking": "排名"
       },
       "headline": "問題",
       "headlinePlaceholder": "輸入您的問題...",
@@ -658,7 +664,43 @@
       "calHost": "Cal.com 主機",
       "calHostPlaceholder": "cal.com",
       "calHostHint": "留空以使用預設的Cal.com主機",
-      "advancedSettings": "進階設定"
+      "advancedSettings": "進階設定",
+      "choices": "選項",
+      "choiceLabelPlaceholder": "選項標籤",
+      "addChoice": "新增選項",
+      "removeChoice": "移除選項",
+      "displayType": "顯示類型",
+      "displayTypes": {
+        "list": "清單",
+        "grid": "格狀"
+      },
+      "shuffleOption": "隨機排序",
+      "shuffleOptions": {
+        "none": "無",
+        "all": "全部",
+        "exceptLast": "除最後一項外"
+      },
+      "otherOptionPlaceholder": "其他選項佔位符",
+      "otherOptionPlaceholderHint": "例如：請說明...",
+      "npsScaleDescription": "量表：{{min}} - {{max}}（固定）",
+      "lowerLabel": "下方標籤",
+      "lowerLabelPlaceholder": "例如：完全不可能",
+      "upperLabel": "上方標籤",
+      "upperLabelPlaceholder": "例如：非常有可能",
+      "scaleType": "量表類型",
+      "scaleTypes": {
+        "smiley": "表情",
+        "star": "星級",
+        "number": "數字"
+      },
+      "range": "範圍",
+      "colorCoding": "顏色編碼",
+      "pictureChoices": "圖片選項",
+      "imageUrlPlaceholder": "圖片URL",
+      "addPictureChoice": "新增圖片選項",
+      "removePictureChoice": "移除圖片選項",
+      "allowMulti": "允許多選",
+      "shuffleChoices": "隨機排列選項"
     }
   }
 }

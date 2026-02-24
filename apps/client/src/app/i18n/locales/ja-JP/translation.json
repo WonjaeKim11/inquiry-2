@@ -626,7 +626,13 @@
         "consent": "同意",
         "cta": "CTA",
         "date": "日付",
-        "cal": "Cal.com"
+        "cal": "Cal.com",
+        "multipleChoiceSingle": "選択式（単一）",
+        "multipleChoiceMulti": "選択式（複数）",
+        "nps": "NPS",
+        "rating": "評価",
+        "pictureSelection": "画像選択",
+        "ranking": "ランキング"
       },
       "headline": "質問",
       "headlinePlaceholder": "質問を入力してください...",
@@ -658,7 +664,43 @@
       "calHost": "Cal.comホスト",
       "calHostPlaceholder": "cal.com",
       "calHostHint": "デフォルトのCal.comホストを使用する場合は空のままにしてください",
-      "advancedSettings": "詳細設定"
+      "advancedSettings": "詳細設定",
+      "choices": "選択肢",
+      "choiceLabelPlaceholder": "選択肢ラベル",
+      "addChoice": "選択肢を追加",
+      "removeChoice": "選択肢を削除",
+      "displayType": "表示タイプ",
+      "displayTypes": {
+        "list": "リスト",
+        "grid": "グリッド"
+      },
+      "shuffleOption": "シャッフルオプション",
+      "shuffleOptions": {
+        "none": "なし",
+        "all": "すべて",
+        "exceptLast": "最後以外"
+      },
+      "otherOptionPlaceholder": "その他オプションのプレースホルダー",
+      "otherOptionPlaceholderHint": "例：具体的にお書きください...",
+      "npsScaleDescription": "スケール: {{min}} - {{max}} (固定)",
+      "lowerLabel": "下部ラベル",
+      "lowerLabelPlaceholder": "例：全くそう思わない",
+      "upperLabel": "上部ラベル",
+      "upperLabelPlaceholder": "例：非常にそう思う",
+      "scaleType": "スケールタイプ",
+      "scaleTypes": {
+        "smiley": "スマイリー",
+        "star": "星",
+        "number": "数値"
+      },
+      "range": "範囲",
+      "colorCoding": "カラーコーディング",
+      "pictureChoices": "画像選択肢",
+      "imageUrlPlaceholder": "画像URL",
+      "addPictureChoice": "画像選択肢を追加",
+      "removePictureChoice": "画像選択肢を削除",
+      "allowMulti": "複数選択を許可",
+      "shuffleChoices": "選択肢をシャッフル"
     }
   }
 }
