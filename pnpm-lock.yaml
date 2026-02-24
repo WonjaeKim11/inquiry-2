@@ -870,6 +870,18 @@ importers:
         specifier: ^4.3.6
         version: 4.3.6
 
+  libs/server/multilingual:
+    dependencies:
+      '@inquiry/server-prisma':
+        specifier: workspace:*
+        version: link:../prisma
+      '@inquiry/survey-builder-config':
+        specifier: workspace:*
+        version: link:../../../packages/survey-builder-config
+      '@nestjs/common':
+        specifier: ^11.0.0
+        version: 11.1.13(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2)
+
   libs/server/organization:
     dependencies:
       '@inquiry/db':
