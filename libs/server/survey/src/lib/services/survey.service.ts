@@ -311,6 +311,8 @@ export class SurveyService {
     if (dto.surveyMetadata !== undefined)
       updateData['surveyMetadata'] = dto.surveyMetadata;
     if (dto.languages !== undefined) updateData['languages'] = dto.languages;
+    if (dto.showLanguageSwitch !== undefined)
+      updateData['showLanguageSwitch'] = dto.showLanguageSwitch;
     if (dto.isVerifyEmailEnabled !== undefined)
       updateData['isVerifyEmailEnabled'] = dto.isVerifyEmailEnabled;
     if (dto.isSingleResponsePerEmailEnabled !== undefined)

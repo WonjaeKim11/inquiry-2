@@ -3,6 +3,7 @@ import type {
   SurveyEnding,
   HiddenFields,
   SurveyVariable,
+  SurveyLanguage,
 } from '@inquiry/survey-builder-config';
 
 /** 설문 상태 */
@@ -45,6 +46,8 @@ export interface SurveyDetail extends SurveyListItem {
   recontactDays: number | null;
   environmentId: string;
   projectId: string;
+  languages: SurveyLanguage[];
+  showLanguageSwitch: boolean | null;
 }
 
 /** 설문 생성 요청 바디 */
@@ -68,6 +71,8 @@ export interface UpdateSurveyInput {
   pin?: string | null;
   singleUse?: boolean;
   recontactDays?: number | null;
+  languages?: SurveyLanguage[];
+  showLanguageSwitch?: boolean;
 }
 
 /** 설문 템플릿 */
