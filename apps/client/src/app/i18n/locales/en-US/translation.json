@@ -888,5 +888,13 @@
     "disable_confirm": "This will remove all translations and language settings from this survey. This action cannot be undone.",
     "disable_confirm_title": "Disable Multi-Language?",
     "removing": "Removing..."
+  },
+  "surveyEditor": {
+    "shared": {
+      "cancel": "Cancel",
+      "confirmDelete": "Delete",
+      "imageUrlPlaceholder": "Enter image URL...",
+      "removeImage": "Remove image"
+    }
   }
 }

@@ -612,5 +612,13 @@
     "disable_confirm": "此问卷的所有翻译和语言设置将被删除。此操作无法撤销。",
     "disable_confirm_title": "禁用多语言？",
     "removing": "正在删除..."
+  },
+  "surveyEditor": {
+    "shared": {
+      "cancel": "取消",
+      "confirmDelete": "删除",
+      "imageUrlPlaceholder": "输入图片URL...",
+      "removeImage": "移除图片"
+    }
   }
 }

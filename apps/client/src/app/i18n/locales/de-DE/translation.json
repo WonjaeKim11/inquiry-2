@@ -612,5 +612,13 @@
     "disable_confirm": "Alle Übersetzungen und Spracheinstellungen dieser Umfrage werden entfernt. Diese Aktion kann nicht rückgängig gemacht werden.",
     "disable_confirm_title": "Mehrsprachigkeit deaktivieren?",
     "removing": "Wird entfernt..."
+  },
+  "surveyEditor": {
+    "shared": {
+      "cancel": "Abbrechen",
+      "confirmDelete": "Löschen",
+      "imageUrlPlaceholder": "Bild-URL eingeben...",
+      "removeImage": "Bild entfernen"
+    }
   }
 }

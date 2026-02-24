@@ -612,5 +612,13 @@
     "disable_confirm": "Todas as traduções e configurações de idioma desta pesquisa serão removidas. Esta ação não pode ser desfeita.",
     "disable_confirm_title": "Desativar multilíngue?",
     "removing": "Removendo..."
+  },
+  "surveyEditor": {
+    "shared": {
+      "cancel": "Cancelar",
+      "confirmDelete": "Excluir",
+      "imageUrlPlaceholder": "Insira a URL da imagem...",
+      "removeImage": "Remover imagem"
+    }
   }
 }

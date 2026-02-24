@@ -41,3 +41,15 @@ export { useSurveyMeta } from './lib/hooks/use-survey-meta';
 export { useEditorAutoSave } from './lib/hooks/use-editor-auto-save';
 export { useSurveyPublish } from './lib/hooks/use-survey-publish';
 export { useActiveElement } from './lib/hooks/use-active-element';
+
+// Layout Components
+export { SurveyEditorLayout } from './lib/components/layout/SurveyEditorLayout';
+export { SurveyMenuBar } from './lib/components/layout/SurveyMenuBar';
+export { EditorTabs } from './lib/components/layout/EditorTabs';
+
+// Shared Components
+export { AutoSaveIndicator } from './lib/components/shared/AutoSaveIndicator';
+export { LocalizedInput } from './lib/components/shared/LocalizedInput';
+export { OptionsSwitch } from './lib/components/shared/OptionsSwitch';
+export { ConfirmDeleteDialog } from './lib/components/shared/ConfirmDeleteDialog';
+export { FileUploadInput } from './lib/components/shared/FileUploadInput';

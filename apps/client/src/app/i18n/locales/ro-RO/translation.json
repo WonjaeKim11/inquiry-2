@@ -612,5 +612,13 @@
     "disable_confirm": "Toate traducerile și setările de limbă ale acestui sondaj vor fi eliminate. Această acțiune nu poate fi anulată.",
     "disable_confirm_title": "Dezactivați multilingv?",
     "removing": "Se elimină..."
+  },
+  "surveyEditor": {
+    "shared": {
+      "cancel": "Anulare",
+      "confirmDelete": "Șterge",
+      "imageUrlPlaceholder": "Introduceți URL-ul imaginii...",
+      "removeImage": "Eliminare imagine"
+    }
   }
 }

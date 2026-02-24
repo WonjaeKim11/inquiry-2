@@ -612,5 +612,13 @@
     "disable_confirm": "Alla översättningar och språkinställningar för denna enkät kommer att tas bort. Denna åtgärd kan inte ångras.",
     "disable_confirm_title": "Inaktivera flerspråkighet?",
     "removing": "Tar bort..."
+  },
+  "surveyEditor": {
+    "shared": {
+      "cancel": "Avbryt",
+      "confirmDelete": "Radera",
+      "imageUrlPlaceholder": "Ange bild-URL...",
+      "removeImage": "Ta bort bild"
+    }
   }
 }

@@ -612,5 +612,13 @@
     "disable_confirm": "Alle vertalingen en taalinstellingen van deze enquête worden verwijderd. Deze actie kan niet ongedaan worden gemaakt.",
     "disable_confirm_title": "Meertaligheid uitschakelen?",
     "removing": "Verwijderen..."
+  },
+  "surveyEditor": {
+    "shared": {
+      "cancel": "Annuleren",
+      "confirmDelete": "Verwijderen",
+      "imageUrlPlaceholder": "Voer afbeeldings-URL in...",
+      "removeImage": "Afbeelding verwijderen"
+    }
   }
 }

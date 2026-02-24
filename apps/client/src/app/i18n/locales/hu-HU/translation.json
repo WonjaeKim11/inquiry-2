@@ -612,5 +612,13 @@
     "disable_confirm": "A kérdőív összes fordítása és nyelvi beállítása törlésre kerül. Ez a művelet nem vonható vissza.",
     "disable_confirm_title": "Többnyelvűség kikapcsolása?",
     "removing": "Eltávolítás..."
+  },
+  "surveyEditor": {
+    "shared": {
+      "cancel": "Mégse",
+      "confirmDelete": "Törlés",
+      "imageUrlPlaceholder": "Adja meg a kép URL-jét...",
+      "removeImage": "Kép eltávolítása"
+    }
   }
 }

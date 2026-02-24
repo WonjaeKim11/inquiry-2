@@ -612,5 +612,13 @@
     "disable_confirm": "このアンケートのすべての翻訳と言語設定が削除されます。この操作は元に戻せません。",
     "disable_confirm_title": "多言語を無効にしますか？",
     "removing": "削除中..."
+  },
+  "surveyEditor": {
+    "shared": {
+      "cancel": "キャンセル",
+      "confirmDelete": "削除",
+      "imageUrlPlaceholder": "画像URLを入力...",
+      "removeImage": "画像を削除"
+    }
   }
 }

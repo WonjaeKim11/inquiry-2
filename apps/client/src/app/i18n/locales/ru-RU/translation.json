@@ -612,5 +612,13 @@
     "disable_confirm": "Все переводы и языковые настройки этого опроса будут удалены. Это действие нельзя отменить.",
     "disable_confirm_title": "Отключить мультиязычность?",
     "removing": "Удаление..."
+  },
+  "surveyEditor": {
+    "shared": {
+      "cancel": "Отмена",
+      "confirmDelete": "Удалить",
+      "imageUrlPlaceholder": "Введите URL изображения...",
+      "removeImage": "Удалить изображение"
+    }
   }
 }
