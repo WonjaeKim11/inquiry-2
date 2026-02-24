@@ -256,3 +256,23 @@ export {
   stripHtmlTags,
   validateFallbacks,
 } from './lib/recall/index';
+
+// Validators 모듈
+export { validateId } from './lib/validators/index';
+export type { IdValidationResult } from './lib/validators/index';
+export {
+  validateVariableName,
+  validateVariableId,
+  validateVariables,
+} from './lib/validators/index';
+export {
+  HIDDEN_FIELD_FORBIDDEN_IDS,
+  validateHiddenFieldId,
+  validateHiddenFields,
+} from './lib/validators/index';
+export {
+  checkHiddenFieldReferences,
+  checkVariableReferences,
+} from './lib/validators/index';
+export type { ReferenceCheckResult } from './lib/validators/index';
+export { validateSurveyVariablesAndFields } from './lib/validators/index';
