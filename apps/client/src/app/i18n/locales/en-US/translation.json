@@ -540,13 +540,37 @@
     "hidden_fields": {
       "title": "Hidden Fields",
       "enabled": "Enable Hidden Fields",
-      "add_field": "Add Field"
+      "add_field": "Add Field",
+      "id_placeholder": "Enter field ID",
+      "delete_field": "Delete Field",
+      "validation": {
+        "id_empty": "{{type}} ID is required.",
+        "id_duplicate": "{{type}} ID already exists in questions, hidden fields, or variables.",
+        "id_forbidden": "{{type}} ID is not allowed.",
+        "id_spaces": "{{type}} ID cannot contain spaces.",
+        "id_pattern": "Only letters, numbers, hyphens, and underscores are allowed.",
+        "in_use_logic": "Cannot delete: used in conditional logic.",
+        "in_use_recall": "Cannot delete: used in recall.",
+        "in_use_quota": "Cannot delete: used in quota conditions.",
+        "in_use_followup": "Cannot delete: used in follow-up."
+      }
     },
     "variables": {
       "title": "Variables",
       "add": "Add Variable",
       "type_number": "Number",
-      "type_text": "Text"
+      "type_text": "Text",
+      "name_label": "Variable Name",
+      "name_placeholder": "lowercase, numbers, underscores only",
+      "value_label": "Default Value",
+      "delete_confirm": "Are you sure you want to delete this variable?",
+      "validation": {
+        "name_pattern": "Variable name only allows lowercase, numbers, and underscores.",
+        "name_empty": "Please enter a variable name.",
+        "name_duplicate": "This variable name is already in use.",
+        "id_duplicate": "Variable ID is duplicated.",
+        "type_mismatch": "Value does not match the variable type."
+      }
     },
     "settings": {
       "title": "Survey Settings",
@@ -652,6 +676,22 @@
       "max_items_exceeded": "Maximum number of logic items exceeded",
       "empty_conditions": "Conditions cannot be empty",
       "logic_valid": "Logic validation passed"
+    }
+  },
+  "recall": {
+    "title": "Recall",
+    "insert": "Insert recall",
+    "fallback_empty_warning": "Recall fallback text is empty. Empty text will be shown when no value is available.",
+    "nested_placeholder": "___",
+    "format": {
+      "date_ordinal": "{{day}} {{month}} {{year}}",
+      "array_separator": ", ",
+      "truncated": "{{start}}...{{end}}"
+    },
+    "source": {
+      "variable": "Variable",
+      "element": "Question",
+      "hiddenField": "Hidden Field"
     }
   }
 }

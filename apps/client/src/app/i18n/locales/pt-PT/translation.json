@@ -253,13 +253,37 @@
     "hidden_fields": {
       "title": "Campos ocultos",
       "enabled": "Ativar campos ocultos",
-      "add_field": "Adicionar campo"
+      "add_field": "Adicionar campo",
+      "id_placeholder": "Introduza o ID do campo",
+      "delete_field": "Eliminar campo",
+      "validation": {
+        "id_empty": "O ID de {{type}} é obrigatório.",
+        "id_duplicate": "O ID de {{type}} já existe em perguntas, campos ocultos ou variáveis.",
+        "id_forbidden": "O ID de {{type}} não é permitido.",
+        "id_spaces": "O ID de {{type}} não pode conter espaços.",
+        "id_pattern": "Apenas letras, números, hífens e underscores são permitidos.",
+        "in_use_logic": "Não é possível eliminar: utilizado na lógica condicional.",
+        "in_use_recall": "Não é possível eliminar: utilizado no recall.",
+        "in_use_quota": "Não é possível eliminar: utilizado nas condições de quota.",
+        "in_use_followup": "Não é possível eliminar: utilizado no acompanhamento."
+      }
     },
     "variables": {
       "title": "Variáveis",
       "add": "Adicionar variável",
       "type_number": "Número",
-      "type_text": "Texto"
+      "type_text": "Texto",
+      "name_label": "Nome da variável",
+      "name_placeholder": "Apenas minúsculas, números e underscores",
+      "value_label": "Valor predefinido",
+      "delete_confirm": "Tem a certeza de que pretende eliminar esta variável?",
+      "validation": {
+        "name_pattern": "O nome da variável só permite minúsculas, números e underscores.",
+        "name_empty": "Por favor, introduza um nome de variável.",
+        "name_duplicate": "Este nome de variável já está em uso.",
+        "id_duplicate": "O ID da variável está duplicado.",
+        "type_mismatch": "O valor não corresponde ao tipo da variável."
+      }
     },
     "settings": {
       "title": "Definições do inquérito",
@@ -365,6 +389,22 @@
       "max_items_exceeded": "Número máximo de itens de lógica excedido",
       "empty_conditions": "As condições não podem estar vazias",
       "logic_valid": "Validação de lógica aprovada"
+    }
+  },
+  "recall": {
+    "title": "Recall",
+    "insert": "Inserir recall",
+    "fallback_empty_warning": "O texto substituto do recall está vazio. Texto vazio será apresentado quando nenhum valor estiver disponível.",
+    "nested_placeholder": "___",
+    "format": {
+      "date_ordinal": "{{day}} de {{month}} de {{year}}",
+      "array_separator": ", ",
+      "truncated": "{{start}}...{{end}}"
+    },
+    "source": {
+      "variable": "Variável",
+      "element": "Pergunta",
+      "hiddenField": "Campo oculto"
     }
   }
 }

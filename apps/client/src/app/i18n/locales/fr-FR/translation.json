@@ -253,13 +253,37 @@
     "hidden_fields": {
       "title": "Champs cachés",
       "enabled": "Activer les champs cachés",
-      "add_field": "Ajouter un champ"
+      "add_field": "Ajouter un champ",
+      "id_placeholder": "Saisir l'ID du champ",
+      "delete_field": "Supprimer le champ",
+      "validation": {
+        "id_empty": "L'ID {{type}} est requis.",
+        "id_duplicate": "L'ID {{type}} existe déjà dans les questions, champs cachés ou variables.",
+        "id_forbidden": "L'ID {{type}} n'est pas autorisé.",
+        "id_spaces": "L'ID {{type}} ne peut pas contenir d'espaces.",
+        "id_pattern": "Seuls les lettres, chiffres, tirets et underscores sont autorisés.",
+        "in_use_logic": "Suppression impossible : utilisé dans la logique conditionnelle.",
+        "in_use_recall": "Suppression impossible : utilisé dans le recall.",
+        "in_use_quota": "Suppression impossible : utilisé dans les conditions de quota.",
+        "in_use_followup": "Suppression impossible : utilisé dans le suivi."
+      }
     },
     "variables": {
       "title": "Variables",
       "add": "Ajouter une variable",
       "type_number": "Nombre",
-      "type_text": "Texte"
+      "type_text": "Texte",
+      "name_label": "Nom de la variable",
+      "name_placeholder": "Minuscules, chiffres et underscores uniquement",
+      "value_label": "Valeur par défaut",
+      "delete_confirm": "Êtes-vous sûr de vouloir supprimer cette variable ?",
+      "validation": {
+        "name_pattern": "Le nom de variable n'accepte que les minuscules, chiffres et underscores.",
+        "name_empty": "Veuillez saisir un nom de variable.",
+        "name_duplicate": "Ce nom de variable est déjà utilisé.",
+        "id_duplicate": "L'ID de variable est en double.",
+        "type_mismatch": "La valeur ne correspond pas au type de variable."
+      }
     },
     "settings": {
       "title": "Paramètres de l'enquête",
@@ -365,6 +389,22 @@
       "max_items_exceeded": "Nombre maximum d'éléments de logique dépassé",
       "empty_conditions": "Les conditions ne peuvent pas être vides",
       "logic_valid": "Validation de la logique réussie"
+    }
+  },
+  "recall": {
+    "title": "Recall",
+    "insert": "Insérer un recall",
+    "fallback_empty_warning": "Le texte de remplacement du recall est vide. Un texte vide sera affiché si aucune valeur n'est disponible.",
+    "nested_placeholder": "___",
+    "format": {
+      "date_ordinal": "{{day}} {{month}} {{year}}",
+      "array_separator": ", ",
+      "truncated": "{{start}}...{{end}}"
+    },
+    "source": {
+      "variable": "Variable",
+      "element": "Question",
+      "hiddenField": "Champ caché"
     }
   }
 }

@@ -253,13 +253,37 @@
     "hidden_fields": {
       "title": "Versteckte Felder",
       "enabled": "Versteckte Felder aktivieren",
-      "add_field": "Feld hinzufügen"
+      "add_field": "Feld hinzufügen",
+      "id_placeholder": "Feld-ID eingeben",
+      "delete_field": "Feld löschen",
+      "validation": {
+        "id_empty": "{{type}}-ID ist erforderlich.",
+        "id_duplicate": "{{type}}-ID existiert bereits in Fragen, versteckten Feldern oder Variablen.",
+        "id_forbidden": "{{type}}-ID ist nicht erlaubt.",
+        "id_spaces": "{{type}}-ID darf keine Leerzeichen enthalten.",
+        "id_pattern": "Nur Buchstaben, Zahlen, Bindestriche und Unterstriche sind erlaubt.",
+        "in_use_logic": "Kann nicht gelöscht werden: Wird in bedingter Logik verwendet.",
+        "in_use_recall": "Kann nicht gelöscht werden: Wird in Recall verwendet.",
+        "in_use_quota": "Kann nicht gelöscht werden: Wird in Quotenbedingungen verwendet.",
+        "in_use_followup": "Kann nicht gelöscht werden: Wird in Follow-up verwendet."
+      }
     },
     "variables": {
       "title": "Variablen",
       "add": "Variable hinzufügen",
       "type_number": "Zahl",
-      "type_text": "Text"
+      "type_text": "Text",
+      "name_label": "Variablenname",
+      "name_placeholder": "Nur Kleinbuchstaben, Zahlen und Unterstriche",
+      "value_label": "Standardwert",
+      "delete_confirm": "Möchten Sie diese Variable wirklich löschen?",
+      "validation": {
+        "name_pattern": "Variablenname erlaubt nur Kleinbuchstaben, Zahlen und Unterstriche.",
+        "name_empty": "Bitte geben Sie einen Variablennamen ein.",
+        "name_duplicate": "Dieser Variablenname wird bereits verwendet.",
+        "id_duplicate": "Variablen-ID ist doppelt vorhanden.",
+        "type_mismatch": "Der Wert stimmt nicht mit dem Variablentyp überein."
+      }
     },
     "settings": {
       "title": "Umfrageeinstellungen",
@@ -365,6 +389,22 @@
       "max_items_exceeded": "Maximale Anzahl an Logik-Elementen überschritten",
       "empty_conditions": "Bedingungen dürfen nicht leer sein",
       "logic_valid": "Logikvalidierung bestanden"
+    }
+  },
+  "recall": {
+    "title": "Recall",
+    "insert": "Recall einfügen",
+    "fallback_empty_warning": "Recall-Ersatztext ist leer. Wenn kein Wert verfügbar ist, wird leerer Text angezeigt.",
+    "nested_placeholder": "___",
+    "format": {
+      "date_ordinal": "{{day}} {{month}} {{year}}",
+      "array_separator": ", ",
+      "truncated": "{{start}}...{{end}}"
+    },
+    "source": {
+      "variable": "Variable",
+      "element": "Frage",
+      "hiddenField": "Verstecktes Feld"
     }
   }
 }

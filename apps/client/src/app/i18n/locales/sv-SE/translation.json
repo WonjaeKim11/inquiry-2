@@ -253,13 +253,37 @@
     "hidden_fields": {
       "title": "Dolda fält",
       "enabled": "Aktivera dolda fält",
-      "add_field": "Lägg till fält"
+      "add_field": "Lägg till fält",
+      "id_placeholder": "Ange fält-ID",
+      "delete_field": "Ta bort fält",
+      "validation": {
+        "id_empty": "{{type}}-ID krävs.",
+        "id_duplicate": "{{type}}-ID finns redan i frågor, dolda fält eller variabler.",
+        "id_forbidden": "{{type}}-ID är inte tillåtet.",
+        "id_spaces": "{{type}}-ID får inte innehålla mellanslag.",
+        "id_pattern": "Endast bokstäver, siffror, bindestreck och understreck är tillåtna.",
+        "in_use_logic": "Kan inte ta bort: används i villkorslogik.",
+        "in_use_recall": "Kan inte ta bort: används i recall.",
+        "in_use_quota": "Kan inte ta bort: används i kvotvillkor.",
+        "in_use_followup": "Kan inte ta bort: används i uppföljning."
+      }
     },
     "variables": {
       "title": "Variabler",
       "add": "Lägg till variabel",
       "type_number": "Nummer",
-      "type_text": "Text"
+      "type_text": "Text",
+      "name_label": "Variabelnamn",
+      "name_placeholder": "Endast gemener, siffror och understreck",
+      "value_label": "Standardvärde",
+      "delete_confirm": "Är du säker på att du vill ta bort denna variabel?",
+      "validation": {
+        "name_pattern": "Variabelnamn tillåter bara gemener, siffror och understreck.",
+        "name_empty": "Ange ett variabelnamn.",
+        "name_duplicate": "Detta variabelnamn används redan.",
+        "id_duplicate": "Variabel-ID är duplicerat.",
+        "type_mismatch": "Värdet matchar inte variabeltypen."
+      }
     },
     "settings": {
       "title": "Enkätinställningar",
@@ -365,6 +389,22 @@
       "max_items_exceeded": "Maximalt antal logikposter överskridet",
       "empty_conditions": "Villkor kan inte vara tomma",
       "logic_valid": "Logikvalidering godkänd"
+    }
+  },
+  "recall": {
+    "title": "Recall",
+    "insert": "Infoga recall",
+    "fallback_empty_warning": "Recall-reservtexten är tom. Tom text visas när inget värde är tillgängligt.",
+    "nested_placeholder": "___",
+    "format": {
+      "date_ordinal": "{{day}} {{month}} {{year}}",
+      "array_separator": ", ",
+      "truncated": "{{start}}...{{end}}"
+    },
+    "source": {
+      "variable": "Variabel",
+      "element": "Fråga",
+      "hiddenField": "Dolt fält"
     }
   }
 }

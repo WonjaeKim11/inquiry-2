@@ -253,13 +253,37 @@
     "hidden_fields": {
       "title": "Verborgen velden",
       "enabled": "Verborgen velden inschakelen",
-      "add_field": "Veld toevoegen"
+      "add_field": "Veld toevoegen",
+      "id_placeholder": "Voer veld-ID in",
+      "delete_field": "Veld verwijderen",
+      "validation": {
+        "id_empty": "{{type}} ID is verplicht.",
+        "id_duplicate": "{{type}} ID bestaat al in vragen, verborgen velden of variabelen.",
+        "id_forbidden": "{{type}} ID is niet toegestaan.",
+        "id_spaces": "{{type}} ID mag geen spaties bevatten.",
+        "id_pattern": "Alleen letters, cijfers, streepjes en underscores zijn toegestaan.",
+        "in_use_logic": "Kan niet verwijderen: wordt gebruikt in voorwaardelijke logica.",
+        "in_use_recall": "Kan niet verwijderen: wordt gebruikt in recall.",
+        "in_use_quota": "Kan niet verwijderen: wordt gebruikt in quotavoorwaarden.",
+        "in_use_followup": "Kan niet verwijderen: wordt gebruikt in follow-up."
+      }
     },
     "variables": {
       "title": "Variabelen",
       "add": "Variabele toevoegen",
       "type_number": "Getal",
-      "type_text": "Tekst"
+      "type_text": "Tekst",
+      "name_label": "Variabelenaam",
+      "name_placeholder": "Alleen kleine letters, cijfers en underscores",
+      "value_label": "Standaardwaarde",
+      "delete_confirm": "Weet u zeker dat u deze variabele wilt verwijderen?",
+      "validation": {
+        "name_pattern": "Variabelenaam staat alleen kleine letters, cijfers en underscores toe.",
+        "name_empty": "Voer een variabelenaam in.",
+        "name_duplicate": "Deze variabelenaam is al in gebruik.",
+        "id_duplicate": "Variabele-ID is gedupliceerd.",
+        "type_mismatch": "Waarde komt niet overeen met het variabeletype."
+      }
     },
     "settings": {
       "title": "Enquête-instellingen",
@@ -365,6 +389,22 @@
       "max_items_exceeded": "Maximum aantal logica-items overschreden",
       "empty_conditions": "Voorwaarden mogen niet leeg zijn",
       "logic_valid": "Logicavalidatie geslaagd"
+    }
+  },
+  "recall": {
+    "title": "Recall",
+    "insert": "Recall invoegen",
+    "fallback_empty_warning": "Recall-terugvaltekst is leeg. Lege tekst wordt weergegeven als er geen waarde beschikbaar is.",
+    "nested_placeholder": "___",
+    "format": {
+      "date_ordinal": "{{day}} {{month}} {{year}}",
+      "array_separator": ", ",
+      "truncated": "{{start}}...{{end}}"
+    },
+    "source": {
+      "variable": "Variabele",
+      "element": "Vraag",
+      "hiddenField": "Verborgen veld"
     }
   }
 }

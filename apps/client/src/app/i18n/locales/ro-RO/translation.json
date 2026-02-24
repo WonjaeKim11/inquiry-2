@@ -253,13 +253,37 @@
     "hidden_fields": {
       "title": "Câmpuri ascunse",
       "enabled": "Activați câmpurile ascunse",
-      "add_field": "Adăugați câmp"
+      "add_field": "Adăugați câmp",
+      "id_placeholder": "Introduceți ID-ul câmpului",
+      "delete_field": "Șterge câmpul",
+      "validation": {
+        "id_empty": "ID-ul {{type}} este obligatoriu.",
+        "id_duplicate": "ID-ul {{type}} există deja în întrebări, câmpuri ascunse sau variabile.",
+        "id_forbidden": "ID-ul {{type}} nu este permis.",
+        "id_spaces": "ID-ul {{type}} nu poate conține spații.",
+        "id_pattern": "Sunt permise doar litere, cifre, cratime și underscore.",
+        "in_use_logic": "Nu se poate șterge: utilizat în logica condițională.",
+        "in_use_recall": "Nu se poate șterge: utilizat în recall.",
+        "in_use_quota": "Nu se poate șterge: utilizat în condițiile de cotă.",
+        "in_use_followup": "Nu se poate șterge: utilizat în urmărire."
+      }
     },
     "variables": {
       "title": "Variabile",
       "add": "Adăugați variabilă",
       "type_number": "Număr",
-      "type_text": "Text"
+      "type_text": "Text",
+      "name_label": "Numele variabilei",
+      "name_placeholder": "Doar litere mici, cifre și underscore",
+      "value_label": "Valoare implicită",
+      "delete_confirm": "Sunteți sigur că doriți să ștergeți această variabilă?",
+      "validation": {
+        "name_pattern": "Numele variabilei permite doar litere mici, cifre și underscore.",
+        "name_empty": "Vă rugăm să introduceți un nume de variabilă.",
+        "name_duplicate": "Acest nume de variabilă este deja utilizat.",
+        "id_duplicate": "ID-ul variabilei este duplicat.",
+        "type_mismatch": "Valoarea nu corespunde tipului variabilei."
+      }
     },
     "settings": {
       "title": "Setări chestionar",
@@ -365,6 +389,22 @@
       "max_items_exceeded": "Numărul maxim de elemente de logică a fost depășit",
       "empty_conditions": "Condițiile nu pot fi goale",
       "logic_valid": "Validarea logicii a trecut"
+    }
+  },
+  "recall": {
+    "title": "Recall",
+    "insert": "Inserare recall",
+    "fallback_empty_warning": "Textul de rezervă al recall-ului este gol. Textul gol va fi afișat când nu este disponibilă nicio valoare.",
+    "nested_placeholder": "___",
+    "format": {
+      "date_ordinal": "{{day}} {{month}} {{year}}",
+      "array_separator": ", ",
+      "truncated": "{{start}}...{{end}}"
+    },
+    "source": {
+      "variable": "Variabilă",
+      "element": "Întrebare",
+      "hiddenField": "Câmp ascuns"
     }
   }
 }

@@ -253,13 +253,37 @@
     "hidden_fields": {
       "title": "Rejtett mezők",
       "enabled": "Rejtett mezők engedélyezése",
-      "add_field": "Mező hozzáadása"
+      "add_field": "Mező hozzáadása",
+      "id_placeholder": "Adja meg a mező azonosítóját",
+      "delete_field": "Mező törlése",
+      "validation": {
+        "id_empty": "{{type}} azonosító megadása kötelező.",
+        "id_duplicate": "{{type}} azonosító már létezik a kérdésekben, rejtett mezőkben vagy változókban.",
+        "id_forbidden": "{{type}} azonosító nem engedélyezett.",
+        "id_spaces": "{{type}} azonosító nem tartalmazhat szóközöket.",
+        "id_pattern": "Csak betűk, számok, kötőjelek és aláhúzások engedélyezettek.",
+        "in_use_logic": "Nem törölhető: feltételes logikában használatban van.",
+        "in_use_recall": "Nem törölhető: recall-ban használatban van.",
+        "in_use_quota": "Nem törölhető: kvótafeltételekben használatban van.",
+        "in_use_followup": "Nem törölhető: utánkövetésben használatban van."
+      }
     },
     "variables": {
       "title": "Változók",
       "add": "Változó hozzáadása",
       "type_number": "Szám",
-      "type_text": "Szöveg"
+      "type_text": "Szöveg",
+      "name_label": "Változó neve",
+      "name_placeholder": "Csak kisbetűk, számok és aláhúzások",
+      "value_label": "Alapértelmezett érték",
+      "delete_confirm": "Biztosan törölni szeretné ezt a változót?",
+      "validation": {
+        "name_pattern": "A változó neve csak kisbetűket, számokat és aláhúzásokat tartalmazhat.",
+        "name_empty": "Kérjük, adja meg a változó nevét.",
+        "name_duplicate": "Ez a változónév már használatban van.",
+        "id_duplicate": "A változó azonosítója duplikált.",
+        "type_mismatch": "Az érték nem egyezik a változó típusával."
+      }
     },
     "settings": {
       "title": "Kérdőív beállításai",
@@ -365,6 +389,22 @@
       "max_items_exceeded": "A logikai elemek maximális száma túllépve",
       "empty_conditions": "A feltételek nem lehetnek üresek",
       "logic_valid": "Logikai ellenőrzés sikeres"
+    }
+  },
+  "recall": {
+    "title": "Recall",
+    "insert": "Recall beszúrása",
+    "fallback_empty_warning": "A recall helyettesítő szöveg üres. Üres szöveg jelenik meg, ha nem áll rendelkezésre érték.",
+    "nested_placeholder": "___",
+    "format": {
+      "date_ordinal": "{{year}}. {{month}} {{day}}.",
+      "array_separator": ", ",
+      "truncated": "{{start}}...{{end}}"
+    },
+    "source": {
+      "variable": "Változó",
+      "element": "Kérdés",
+      "hiddenField": "Rejtett mező"
     }
   }
 }

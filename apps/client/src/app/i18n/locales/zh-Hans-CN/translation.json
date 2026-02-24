@@ -253,13 +253,37 @@
     "hidden_fields": {
       "title": "隐藏字段",
       "enabled": "启用隐藏字段",
-      "add_field": "添加字段"
+      "add_field": "添加字段",
+      "id_placeholder": "输入字段ID",
+      "delete_field": "删除字段",
+      "validation": {
+        "id_empty": "{{type}} ID为必填项。",
+        "id_duplicate": "{{type}} ID已存在于问题、隐藏字段或变量中。",
+        "id_forbidden": "{{type}} ID不允许使用。",
+        "id_spaces": "{{type}} ID不能包含空格。",
+        "id_pattern": "仅允许字母、数字、连字符和下划线。",
+        "in_use_logic": "无法删除：已在条件逻辑中使用。",
+        "in_use_recall": "无法删除：已在引用中使用。",
+        "in_use_quota": "无法删除：已在配额条件中使用。",
+        "in_use_followup": "无法删除：已在后续操作中使用。"
+      }
     },
     "variables": {
       "title": "变量",
       "add": "添加变量",
       "type_number": "数字",
-      "type_text": "文本"
+      "type_text": "文本",
+      "name_label": "变量名称",
+      "name_placeholder": "仅限小写字母、数字和下划线",
+      "value_label": "默认值",
+      "delete_confirm": "确定要删除此变量吗？",
+      "validation": {
+        "name_pattern": "变量名称仅允许小写字母、数字和下划线。",
+        "name_empty": "请输入变量名称。",
+        "name_duplicate": "此变量名称已被使用。",
+        "id_duplicate": "变量ID重复。",
+        "type_mismatch": "值与变量类型不匹配。"
+      }
     },
     "settings": {
       "title": "问卷设置",
@@ -365,6 +389,22 @@
       "max_items_exceeded": "超过逻辑项目最大数量",
       "empty_conditions": "条件不能为空",
       "logic_valid": "逻辑验证通过"
+    }
+  },
+  "recall": {
+    "title": "引用",
+    "insert": "插入引用",
+    "fallback_empty_warning": "引用备用文本为空。当没有可用值时将显示空文本。",
+    "nested_placeholder": "___",
+    "format": {
+      "date_ordinal": "{{year}}年{{month}}{{day}}日",
+      "array_separator": "、",
+      "truncated": "{{start}}...{{end}}"
+    },
+    "source": {
+      "variable": "变量",
+      "element": "问题",
+      "hiddenField": "隐藏字段"
     }
   }
 }

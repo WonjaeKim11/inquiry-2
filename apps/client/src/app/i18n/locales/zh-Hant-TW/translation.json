@@ -253,13 +253,37 @@
     "hidden_fields": {
       "title": "隱藏欄位",
       "enabled": "啟用隱藏欄位",
-      "add_field": "新增欄位"
+      "add_field": "新增欄位",
+      "id_placeholder": "輸入欄位ID",
+      "delete_field": "刪除欄位",
+      "validation": {
+        "id_empty": "{{type}} ID為必填項。",
+        "id_duplicate": "{{type}} ID已存在於問題、隱藏欄位或變數中。",
+        "id_forbidden": "{{type}} ID不允許使用。",
+        "id_spaces": "{{type}} ID不能包含空格。",
+        "id_pattern": "僅允許字母、數字、連字號和底線。",
+        "in_use_logic": "無法刪除：已在條件邏輯中使用。",
+        "in_use_recall": "無法刪除：已在引用中使用。",
+        "in_use_quota": "無法刪除：已在配額條件中使用。",
+        "in_use_followup": "無法刪除：已在後續操作中使用。"
+      }
     },
     "variables": {
       "title": "變數",
       "add": "新增變數",
       "type_number": "數字",
-      "type_text": "文字"
+      "type_text": "文字",
+      "name_label": "變數名稱",
+      "name_placeholder": "僅限小寫字母、數字和底線",
+      "value_label": "預設值",
+      "delete_confirm": "確定要刪除此變數嗎？",
+      "validation": {
+        "name_pattern": "變數名稱僅允許小寫字母、數字和底線。",
+        "name_empty": "請輸入變數名稱。",
+        "name_duplicate": "此變數名稱已被使用。",
+        "id_duplicate": "變數ID重複。",
+        "type_mismatch": "值與變數類型不相符。"
+      }
     },
     "settings": {
       "title": "問卷設定",
@@ -365,6 +389,22 @@
       "max_items_exceeded": "超過邏輯項目最大數量",
       "empty_conditions": "條件不能為空",
       "logic_valid": "邏輯驗證通過"
+    }
+  },
+  "recall": {
+    "title": "引用",
+    "insert": "插入引用",
+    "fallback_empty_warning": "引用備用文字為空。當沒有可用值時將顯示空文字。",
+    "nested_placeholder": "___",
+    "format": {
+      "date_ordinal": "{{year}}年{{month}}{{day}}日",
+      "array_separator": "、",
+      "truncated": "{{start}}...{{end}}"
+    },
+    "source": {
+      "variable": "變數",
+      "element": "問題",
+      "hiddenField": "隱藏欄位"
     }
   }
 }

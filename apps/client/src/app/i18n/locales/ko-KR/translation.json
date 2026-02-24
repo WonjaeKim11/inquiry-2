@@ -540,13 +540,37 @@
     "hidden_fields": {
       "title": "숨겨진 필드",
       "enabled": "숨겨진 필드 활성화",
-      "add_field": "필드 추가"
+      "add_field": "필드 추가",
+      "id_placeholder": "필드 ID 입력",
+      "delete_field": "필드 삭제",
+      "validation": {
+        "id_empty": "{{type}} ID는 필수입니다.",
+        "id_duplicate": "{{type}} ID가 질문, 숨겨진 필드 또는 변수에 이미 존재합니다.",
+        "id_forbidden": "{{type}} ID는 사용할 수 없습니다.",
+        "id_spaces": "{{type}} ID에 공백을 포함할 수 없습니다.",
+        "id_pattern": "영문자, 숫자, 하이픈, 언더스코어만 허용됩니다.",
+        "in_use_logic": "삭제할 수 없습니다: 조건부 로직에서 사용 중입니다.",
+        "in_use_recall": "삭제할 수 없습니다: 리콜에서 사용 중입니다.",
+        "in_use_quota": "삭제할 수 없습니다: 쿼터 조건에서 사용 중입니다.",
+        "in_use_followup": "삭제할 수 없습니다: 후속 조치에서 사용 중입니다."
+      }
     },
     "variables": {
       "title": "변수",
       "add": "변수 추가",
       "type_number": "숫자",
-      "type_text": "텍스트"
+      "type_text": "텍스트",
+      "name_label": "변수 이름",
+      "name_placeholder": "소문자, 숫자, 언더스코어만 사용 가능",
+      "value_label": "기본값",
+      "delete_confirm": "이 변수를 삭제하시겠습니까?",
+      "validation": {
+        "name_pattern": "변수 이름은 소문자, 숫자, 언더스코어만 허용됩니다.",
+        "name_empty": "변수 이름을 입력해주세요.",
+        "name_duplicate": "이 변수 이름은 이미 사용 중입니다.",
+        "id_duplicate": "변수 ID가 중복되었습니다.",
+        "type_mismatch": "값이 변수 유형과 일치하지 않습니다."
+      }
     },
     "settings": {
       "title": "설문 설정",
@@ -652,6 +676,22 @@
       "max_items_exceeded": "최대 로직 아이템 수를 초과했습니다",
       "empty_conditions": "조건이 비어 있을 수 없습니다",
       "logic_valid": "로직 검증을 통과했습니다"
+    }
+  },
+  "recall": {
+    "title": "리콜",
+    "insert": "리콜 삽입",
+    "fallback_empty_warning": "리콜 대체 텍스트가 비어 있습니다. 값이 없을 때 빈 텍스트가 표시됩니다.",
+    "nested_placeholder": "___",
+    "format": {
+      "date_ordinal": "{{year}}년 {{month}} {{day}}일",
+      "array_separator": ", ",
+      "truncated": "{{start}}...{{end}}"
+    },
+    "source": {
+      "variable": "변수",
+      "element": "질문",
+      "hiddenField": "숨겨진 필드"
     }
   }
 }
