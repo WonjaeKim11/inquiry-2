@@ -327,3 +327,41 @@ export {
   stripHtmlAndCheckEmpty,
 } from './lib/multilingual/index';
 export type { IsoLanguageCode } from './lib/multilingual/index';
+
+// Styling 모듈
+export type {
+  StylingColor,
+  CardArrangement,
+  CardArrangementOption,
+  SurveyLogo,
+  SurveyBackground,
+  BackgroundType,
+  BaseStyling,
+  ProjectStyling,
+  SurveyStyling,
+  AnimationBackground,
+  SuggestedColors,
+  ResolveStylingParams,
+} from './lib/styling/index';
+export {
+  stylingColorSchema,
+  cardArrangementSchema,
+  surveyLogoSchema,
+  surveyBackgroundSchema,
+  baseStylingSchema,
+  projectStylingSchema,
+  surveyStylingSchema,
+  CARD_ARRANGEMENT_OPTIONS,
+  BACKGROUND_TYPES,
+  STYLING_DEFAULTS,
+  ANIMATION_BACKGROUNDS,
+  isValidCssColor,
+  parseHexColor,
+  rgbToHex,
+  mixColors,
+  isLightColor,
+  suggestColors,
+  migrateLegacyStyling,
+  resolveStyling,
+  deepMergeNonNull,
+} from './lib/styling/index';
