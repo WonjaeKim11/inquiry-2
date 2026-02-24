@@ -228,3 +228,31 @@ export type {
   BlockLogicValidationError,
   CycleDetectionResult,
 } from './lib/logic/index';
+
+// Recall 모듈
+export type { RecallInfo, RecallContext, RecallItem } from './lib/recall/index';
+export {
+  recallInfoSchema,
+  recallContextSchema,
+  recallItemSchema,
+} from './lib/recall/index';
+export {
+  RECALL_PATTERN,
+  getFirstRecallId,
+  getAllRecallIds,
+  getFallbackValue,
+  getAllRecallInfo,
+} from './lib/recall/index';
+export { resolveRecalls } from './lib/recall/index';
+export {
+  formatDateValue,
+  formatArrayValue,
+  truncateText,
+  replaceNbsp,
+} from './lib/recall/index';
+export { recallToEditor, editorToRecall } from './lib/recall/index';
+export {
+  sanitizeNestedRecall,
+  stripHtmlTags,
+  validateFallbacks,
+} from './lib/recall/index';
