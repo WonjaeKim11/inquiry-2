@@ -289,6 +289,9 @@ importers:
       '@inquiry/server-member':
         specifier: workspace:*
         version: link:../../libs/server/member
+      '@inquiry/server-multilingual':
+        specifier: workspace:*
+        version: link:../../libs/server/multilingual
       '@inquiry/server-organization':
         specifier: workspace:*
         version: link:../../libs/server/organization

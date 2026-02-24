@@ -36,6 +36,9 @@
       "path": "../../libs/server/quota/tsconfig.lib.json"
     },
     {
+      "path": "../../libs/server/multilingual/tsconfig.lib.json"
+    },
+    {
       "path": "../../libs/server/member/tsconfig.lib.json"
     },
     {

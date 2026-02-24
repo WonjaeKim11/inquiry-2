@@ -4,6 +4,7 @@ import {
   SurveyEndingSchema,
   HiddenFieldsSchema,
   SurveyVariableSchema,
+  surveyLanguageArraySchema,
 } from '@inquiry/survey-builder-config';
 
 /**
@@ -62,8 +63,10 @@ export const CreateSurveySchema = z.object({
   projectOverwrites: z.record(z.unknown()).nullable().optional(),
   /** 설문 메타데이터 (JSON) */
   surveyMetadata: z.record(z.unknown()).nullable().optional(),
-  /** 언어 설정 (JSON) */
-  languages: z.unknown().optional(),
+  /** 언어 설정 (SurveyLanguage 배열) */
+  languages: surveyLanguageArraySchema.optional(),
+  /** 언어 전환 UI 표시 여부 */
+  showLanguageSwitch: z.boolean().optional(),
   /** 이메일 인증 활성화 */
   isVerifyEmailEnabled: z.boolean().optional(),
   /** 이메일 당 단일 응답 */

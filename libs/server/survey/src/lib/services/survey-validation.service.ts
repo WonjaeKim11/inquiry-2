@@ -5,6 +5,8 @@ import {
   validateSurveyLogic,
   validateSurveyVariablesAndFields,
   validateQuotas,
+  validateSurveyLanguages,
+  validateTranslationCompleteness,
 } from '@inquiry/survey-builder-config';
 import type {
   WelcomeCard,
@@ -13,13 +15,14 @@ import type {
   LogicItem,
   QuotaDefinition,
   SurveyEnding,
+  SurveyLanguage,
 } from '@inquiry/survey-builder-config';
 import { ServerPrismaService } from '@inquiry/server-prisma';
 import { HIDDEN_FIELD_FORBIDDEN_IDS } from '../constants/hidden-field-forbidden-ids.js';
 
 /**
  * 설문 발행 전 검증 서비스.
- * Builder 스키마 구조 + 비즈니스 규칙 + 조건부 로직 + 변수/히든 필드 + 쿼터를 5단계로 검증한다.
+ * Builder 스키마 구조 + 비즈니스 규칙 + 조건부 로직 + 변수/히든 필드 + 쿼터 + 다국어 번역을 6단계로 검증한다.
  */
 @Injectable()
 export class SurveyValidationService {
@@ -34,6 +37,7 @@ export class SurveyValidationService {
    * 3) 조건부 로직 검증 (블록 로직 구조 + 순환 검출)
    * 4) 변수/히든 필드 검증 (ID 유일성, 이름 패턴, 참조 무결성, recall fallback)
    * 5) 쿼터 검증 (이름/limit/조건/endingCard 유효성)
+   * 6) 다국어 번역 완료 검증
    *
    * @param survey - Prisma에서 조회한 설문 객체
    * @throws BadRequestException - 검증 실패 시
@@ -48,6 +52,7 @@ export class SurveyValidationService {
     variables?: unknown;
     displayOption: string;
     displayLimit: number | null;
+    languages?: unknown;
   }): Promise<void> {
     // 1단계: Builder 스키마 구조 검증
     await this.validateBuilderSchema(survey.schema);
@@ -63,6 +68,9 @@ export class SurveyValidationService {
 
     // 5단계: 쿼터 검증
     await this.validateQuotas(survey);
+
+    // 6단계: 다국어 번역 완료 검증
+    await this.validateMultilingual(survey);
   }
 
   /**
@@ -384,6 +392,75 @@ export class SurveyValidationService {
 
     if (!result.valid) {
       throw new BadRequestException(result.errors.join(' '));
+    }
+  }
+
+  /**
+   * 다국어 번역 완료를 검증한다 (6단계).
+   * 활성 언어가 2개 이상인 경우 모든 TI18nString 필드에 번역이 완료되었는지 확인한다.
+   * ServerPrismaService로 직접 조회하여 순환 의존을 방지한다.
+   *
+   * @param survey - 설문 데이터 (languages 포함)
+   */
+  private async validateMultilingual(survey: {
+    id: string;
+    schema: unknown;
+    languages?: unknown;
+    welcomeCard: unknown;
+    endings: unknown;
+  }): Promise<void> {
+    const languages = (survey.languages ?? []) as SurveyLanguage[];
+    if (!Array.isArray(languages) || languages.length <= 1) return;
+
+    // SurveyLanguage 구조 검증
+    const langResult = validateSurveyLanguages(languages);
+    if (!langResult.valid) {
+      throw new BadRequestException(langResult.errors.join(' '));
+    }
+
+    // 활성 언어 코드 추출 (Language 테이블에서 code 조회)
+    const enabledLangs = languages.filter((l) => l.enabled);
+    if (enabledLangs.length <= 1) return; // 활성 언어가 1개 이하면 검증 불필요
+
+    const langIds = enabledLangs.map((l) => l.languageId);
+    const dbLangs = await this.prisma.language.findMany({
+      where: { id: { in: langIds } },
+      select: { id: true, code: true },
+    });
+
+    // 기본 언어를 제외한 활성 언어 코드만 검증 대상
+    const defaultLang = languages.find((l) => l.default);
+    const defaultLangDb = defaultLang
+      ? dbLangs.find((d) => d.id === defaultLang.languageId)
+      : null;
+    const enabledCodes = dbLangs
+      .filter((l) => !defaultLangDb || l.id !== defaultLangDb.id)
+      .map((l) => l.code);
+
+    if (enabledCodes.length === 0) return;
+
+    // 번역 완료 검증
+    const surveyData = {
+      schema: survey.schema,
+      welcomeCard: survey.welcomeCard,
+      endings: survey.endings,
+    };
+    const result = validateTranslationCompleteness(
+      surveyData as Record<string, unknown>,
+      enabledCodes
+    );
+
+    if (!result.valid) {
+      const missing = result.missingTranslations.slice(0, 5);
+      const msgs = missing.map(
+        (m) => `"${m.field}" 필드의 "${m.language}" 번역 누락`
+      );
+      if (result.missingTranslations.length > 5) {
+        msgs.push(`외 ${result.missingTranslations.length - 5}건`);
+      }
+      throw new BadRequestException(
+        `번역이 완료되지 않았습니다: ${msgs.join(', ')}`
+      );
     }
   }
 }

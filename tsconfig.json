@@ -107,6 +107,9 @@
     },
     {
       "path": "./libs/server/quota"
+    },
+    {
+      "path": "./libs/server/multilingual"
     }
   ]
 }
