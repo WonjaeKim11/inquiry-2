@@ -895,6 +895,88 @@
       "confirmDelete": "삭제",
       "imageUrlPlaceholder": "이미지 URL을 입력하세요...",
       "removeImage": "이미지 제거"
+    },
+    "element": {
+      "types": {
+        "openText": "텍스트 입력",
+        "consent": "동의",
+        "cta": "CTA",
+        "date": "날짜",
+        "cal": "Cal.com",
+        "multipleChoiceSingle": "객관식 (단일 선택)",
+        "multipleChoiceMulti": "객관식 (복수 선택)",
+        "nps": "NPS",
+        "rating": "평점",
+        "pictureSelection": "이미지 선택",
+        "ranking": "순위"
+      },
+      "headline": "질문",
+      "headlinePlaceholder": "질문을 입력하세요...",
+      "placeholder": "플레이스홀더",
+      "placeholderPlaceholder": "플레이스홀더 텍스트를 입력하세요...",
+      "inputType": "입력 유형",
+      "inputTypes": {
+        "text": "텍스트",
+        "email": "이메일",
+        "url": "URL",
+        "number": "숫자",
+        "phone": "전화번호"
+      },
+      "longAnswer": "장문 응답",
+      "charLimit": "글자 수 제한",
+      "minLength": "최소",
+      "maxLength": "최대",
+      "required": "필수",
+      "consentLabel": "동의 문구",
+      "consentLabelPlaceholder": "동의합니다...",
+      "buttonLabel": "버튼 라벨",
+      "buttonLabelPlaceholder": "다음",
+      "buttonUrl": "버튼 URL",
+      "buttonUrlPlaceholder": "https://example.com",
+      "dismissible": "건너뛰기 허용",
+      "dateFormat": "날짜 형식",
+      "calUserName": "Cal.com 사용자명",
+      "calUserNamePlaceholder": "사용자명",
+      "calHost": "Cal.com 호스트",
+      "calHostPlaceholder": "cal.com",
+      "calHostHint": "기본 Cal.com 호스트를 사용하려면 비워두세요",
+      "advancedSettings": "고급 설정",
+      "choices": "선택지",
+      "choiceLabelPlaceholder": "선택지 라벨",
+      "addChoice": "선택지 추가",
+      "removeChoice": "선택지 삭제",
+      "displayType": "표시 유형",
+      "displayTypes": {
+        "list": "목록",
+        "grid": "격자"
+      },
+      "shuffleOption": "셔플 옵션",
+      "shuffleOptions": {
+        "none": "없음",
+        "all": "전체",
+        "exceptLast": "마지막 제외"
+      },
+      "otherOptionPlaceholder": "기타 옵션 플레이스홀더",
+      "otherOptionPlaceholderHint": "예: 직접 입력해주세요...",
+      "npsScaleDescription": "척도: {{min}} - {{max}} (고정)",
+      "lowerLabel": "하단 라벨",
+      "lowerLabelPlaceholder": "예: 전혀 그렇지 않다",
+      "upperLabel": "상단 라벨",
+      "upperLabelPlaceholder": "예: 매우 그렇다",
+      "scaleType": "척도 유형",
+      "scaleTypes": {
+        "smiley": "이모지",
+        "star": "별점",
+        "number": "숫자"
+      },
+      "range": "범위",
+      "colorCoding": "색상 코딩",
+      "pictureChoices": "이미지 선택지",
+      "imageUrlPlaceholder": "이미지 URL",
+      "addPictureChoice": "이미지 선택지 추가",
+      "removePictureChoice": "이미지 선택지 삭제",
+      "allowMulti": "복수 선택 허용",
+      "shuffleChoices": "선택지 셔플"
     }
   }
 }

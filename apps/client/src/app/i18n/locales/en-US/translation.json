@@ -895,6 +895,88 @@
       "confirmDelete": "Delete",
       "imageUrlPlaceholder": "Enter image URL...",
       "removeImage": "Remove image"
+    },
+    "element": {
+      "types": {
+        "openText": "Open Text",
+        "consent": "Consent",
+        "cta": "CTA",
+        "date": "Date",
+        "cal": "Cal.com",
+        "multipleChoiceSingle": "Multiple Choice (Single)",
+        "multipleChoiceMulti": "Multiple Choice (Multi)",
+        "nps": "NPS",
+        "rating": "Rating",
+        "pictureSelection": "Picture Selection",
+        "ranking": "Ranking"
+      },
+      "headline": "Question",
+      "headlinePlaceholder": "Enter your question...",
+      "placeholder": "Placeholder",
+      "placeholderPlaceholder": "Type placeholder text...",
+      "inputType": "Input Type",
+      "inputTypes": {
+        "text": "Text",
+        "email": "Email",
+        "url": "URL",
+        "number": "Number",
+        "phone": "Phone"
+      },
+      "longAnswer": "Long Answer",
+      "charLimit": "Character Limit",
+      "minLength": "Min",
+      "maxLength": "Max",
+      "required": "Required",
+      "consentLabel": "Consent Text",
+      "consentLabelPlaceholder": "I agree to...",
+      "buttonLabel": "Button Label",
+      "buttonLabelPlaceholder": "Next",
+      "buttonUrl": "Button URL",
+      "buttonUrlPlaceholder": "https://example.com",
+      "dismissible": "Allow Dismiss",
+      "dateFormat": "Date Format",
+      "calUserName": "Cal.com Username",
+      "calUserNamePlaceholder": "your-username",
+      "calHost": "Cal.com Host",
+      "calHostPlaceholder": "cal.com",
+      "calHostHint": "Leave empty to use default Cal.com host",
+      "advancedSettings": "Advanced Settings",
+      "choices": "Choices",
+      "choiceLabelPlaceholder": "Choice label",
+      "addChoice": "Add Choice",
+      "removeChoice": "Remove choice",
+      "displayType": "Display Type",
+      "displayTypes": {
+        "list": "List",
+        "grid": "Grid"
+      },
+      "shuffleOption": "Shuffle Option",
+      "shuffleOptions": {
+        "none": "None",
+        "all": "All",
+        "exceptLast": "Except Last"
+      },
+      "otherOptionPlaceholder": "Other Option Placeholder",
+      "otherOptionPlaceholderHint": "e.g. Please specify...",
+      "npsScaleDescription": "Scale: {{min}} - {{max}} (fixed)",
+      "lowerLabel": "Lower Label",
+      "lowerLabelPlaceholder": "e.g. Not at all likely",
+      "upperLabel": "Upper Label",
+      "upperLabelPlaceholder": "e.g. Extremely likely",
+      "scaleType": "Scale Type",
+      "scaleTypes": {
+        "smiley": "Smiley",
+        "star": "Star",
+        "number": "Number"
+      },
+      "range": "Range",
+      "colorCoding": "Color Coding",
+      "pictureChoices": "Picture Choices",
+      "imageUrlPlaceholder": "Image URL",
+      "addPictureChoice": "Add Picture Choice",
+      "removePictureChoice": "Remove picture choice",
+      "allowMulti": "Allow Multiple Selection",
+      "shuffleChoices": "Shuffle Choices"
     }
   }
 }

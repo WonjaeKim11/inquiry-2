@@ -619,6 +619,52 @@
       "confirmDelete": "删除",
       "imageUrlPlaceholder": "输入图片URL...",
       "removeImage": "移除图片"
+    },
+    "element": {
+      "types": {
+        "openText": "文本输入",
+        "consent": "同意",
+        "cta": "CTA",
+        "date": "日期",
+        "cal": "Cal.com",
+        "multipleChoiceSingle": "多选题（单选）",
+        "multipleChoiceMulti": "多选题（多选）",
+        "nps": "NPS",
+        "rating": "评分",
+        "pictureSelection": "图片选择",
+        "ranking": "排名"
+      },
+      "headline": "问题",
+      "headlinePlaceholder": "输入您的问题...",
+      "placeholder": "占位符",
+      "placeholderPlaceholder": "输入占位符文本...",
+      "inputType": "输入类型",
+      "inputTypes": {
+        "text": "文本",
+        "email": "电子邮件",
+        "url": "URL",
+        "number": "数字",
+        "phone": "电话"
+      },
+      "longAnswer": "长文回答",
+      "charLimit": "字数限制",
+      "minLength": "最小",
+      "maxLength": "最大",
+      "required": "必填",
+      "consentLabel": "同意文本",
+      "consentLabelPlaceholder": "我同意...",
+      "buttonLabel": "按钮标签",
+      "buttonLabelPlaceholder": "下一步",
+      "buttonUrl": "按钮URL",
+      "buttonUrlPlaceholder": "https://example.com",
+      "dismissible": "允许跳过",
+      "dateFormat": "日期格式",
+      "calUserName": "Cal.com 用户名",
+      "calUserNamePlaceholder": "用户名",
+      "calHost": "Cal.com 主机",
+      "calHostPlaceholder": "cal.com",
+      "calHostHint": "留空以使用默认的Cal.com主机",
+      "advancedSettings": "高级设置"
     }
   }
 }

@@ -116,6 +116,9 @@
     },
     {
       "path": "./libs/client/styling"
+    },
+    {
+      "path": "./libs/client/survey-editor"
     }
   ]
 }

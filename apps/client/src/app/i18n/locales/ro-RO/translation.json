@@ -619,6 +619,88 @@
       "confirmDelete": "Șterge",
       "imageUrlPlaceholder": "Introduceți URL-ul imaginii...",
       "removeImage": "Eliminare imagine"
+    },
+    "element": {
+      "types": {
+        "openText": "Text liber",
+        "consent": "Consimțământ",
+        "cta": "CTA",
+        "date": "Dată",
+        "cal": "Cal.com",
+        "multipleChoiceSingle": "Alegere multipla (unica)",
+        "multipleChoiceMulti": "Alegere multipla (multipla)",
+        "nps": "NPS",
+        "rating": "Evaluare",
+        "pictureSelection": "Selectie imagine",
+        "ranking": "Clasificare"
+      },
+      "headline": "Întrebare",
+      "headlinePlaceholder": "Introduceți întrebarea...",
+      "placeholder": "Text substituent",
+      "placeholderPlaceholder": "Introduceți textul substituent...",
+      "inputType": "Tip de intrare",
+      "inputTypes": {
+        "text": "Text",
+        "email": "E-mail",
+        "url": "URL",
+        "number": "Număr",
+        "phone": "Telefon"
+      },
+      "longAnswer": "Răspuns lung",
+      "charLimit": "Limită de caractere",
+      "minLength": "Min",
+      "maxLength": "Max",
+      "required": "Obligatoriu",
+      "consentLabel": "Text de consimțământ",
+      "consentLabelPlaceholder": "Sunt de acord...",
+      "buttonLabel": "Etichetă buton",
+      "buttonLabelPlaceholder": "Următorul",
+      "buttonUrl": "URL buton",
+      "buttonUrlPlaceholder": "https://example.com",
+      "dismissible": "Permite omiterea",
+      "dateFormat": "Format dată",
+      "calUserName": "Nume utilizator Cal.com",
+      "calUserNamePlaceholder": "nume-utilizator",
+      "calHost": "Gazdă Cal.com",
+      "calHostPlaceholder": "cal.com",
+      "calHostHint": "Lăsați gol pentru a folosi gazda implicită Cal.com",
+      "advancedSettings": "Setări avansate",
+      "choices": "Opțiuni",
+      "choiceLabelPlaceholder": "Etichetă opțiune",
+      "addChoice": "Adăugare opțiune",
+      "removeChoice": "Eliminare opțiune",
+      "displayType": "Tip de afișare",
+      "displayTypes": {
+        "list": "Listă",
+        "grid": "Grilă"
+      },
+      "shuffleOption": "Opțiune de amestecare",
+      "shuffleOptions": {
+        "none": "Niciuna",
+        "all": "Toate",
+        "exceptLast": "Exceptând ultima"
+      },
+      "otherOptionPlaceholder": "Text opțiune Altele",
+      "otherOptionPlaceholderHint": "ex. Vă rugăm specificați...",
+      "npsScaleDescription": "Scală: {{min}} - {{max}} (fixă)",
+      "lowerLabel": "Etichetă inferioară",
+      "lowerLabelPlaceholder": "ex. Deloc probabil",
+      "upperLabel": "Etichetă superioară",
+      "upperLabelPlaceholder": "ex. Extrem de probabil",
+      "scaleType": "Tip de scală",
+      "scaleTypes": {
+        "smiley": "Smiley",
+        "star": "Stea",
+        "number": "Număr"
+      },
+      "range": "Interval",
+      "colorCoding": "Codificare color",
+      "pictureChoices": "Opțiuni imagine",
+      "imageUrlPlaceholder": "URL imagine",
+      "addPictureChoice": "Adăugare opțiune imagine",
+      "removePictureChoice": "Eliminare opțiune imagine",
+      "allowMulti": "Permite selecție multiplă",
+      "shuffleChoices": "Amestecă opțiunile"
     }
   }
 }

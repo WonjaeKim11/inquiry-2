@@ -619,6 +619,88 @@
       "confirmDelete": "Verwijderen",
       "imageUrlPlaceholder": "Voer afbeeldings-URL in...",
       "removeImage": "Afbeelding verwijderen"
+    },
+    "element": {
+      "types": {
+        "openText": "Vrije tekst",
+        "consent": "Toestemming",
+        "cta": "CTA",
+        "date": "Datum",
+        "cal": "Cal.com",
+        "multipleChoiceSingle": "Meerkeuze (enkel)",
+        "multipleChoiceMulti": "Meerkeuze (meervoudig)",
+        "nps": "NPS",
+        "rating": "Beoordeling",
+        "pictureSelection": "Afbeeldingselectie",
+        "ranking": "Rangschikking"
+      },
+      "headline": "Vraag",
+      "headlinePlaceholder": "Voer uw vraag in...",
+      "placeholder": "Tijdelijke aanduiding",
+      "placeholderPlaceholder": "Typ tijdelijke tekst...",
+      "inputType": "Invoertype",
+      "inputTypes": {
+        "text": "Tekst",
+        "email": "E-mail",
+        "url": "URL",
+        "number": "Nummer",
+        "phone": "Telefoon"
+      },
+      "longAnswer": "Lang antwoord",
+      "charLimit": "Tekenlimiet",
+      "minLength": "Min",
+      "maxLength": "Max",
+      "required": "Verplicht",
+      "consentLabel": "Toestemmingstekst",
+      "consentLabelPlaceholder": "Ik ga akkoord...",
+      "buttonLabel": "Knoplabel",
+      "buttonLabelPlaceholder": "Volgende",
+      "buttonUrl": "Knop-URL",
+      "buttonUrlPlaceholder": "https://example.com",
+      "dismissible": "Overslaan toestaan",
+      "dateFormat": "Datumformaat",
+      "calUserName": "Cal.com gebruikersnaam",
+      "calUserNamePlaceholder": "gebruikersnaam",
+      "calHost": "Cal.com host",
+      "calHostPlaceholder": "cal.com",
+      "calHostHint": "Laat leeg om de standaard Cal.com-host te gebruiken",
+      "advancedSettings": "Geavanceerde instellingen",
+      "choices": "Keuzes",
+      "choiceLabelPlaceholder": "Keuzelabel",
+      "addChoice": "Keuze toevoegen",
+      "removeChoice": "Keuze verwijderen",
+      "displayType": "Weergavetype",
+      "displayTypes": {
+        "list": "Lijst",
+        "grid": "Raster"
+      },
+      "shuffleOption": "Willekeurige volgorde",
+      "shuffleOptions": {
+        "none": "Geen",
+        "all": "Alles",
+        "exceptLast": "Behalve laatste"
+      },
+      "otherOptionPlaceholder": "Overige optie placeholder",
+      "otherOptionPlaceholderHint": "bijv. Gelieve te specificeren...",
+      "npsScaleDescription": "Schaal: {{min}} - {{max}} (vast)",
+      "lowerLabel": "Onderste label",
+      "lowerLabelPlaceholder": "bijv. Helemaal niet waarschijnlijk",
+      "upperLabel": "Bovenste label",
+      "upperLabelPlaceholder": "bijv. Uiterst waarschijnlijk",
+      "scaleType": "Schaaltype",
+      "scaleTypes": {
+        "smiley": "Smiley",
+        "star": "Ster",
+        "number": "Nummer"
+      },
+      "range": "Bereik",
+      "colorCoding": "Kleurcodering",
+      "pictureChoices": "Afbeeldingskeuzes",
+      "imageUrlPlaceholder": "Afbeeldings-URL",
+      "addPictureChoice": "Afbeeldingskeuze toevoegen",
+      "removePictureChoice": "Afbeeldingskeuze verwijderen",
+      "allowMulti": "Meervoudige selectie toestaan",
+      "shuffleChoices": "Keuzes willekeurig ordenen"
     }
   }
 }

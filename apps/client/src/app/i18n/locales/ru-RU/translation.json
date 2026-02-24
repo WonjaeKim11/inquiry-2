@@ -619,6 +619,88 @@
       "confirmDelete": "Удалить",
       "imageUrlPlaceholder": "Введите URL изображения...",
       "removeImage": "Удалить изображение"
+    },
+    "element": {
+      "types": {
+        "openText": "Свободный текст",
+        "consent": "Согласие",
+        "cta": "CTA",
+        "date": "Дата",
+        "cal": "Cal.com",
+        "multipleChoiceSingle": "Множественный выбор (одиночный)",
+        "multipleChoiceMulti": "Множественный выбор (множественный)",
+        "nps": "NPS",
+        "rating": "Рейтинг",
+        "pictureSelection": "Выбор изображения",
+        "ranking": "Ранжирование"
+      },
+      "headline": "Вопрос",
+      "headlinePlaceholder": "Введите ваш вопрос...",
+      "placeholder": "Подсказка",
+      "placeholderPlaceholder": "Введите текст подсказки...",
+      "inputType": "Тип ввода",
+      "inputTypes": {
+        "text": "Текст",
+        "email": "Эл. почта",
+        "url": "URL",
+        "number": "Число",
+        "phone": "Телефон"
+      },
+      "longAnswer": "Длинный ответ",
+      "charLimit": "Ограничение символов",
+      "minLength": "Мин",
+      "maxLength": "Макс",
+      "required": "Обязательно",
+      "consentLabel": "Текст согласия",
+      "consentLabelPlaceholder": "Я согласен...",
+      "buttonLabel": "Текст кнопки",
+      "buttonLabelPlaceholder": "Далее",
+      "buttonUrl": "URL кнопки",
+      "buttonUrlPlaceholder": "https://example.com",
+      "dismissible": "Разрешить пропуск",
+      "dateFormat": "Формат даты",
+      "calUserName": "Имя пользователя Cal.com",
+      "calUserNamePlaceholder": "имя-пользователя",
+      "calHost": "Хост Cal.com",
+      "calHostPlaceholder": "cal.com",
+      "calHostHint": "Оставьте пустым для использования хоста Cal.com по умолчанию",
+      "advancedSettings": "Расширенные настройки",
+      "choices": "Варианты",
+      "choiceLabelPlaceholder": "Метка варианта",
+      "addChoice": "Добавить вариант",
+      "removeChoice": "Удалить вариант",
+      "displayType": "Тип отображения",
+      "displayTypes": {
+        "list": "Список",
+        "grid": "Сетка"
+      },
+      "shuffleOption": "Перемешивание",
+      "shuffleOptions": {
+        "none": "Нет",
+        "all": "Все",
+        "exceptLast": "Кроме последнего"
+      },
+      "otherOptionPlaceholder": "Текст для варианта Другое",
+      "otherOptionPlaceholderHint": "напр. Уточните...",
+      "npsScaleDescription": "Шкала: {{min}} - {{max}} (фиксированная)",
+      "lowerLabel": "Нижняя метка",
+      "lowerLabelPlaceholder": "напр. Совсем маловероятно",
+      "upperLabel": "Верхняя метка",
+      "upperLabelPlaceholder": "напр. Крайне вероятно",
+      "scaleType": "Тип шкалы",
+      "scaleTypes": {
+        "smiley": "Смайлик",
+        "star": "Звезда",
+        "number": "Число"
+      },
+      "range": "Диапазон",
+      "colorCoding": "Цветовая кодировка",
+      "pictureChoices": "Варианты с изображениями",
+      "imageUrlPlaceholder": "URL изображения",
+      "addPictureChoice": "Добавить вариант с изображением",
+      "removePictureChoice": "Удалить вариант с изображением",
+      "allowMulti": "Разрешить множественный выбор",
+      "shuffleChoices": "Перемешать варианты"
     }
   }
 }

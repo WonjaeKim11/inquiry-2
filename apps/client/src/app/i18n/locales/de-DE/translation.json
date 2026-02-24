@@ -619,6 +619,88 @@
       "confirmDelete": "Löschen",
       "imageUrlPlaceholder": "Bild-URL eingeben...",
       "removeImage": "Bild entfernen"
+    },
+    "element": {
+      "types": {
+        "openText": "Freitext",
+        "consent": "Einwilligung",
+        "cta": "CTA",
+        "date": "Datum",
+        "cal": "Cal.com",
+        "multipleChoiceSingle": "Multiple Choice (Einzeln)",
+        "multipleChoiceMulti": "Multiple Choice (Mehrfach)",
+        "nps": "NPS",
+        "rating": "Bewertung",
+        "pictureSelection": "Bildauswahl",
+        "ranking": "Ranking"
+      },
+      "headline": "Frage",
+      "headlinePlaceholder": "Geben Sie Ihre Frage ein...",
+      "placeholder": "Platzhalter",
+      "placeholderPlaceholder": "Platzhaltertext eingeben...",
+      "inputType": "Eingabetyp",
+      "inputTypes": {
+        "text": "Text",
+        "email": "E-Mail",
+        "url": "URL",
+        "number": "Zahl",
+        "phone": "Telefon"
+      },
+      "longAnswer": "Lange Antwort",
+      "charLimit": "Zeichenlimit",
+      "minLength": "Min",
+      "maxLength": "Max",
+      "required": "Erforderlich",
+      "consentLabel": "Einwilligungstext",
+      "consentLabelPlaceholder": "Ich stimme zu...",
+      "buttonLabel": "Button-Beschriftung",
+      "buttonLabelPlaceholder": "Weiter",
+      "buttonUrl": "Button-URL",
+      "buttonUrlPlaceholder": "https://example.com",
+      "dismissible": "Überspringen erlauben",
+      "dateFormat": "Datumsformat",
+      "calUserName": "Cal.com Benutzername",
+      "calUserNamePlaceholder": "Benutzername",
+      "calHost": "Cal.com Host",
+      "calHostPlaceholder": "cal.com",
+      "calHostHint": "Leer lassen, um den Standard-Cal.com-Host zu verwenden",
+      "advancedSettings": "Erweiterte Einstellungen",
+      "choices": "Auswahlmöglichkeiten",
+      "choiceLabelPlaceholder": "Auswahl-Beschriftung",
+      "addChoice": "Auswahl hinzufügen",
+      "removeChoice": "Auswahl entfernen",
+      "displayType": "Anzeigetyp",
+      "displayTypes": {
+        "list": "Liste",
+        "grid": "Raster"
+      },
+      "shuffleOption": "Misch-Option",
+      "shuffleOptions": {
+        "none": "Keine",
+        "all": "Alle",
+        "exceptLast": "Außer Letztem"
+      },
+      "otherOptionPlaceholder": "Platzhalter für Sonstige-Option",
+      "otherOptionPlaceholderHint": "z.B. Bitte angeben...",
+      "npsScaleDescription": "Skala: {{min}} - {{max}} (fest)",
+      "lowerLabel": "Untere Beschriftung",
+      "lowerLabelPlaceholder": "z.B. Überhaupt nicht wahrscheinlich",
+      "upperLabel": "Obere Beschriftung",
+      "upperLabelPlaceholder": "z.B. Äußerst wahrscheinlich",
+      "scaleType": "Skalentyp",
+      "scaleTypes": {
+        "smiley": "Smiley",
+        "star": "Stern",
+        "number": "Zahl"
+      },
+      "range": "Bereich",
+      "colorCoding": "Farbkodierung",
+      "pictureChoices": "Bildauswahl",
+      "imageUrlPlaceholder": "Bild-URL",
+      "addPictureChoice": "Bildauswahl hinzufügen",
+      "removePictureChoice": "Bildauswahl entfernen",
+      "allowMulti": "Mehrfachauswahl erlauben",
+      "shuffleChoices": "Auswahlmöglichkeiten mischen"
     }
   }
 }

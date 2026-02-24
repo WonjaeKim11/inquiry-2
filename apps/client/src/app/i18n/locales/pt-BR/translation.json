@@ -619,6 +619,88 @@
       "confirmDelete": "Excluir",
       "imageUrlPlaceholder": "Insira a URL da imagem...",
       "removeImage": "Remover imagem"
+    },
+    "element": {
+      "types": {
+        "openText": "Texto livre",
+        "consent": "Consentimento",
+        "cta": "CTA",
+        "date": "Data",
+        "cal": "Cal.com",
+        "multipleChoiceSingle": "Multipla escolha (unica)",
+        "multipleChoiceMulti": "Multipla escolha (multipla)",
+        "nps": "NPS",
+        "rating": "Avaliacao",
+        "pictureSelection": "Selecao de imagem",
+        "ranking": "Classificacao"
+      },
+      "headline": "Pergunta",
+      "headlinePlaceholder": "Digite sua pergunta...",
+      "placeholder": "Espaço reservado",
+      "placeholderPlaceholder": "Digite o texto do espaço reservado...",
+      "inputType": "Tipo de entrada",
+      "inputTypes": {
+        "text": "Texto",
+        "email": "E-mail",
+        "url": "URL",
+        "number": "Número",
+        "phone": "Telefone"
+      },
+      "longAnswer": "Resposta longa",
+      "charLimit": "Limite de caracteres",
+      "minLength": "Mín",
+      "maxLength": "Máx",
+      "required": "Obrigatório",
+      "consentLabel": "Texto de consentimento",
+      "consentLabelPlaceholder": "Eu concordo...",
+      "buttonLabel": "Rótulo do botão",
+      "buttonLabelPlaceholder": "Próximo",
+      "buttonUrl": "URL do botão",
+      "buttonUrlPlaceholder": "https://example.com",
+      "dismissible": "Permitir pular",
+      "dateFormat": "Formato de data",
+      "calUserName": "Nome de usuário Cal.com",
+      "calUserNamePlaceholder": "nome-de-usuario",
+      "calHost": "Host Cal.com",
+      "calHostPlaceholder": "cal.com",
+      "calHostHint": "Deixe vazio para usar o host padrão do Cal.com",
+      "advancedSettings": "Configurações avançadas",
+      "choices": "Opções",
+      "choiceLabelPlaceholder": "Rótulo da opção",
+      "addChoice": "Adicionar opção",
+      "removeChoice": "Remover opção",
+      "displayType": "Tipo de exibição",
+      "displayTypes": {
+        "list": "Lista",
+        "grid": "Grade"
+      },
+      "shuffleOption": "Opção de embaralhamento",
+      "shuffleOptions": {
+        "none": "Nenhum",
+        "all": "Todos",
+        "exceptLast": "Exceto o último"
+      },
+      "otherOptionPlaceholder": "Texto da opção Outro",
+      "otherOptionPlaceholderHint": "ex. Por favor especifique...",
+      "npsScaleDescription": "Escala: {{min}} - {{max}} (fixa)",
+      "lowerLabel": "Rótulo inferior",
+      "lowerLabelPlaceholder": "ex. Nada provável",
+      "upperLabel": "Rótulo superior",
+      "upperLabelPlaceholder": "ex. Extremamente provável",
+      "scaleType": "Tipo de escala",
+      "scaleTypes": {
+        "smiley": "Smiley",
+        "star": "Estrela",
+        "number": "Número"
+      },
+      "range": "Faixa",
+      "colorCoding": "Codificação por cores",
+      "pictureChoices": "Opções de imagem",
+      "imageUrlPlaceholder": "URL da imagem",
+      "addPictureChoice": "Adicionar opção de imagem",
+      "removePictureChoice": "Remover opção de imagem",
+      "allowMulti": "Permitir seleção múltipla",
+      "shuffleChoices": "Embaralhar opções"
     }
   }
 }

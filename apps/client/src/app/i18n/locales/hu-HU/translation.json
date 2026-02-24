@@ -619,6 +619,88 @@
       "confirmDelete": "Törlés",
       "imageUrlPlaceholder": "Adja meg a kép URL-jét...",
       "removeImage": "Kép eltávolítása"
+    },
+    "element": {
+      "types": {
+        "openText": "Szabad szöveg",
+        "consent": "Hozzájárulás",
+        "cta": "CTA",
+        "date": "Dátum",
+        "cal": "Cal.com",
+        "multipleChoiceSingle": "Feleletvalasztos (egyszeres)",
+        "multipleChoiceMulti": "Feleletvalasztos (tobbszoros)",
+        "nps": "NPS",
+        "rating": "Ertekeles",
+        "pictureSelection": "Kepvalasztas",
+        "ranking": "Rangsorolas"
+      },
+      "headline": "Kérdés",
+      "headlinePlaceholder": "Írja be a kérdését...",
+      "placeholder": "Helyőrző",
+      "placeholderPlaceholder": "Írja be a helyőrző szöveget...",
+      "inputType": "Beviteli típus",
+      "inputTypes": {
+        "text": "Szöveg",
+        "email": "E-mail",
+        "url": "URL",
+        "number": "Szám",
+        "phone": "Telefon"
+      },
+      "longAnswer": "Hosszú válasz",
+      "charLimit": "Karakterkorlát",
+      "minLength": "Min",
+      "maxLength": "Max",
+      "required": "Kötelező",
+      "consentLabel": "Hozzájárulási szöveg",
+      "consentLabelPlaceholder": "Elfogadom...",
+      "buttonLabel": "Gomb felirata",
+      "buttonLabelPlaceholder": "Következő",
+      "buttonUrl": "Gomb URL",
+      "buttonUrlPlaceholder": "https://example.com",
+      "dismissible": "Kihagyás engedélyezése",
+      "dateFormat": "Dátumformátum",
+      "calUserName": "Cal.com felhasználónév",
+      "calUserNamePlaceholder": "felhasználónév",
+      "calHost": "Cal.com gazdagép",
+      "calHostPlaceholder": "cal.com",
+      "calHostHint": "Hagyja üresen az alapértelmezett Cal.com gazdagép használatához",
+      "advancedSettings": "Speciális beállítások",
+      "choices": "Választási lehetőségek",
+      "choiceLabelPlaceholder": "Választási címke",
+      "addChoice": "Választás hozzáadása",
+      "removeChoice": "Választás eltávolítása",
+      "displayType": "Megjelenítési típus",
+      "displayTypes": {
+        "list": "Lista",
+        "grid": "Rács"
+      },
+      "shuffleOption": "Keverési opció",
+      "shuffleOptions": {
+        "none": "Nincs",
+        "all": "Mind",
+        "exceptLast": "Utolsó kivételével"
+      },
+      "otherOptionPlaceholder": "Egyéb opció helyőrzője",
+      "otherOptionPlaceholderHint": "pl. Kérjük, pontosítsa...",
+      "npsScaleDescription": "Skála: {{min}} - {{max}} (fix)",
+      "lowerLabel": "Alsó címke",
+      "lowerLabelPlaceholder": "pl. Egyáltalán nem valószínű",
+      "upperLabel": "Felső címke",
+      "upperLabelPlaceholder": "pl. Rendkívül valószínű",
+      "scaleType": "Skálatípus",
+      "scaleTypes": {
+        "smiley": "Smiley",
+        "star": "Csillag",
+        "number": "Szám"
+      },
+      "range": "Tartomány",
+      "colorCoding": "Színkódolás",
+      "pictureChoices": "Képválasztások",
+      "imageUrlPlaceholder": "Kép URL",
+      "addPictureChoice": "Képválasztás hozzáadása",
+      "removePictureChoice": "Képválasztás eltávolítása",
+      "allowMulti": "Többszörös választás engedélyezése",
+      "shuffleChoices": "Választások keverése"
     }
   }
 }

@@ -619,6 +619,88 @@
       "confirmDelete": "Radera",
       "imageUrlPlaceholder": "Ange bild-URL...",
       "removeImage": "Ta bort bild"
+    },
+    "element": {
+      "types": {
+        "openText": "Fritext",
+        "consent": "Samtycke",
+        "cta": "CTA",
+        "date": "Datum",
+        "cal": "Cal.com",
+        "multipleChoiceSingle": "Flerval (enstaka)",
+        "multipleChoiceMulti": "Flerval (flera)",
+        "nps": "NPS",
+        "rating": "Betyg",
+        "pictureSelection": "Bildval",
+        "ranking": "Rangordning"
+      },
+      "headline": "Fråga",
+      "headlinePlaceholder": "Ange din fråga...",
+      "placeholder": "Platshållare",
+      "placeholderPlaceholder": "Skriv platshållartext...",
+      "inputType": "Inmatningstyp",
+      "inputTypes": {
+        "text": "Text",
+        "email": "E-post",
+        "url": "URL",
+        "number": "Nummer",
+        "phone": "Telefon"
+      },
+      "longAnswer": "Långt svar",
+      "charLimit": "Teckengräns",
+      "minLength": "Min",
+      "maxLength": "Max",
+      "required": "Obligatorisk",
+      "consentLabel": "Samtyckestext",
+      "consentLabelPlaceholder": "Jag godkänner...",
+      "buttonLabel": "Knapptext",
+      "buttonLabelPlaceholder": "Nästa",
+      "buttonUrl": "Knapp-URL",
+      "buttonUrlPlaceholder": "https://example.com",
+      "dismissible": "Tillåt hoppa över",
+      "dateFormat": "Datumformat",
+      "calUserName": "Cal.com användarnamn",
+      "calUserNamePlaceholder": "användarnamn",
+      "calHost": "Cal.com värd",
+      "calHostPlaceholder": "cal.com",
+      "calHostHint": "Lämna tomt för att använda standard Cal.com-värd",
+      "advancedSettings": "Avancerade inställningar",
+      "choices": "Val",
+      "choiceLabelPlaceholder": "Valetikett",
+      "addChoice": "Lägg till val",
+      "removeChoice": "Ta bort val",
+      "displayType": "Visningstyp",
+      "displayTypes": {
+        "list": "Lista",
+        "grid": "Rutnät"
+      },
+      "shuffleOption": "Blandningsalternativ",
+      "shuffleOptions": {
+        "none": "Ingen",
+        "all": "Alla",
+        "exceptLast": "Utom sista"
+      },
+      "otherOptionPlaceholder": "Platshållare för Annat-alternativ",
+      "otherOptionPlaceholderHint": "t.ex. Vänligen specificera...",
+      "npsScaleDescription": "Skala: {{min}} - {{max}} (fast)",
+      "lowerLabel": "Nedre etikett",
+      "lowerLabelPlaceholder": "t.ex. Inte alls sannolikt",
+      "upperLabel": "Övre etikett",
+      "upperLabelPlaceholder": "t.ex. Extremt sannolikt",
+      "scaleType": "Skaltyp",
+      "scaleTypes": {
+        "smiley": "Smiley",
+        "star": "Stjärna",
+        "number": "Nummer"
+      },
+      "range": "Intervall",
+      "colorCoding": "Färgkodning",
+      "pictureChoices": "Bildval",
+      "imageUrlPlaceholder": "Bild-URL",
+      "addPictureChoice": "Lägg till bildval",
+      "removePictureChoice": "Ta bort bildval",
+      "allowMulti": "Tillåt flerval",
+      "shuffleChoices": "Blanda val"
     }
   }
 }
