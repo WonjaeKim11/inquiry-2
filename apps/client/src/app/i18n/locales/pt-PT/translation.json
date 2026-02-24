@@ -504,6 +504,16 @@
       "save_fail": "Falha ao guardar traduções.",
       "load_fail": "Falha ao carregar idiomas.",
       "license_required": "A funcionalidade multilingue requer uma licença Enterprise."
-    }
+    },
+    "card_title": "Definições multilingues",
+    "upgrade_prompt": "Inquéritos multilingues requerem um plano Startup ou Custom. Atualize para desbloquear esta funcionalidade.",
+    "no_project_languages": "Não foram adicionados idiomas a este projeto. Adicione idiomas nas definições do projeto primeiro.",
+    "add_more_languages": "Adicione pelo menos mais um idioma nas definições do projeto para ativar inquéritos multilingues.",
+    "go_to_settings": "Ir para Definições",
+    "editing_language": "Idioma de edição",
+    "disable_multilingual": "Desativar multilingue",
+    "disable_confirm": "Todas as traduções e definições de idioma deste inquérito serão removidas. Esta ação não pode ser revertida.",
+    "disable_confirm_title": "Desativar multilingue?",
+    "removing": "A remover..."
   }
 }

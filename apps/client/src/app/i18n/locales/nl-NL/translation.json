@@ -504,6 +504,16 @@
       "save_fail": "Vertalingen opslaan mislukt.",
       "load_fail": "Talen laden mislukt.",
       "license_required": "De meertalige functie vereist een Enterprise-licentie."
-    }
+    },
+    "card_title": "Meertalige instellingen",
+    "upgrade_prompt": "Meertalige enquêtes vereisen een Startup- of Custom-plan. Upgrade om deze functie te ontgrendelen.",
+    "no_project_languages": "Er zijn geen talen aan dit project toegevoegd. Voeg eerst talen toe in de projectinstellingen.",
+    "add_more_languages": "Voeg minstens één extra taal toe in de projectinstellingen om meertalige enquêtes in te schakelen.",
+    "go_to_settings": "Naar instellingen",
+    "editing_language": "Bewerkingstaal",
+    "disable_multilingual": "Meertaligheid uitschakelen",
+    "disable_confirm": "Alle vertalingen en taalinstellingen van deze enquête worden verwijderd. Deze actie kan niet ongedaan worden gemaakt.",
+    "disable_confirm_title": "Meertaligheid uitschakelen?",
+    "removing": "Verwijderen..."
   }
 }

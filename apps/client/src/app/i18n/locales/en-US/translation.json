@@ -791,6 +791,16 @@
       "save_fail": "Failed to save translations.",
       "load_fail": "Failed to load languages.",
       "license_required": "Multi-language feature requires an Enterprise license."
-    }
+    },
+    "card_title": "Multi-Language Settings",
+    "upgrade_prompt": "Multi-language surveys require a Startup or Custom plan. Upgrade to unlock this feature.",
+    "no_project_languages": "No languages have been added to this project. Add languages in project settings first.",
+    "add_more_languages": "Add at least one more language in project settings to enable multi-language surveys.",
+    "go_to_settings": "Go to Settings",
+    "editing_language": "Editing Language",
+    "disable_multilingual": "Disable Multi-Language",
+    "disable_confirm": "This will remove all translations and language settings from this survey. This action cannot be undone.",
+    "disable_confirm_title": "Disable Multi-Language?",
+    "removing": "Removing..."
   }
 }

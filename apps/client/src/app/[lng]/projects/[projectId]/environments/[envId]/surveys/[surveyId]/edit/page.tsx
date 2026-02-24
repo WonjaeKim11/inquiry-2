@@ -22,12 +22,22 @@ import {
   pauseSurvey,
   resumeSurvey,
   completeSurvey,
+  updateSurvey,
 } from '@inquiry/client-survey';
 import type { SurveyStatus, UpdateSurveyInput } from '@inquiry/client-survey';
+import {
+  MultiLanguageCard,
+  EditorLanguageSelector,
+  useSurveyLanguages,
+} from '@inquiry/client-multilingual';
+import type {
+  EditingLanguageContext,
+  LanguageWithConfig,
+} from '@inquiry/client-multilingual';
 
 /**
  * 설문 편집기 페이지.
- * 설문 데이터를 로드하고, 이름/스키마 편집, 자동 저장, 상태 전이 기능을 제공한다.
+ * 설문 데이터를 로드하고, 이름/스키마 편집, 자동 저장, 상태 전이, 다국어 설정 기능을 제공한다.
  */
 export default function SurveyEditPage({
   params,
@@ -52,6 +62,8 @@ export default function SurveyEditPage({
   const [schemaText, setSchemaText] = useState('');
   const [statusError, setStatusError] = useState<string | null>(null);
   const [transitioning, setTransitioning] = useState(false);
+  const [editingLanguage, setEditingLanguage] =
+    useState<EditingLanguageContext | null>(null);
 
   // 설문 데이터가 로드되면 편집 상태를 초기화한다
   useEffect(() => {
@@ -71,6 +83,26 @@ export default function SurveyEditPage({
   const { saving, lastSavedAt } = useAutoSave(surveyId, autoSaveData, {
     enabled: survey?.status === 'DRAFT',
   });
+
+  /** 다국어 설정 변경 시 즉시 서버에 저장하고 refetch한다 */
+  const handleMultilingualUpdate = useCallback(
+    async (data: Partial<UpdateSurveyInput>) => {
+      try {
+        await updateSurvey(surveyId, data);
+        await refetch();
+      } catch {
+        // MultiLanguageCard 내부에서 에러를 처리하므로 여기서는 무시
+      }
+    },
+    [surveyId, refetch]
+  );
+
+  // 다국어 훅 — EditorLanguageSelector에 전달할 데이터
+  const { languagesWithConfig } = useSurveyLanguages(
+    projectId,
+    survey,
+    handleMultilingualUpdate
+  );
 
   // 미인증 시 로그인 페이지로 리다이렉트
   useEffect(() => {
@@ -166,17 +198,28 @@ export default function SurveyEditPage({
         </Button>
       </div>
 
-      {/* 헤더: 설문 이름 + 상태 배지 + 저장 표시 */}
+      {/* 헤더: 설문 이름 + 상태 배지 + 언어 선택 + 저장 표시 */}
       <div className="mb-8 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <h1 className="text-2xl font-bold">{t('survey.editor.title')}</h1>
           <SurveyStatusBadge status={survey.status} />
         </div>
-        <div className="flex items-center gap-2 text-sm text-muted-foreground">
-          {saving && <span>{t('survey.actions.saving')}</span>}
-          {!saving && lastSavedAt && (
-            <span>{t('survey.actions.auto_saved')}</span>
+        <div className="flex items-center gap-4">
+          {languagesWithConfig.filter(
+            (l: LanguageWithConfig) => l.isEnabled || l.isDefault
+          ).length > 1 && (
+            <EditorLanguageSelector
+              languages={languagesWithConfig}
+              editingContext={editingLanguage}
+              onSelectLanguage={setEditingLanguage}
+            />
           )}
+          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            {saving && <span>{t('survey.actions.saving')}</span>}
+            {!saving && lastSavedAt && (
+              <span>{t('survey.actions.auto_saved')}</span>
+            )}
+          </div>
         </div>
       </div>
 
@@ -215,7 +258,7 @@ export default function SurveyEditPage({
       </Card>
 
       {/* 스키마 편집 (JSON) */}
-      <Card>
+      <Card className="mb-6">
         <CardHeader>
           <CardTitle>{t('survey.editor.questions')}</CardTitle>
         </CardHeader>
@@ -228,6 +271,14 @@ export default function SurveyEditPage({
           />
         </CardContent>
       </Card>
+
+      {/* 다국어 설정 카드 */}
+      <MultiLanguageCard
+        projectId={projectId}
+        survey={survey}
+        onUpdate={handleMultilingualUpdate}
+        lng={lng}
+      />
     </div>
   );
 }

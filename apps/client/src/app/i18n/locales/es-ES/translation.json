@@ -504,6 +504,16 @@
       "save_fail": "Error al guardar las traducciones.",
       "load_fail": "Error al cargar los idiomas.",
       "license_required": "La función multilingüe requiere una licencia Enterprise."
-    }
+    },
+    "card_title": "Configuración multilingüe",
+    "upgrade_prompt": "Las encuestas multilingües requieren un plan Startup o Custom. Actualice para desbloquear esta función.",
+    "no_project_languages": "No se han añadido idiomas a este proyecto. Primero añada idiomas en la configuración del proyecto.",
+    "add_more_languages": "Añada al menos un idioma más en la configuración del proyecto para habilitar encuestas multilingües.",
+    "go_to_settings": "Ir a Configuración",
+    "editing_language": "Idioma de edición",
+    "disable_multilingual": "Desactivar multilingüe",
+    "disable_confirm": "Se eliminarán todas las traducciones y configuraciones de idioma de esta encuesta. Esta acción no se puede deshacer.",
+    "disable_confirm_title": "¿Desactivar multilingüe?",
+    "removing": "Eliminando..."
   }
 }

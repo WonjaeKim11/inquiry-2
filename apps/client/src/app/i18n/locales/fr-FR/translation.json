@@ -504,6 +504,16 @@
       "save_fail": "Échec de l'enregistrement des traductions.",
       "load_fail": "Échec du chargement des langues.",
       "license_required": "La fonctionnalité multilingue nécessite une licence Enterprise."
-    }
+    },
+    "card_title": "Paramètres multilingues",
+    "upgrade_prompt": "Les enquêtes multilingues nécessitent un plan Startup ou Custom. Mettez à niveau pour débloquer cette fonctionnalité.",
+    "no_project_languages": "Aucune langue n'a été ajoutée à ce projet. Ajoutez d'abord des langues dans les paramètres du projet.",
+    "add_more_languages": "Ajoutez au moins une langue supplémentaire dans les paramètres du projet pour activer les enquêtes multilingues.",
+    "go_to_settings": "Aller aux paramètres",
+    "editing_language": "Langue d'édition",
+    "disable_multilingual": "Désactiver le multilingue",
+    "disable_confirm": "Toutes les traductions et les paramètres linguistiques de cette enquête seront supprimés. Cette action est irréversible.",
+    "disable_confirm_title": "Désactiver le multilingue ?",
+    "removing": "Suppression..."
   }
 }

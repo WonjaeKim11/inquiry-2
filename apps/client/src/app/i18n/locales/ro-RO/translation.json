@@ -504,6 +504,16 @@
       "save_fail": "Salvarea traducerilor a eșuat.",
       "load_fail": "Încărcarea limbilor a eșuat.",
       "license_required": "Funcția multilingvă necesită o licență Enterprise."
-    }
+    },
+    "card_title": "Setări multilingve",
+    "upgrade_prompt": "Sondajele multilingve necesită un plan Startup sau Custom. Faceți upgrade pentru a debloca această funcție.",
+    "no_project_languages": "Nu au fost adăugate limbi la acest proiect. Adăugați mai întâi limbi în setările proiectului.",
+    "add_more_languages": "Adăugați cel puțin o limbă în plus în setările proiectului pentru a activa sondajele multilingve.",
+    "go_to_settings": "Mergi la Setări",
+    "editing_language": "Limba de editare",
+    "disable_multilingual": "Dezactivare multilingv",
+    "disable_confirm": "Toate traducerile și setările de limbă ale acestui sondaj vor fi eliminate. Această acțiune nu poate fi anulată.",
+    "disable_confirm_title": "Dezactivați multilingv?",
+    "removing": "Se elimină..."
   }
 }

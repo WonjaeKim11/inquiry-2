@@ -504,6 +504,16 @@
       "save_fail": "Übersetzungen konnten nicht gespeichert werden.",
       "load_fail": "Sprachen konnten nicht geladen werden.",
       "license_required": "Die Mehrsprachigkeitsfunktion erfordert eine Enterprise-Lizenz."
-    }
+    },
+    "card_title": "Mehrsprachige Einstellungen",
+    "upgrade_prompt": "Mehrsprachige Umfragen erfordern einen Startup- oder Custom-Plan. Upgraden Sie, um diese Funktion freizuschalten.",
+    "no_project_languages": "Diesem Projekt wurden keine Sprachen hinzugefügt. Fügen Sie zuerst in den Projekteinstellungen Sprachen hinzu.",
+    "add_more_languages": "Fügen Sie mindestens eine weitere Sprache in den Projekteinstellungen hinzu, um mehrsprachige Umfragen zu aktivieren.",
+    "go_to_settings": "Zu Einstellungen",
+    "editing_language": "Bearbeitungssprache",
+    "disable_multilingual": "Mehrsprachigkeit deaktivieren",
+    "disable_confirm": "Alle Übersetzungen und Spracheinstellungen dieser Umfrage werden entfernt. Diese Aktion kann nicht rückgängig gemacht werden.",
+    "disable_confirm_title": "Mehrsprachigkeit deaktivieren?",
+    "removing": "Wird entfernt..."
   }
 }

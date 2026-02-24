@@ -192,6 +192,9 @@ importers:
       '@inquiry/client-member':
         specifier: workspace:*
         version: link:../../libs/client/member
+      '@inquiry/client-multilingual':
+        specifier: workspace:*
+        version: link:../../libs/client/multilingual
       '@inquiry/client-organization':
         specifier: workspace:*
         version: link:../../libs/client/organization

@@ -504,6 +504,16 @@
       "save_fail": "保存翻译失败。",
       "load_fail": "加载语言失败。",
       "license_required": "多语言功能需要 Enterprise 许可证。"
-    }
+    },
+    "card_title": "多语言设置",
+    "upgrade_prompt": "多语言问卷需要 Startup 或 Custom 计划。升级以解锁此功能。",
+    "no_project_languages": "此项目尚未添加语言。请先在项目设置中添加语言。",
+    "add_more_languages": "请在项目设置中至少再添加一种语言以启用多语言问卷。",
+    "go_to_settings": "前往设置",
+    "editing_language": "编辑语言",
+    "disable_multilingual": "禁用多语言",
+    "disable_confirm": "此问卷的所有翻译和语言设置将被删除。此操作无法撤销。",
+    "disable_confirm_title": "禁用多语言？",
+    "removing": "正在删除..."
   }
 }

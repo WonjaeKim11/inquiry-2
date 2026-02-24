@@ -504,6 +504,16 @@
       "save_fail": "A fordítások mentése sikertelen.",
       "load_fail": "A nyelvek betöltése sikertelen.",
       "license_required": "A többnyelvű funkció Enterprise licencet igényel."
-    }
+    },
+    "card_title": "Többnyelvű beállítások",
+    "upgrade_prompt": "A többnyelvű kérdőívekhez Startup vagy Custom csomag szükséges. Frissítsen a funkció feloldásához.",
+    "no_project_languages": "Ehhez a projekthez nem adtak hozzá nyelvet. Először adjon hozzá nyelveket a projektbeállításokban.",
+    "add_more_languages": "Adjon hozzá legalább egy további nyelvet a projektbeállításokban a többnyelvű kérdőívek engedélyezéséhez.",
+    "go_to_settings": "Beállítások megnyitása",
+    "editing_language": "Szerkesztési nyelv",
+    "disable_multilingual": "Többnyelvűség kikapcsolása",
+    "disable_confirm": "A kérdőív összes fordítása és nyelvi beállítása törlésre kerül. Ez a művelet nem vonható vissza.",
+    "disable_confirm_title": "Többnyelvűség kikapcsolása?",
+    "removing": "Eltávolítás..."
   }
 }

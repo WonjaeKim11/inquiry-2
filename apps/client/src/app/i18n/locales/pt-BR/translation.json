@@ -504,6 +504,16 @@
       "save_fail": "Falha ao salvar traduções.",
       "load_fail": "Falha ao carregar idiomas.",
       "license_required": "O recurso multilíngue requer uma licença Enterprise."
-    }
+    },
+    "card_title": "Configurações multilíngues",
+    "upgrade_prompt": "Pesquisas multilíngues requerem um plano Startup ou Custom. Faça upgrade para desbloquear este recurso.",
+    "no_project_languages": "Nenhum idioma foi adicionado a este projeto. Adicione idiomas nas configurações do projeto primeiro.",
+    "add_more_languages": "Adicione pelo menos mais um idioma nas configurações do projeto para habilitar pesquisas multilíngues.",
+    "go_to_settings": "Ir para Configurações",
+    "editing_language": "Idioma de edição",
+    "disable_multilingual": "Desativar multilíngue",
+    "disable_confirm": "Todas as traduções e configurações de idioma desta pesquisa serão removidas. Esta ação não pode ser desfeita.",
+    "disable_confirm_title": "Desativar multilíngue?",
+    "removing": "Removendo..."
   }
 }

@@ -504,6 +504,16 @@
       "save_fail": "Det gick inte att spara översättningarna.",
       "load_fail": "Det gick inte att ladda språken.",
       "license_required": "Den flerspråkiga funktionen kräver en Enterprise-licens."
-    }
+    },
+    "card_title": "Flerspråkiga inställningar",
+    "upgrade_prompt": "Flerspråkiga enkäter kräver en Startup- eller Custom-plan. Uppgradera för att låsa upp denna funktion.",
+    "no_project_languages": "Inga språk har lagts till i detta projekt. Lägg till språk i projektinställningarna först.",
+    "add_more_languages": "Lägg till minst ett språk till i projektinställningarna för att aktivera flerspråkiga enkäter.",
+    "go_to_settings": "Gå till inställningar",
+    "editing_language": "Redigeringsspråk",
+    "disable_multilingual": "Inaktivera flerspråkighet",
+    "disable_confirm": "Alla översättningar och språkinställningar för denna enkät kommer att tas bort. Denna åtgärd kan inte ångras.",
+    "disable_confirm_title": "Inaktivera flerspråkighet?",
+    "removing": "Tar bort..."
   }
 }

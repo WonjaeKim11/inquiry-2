@@ -504,6 +504,16 @@
       "save_fail": "翻訳の保存に失敗しました。",
       "load_fail": "言語の読み込みに失敗しました。",
       "license_required": "多言語機能にはEnterpriseライセンスが必要です。"
-    }
+    },
+    "card_title": "多言語設定",
+    "upgrade_prompt": "多言語アンケートにはStartupまたはCustomプランが必要です。アップグレードしてこの機能をご利用ください。",
+    "no_project_languages": "このプロジェクトに言語が追加されていません。まずプロジェクト設定で言語を追加してください。",
+    "add_more_languages": "多言語アンケートを有効にするには、プロジェクト設定で言語をもう1つ以上追加してください。",
+    "go_to_settings": "設定へ移動",
+    "editing_language": "編集言語",
+    "disable_multilingual": "多言語を無効化",
+    "disable_confirm": "このアンケートのすべての翻訳と言語設定が削除されます。この操作は元に戻せません。",
+    "disable_confirm_title": "多言語を無効にしますか？",
+    "removing": "削除中..."
   }
 }
