@@ -280,5 +280,91 @@
       "pin_4_digits": "PIN 必须恰好为 4 位数字",
       "display_limit_required": "'部分显示'选项需要设置显示限制"
     }
+  },
+  "logic": {
+    "operator": {
+      "equals": "等于",
+      "doesNotEqual": "不等于",
+      "contains": "包含",
+      "doesNotContain": "不包含",
+      "startsWith": "以...开头",
+      "doesNotStartWith": "不以...开头",
+      "endsWith": "以...结尾",
+      "doesNotEndWith": "不以...结尾",
+      "isEmpty": "为空",
+      "isNotEmpty": "不为空",
+      "isSet": "已设置",
+      "isNotSet": "未设置",
+      "isGreaterThan": "大于",
+      "isLessThan": "小于",
+      "isGreaterThanOrEqual": "大于或等于",
+      "isLessThanOrEqual": "小于或等于",
+      "equalsOneOf": "等于其中之一",
+      "includesAllOf": "包含所有",
+      "includesOneOf": "包含其中之一",
+      "doesNotIncludeOneOf": "不包含任何一个",
+      "doesNotIncludeAllOf": "不包含所有",
+      "isSubmitted": "已提交",
+      "isSkipped": "已跳过",
+      "isClicked": "已点击",
+      "isNotClicked": "未点击",
+      "isAccepted": "已接受",
+      "isBooked": "已预订",
+      "isPartiallySubmitted": "部分提交",
+      "isCompletelySubmitted": "完全提交",
+      "isBefore": "在...之前",
+      "isAfter": "在...之后",
+      "assign": "赋值",
+      "concat": "连接",
+      "add": "加",
+      "subtract": "减",
+      "multiply": "乘",
+      "divide": "除",
+      "isAnyOf": "是其中之一"
+    },
+    "action": {
+      "jumpToBlock": "跳转到块",
+      "requireAnswer": "必须回答",
+      "calculate": "计算"
+    },
+    "panel": {
+      "title": "逻辑",
+      "add_item": "添加逻辑",
+      "no_items": "未配置逻辑",
+      "fallback_label": "默认目标",
+      "fallback_description": "当没有条件匹配时跳转到的块"
+    },
+    "condition": {
+      "if": "如果",
+      "then": "那么",
+      "value": "值",
+      "field": "字段",
+      "operator": "运算符"
+    },
+    "connector": {
+      "and": "并且",
+      "or": "或者"
+    },
+    "operand": {
+      "element": "问题",
+      "variable": "变量",
+      "hiddenField": "隐藏字段",
+      "static": "静态值",
+      "dynamic": "动态值"
+    },
+    "fallback": {
+      "next_block": "下一个块（默认）",
+      "end_survey": "结束问卷",
+      "specific_block": "指定块"
+    },
+    "validation": {
+      "cycle_detected": "检测到循环逻辑：{{path}}",
+      "missing_target_block": "目标块\"{{blockId}}\"不存在",
+      "missing_target_element": "目标元素\"{{elementId}}\"不存在",
+      "divide_by_zero": "不允许除以零",
+      "max_items_exceeded": "超过逻辑项目最大数量",
+      "empty_conditions": "条件不能为空",
+      "logic_valid": "逻辑验证通过"
+    }
   }
 }

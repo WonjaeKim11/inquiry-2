@@ -567,5 +567,91 @@
       "pin_4_digits": "PIN must be exactly 4 digits",
       "display_limit_required": "Display limit is required for 'Display Some' option"
     }
+  },
+  "logic": {
+    "operator": {
+      "equals": "Equals",
+      "doesNotEqual": "Does not equal",
+      "contains": "Contains",
+      "doesNotContain": "Does not contain",
+      "startsWith": "Starts with",
+      "doesNotStartWith": "Does not start with",
+      "endsWith": "Ends with",
+      "doesNotEndWith": "Does not end with",
+      "isEmpty": "Is empty",
+      "isNotEmpty": "Is not empty",
+      "isSet": "Is set",
+      "isNotSet": "Is not set",
+      "isGreaterThan": "Is greater than",
+      "isLessThan": "Is less than",
+      "isGreaterThanOrEqual": "Is greater than or equal to",
+      "isLessThanOrEqual": "Is less than or equal to",
+      "equalsOneOf": "Equals one of",
+      "includesAllOf": "Includes all of",
+      "includesOneOf": "Includes one of",
+      "doesNotIncludeOneOf": "Does not include one of",
+      "doesNotIncludeAllOf": "Does not include all of",
+      "isSubmitted": "Is submitted",
+      "isSkipped": "Is skipped",
+      "isClicked": "Is clicked",
+      "isNotClicked": "Is not clicked",
+      "isAccepted": "Is accepted",
+      "isBooked": "Is booked",
+      "isPartiallySubmitted": "Is partially submitted",
+      "isCompletelySubmitted": "Is completely submitted",
+      "isBefore": "Is before",
+      "isAfter": "Is after",
+      "assign": "Assign",
+      "concat": "Concatenate",
+      "add": "Add",
+      "subtract": "Subtract",
+      "multiply": "Multiply",
+      "divide": "Divide",
+      "isAnyOf": "Is any of"
+    },
+    "action": {
+      "jumpToBlock": "Jump to block",
+      "requireAnswer": "Require answer",
+      "calculate": "Calculate"
+    },
+    "panel": {
+      "title": "Logic",
+      "add_item": "Add logic",
+      "no_items": "No logic configured",
+      "fallback_label": "Default destination",
+      "fallback_description": "Block to jump to when no conditions match"
+    },
+    "condition": {
+      "if": "If",
+      "then": "Then",
+      "value": "Value",
+      "field": "Field",
+      "operator": "Operator"
+    },
+    "connector": {
+      "and": "AND",
+      "or": "OR"
+    },
+    "operand": {
+      "element": "Question",
+      "variable": "Variable",
+      "hiddenField": "Hidden field",
+      "static": "Static value",
+      "dynamic": "Dynamic value"
+    },
+    "fallback": {
+      "next_block": "Next block (default)",
+      "end_survey": "End survey",
+      "specific_block": "Specific block"
+    },
+    "validation": {
+      "cycle_detected": "Circular logic detected: {{path}}",
+      "missing_target_block": "Target block \"{{blockId}}\" does not exist",
+      "missing_target_element": "Target element \"{{elementId}}\" does not exist",
+      "divide_by_zero": "Division by zero is not allowed",
+      "max_items_exceeded": "Maximum number of logic items exceeded",
+      "empty_conditions": "Conditions cannot be empty",
+      "logic_valid": "Logic validation passed"
+    }
   }
 }

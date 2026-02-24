@@ -280,5 +280,91 @@
       "pin_4_digits": "O PIN deve ter exatamente 4 dígitos",
       "display_limit_required": "O limite de apresentação é obrigatório para a opção 'Apresentação parcial'"
     }
+  },
+  "logic": {
+    "operator": {
+      "equals": "É igual a",
+      "doesNotEqual": "Não é igual a",
+      "contains": "Contém",
+      "doesNotContain": "Não contém",
+      "startsWith": "Começa com",
+      "doesNotStartWith": "Não começa com",
+      "endsWith": "Termina com",
+      "doesNotEndWith": "Não termina com",
+      "isEmpty": "Está vazio",
+      "isNotEmpty": "Não está vazio",
+      "isSet": "Está definido",
+      "isNotSet": "Não está definido",
+      "isGreaterThan": "É maior que",
+      "isLessThan": "É menor que",
+      "isGreaterThanOrEqual": "É maior ou igual a",
+      "isLessThanOrEqual": "É menor ou igual a",
+      "equalsOneOf": "É igual a um de",
+      "includesAllOf": "Inclui todos os",
+      "includesOneOf": "Inclui um de",
+      "doesNotIncludeOneOf": "Não inclui nenhum de",
+      "doesNotIncludeAllOf": "Não inclui todos os",
+      "isSubmitted": "Foi submetido",
+      "isSkipped": "Foi ignorado",
+      "isClicked": "Foi clicado",
+      "isNotClicked": "Não foi clicado",
+      "isAccepted": "Foi aceite",
+      "isBooked": "Foi reservado",
+      "isPartiallySubmitted": "Foi parcialmente submetido",
+      "isCompletelySubmitted": "Foi completamente submetido",
+      "isBefore": "É antes de",
+      "isAfter": "É depois de",
+      "assign": "Atribuir",
+      "concat": "Concatenar",
+      "add": "Somar",
+      "subtract": "Subtrair",
+      "multiply": "Multiplicar",
+      "divide": "Dividir",
+      "isAnyOf": "É qualquer um de"
+    },
+    "action": {
+      "jumpToBlock": "Ir para o bloco",
+      "requireAnswer": "Resposta obrigatória",
+      "calculate": "Calcular"
+    },
+    "panel": {
+      "title": "Lógica",
+      "add_item": "Adicionar lógica",
+      "no_items": "Nenhuma lógica configurada",
+      "fallback_label": "Destino predefinido",
+      "fallback_description": "Bloco para o qual ir quando nenhuma condição corresponder"
+    },
+    "condition": {
+      "if": "Se",
+      "then": "Então",
+      "value": "Valor",
+      "field": "Campo",
+      "operator": "Operador"
+    },
+    "connector": {
+      "and": "E",
+      "or": "OU"
+    },
+    "operand": {
+      "element": "Pergunta",
+      "variable": "Variável",
+      "hiddenField": "Campo oculto",
+      "static": "Valor estático",
+      "dynamic": "Valor dinâmico"
+    },
+    "fallback": {
+      "next_block": "Próximo bloco (predefinido)",
+      "end_survey": "Terminar inquérito",
+      "specific_block": "Bloco específico"
+    },
+    "validation": {
+      "cycle_detected": "Lógica circular detetada: {{path}}",
+      "missing_target_block": "O bloco alvo \"{{blockId}}\" não existe",
+      "missing_target_element": "O elemento alvo \"{{elementId}}\" não existe",
+      "divide_by_zero": "Divisão por zero não é permitida",
+      "max_items_exceeded": "Número máximo de itens de lógica excedido",
+      "empty_conditions": "As condições não podem estar vazias",
+      "logic_valid": "Validação de lógica aprovada"
+    }
   }
 }

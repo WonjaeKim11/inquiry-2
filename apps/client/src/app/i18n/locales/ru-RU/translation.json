@@ -280,5 +280,91 @@
       "pin_4_digits": "PIN должен состоять ровно из 4 цифр",
       "display_limit_required": "Для опции 'Частичный показ' требуется лимит отображения"
     }
+  },
+  "logic": {
+    "operator": {
+      "equals": "Равно",
+      "doesNotEqual": "Не равно",
+      "contains": "Содержит",
+      "doesNotContain": "Не содержит",
+      "startsWith": "Начинается с",
+      "doesNotStartWith": "Не начинается с",
+      "endsWith": "Заканчивается на",
+      "doesNotEndWith": "Не заканчивается на",
+      "isEmpty": "Пусто",
+      "isNotEmpty": "Не пусто",
+      "isSet": "Установлено",
+      "isNotSet": "Не установлено",
+      "isGreaterThan": "Больше чем",
+      "isLessThan": "Меньше чем",
+      "isGreaterThanOrEqual": "Больше или равно",
+      "isLessThanOrEqual": "Меньше или равно",
+      "equalsOneOf": "Равно одному из",
+      "includesAllOf": "Включает все из",
+      "includesOneOf": "Включает одно из",
+      "doesNotIncludeOneOf": "Не включает ни одного из",
+      "doesNotIncludeAllOf": "Не включает все из",
+      "isSubmitted": "Отправлено",
+      "isSkipped": "Пропущено",
+      "isClicked": "Нажато",
+      "isNotClicked": "Не нажато",
+      "isAccepted": "Принято",
+      "isBooked": "Забронировано",
+      "isPartiallySubmitted": "Частично отправлено",
+      "isCompletelySubmitted": "Полностью отправлено",
+      "isBefore": "До",
+      "isAfter": "После",
+      "assign": "Присвоить",
+      "concat": "Объединить",
+      "add": "Сложить",
+      "subtract": "Вычесть",
+      "multiply": "Умножить",
+      "divide": "Разделить",
+      "isAnyOf": "Является одним из"
+    },
+    "action": {
+      "jumpToBlock": "Перейти к блоку",
+      "requireAnswer": "Обязательный ответ",
+      "calculate": "Вычислить"
+    },
+    "panel": {
+      "title": "Логика",
+      "add_item": "Добавить логику",
+      "no_items": "Логика не настроена",
+      "fallback_label": "Цель по умолчанию",
+      "fallback_description": "Блок для перехода, когда ни одно условие не совпадает"
+    },
+    "condition": {
+      "if": "Если",
+      "then": "Тогда",
+      "value": "Значение",
+      "field": "Поле",
+      "operator": "Оператор"
+    },
+    "connector": {
+      "and": "И",
+      "or": "ИЛИ"
+    },
+    "operand": {
+      "element": "Вопрос",
+      "variable": "Переменная",
+      "hiddenField": "Скрытое поле",
+      "static": "Статическое значение",
+      "dynamic": "Динамическое значение"
+    },
+    "fallback": {
+      "next_block": "Следующий блок (по умолчанию)",
+      "end_survey": "Завершить опрос",
+      "specific_block": "Определённый блок"
+    },
+    "validation": {
+      "cycle_detected": "Обнаружена циклическая логика: {{path}}",
+      "missing_target_block": "Целевой блок \"{{blockId}}\" не существует",
+      "missing_target_element": "Целевой элемент \"{{elementId}}\" не существует",
+      "divide_by_zero": "Деление на ноль не допускается",
+      "max_items_exceeded": "Превышено максимальное количество элементов логики",
+      "empty_conditions": "Условия не могут быть пустыми",
+      "logic_valid": "Проверка логики пройдена"
+    }
   }
 }

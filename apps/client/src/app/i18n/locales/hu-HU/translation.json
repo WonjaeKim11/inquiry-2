@@ -280,5 +280,91 @@
       "pin_4_digits": "A PIN-nek pontosan 4 számjegyből kell állnia",
       "display_limit_required": "A megjelenítési korlát szükséges a 'Részleges megjelenítés' opcióhoz"
     }
+  },
+  "logic": {
+    "operator": {
+      "equals": "Egyenlő",
+      "doesNotEqual": "Nem egyenlő",
+      "contains": "Tartalmazza",
+      "doesNotContain": "Nem tartalmazza",
+      "startsWith": "Kezdődik",
+      "doesNotStartWith": "Nem kezdődik",
+      "endsWith": "Végződik",
+      "doesNotEndWith": "Nem végződik",
+      "isEmpty": "Üres",
+      "isNotEmpty": "Nem üres",
+      "isSet": "Be van állítva",
+      "isNotSet": "Nincs beállítva",
+      "isGreaterThan": "Nagyobb mint",
+      "isLessThan": "Kisebb mint",
+      "isGreaterThanOrEqual": "Nagyobb vagy egyenlő",
+      "isLessThanOrEqual": "Kisebb vagy egyenlő",
+      "equalsOneOf": "Egyenlő az egyikkel",
+      "includesAllOf": "Mindet tartalmazza",
+      "includesOneOf": "Legalább egyet tartalmaz",
+      "doesNotIncludeOneOf": "Egyiket sem tartalmazza",
+      "doesNotIncludeAllOf": "Nem tartalmazza mindet",
+      "isSubmitted": "Beküldve",
+      "isSkipped": "Kihagyva",
+      "isClicked": "Kattintva",
+      "isNotClicked": "Nem kattintva",
+      "isAccepted": "Elfogadva",
+      "isBooked": "Lefoglalva",
+      "isPartiallySubmitted": "Részlegesen beküldve",
+      "isCompletelySubmitted": "Teljesen beküldve",
+      "isBefore": "Előtte",
+      "isAfter": "Utána",
+      "assign": "Hozzárendelés",
+      "concat": "Összefűzés",
+      "add": "Összeadás",
+      "subtract": "Kivonás",
+      "multiply": "Szorzás",
+      "divide": "Osztás",
+      "isAnyOf": "Bármelyike"
+    },
+    "action": {
+      "jumpToBlock": "Ugrás blokkra",
+      "requireAnswer": "Kötelező válasz",
+      "calculate": "Számítás"
+    },
+    "panel": {
+      "title": "Logika",
+      "add_item": "Logika hozzáadása",
+      "no_items": "Nincs beállított logika",
+      "fallback_label": "Alapértelmezett cél",
+      "fallback_description": "Blokk, amelyre ugrás történik, ha egyetlen feltétel sem teljesül"
+    },
+    "condition": {
+      "if": "Ha",
+      "then": "Akkor",
+      "value": "Érték",
+      "field": "Mező",
+      "operator": "Operátor"
+    },
+    "connector": {
+      "and": "ÉS",
+      "or": "VAGY"
+    },
+    "operand": {
+      "element": "Kérdés",
+      "variable": "Változó",
+      "hiddenField": "Rejtett mező",
+      "static": "Statikus érték",
+      "dynamic": "Dinamikus érték"
+    },
+    "fallback": {
+      "next_block": "Következő blokk (alapértelmezett)",
+      "end_survey": "Kérdőív befejezése",
+      "specific_block": "Meghatározott blokk"
+    },
+    "validation": {
+      "cycle_detected": "Körkörös logika észlelve: {{path}}",
+      "missing_target_block": "A célblokk \"{{blockId}}\" nem létezik",
+      "missing_target_element": "A célelem \"{{elementId}}\" nem létezik",
+      "divide_by_zero": "Nullával való osztás nem megengedett",
+      "max_items_exceeded": "A logikai elemek maximális száma túllépve",
+      "empty_conditions": "A feltételek nem lehetnek üresek",
+      "logic_valid": "Logikai ellenőrzés sikeres"
+    }
   }
 }

@@ -280,5 +280,91 @@
       "pin_4_digits": "PIN måste vara exakt 4 siffror",
       "display_limit_required": "Visningsgräns krävs för alternativet 'Delvis visning'"
     }
+  },
+  "logic": {
+    "operator": {
+      "equals": "Är lika med",
+      "doesNotEqual": "Är inte lika med",
+      "contains": "Innehåller",
+      "doesNotContain": "Innehåller inte",
+      "startsWith": "Börjar med",
+      "doesNotStartWith": "Börjar inte med",
+      "endsWith": "Slutar med",
+      "doesNotEndWith": "Slutar inte med",
+      "isEmpty": "Är tom",
+      "isNotEmpty": "Är inte tom",
+      "isSet": "Är angiven",
+      "isNotSet": "Är inte angiven",
+      "isGreaterThan": "Är större än",
+      "isLessThan": "Är mindre än",
+      "isGreaterThanOrEqual": "Är större än eller lika med",
+      "isLessThanOrEqual": "Är mindre än eller lika med",
+      "equalsOneOf": "Är lika med en av",
+      "includesAllOf": "Inkluderar alla av",
+      "includesOneOf": "Inkluderar en av",
+      "doesNotIncludeOneOf": "Inkluderar inte någon av",
+      "doesNotIncludeAllOf": "Inkluderar inte alla av",
+      "isSubmitted": "Är inskickad",
+      "isSkipped": "Är överhoppad",
+      "isClicked": "Är klickad",
+      "isNotClicked": "Är inte klickad",
+      "isAccepted": "Är accepterad",
+      "isBooked": "Är bokad",
+      "isPartiallySubmitted": "Är delvis inskickad",
+      "isCompletelySubmitted": "Är helt inskickad",
+      "isBefore": "Är före",
+      "isAfter": "Är efter",
+      "assign": "Tilldela",
+      "concat": "Sammanfoga",
+      "add": "Addera",
+      "subtract": "Subtrahera",
+      "multiply": "Multiplicera",
+      "divide": "Dividera",
+      "isAnyOf": "Är någon av"
+    },
+    "action": {
+      "jumpToBlock": "Hoppa till block",
+      "requireAnswer": "Kräv svar",
+      "calculate": "Beräkna"
+    },
+    "panel": {
+      "title": "Logik",
+      "add_item": "Lägg till logik",
+      "no_items": "Ingen logik konfigurerad",
+      "fallback_label": "Standardmål",
+      "fallback_description": "Block att hoppa till när inga villkor matchar"
+    },
+    "condition": {
+      "if": "Om",
+      "then": "Då",
+      "value": "Värde",
+      "field": "Fält",
+      "operator": "Operator"
+    },
+    "connector": {
+      "and": "OCH",
+      "or": "ELLER"
+    },
+    "operand": {
+      "element": "Fråga",
+      "variable": "Variabel",
+      "hiddenField": "Dolt fält",
+      "static": "Statiskt värde",
+      "dynamic": "Dynamiskt värde"
+    },
+    "fallback": {
+      "next_block": "Nästa block (standard)",
+      "end_survey": "Avsluta enkät",
+      "specific_block": "Specifikt block"
+    },
+    "validation": {
+      "cycle_detected": "Cirkulär logik upptäckt: {{path}}",
+      "missing_target_block": "Målblocket \"{{blockId}}\" finns inte",
+      "missing_target_element": "Målelementet \"{{elementId}}\" finns inte",
+      "divide_by_zero": "Division med noll är inte tillåten",
+      "max_items_exceeded": "Maximalt antal logikposter överskridet",
+      "empty_conditions": "Villkor kan inte vara tomma",
+      "logic_valid": "Logikvalidering godkänd"
+    }
   }
 }

@@ -567,5 +567,91 @@
       "pin_4_digits": "PIN은 정확히 4자리 숫자여야 합니다",
       "display_limit_required": "'일부만 표시' 옵션에는 표시 제한이 필요합니다"
     }
+  },
+  "logic": {
+    "operator": {
+      "equals": "같음",
+      "doesNotEqual": "같지 않음",
+      "contains": "포함",
+      "doesNotContain": "포함하지 않음",
+      "startsWith": "시작함",
+      "doesNotStartWith": "시작하지 않음",
+      "endsWith": "끝남",
+      "doesNotEndWith": "끝나지 않음",
+      "isEmpty": "비어 있음",
+      "isNotEmpty": "비어 있지 않음",
+      "isSet": "설정됨",
+      "isNotSet": "설정되지 않음",
+      "isGreaterThan": "보다 큼",
+      "isLessThan": "보다 작음",
+      "isGreaterThanOrEqual": "이상",
+      "isLessThanOrEqual": "이하",
+      "equalsOneOf": "다음 중 하나와 같음",
+      "includesAllOf": "모두 포함",
+      "includesOneOf": "하나 이상 포함",
+      "doesNotIncludeOneOf": "하나도 포함하지 않음",
+      "doesNotIncludeAllOf": "모두 포함하지 않음",
+      "isSubmitted": "제출됨",
+      "isSkipped": "건너뜀",
+      "isClicked": "클릭됨",
+      "isNotClicked": "클릭되지 않음",
+      "isAccepted": "동의됨",
+      "isBooked": "예약됨",
+      "isPartiallySubmitted": "부분 제출됨",
+      "isCompletelySubmitted": "완전 제출됨",
+      "isBefore": "이전",
+      "isAfter": "이후",
+      "assign": "할당",
+      "concat": "연결",
+      "add": "더하기",
+      "subtract": "빼기",
+      "multiply": "곱하기",
+      "divide": "나누기",
+      "isAnyOf": "다음 중 하나"
+    },
+    "action": {
+      "jumpToBlock": "블록으로 이동",
+      "requireAnswer": "필수 응답",
+      "calculate": "계산"
+    },
+    "panel": {
+      "title": "로직",
+      "add_item": "로직 추가",
+      "no_items": "설정된 로직이 없습니다",
+      "fallback_label": "기본 이동 대상",
+      "fallback_description": "조건이 일치하지 않을 때 이동할 블록"
+    },
+    "condition": {
+      "if": "만약",
+      "then": "그러면",
+      "value": "값",
+      "field": "필드",
+      "operator": "연산자"
+    },
+    "connector": {
+      "and": "그리고",
+      "or": "또는"
+    },
+    "operand": {
+      "element": "질문",
+      "variable": "변수",
+      "hiddenField": "숨겨진 필드",
+      "static": "정적 값",
+      "dynamic": "동적 값"
+    },
+    "fallback": {
+      "next_block": "다음 블록 (기본)",
+      "end_survey": "설문 종료",
+      "specific_block": "특정 블록"
+    },
+    "validation": {
+      "cycle_detected": "순환 로직이 감지되었습니다: {{path}}",
+      "missing_target_block": "대상 블록 \"{{blockId}}\"이 존재하지 않습니다",
+      "missing_target_element": "대상 요소 \"{{elementId}}\"이 존재하지 않습니다",
+      "divide_by_zero": "0으로 나눌 수 없습니다",
+      "max_items_exceeded": "최대 로직 아이템 수를 초과했습니다",
+      "empty_conditions": "조건이 비어 있을 수 없습니다",
+      "logic_valid": "로직 검증을 통과했습니다"
+    }
   }
 }

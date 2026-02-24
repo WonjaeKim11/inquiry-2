@@ -280,5 +280,91 @@
       "pin_4_digits": "PIN-ul trebuie să aibă exact 4 cifre",
       "display_limit_required": "Limita de afișare este necesară pentru opțiunea 'Afișare parțială'"
     }
+  },
+  "logic": {
+    "operator": {
+      "equals": "Este egal cu",
+      "doesNotEqual": "Nu este egal cu",
+      "contains": "Conține",
+      "doesNotContain": "Nu conține",
+      "startsWith": "Începe cu",
+      "doesNotStartWith": "Nu începe cu",
+      "endsWith": "Se termină cu",
+      "doesNotEndWith": "Nu se termină cu",
+      "isEmpty": "Este gol",
+      "isNotEmpty": "Nu este gol",
+      "isSet": "Este setat",
+      "isNotSet": "Nu este setat",
+      "isGreaterThan": "Este mai mare decât",
+      "isLessThan": "Este mai mic decât",
+      "isGreaterThanOrEqual": "Este mai mare sau egal cu",
+      "isLessThanOrEqual": "Este mai mic sau egal cu",
+      "equalsOneOf": "Este egal cu unul dintre",
+      "includesAllOf": "Include toate din",
+      "includesOneOf": "Include unul din",
+      "doesNotIncludeOneOf": "Nu include niciunul din",
+      "doesNotIncludeAllOf": "Nu include toate din",
+      "isSubmitted": "Este trimis",
+      "isSkipped": "Este omis",
+      "isClicked": "Este apăsat",
+      "isNotClicked": "Nu este apăsat",
+      "isAccepted": "Este acceptat",
+      "isBooked": "Este rezervat",
+      "isPartiallySubmitted": "Este parțial trimis",
+      "isCompletelySubmitted": "Este complet trimis",
+      "isBefore": "Este înainte de",
+      "isAfter": "Este după",
+      "assign": "Atribuire",
+      "concat": "Concatenare",
+      "add": "Adunare",
+      "subtract": "Scădere",
+      "multiply": "Înmulțire",
+      "divide": "Împărțire",
+      "isAnyOf": "Este oricare din"
+    },
+    "action": {
+      "jumpToBlock": "Salt la bloc",
+      "requireAnswer": "Răspuns obligatoriu",
+      "calculate": "Calculare"
+    },
+    "panel": {
+      "title": "Logică",
+      "add_item": "Adaugă logică",
+      "no_items": "Nicio logică configurată",
+      "fallback_label": "Destinație implicită",
+      "fallback_description": "Blocul la care se sare când nicio condiție nu se potrivește"
+    },
+    "condition": {
+      "if": "Dacă",
+      "then": "Atunci",
+      "value": "Valoare",
+      "field": "Câmp",
+      "operator": "Operator"
+    },
+    "connector": {
+      "and": "ȘI",
+      "or": "SAU"
+    },
+    "operand": {
+      "element": "Întrebare",
+      "variable": "Variabilă",
+      "hiddenField": "Câmp ascuns",
+      "static": "Valoare statică",
+      "dynamic": "Valoare dinamică"
+    },
+    "fallback": {
+      "next_block": "Blocul următor (implicit)",
+      "end_survey": "Încheie sondajul",
+      "specific_block": "Bloc specific"
+    },
+    "validation": {
+      "cycle_detected": "Logică circulară detectată: {{path}}",
+      "missing_target_block": "Blocul țintă \"{{blockId}}\" nu există",
+      "missing_target_element": "Elementul țintă \"{{elementId}}\" nu există",
+      "divide_by_zero": "Împărțirea la zero nu este permisă",
+      "max_items_exceeded": "Numărul maxim de elemente de logică a fost depășit",
+      "empty_conditions": "Condițiile nu pot fi goale",
+      "logic_valid": "Validarea logicii a trecut"
+    }
   }
 }

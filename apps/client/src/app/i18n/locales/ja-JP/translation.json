@@ -280,5 +280,91 @@
       "pin_4_digits": "PINは正確に4桁である必要があります",
       "display_limit_required": "'一部のみ表示'オプションには表示制限が必要です"
     }
+  },
+  "logic": {
+    "operator": {
+      "equals": "等しい",
+      "doesNotEqual": "等しくない",
+      "contains": "含む",
+      "doesNotContain": "含まない",
+      "startsWith": "で始まる",
+      "doesNotStartWith": "で始まらない",
+      "endsWith": "で終わる",
+      "doesNotEndWith": "で終わらない",
+      "isEmpty": "空である",
+      "isNotEmpty": "空でない",
+      "isSet": "設定済み",
+      "isNotSet": "未設定",
+      "isGreaterThan": "より大きい",
+      "isLessThan": "より小さい",
+      "isGreaterThanOrEqual": "以上",
+      "isLessThanOrEqual": "以下",
+      "equalsOneOf": "いずれかと等しい",
+      "includesAllOf": "すべてを含む",
+      "includesOneOf": "いずれかを含む",
+      "doesNotIncludeOneOf": "いずれも含まない",
+      "doesNotIncludeAllOf": "すべてを含まない",
+      "isSubmitted": "送信済み",
+      "isSkipped": "スキップ済み",
+      "isClicked": "クリック済み",
+      "isNotClicked": "未クリック",
+      "isAccepted": "承諾済み",
+      "isBooked": "予約済み",
+      "isPartiallySubmitted": "部分送信済み",
+      "isCompletelySubmitted": "完全送信済み",
+      "isBefore": "より前",
+      "isAfter": "より後",
+      "assign": "代入",
+      "concat": "連結",
+      "add": "加算",
+      "subtract": "減算",
+      "multiply": "乗算",
+      "divide": "除算",
+      "isAnyOf": "いずれか"
+    },
+    "action": {
+      "jumpToBlock": "ブロックへ移動",
+      "requireAnswer": "回答必須",
+      "calculate": "計算"
+    },
+    "panel": {
+      "title": "ロジック",
+      "add_item": "ロジックを追加",
+      "no_items": "ロジックが設定されていません",
+      "fallback_label": "デフォルトの移動先",
+      "fallback_description": "条件に一致しない場合の移動先ブロック"
+    },
+    "condition": {
+      "if": "もし",
+      "then": "ならば",
+      "value": "値",
+      "field": "フィールド",
+      "operator": "演算子"
+    },
+    "connector": {
+      "and": "かつ",
+      "or": "または"
+    },
+    "operand": {
+      "element": "質問",
+      "variable": "変数",
+      "hiddenField": "非表示フィールド",
+      "static": "静的値",
+      "dynamic": "動的値"
+    },
+    "fallback": {
+      "next_block": "次のブロック（デフォルト）",
+      "end_survey": "アンケート終了",
+      "specific_block": "特定のブロック"
+    },
+    "validation": {
+      "cycle_detected": "循環ロジックが検出されました：{{path}}",
+      "missing_target_block": "対象ブロック\"{{blockId}}\"が存在しません",
+      "missing_target_element": "対象要素\"{{elementId}}\"が存在しません",
+      "divide_by_zero": "ゼロ除算は許可されていません",
+      "max_items_exceeded": "ロジックアイテムの最大数を超えました",
+      "empty_conditions": "条件を空にすることはできません",
+      "logic_valid": "ロジック検証に合格しました"
+    }
   }
 }

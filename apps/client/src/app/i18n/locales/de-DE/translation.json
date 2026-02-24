@@ -280,5 +280,91 @@
       "pin_4_digits": "PIN muss genau 4 Ziffern haben",
       "display_limit_required": "Anzeigelimit ist für die Option 'Teilweise anzeigen' erforderlich"
     }
+  },
+  "logic": {
+    "operator": {
+      "equals": "Ist gleich",
+      "doesNotEqual": "Ist nicht gleich",
+      "contains": "Enthält",
+      "doesNotContain": "Enthält nicht",
+      "startsWith": "Beginnt mit",
+      "doesNotStartWith": "Beginnt nicht mit",
+      "endsWith": "Endet mit",
+      "doesNotEndWith": "Endet nicht mit",
+      "isEmpty": "Ist leer",
+      "isNotEmpty": "Ist nicht leer",
+      "isSet": "Ist gesetzt",
+      "isNotSet": "Ist nicht gesetzt",
+      "isGreaterThan": "Ist größer als",
+      "isLessThan": "Ist kleiner als",
+      "isGreaterThanOrEqual": "Ist größer oder gleich",
+      "isLessThanOrEqual": "Ist kleiner oder gleich",
+      "equalsOneOf": "Entspricht einem von",
+      "includesAllOf": "Enthält alle von",
+      "includesOneOf": "Enthält eines von",
+      "doesNotIncludeOneOf": "Enthält keines von",
+      "doesNotIncludeAllOf": "Enthält nicht alle von",
+      "isSubmitted": "Ist eingereicht",
+      "isSkipped": "Ist übersprungen",
+      "isClicked": "Ist geklickt",
+      "isNotClicked": "Ist nicht geklickt",
+      "isAccepted": "Ist akzeptiert",
+      "isBooked": "Ist gebucht",
+      "isPartiallySubmitted": "Ist teilweise eingereicht",
+      "isCompletelySubmitted": "Ist vollständig eingereicht",
+      "isBefore": "Ist vor",
+      "isAfter": "Ist nach",
+      "assign": "Zuweisen",
+      "concat": "Verketten",
+      "add": "Addieren",
+      "subtract": "Subtrahieren",
+      "multiply": "Multiplizieren",
+      "divide": "Dividieren",
+      "isAnyOf": "Ist eines von"
+    },
+    "action": {
+      "jumpToBlock": "Zum Block springen",
+      "requireAnswer": "Antwort erforderlich",
+      "calculate": "Berechnen"
+    },
+    "panel": {
+      "title": "Logik",
+      "add_item": "Logik hinzufügen",
+      "no_items": "Keine Logik konfiguriert",
+      "fallback_label": "Standardziel",
+      "fallback_description": "Block, zu dem gesprungen wird, wenn keine Bedingungen zutreffen"
+    },
+    "condition": {
+      "if": "Wenn",
+      "then": "Dann",
+      "value": "Wert",
+      "field": "Feld",
+      "operator": "Operator"
+    },
+    "connector": {
+      "and": "UND",
+      "or": "ODER"
+    },
+    "operand": {
+      "element": "Frage",
+      "variable": "Variable",
+      "hiddenField": "Verstecktes Feld",
+      "static": "Statischer Wert",
+      "dynamic": "Dynamischer Wert"
+    },
+    "fallback": {
+      "next_block": "Nächster Block (Standard)",
+      "end_survey": "Umfrage beenden",
+      "specific_block": "Bestimmter Block"
+    },
+    "validation": {
+      "cycle_detected": "Zirkuläre Logik erkannt: {{path}}",
+      "missing_target_block": "Zielblock \"{{blockId}}\" existiert nicht",
+      "missing_target_element": "Zielelement \"{{elementId}}\" existiert nicht",
+      "divide_by_zero": "Division durch Null ist nicht erlaubt",
+      "max_items_exceeded": "Maximale Anzahl an Logik-Elementen überschritten",
+      "empty_conditions": "Bedingungen dürfen nicht leer sein",
+      "logic_valid": "Logikvalidierung bestanden"
+    }
   }
 }

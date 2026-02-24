@@ -19,6 +19,7 @@ import type { Request } from 'express';
 import { ZodValidationPipe } from '@inquiry/server-core';
 import { SurveyService } from './services/survey.service.js';
 import { SurveyTemplateService } from './services/survey-template.service.js';
+import { SurveyValidationService } from './services/survey-validation.service.js';
 import { CreateSurveySchema } from './dto/create-survey.dto.js';
 import type { CreateSurveyDto } from './dto/create-survey.dto.js';
 import { UpdateSurveySchema } from './dto/update-survey.dto.js';
@@ -42,7 +43,8 @@ interface AuthenticatedUser {
 export class SurveyController {
   constructor(
     private readonly surveyService: SurveyService,
-    private readonly templateService: SurveyTemplateService
+    private readonly templateService: SurveyTemplateService,
+    private readonly validationService: SurveyValidationService
   ) {}
 
   /**
@@ -188,5 +190,21 @@ export class SurveyController {
   completeSurvey(@Param('surveyId') surveyId: string, @Req() req: Request) {
     const user = req.user as AuthenticatedUser;
     return this.surveyService.completeSurvey(user.id, surveyId, req.ip);
+  }
+
+  /**
+   * POST /api/surveys/:surveyId/validate-logic
+   * 설문의 조건부 로직을 검증한다.
+   */
+  @Post('surveys/:surveyId/validate-logic')
+  @HttpCode(HttpStatus.OK)
+  async validateLogic(
+    @Param('surveyId') surveyId: string,
+    @Req() req: Request
+  ) {
+    const user = req.user as AuthenticatedUser;
+    const survey = await this.surveyService.getSurvey(user.id, surveyId);
+    await this.validationService.validateForPublish(survey);
+    return { valid: true, message: '로직 검증을 통과했습니다.' };
   }
 }

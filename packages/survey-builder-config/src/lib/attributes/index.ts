@@ -61,3 +61,7 @@ export { contactInfoFieldsAttribute } from './sub-field/contact-info-fields.attr
 
 // validation
 export { validationConfigAttribute } from './validation/validation-config.attribute';
+
+// logic
+export { logicItemsAttribute } from './logic/logic-items.attribute';
+export { logicFallbackAttribute } from './logic/logic-fallback.attribute';

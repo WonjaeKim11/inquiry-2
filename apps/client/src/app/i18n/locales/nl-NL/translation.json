@@ -280,5 +280,91 @@
       "pin_4_digits": "PIN moet precies 4 cijfers bevatten",
       "display_limit_required": "Weergavelimiet is vereist voor de optie 'Gedeeltelijk tonen'"
     }
+  },
+  "logic": {
+    "operator": {
+      "equals": "Is gelijk aan",
+      "doesNotEqual": "Is niet gelijk aan",
+      "contains": "Bevat",
+      "doesNotContain": "Bevat niet",
+      "startsWith": "Begint met",
+      "doesNotStartWith": "Begint niet met",
+      "endsWith": "Eindigt met",
+      "doesNotEndWith": "Eindigt niet met",
+      "isEmpty": "Is leeg",
+      "isNotEmpty": "Is niet leeg",
+      "isSet": "Is ingesteld",
+      "isNotSet": "Is niet ingesteld",
+      "isGreaterThan": "Is groter dan",
+      "isLessThan": "Is kleiner dan",
+      "isGreaterThanOrEqual": "Is groter dan of gelijk aan",
+      "isLessThanOrEqual": "Is kleiner dan of gelijk aan",
+      "equalsOneOf": "Is gelijk aan een van",
+      "includesAllOf": "Bevat alle van",
+      "includesOneOf": "Bevat een van",
+      "doesNotIncludeOneOf": "Bevat geen van",
+      "doesNotIncludeAllOf": "Bevat niet alle van",
+      "isSubmitted": "Is ingediend",
+      "isSkipped": "Is overgeslagen",
+      "isClicked": "Is aangeklikt",
+      "isNotClicked": "Is niet aangeklikt",
+      "isAccepted": "Is geaccepteerd",
+      "isBooked": "Is geboekt",
+      "isPartiallySubmitted": "Is gedeeltelijk ingediend",
+      "isCompletelySubmitted": "Is volledig ingediend",
+      "isBefore": "Is voor",
+      "isAfter": "Is na",
+      "assign": "Toewijzen",
+      "concat": "Samenvoegen",
+      "add": "Optellen",
+      "subtract": "Aftrekken",
+      "multiply": "Vermenigvuldigen",
+      "divide": "Delen",
+      "isAnyOf": "Is een van"
+    },
+    "action": {
+      "jumpToBlock": "Naar blok springen",
+      "requireAnswer": "Antwoord vereist",
+      "calculate": "Berekenen"
+    },
+    "panel": {
+      "title": "Logica",
+      "add_item": "Logica toevoegen",
+      "no_items": "Geen logica geconfigureerd",
+      "fallback_label": "Standaardbestemming",
+      "fallback_description": "Blok om naar te springen als geen voorwaarden overeenkomen"
+    },
+    "condition": {
+      "if": "Als",
+      "then": "Dan",
+      "value": "Waarde",
+      "field": "Veld",
+      "operator": "Operator"
+    },
+    "connector": {
+      "and": "EN",
+      "or": "OF"
+    },
+    "operand": {
+      "element": "Vraag",
+      "variable": "Variabele",
+      "hiddenField": "Verborgen veld",
+      "static": "Statische waarde",
+      "dynamic": "Dynamische waarde"
+    },
+    "fallback": {
+      "next_block": "Volgend blok (standaard)",
+      "end_survey": "Enquête beëindigen",
+      "specific_block": "Specifiek blok"
+    },
+    "validation": {
+      "cycle_detected": "Circulaire logica gedetecteerd: {{path}}",
+      "missing_target_block": "Doelblok \"{{blockId}}\" bestaat niet",
+      "missing_target_element": "Doelelement \"{{elementId}}\" bestaat niet",
+      "divide_by_zero": "Delen door nul is niet toegestaan",
+      "max_items_exceeded": "Maximum aantal logica-items overschreden",
+      "empty_conditions": "Voorwaarden mogen niet leeg zijn",
+      "logic_valid": "Logicavalidatie geslaagd"
+    }
   }
 }
