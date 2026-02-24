@@ -60,11 +60,18 @@ export { BuilderCanvas } from './lib/components/elements-view/BuilderCanvas';
 export { BlockComponent } from './lib/components/elements-view/BlockComponent';
 export { BlockHeader } from './lib/components/elements-view/BlockHeader';
 export { BlockSettings } from './lib/components/elements-view/BlockSettings';
+export { BlockLogicEditor } from './lib/components/elements-view/BlockLogicEditor';
+export { ValidationRulesEditor } from './lib/components/elements-view/ValidationRulesEditor';
 export { ElementComponent } from './lib/components/elements-view/ElementComponent';
 export { ElementCardMenu } from './lib/components/elements-view/ElementCardMenu';
 export { AddElementButton } from './lib/components/elements-view/AddElementButton';
 export { DEFAULT_ELEMENT_ATTRS } from './lib/components/elements-view/AddElementButton';
 export { LanguageSettingsCard } from './lib/components/elements-view/LanguageSettingsCard';
+export { WelcomeCardEditor } from './lib/components/elements-view/WelcomeCardEditor';
+export { EndingCardEditor } from './lib/components/elements-view/EndingCardEditor';
+export { EndingCardList } from './lib/components/elements-view/EndingCardList';
+export { HiddenFieldsCard } from './lib/components/elements-view/HiddenFieldsCard';
+export { SurveyVariablesCard } from './lib/components/elements-view/SurveyVariablesCard';
 export { entityComponentMap } from './lib/components/elements-view/entity-components/index';
 export {
   BuilderStoreProvider,

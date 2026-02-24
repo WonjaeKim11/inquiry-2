@@ -1,9 +1,12 @@
 'use client';
 
-import { useTranslation } from 'react-i18next';
 import type { BuilderStore } from '@coltorapps/builder';
 import { LanguageSettingsCard } from './LanguageSettingsCard';
 import { BuilderCanvas } from './BuilderCanvas';
+import { WelcomeCardEditor } from './WelcomeCardEditor';
+import { EndingCardList } from './EndingCardList';
+import { HiddenFieldsCard } from './HiddenFieldsCard';
+import { SurveyVariablesCard } from './SurveyVariablesCard';
 
 interface ElementsViewProps {
   /** @coltorapps/builder-react의 builderStore 인스턴스 */
@@ -16,47 +19,28 @@ interface ElementsViewProps {
  * 다국어 설정 -> Welcome Card -> Builder Canvas (Blocks + Elements) ->
  * Ending Cards -> Hidden Fields -> Variables 순서로 배치한다.
  *
- * WelcomeCardEditor, EndingCardList, HiddenFieldsCard, SurveyVariablesCard는
- * Phase 5에서 구현하므로, 현재는 placeholder div를 렌더링한다.
+ * 각 섹션은 SurveyMetaContext를 통해 Builder Schema 외부 데이터를 관리한다.
  */
 export function ElementsView({ builderStore }: ElementsViewProps) {
-  const { t } = useTranslation();
-
   return (
     <div className="space-y-6">
       {/* 다국어 설정 카드 */}
       <LanguageSettingsCard />
 
-      {/* Welcome Card - Phase 5에서 WelcomeCardEditor로 교체 */}
-      <div className="rounded-lg border p-4">
-        <h3 className="text-sm font-medium text-muted-foreground">
-          {t('surveyEditor.welcomeCard.title', 'Welcome Card')}
-        </h3>
-      </div>
+      {/* Welcome Card 편집기 */}
+      <WelcomeCardEditor />
 
       {/* Builder Canvas - Blocks + Elements */}
       <BuilderCanvas builderStore={builderStore} />
 
-      {/* Ending Cards - Phase 5에서 EndingCardList로 교체 */}
-      <div className="rounded-lg border p-4">
-        <h3 className="text-sm font-medium text-muted-foreground">
-          {t('surveyEditor.ending.title', 'Ending Cards')}
-        </h3>
-      </div>
+      {/* Ending Cards 목록 (DnD 정렬 + 추가/삭제) */}
+      <EndingCardList />
 
-      {/* Hidden Fields - Phase 5에서 HiddenFieldsCard로 교체 */}
-      <div className="rounded-lg border p-4">
-        <h3 className="text-sm font-medium text-muted-foreground">
-          {t('surveyEditor.hiddenFields.title', 'Hidden Fields')}
-        </h3>
-      </div>
+      {/* Hidden Fields 편집기 */}
+      <HiddenFieldsCard />
 
-      {/* Survey Variables - Phase 5에서 SurveyVariablesCard로 교체 */}
-      <div className="rounded-lg border p-4">
-        <h3 className="text-sm font-medium text-muted-foreground">
-          {t('surveyEditor.variables.title', 'Variables')}
-        </h3>
-      </div>
+      {/* Survey Variables 편집기 */}
+      <SurveyVariablesCard />
     </div>
   );
 }
