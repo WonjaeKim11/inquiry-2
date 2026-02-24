@@ -462,6 +462,33 @@ importers:
         specifier: ^4.3.6
         version: 4.3.6
 
+  libs/client/multilingual:
+    dependencies:
+      '@inquiry/client-core':
+        specifier: workspace:*
+        version: link:../core
+      '@inquiry/client-organization':
+        specifier: workspace:*
+        version: link:../organization
+      '@inquiry/client-project':
+        specifier: workspace:*
+        version: link:../project
+      '@inquiry/client-survey':
+        specifier: workspace:*
+        version: link:../survey
+      '@inquiry/client-ui':
+        specifier: workspace:*
+        version: link:../ui
+      '@inquiry/survey-builder-config':
+        specifier: workspace:*
+        version: link:../../../packages/survey-builder-config
+      react:
+        specifier: ^19.0.0
+        version: 19.2.4
+      react-i18next:
+        specifier: ^16.5.4
+        version: 16.5.4(i18next@25.8.13(typescript@5.9.3))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)
+
   libs/client/organization:
     dependencies:
       '@inquiry/client-core':

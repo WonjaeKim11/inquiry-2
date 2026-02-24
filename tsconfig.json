@@ -110,6 +110,9 @@
     },
     {
       "path": "./libs/server/multilingual"
+    },
+    {
+      "path": "./libs/client/multilingual"
     }
   ]
 }

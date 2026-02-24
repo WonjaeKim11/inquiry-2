@@ -1,0 +1,29 @@
+{
+  "name": "@inquiry/client-multilingual",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "nx": {
+    "name": "client-multilingual"
+  },
+  "dependencies": {
+    "@inquiry/client-core": "workspace:*",
+    "@inquiry/client-ui": "workspace:*",
+    "@inquiry/client-survey": "workspace:*",
+    "@inquiry/client-project": "workspace:*",
+    "@inquiry/client-organization": "workspace:*",
+    "@inquiry/survey-builder-config": "workspace:*",
+    "react": "^19.0.0",
+    "react-i18next": "^16.5.4"
+  }
+}
