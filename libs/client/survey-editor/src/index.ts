@@ -53,3 +53,20 @@ export { LocalizedInput } from './lib/components/shared/LocalizedInput';
 export { OptionsSwitch } from './lib/components/shared/OptionsSwitch';
 export { ConfirmDeleteDialog } from './lib/components/shared/ConfirmDeleteDialog';
 export { FileUploadInput } from './lib/components/shared/FileUploadInput';
+
+// Elements View Components
+export { ElementsView } from './lib/components/elements-view/ElementsView';
+export { BuilderCanvas } from './lib/components/elements-view/BuilderCanvas';
+export { BlockComponent } from './lib/components/elements-view/BlockComponent';
+export { BlockHeader } from './lib/components/elements-view/BlockHeader';
+export { BlockSettings } from './lib/components/elements-view/BlockSettings';
+export { ElementComponent } from './lib/components/elements-view/ElementComponent';
+export { ElementCardMenu } from './lib/components/elements-view/ElementCardMenu';
+export { AddElementButton } from './lib/components/elements-view/AddElementButton';
+export { DEFAULT_ELEMENT_ATTRS } from './lib/components/elements-view/AddElementButton';
+export { LanguageSettingsCard } from './lib/components/elements-view/LanguageSettingsCard';
+export { entityComponentMap } from './lib/components/elements-view/entity-components/index';
+export {
+  BuilderStoreProvider,
+  useBuilderStoreContext,
+} from './lib/components/elements-view/BuilderStoreContext';
