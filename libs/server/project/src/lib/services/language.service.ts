@@ -208,6 +208,32 @@ export class LanguageService {
       where: { id: languageId },
     });
 
+    // Survey.languages 연쇄 정리: 삭제된 Language를 참조하는 SurveyLanguage 항목 제거
+    const surveys = await this.prisma.survey.findMany({
+      where: { projectId: existing.projectId },
+      select: { id: true, languages: true },
+    });
+
+    for (const survey of surveys) {
+      const langs = (survey.languages ?? []) as Array<{
+        languageId: string;
+        default: boolean;
+        enabled: boolean;
+      }>;
+      if (!Array.isArray(langs) || langs.length === 0) continue;
+
+      const filtered = langs.filter((l) => l.languageId !== languageId);
+      if (filtered.length !== langs.length) {
+        await this.prisma.survey.update({
+          where: { id: survey.id },
+          data: { languages: filtered as any },
+        });
+        this.logger.debug(
+          `설문 ${survey.id}에서 삭제된 언어(${languageId}) 참조 제거 완료`
+        );
+      }
+    }
+
     // 감사 로그 기록 (fire-and-forget)
     this.auditLogService.logEvent({
       action: 'language.deleted',

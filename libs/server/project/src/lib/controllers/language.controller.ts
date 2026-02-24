@@ -15,6 +15,7 @@ import {
 import { AuthGuard } from '@nestjs/passport';
 import type { Request } from 'express';
 import { ZodValidationPipe } from '@inquiry/server-core';
+import { RequireLicense, LicenseGuard } from '@inquiry/server-license';
 import { LanguageService } from '../services/language.service.js';
 import { CreateLanguageSchema } from '../dto/create-language.dto.js';
 import type { CreateLanguageDto } from '../dto/create-language.dto.js';
@@ -41,6 +42,8 @@ export class LanguageController {
    * 프로젝트에 새 언어를 등록한다.
    */
   @Post('projects/:projectId/languages')
+  @UseGuards(LicenseGuard)
+  @RequireLicense('multiLanguage')
   @UsePipes(new ZodValidationPipe(CreateLanguageSchema))
   @HttpCode(HttpStatus.CREATED)
   async create(
@@ -70,6 +73,8 @@ export class LanguageController {
    * 언어 정보를 부분 업데이트한다.
    */
   @Patch('languages/:languageId')
+  @UseGuards(LicenseGuard)
+  @RequireLicense('multiLanguage')
   @UsePipes(new ZodValidationPipe(UpdateLanguageSchema))
   async update(
     @Param('languageId') languageId: string,
@@ -90,6 +95,8 @@ export class LanguageController {
    * 언어를 삭제한다.
    */
   @Delete('languages/:languageId')
+  @UseGuards(LicenseGuard)
+  @RequireLicense('multiLanguage')
   async remove(@Param('languageId') languageId: string, @Req() req: Request) {
     const user = req.user as AuthenticatedUser;
     return this.languageService.deleteLanguage(user.id, languageId, req.ip);
