@@ -57,3 +57,29 @@ export type { TextareaProps } from './components/ui/textarea';
 
 // 언어 선택 컴포넌트
 export { LanguageSelector } from './components/language-selector';
+
+// Slider 컴포넌트
+export { Slider } from './components/ui/slider';
+
+// Popover 컴포넌트
+export {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverAnchor,
+} from './components/ui/popover';
+
+// Collapsible 컴포넌트
+export {
+  Collapsible,
+  CollapsibleTrigger,
+  CollapsibleContent,
+} from './components/ui/collapsible';
+
+// Tooltip 컴포넌트
+export {
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+  TooltipProvider,
+} from './components/ui/tooltip';
