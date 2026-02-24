@@ -28,3 +28,16 @@ export type {
   SurveyMetaState,
   SurveyMetaAction,
 } from './lib/context/types';
+
+// Context Providers
+export { EditorUIProvider } from './lib/context/editor-ui.context';
+export type { EditorUIContextValue } from './lib/context/editor-ui.context';
+export { SurveyMetaProvider } from './lib/context/survey-meta.context';
+export type { SurveyMetaContextValue } from './lib/context/survey-meta.context';
+
+// Hooks
+export { useEditorUI } from './lib/hooks/use-editor-ui';
+export { useSurveyMeta } from './lib/hooks/use-survey-meta';
+export { useEditorAutoSave } from './lib/hooks/use-editor-auto-save';
+export { useSurveyPublish } from './lib/hooks/use-survey-publish';
+export { useActiveElement } from './lib/hooks/use-active-element';
