@@ -456,5 +456,54 @@
       "element": "Întrebare",
       "hiddenField": "Câmp ascuns"
     }
+  },
+  "multilingual": {
+    "title": "Multilingv",
+    "add_language": "Adaugă limbă",
+    "remove_language": "Elimină limba",
+    "default_language": "Limba implicită",
+    "set_as_default": "Setare ca implicită",
+    "enable_language": "Activare limbă",
+    "disable_language": "Dezactivare limbă",
+    "language_switch": "Afișare selector de limbă",
+    "language_switch_hint": "Permite respondenților să schimbe limba în timpul chestionarului",
+    "translation_status": "Starea traducerii",
+    "translation_complete": "Completă",
+    "translation_incomplete": "Incompletă",
+    "translation_missing": "Lipsă",
+    "translate_all": "Traduce tot",
+    "auto_translate": "Traducere automată",
+    "rtl_detected": "Limbă de la dreapta la stânga detectată",
+    "max_languages": "Maximum {{max}} limbi per chestionar",
+    "language_code": "Cod de limbă",
+    "language_name": "Numele limbii",
+    "native_name": "Denumire nativă",
+    "search_language": "Caută limbi...",
+    "no_languages": "Nicio limbă configurată",
+    "no_results": "Nu s-au găsit limbi care să corespundă",
+    "direction": {
+      "ltr": "Stânga la dreapta",
+      "rtl": "Dreapta la stânga"
+    },
+    "validation": {
+      "default_required": "Este necesară o limbă implicită.",
+      "default_must_be_enabled": "Limba implicită trebuie să fie activată.",
+      "duplicate_language": "Această limbă a fost deja adăugată.",
+      "translation_incomplete": "Traducerile sunt incomplete pentru unele limbi.",
+      "missing_field": "Traducere lipsă pentru \"{{field}}\" în \"{{language}}\"."
+    },
+    "success": {
+      "language_added": "Limba a fost adăugată.",
+      "language_removed": "Limba a fost eliminată.",
+      "default_changed": "Limba implicită a fost schimbată.",
+      "translations_saved": "Traducerile au fost salvate."
+    },
+    "errors": {
+      "add_fail": "Adăugarea limbii a eșuat.",
+      "remove_fail": "Eliminarea limbii a eșuat.",
+      "save_fail": "Salvarea traducerilor a eșuat.",
+      "load_fail": "Încărcarea limbilor a eșuat.",
+      "license_required": "Funcția multilingvă necesită o licență Enterprise."
+    }
   }
 }

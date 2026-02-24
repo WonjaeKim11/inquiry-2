@@ -456,5 +456,54 @@
       "element": "Vraag",
       "hiddenField": "Verborgen veld"
     }
+  },
+  "multilingual": {
+    "title": "Meertalig",
+    "add_language": "Taal toevoegen",
+    "remove_language": "Taal verwijderen",
+    "default_language": "Standaardtaal",
+    "set_as_default": "Als standaard instellen",
+    "enable_language": "Taal inschakelen",
+    "disable_language": "Taal uitschakelen",
+    "language_switch": "Taalwisselaar tonen",
+    "language_switch_hint": "Sta respondenten toe om van taal te wisselen tijdens de enquête",
+    "translation_status": "Vertaalstatus",
+    "translation_complete": "Voltooid",
+    "translation_incomplete": "Onvolledig",
+    "translation_missing": "Ontbrekend",
+    "translate_all": "Alles vertalen",
+    "auto_translate": "Automatisch vertalen",
+    "rtl_detected": "Rechts-naar-links taal gedetecteerd",
+    "max_languages": "Maximaal {{max}} talen per enquête",
+    "language_code": "Taalcode",
+    "language_name": "Taalnaam",
+    "native_name": "Oorspronkelijke naam",
+    "search_language": "Talen zoeken...",
+    "no_languages": "Geen talen geconfigureerd",
+    "no_results": "Geen overeenkomende talen gevonden",
+    "direction": {
+      "ltr": "Links naar rechts",
+      "rtl": "Rechts naar links"
+    },
+    "validation": {
+      "default_required": "Een standaardtaal is vereist.",
+      "default_must_be_enabled": "De standaardtaal moet ingeschakeld zijn.",
+      "duplicate_language": "Deze taal is al toegevoegd.",
+      "translation_incomplete": "Vertalingen zijn onvolledig voor sommige talen.",
+      "missing_field": "Ontbrekende vertaling voor \"{{field}}\" in \"{{language}}\"."
+    },
+    "success": {
+      "language_added": "Taal toegevoegd.",
+      "language_removed": "Taal verwijderd.",
+      "default_changed": "Standaardtaal gewijzigd.",
+      "translations_saved": "Vertalingen opgeslagen."
+    },
+    "errors": {
+      "add_fail": "Taal toevoegen mislukt.",
+      "remove_fail": "Taal verwijderen mislukt.",
+      "save_fail": "Vertalingen opslaan mislukt.",
+      "load_fail": "Talen laden mislukt.",
+      "license_required": "De meertalige functie vereist een Enterprise-licentie."
+    }
   }
 }

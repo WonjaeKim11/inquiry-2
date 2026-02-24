@@ -456,5 +456,54 @@
       "element": "Pergunta",
       "hiddenField": "Campo oculto"
     }
+  },
+  "multilingual": {
+    "title": "Multilíngue",
+    "add_language": "Adicionar idioma",
+    "remove_language": "Remover idioma",
+    "default_language": "Idioma padrão",
+    "set_as_default": "Definir como padrão",
+    "enable_language": "Ativar idioma",
+    "disable_language": "Desativar idioma",
+    "language_switch": "Mostrar seletor de idioma",
+    "language_switch_hint": "Permitir que os respondentes troquem de idioma durante a pesquisa",
+    "translation_status": "Status da tradução",
+    "translation_complete": "Completa",
+    "translation_incomplete": "Incompleta",
+    "translation_missing": "Ausente",
+    "translate_all": "Traduzir tudo",
+    "auto_translate": "Tradução automática",
+    "rtl_detected": "Idioma da direita para a esquerda detectado",
+    "max_languages": "Máximo de {{max}} idiomas por pesquisa",
+    "language_code": "Código do idioma",
+    "language_name": "Nome do idioma",
+    "native_name": "Nome nativo",
+    "search_language": "Pesquisar idiomas...",
+    "no_languages": "Nenhum idioma configurado",
+    "no_results": "Nenhum idioma correspondente encontrado",
+    "direction": {
+      "ltr": "Esquerda para direita",
+      "rtl": "Direita para esquerda"
+    },
+    "validation": {
+      "default_required": "Um idioma padrão é obrigatório.",
+      "default_must_be_enabled": "O idioma padrão deve estar ativado.",
+      "duplicate_language": "Este idioma já foi adicionado.",
+      "translation_incomplete": "As traduções estão incompletas para alguns idiomas.",
+      "missing_field": "Tradução ausente para \"{{field}}\" em \"{{language}}\"."
+    },
+    "success": {
+      "language_added": "Idioma adicionado.",
+      "language_removed": "Idioma removido.",
+      "default_changed": "Idioma padrão alterado.",
+      "translations_saved": "Traduções salvas."
+    },
+    "errors": {
+      "add_fail": "Falha ao adicionar idioma.",
+      "remove_fail": "Falha ao remover idioma.",
+      "save_fail": "Falha ao salvar traduções.",
+      "load_fail": "Falha ao carregar idiomas.",
+      "license_required": "O recurso multilíngue requer uma licença Enterprise."
+    }
   }
 }

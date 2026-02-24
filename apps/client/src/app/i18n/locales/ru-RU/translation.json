@@ -456,5 +456,54 @@
       "element": "Вопрос",
       "hiddenField": "Скрытое поле"
     }
+  },
+  "multilingual": {
+    "title": "Мультиязычность",
+    "add_language": "Добавить язык",
+    "remove_language": "Удалить язык",
+    "default_language": "Язык по умолчанию",
+    "set_as_default": "Установить по умолчанию",
+    "enable_language": "Включить язык",
+    "disable_language": "Отключить язык",
+    "language_switch": "Показать переключатель языков",
+    "language_switch_hint": "Разрешить респондентам переключать язык во время опроса",
+    "translation_status": "Статус перевода",
+    "translation_complete": "Завершён",
+    "translation_incomplete": "Не завершён",
+    "translation_missing": "Отсутствует",
+    "translate_all": "Перевести всё",
+    "auto_translate": "Автоматический перевод",
+    "rtl_detected": "Обнаружен язык с письмом справа налево",
+    "max_languages": "Максимум {{max}} языков на опрос",
+    "language_code": "Код языка",
+    "language_name": "Название языка",
+    "native_name": "Самоназвание",
+    "search_language": "Поиск языков...",
+    "no_languages": "Языки не настроены",
+    "no_results": "Подходящие языки не найдены",
+    "direction": {
+      "ltr": "Слева направо",
+      "rtl": "Справа налево"
+    },
+    "validation": {
+      "default_required": "Необходимо указать язык по умолчанию.",
+      "default_must_be_enabled": "Язык по умолчанию должен быть включён.",
+      "duplicate_language": "Этот язык уже добавлен.",
+      "translation_incomplete": "Переводы не завершены для некоторых языков.",
+      "missing_field": "Отсутствует перевод для \"{{field}}\" на языке \"{{language}}\"."
+    },
+    "success": {
+      "language_added": "Язык добавлен.",
+      "language_removed": "Язык удалён.",
+      "default_changed": "Язык по умолчанию изменён.",
+      "translations_saved": "Переводы сохранены."
+    },
+    "errors": {
+      "add_fail": "Не удалось добавить язык.",
+      "remove_fail": "Не удалось удалить язык.",
+      "save_fail": "Не удалось сохранить переводы.",
+      "load_fail": "Не удалось загрузить языки.",
+      "license_required": "Мультиязычная функция требует лицензии Enterprise."
+    }
   }
 }

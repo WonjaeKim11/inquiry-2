@@ -456,5 +456,54 @@
       "element": "Kérdés",
       "hiddenField": "Rejtett mező"
     }
+  },
+  "multilingual": {
+    "title": "Többnyelvű",
+    "add_language": "Nyelv hozzáadása",
+    "remove_language": "Nyelv eltávolítása",
+    "default_language": "Alapértelmezett nyelv",
+    "set_as_default": "Beállítás alapértelmezettként",
+    "enable_language": "Nyelv engedélyezése",
+    "disable_language": "Nyelv letiltása",
+    "language_switch": "Nyelvválasztó megjelenítése",
+    "language_switch_hint": "Lehetővé teszi a válaszadók számára a nyelv váltását a kérdőív során",
+    "translation_status": "Fordítás állapota",
+    "translation_complete": "Kész",
+    "translation_incomplete": "Hiányos",
+    "translation_missing": "Hiányzik",
+    "translate_all": "Összes fordítása",
+    "auto_translate": "Automatikus fordítás",
+    "rtl_detected": "Jobbról balra írt nyelv észlelve",
+    "max_languages": "Kérdőívenként legfeljebb {{max}} nyelv",
+    "language_code": "Nyelvkód",
+    "language_name": "Nyelv neve",
+    "native_name": "Anyanyelvi név",
+    "search_language": "Nyelvek keresése...",
+    "no_languages": "Nincs beállított nyelv",
+    "no_results": "Nem található egyező nyelv",
+    "direction": {
+      "ltr": "Balról jobbra",
+      "rtl": "Jobbról balra"
+    },
+    "validation": {
+      "default_required": "Alapértelmezett nyelv megadása kötelező.",
+      "default_must_be_enabled": "Az alapértelmezett nyelvnek engedélyezettnek kell lennie.",
+      "duplicate_language": "Ez a nyelv már hozzá lett adva.",
+      "translation_incomplete": "Egyes nyelvek fordítása hiányos.",
+      "missing_field": "Hiányzó fordítás: \"{{field}}\" a következő nyelvben: \"{{language}}\"."
+    },
+    "success": {
+      "language_added": "Nyelv hozzáadva.",
+      "language_removed": "Nyelv eltávolítva.",
+      "default_changed": "Alapértelmezett nyelv módosítva.",
+      "translations_saved": "Fordítások mentve."
+    },
+    "errors": {
+      "add_fail": "A nyelv hozzáadása sikertelen.",
+      "remove_fail": "A nyelv eltávolítása sikertelen.",
+      "save_fail": "A fordítások mentése sikertelen.",
+      "load_fail": "A nyelvek betöltése sikertelen.",
+      "license_required": "A többnyelvű funkció Enterprise licencet igényel."
+    }
   }
 }

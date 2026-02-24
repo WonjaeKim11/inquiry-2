@@ -320,7 +320,7 @@
         "limit_min": "Das Limit muss mindestens 1 betragen.",
         "limit_integer": "Das Limit muss eine ganze Zahl sein.",
         "action_required": "Bitte wählen Sie eine Aktion.",
-        "ending_required": "Endkarte ist für die Aktion \u201eUmfrage beenden\u201c erforderlich.",
+        "ending_required": "Endkarte ist für die Aktion „Umfrage beenden“ erforderlich.",
         "max_quotas": "Maximal {{max}} Quoten pro Umfrage."
       },
       "success": {
@@ -455,6 +455,55 @@
       "variable": "Variable",
       "element": "Frage",
       "hiddenField": "Verstecktes Feld"
+    }
+  },
+  "multilingual": {
+    "title": "Mehrsprachigkeit",
+    "add_language": "Sprache hinzufügen",
+    "remove_language": "Sprache entfernen",
+    "default_language": "Standardsprache",
+    "set_as_default": "Als Standard festlegen",
+    "enable_language": "Sprache aktivieren",
+    "disable_language": "Sprache deaktivieren",
+    "language_switch": "Sprachumschalter anzeigen",
+    "language_switch_hint": "Erlaubt Befragten, die Sprache während der Umfrage zu wechseln",
+    "translation_status": "Übersetzungsstatus",
+    "translation_complete": "Vollständig",
+    "translation_incomplete": "Unvollständig",
+    "translation_missing": "Fehlend",
+    "translate_all": "Alle übersetzen",
+    "auto_translate": "Automatisch übersetzen",
+    "rtl_detected": "Rechts-nach-links-Sprache erkannt",
+    "max_languages": "Maximal {{max}} Sprachen pro Umfrage",
+    "language_code": "Sprachcode",
+    "language_name": "Sprachname",
+    "native_name": "Eigenbezeichnung",
+    "search_language": "Sprachen suchen...",
+    "no_languages": "Keine Sprachen konfiguriert",
+    "no_results": "Keine passenden Sprachen gefunden",
+    "direction": {
+      "ltr": "Links nach rechts",
+      "rtl": "Rechts nach links"
+    },
+    "validation": {
+      "default_required": "Eine Standardsprache ist erforderlich.",
+      "default_must_be_enabled": "Die Standardsprache muss aktiviert sein.",
+      "duplicate_language": "Diese Sprache wurde bereits hinzugefügt.",
+      "translation_incomplete": "Die Übersetzungen sind für einige Sprachen unvollständig.",
+      "missing_field": "Fehlende Übersetzung für \"{{field}}\" in \"{{language}}\"."
+    },
+    "success": {
+      "language_added": "Sprache hinzugefügt.",
+      "language_removed": "Sprache entfernt.",
+      "default_changed": "Standardsprache geändert.",
+      "translations_saved": "Übersetzungen gespeichert."
+    },
+    "errors": {
+      "add_fail": "Sprache konnte nicht hinzugefügt werden.",
+      "remove_fail": "Sprache konnte nicht entfernt werden.",
+      "save_fail": "Übersetzungen konnten nicht gespeichert werden.",
+      "load_fail": "Sprachen konnten nicht geladen werden.",
+      "license_required": "Die Mehrsprachigkeitsfunktion erfordert eine Enterprise-Lizenz."
     }
   }
 }

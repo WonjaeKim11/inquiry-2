@@ -456,5 +456,54 @@
       "element": "Pregunta",
       "hiddenField": "Campo oculto"
     }
+  },
+  "multilingual": {
+    "title": "Multilingüe",
+    "add_language": "Agregar idioma",
+    "remove_language": "Eliminar idioma",
+    "default_language": "Idioma predeterminado",
+    "set_as_default": "Establecer como predeterminado",
+    "enable_language": "Activar idioma",
+    "disable_language": "Desactivar idioma",
+    "language_switch": "Mostrar selector de idioma",
+    "language_switch_hint": "Permite a los encuestados cambiar de idioma durante la encuesta",
+    "translation_status": "Estado de traducción",
+    "translation_complete": "Completa",
+    "translation_incomplete": "Incompleta",
+    "translation_missing": "Faltante",
+    "translate_all": "Traducir todo",
+    "auto_translate": "Traducción automática",
+    "rtl_detected": "Se detectó un idioma de derecha a izquierda",
+    "max_languages": "Máximo {{max}} idiomas por encuesta",
+    "language_code": "Código de idioma",
+    "language_name": "Nombre del idioma",
+    "native_name": "Nombre nativo",
+    "search_language": "Buscar idiomas...",
+    "no_languages": "No hay idiomas configurados",
+    "no_results": "No se encontraron idiomas coincidentes",
+    "direction": {
+      "ltr": "Izquierda a derecha",
+      "rtl": "Derecha a izquierda"
+    },
+    "validation": {
+      "default_required": "Se requiere un idioma predeterminado.",
+      "default_must_be_enabled": "El idioma predeterminado debe estar activado.",
+      "duplicate_language": "Este idioma ya ha sido agregado.",
+      "translation_incomplete": "Las traducciones están incompletas para algunos idiomas.",
+      "missing_field": "Falta la traducción de \"{{field}}\" en \"{{language}}\"."
+    },
+    "success": {
+      "language_added": "Idioma agregado.",
+      "language_removed": "Idioma eliminado.",
+      "default_changed": "Idioma predeterminado cambiado.",
+      "translations_saved": "Traducciones guardadas."
+    },
+    "errors": {
+      "add_fail": "Error al agregar el idioma.",
+      "remove_fail": "Error al eliminar el idioma.",
+      "save_fail": "Error al guardar las traducciones.",
+      "load_fail": "Error al cargar los idiomas.",
+      "license_required": "La función multilingüe requiere una licencia Enterprise."
+    }
   }
 }

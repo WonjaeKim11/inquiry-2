@@ -456,5 +456,54 @@
       "element": "Question",
       "hiddenField": "Champ caché"
     }
+  },
+  "multilingual": {
+    "title": "Multilingue",
+    "add_language": "Ajouter une langue",
+    "remove_language": "Supprimer la langue",
+    "default_language": "Langue par défaut",
+    "set_as_default": "Définir par défaut",
+    "enable_language": "Activer la langue",
+    "disable_language": "Désactiver la langue",
+    "language_switch": "Afficher le sélecteur de langue",
+    "language_switch_hint": "Permettre aux répondants de changer de langue pendant l'enquête",
+    "translation_status": "Statut de traduction",
+    "translation_complete": "Complète",
+    "translation_incomplete": "Incomplète",
+    "translation_missing": "Manquante",
+    "translate_all": "Tout traduire",
+    "auto_translate": "Traduction automatique",
+    "rtl_detected": "Langue de droite à gauche détectée",
+    "max_languages": "Maximum {{max}} langues par enquête",
+    "language_code": "Code de langue",
+    "language_name": "Nom de la langue",
+    "native_name": "Nom natif",
+    "search_language": "Rechercher des langues...",
+    "no_languages": "Aucune langue configurée",
+    "no_results": "Aucune langue correspondante trouvée",
+    "direction": {
+      "ltr": "Gauche à droite",
+      "rtl": "Droite à gauche"
+    },
+    "validation": {
+      "default_required": "Une langue par défaut est requise.",
+      "default_must_be_enabled": "La langue par défaut doit être activée.",
+      "duplicate_language": "Cette langue a déjà été ajoutée.",
+      "translation_incomplete": "Les traductions sont incomplètes pour certaines langues.",
+      "missing_field": "Traduction manquante pour \"{{field}}\" en \"{{language}}\"."
+    },
+    "success": {
+      "language_added": "Langue ajoutée.",
+      "language_removed": "Langue supprimée.",
+      "default_changed": "Langue par défaut modifiée.",
+      "translations_saved": "Traductions enregistrées."
+    },
+    "errors": {
+      "add_fail": "Échec de l'ajout de la langue.",
+      "remove_fail": "Échec de la suppression de la langue.",
+      "save_fail": "Échec de l'enregistrement des traductions.",
+      "load_fail": "Échec du chargement des langues.",
+      "license_required": "La fonctionnalité multilingue nécessite une licence Enterprise."
+    }
   }
 }

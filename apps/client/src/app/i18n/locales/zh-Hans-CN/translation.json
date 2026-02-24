@@ -456,5 +456,54 @@
       "element": "问题",
       "hiddenField": "隐藏字段"
     }
+  },
+  "multilingual": {
+    "title": "多语言",
+    "add_language": "添加语言",
+    "remove_language": "移除语言",
+    "default_language": "默认语言",
+    "set_as_default": "设为默认",
+    "enable_language": "启用语言",
+    "disable_language": "禁用语言",
+    "language_switch": "显示语言切换器",
+    "language_switch_hint": "允许受访者在问卷期间切换语言",
+    "translation_status": "翻译状态",
+    "translation_complete": "已完成",
+    "translation_incomplete": "未完成",
+    "translation_missing": "缺失",
+    "translate_all": "全部翻译",
+    "auto_translate": "自动翻译",
+    "rtl_detected": "检测到从右到左的语言",
+    "max_languages": "每份问卷最多 {{max}} 种语言",
+    "language_code": "语言代码",
+    "language_name": "语言名称",
+    "native_name": "原生名称",
+    "search_language": "搜索语言...",
+    "no_languages": "未配置语言",
+    "no_results": "未找到匹配的语言",
+    "direction": {
+      "ltr": "从左到右",
+      "rtl": "从右到左"
+    },
+    "validation": {
+      "default_required": "需要设置默认语言。",
+      "default_must_be_enabled": "默认语言必须处于启用状态。",
+      "duplicate_language": "该语言已被添加。",
+      "translation_incomplete": "部分语言的翻译尚未完成。",
+      "missing_field": "\"{{language}}\"中缺少\"{{field}}\"的翻译。"
+    },
+    "success": {
+      "language_added": "语言已添加。",
+      "language_removed": "语言已移除。",
+      "default_changed": "默认语言已更改。",
+      "translations_saved": "翻译已保存。"
+    },
+    "errors": {
+      "add_fail": "添加语言失败。",
+      "remove_fail": "移除语言失败。",
+      "save_fail": "保存翻译失败。",
+      "load_fail": "加载语言失败。",
+      "license_required": "多语言功能需要 Enterprise 许可证。"
+    }
   }
 }

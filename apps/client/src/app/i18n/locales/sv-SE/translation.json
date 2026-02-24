@@ -456,5 +456,54 @@
       "element": "Fråga",
       "hiddenField": "Dolt fält"
     }
+  },
+  "multilingual": {
+    "title": "Flerspråkig",
+    "add_language": "Lägg till språk",
+    "remove_language": "Ta bort språk",
+    "default_language": "Standardspråk",
+    "set_as_default": "Ange som standard",
+    "enable_language": "Aktivera språk",
+    "disable_language": "Inaktivera språk",
+    "language_switch": "Visa språkväljare",
+    "language_switch_hint": "Låt respondenter byta språk under enkäten",
+    "translation_status": "Översättningsstatus",
+    "translation_complete": "Fullständig",
+    "translation_incomplete": "Ofullständig",
+    "translation_missing": "Saknas",
+    "translate_all": "Översätt alla",
+    "auto_translate": "Automatisk översättning",
+    "rtl_detected": "Höger-till-vänster-språk upptäckt",
+    "max_languages": "Maximalt {{max}} språk per enkät",
+    "language_code": "Språkkod",
+    "language_name": "Språknamn",
+    "native_name": "Inhemskt namn",
+    "search_language": "Sök språk...",
+    "no_languages": "Inga språk konfigurerade",
+    "no_results": "Inga matchande språk hittades",
+    "direction": {
+      "ltr": "Vänster till höger",
+      "rtl": "Höger till vänster"
+    },
+    "validation": {
+      "default_required": "Ett standardspråk krävs.",
+      "default_must_be_enabled": "Standardspråket måste vara aktiverat.",
+      "duplicate_language": "Detta språk har redan lagts till.",
+      "translation_incomplete": "Översättningar är ofullständiga för vissa språk.",
+      "missing_field": "Saknad översättning för \"{{field}}\" på \"{{language}}\"."
+    },
+    "success": {
+      "language_added": "Språk tillagt.",
+      "language_removed": "Språk borttaget.",
+      "default_changed": "Standardspråk ändrat.",
+      "translations_saved": "Översättningar sparade."
+    },
+    "errors": {
+      "add_fail": "Det gick inte att lägga till språket.",
+      "remove_fail": "Det gick inte att ta bort språket.",
+      "save_fail": "Det gick inte att spara översättningarna.",
+      "load_fail": "Det gick inte att ladda språken.",
+      "license_required": "Den flerspråkiga funktionen kräver en Enterprise-licens."
+    }
   }
 }

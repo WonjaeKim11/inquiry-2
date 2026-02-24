@@ -743,5 +743,54 @@
       "element": "Question",
       "hiddenField": "Hidden Field"
     }
+  },
+  "multilingual": {
+    "title": "Multi-Language",
+    "add_language": "Add Language",
+    "remove_language": "Remove Language",
+    "default_language": "Default Language",
+    "set_as_default": "Set as Default",
+    "enable_language": "Enable Language",
+    "disable_language": "Disable Language",
+    "language_switch": "Show Language Switcher",
+    "language_switch_hint": "Allow respondents to switch languages during the survey",
+    "translation_status": "Translation Status",
+    "translation_complete": "Complete",
+    "translation_incomplete": "Incomplete",
+    "translation_missing": "Missing",
+    "translate_all": "Translate All",
+    "auto_translate": "Auto Translate",
+    "rtl_detected": "Right-to-left language detected",
+    "max_languages": "Maximum {{max}} languages per survey",
+    "language_code": "Language Code",
+    "language_name": "Language Name",
+    "native_name": "Native Name",
+    "search_language": "Search languages...",
+    "no_languages": "No languages configured",
+    "no_results": "No matching languages found",
+    "direction": {
+      "ltr": "Left to Right",
+      "rtl": "Right to Left"
+    },
+    "validation": {
+      "default_required": "A default language is required.",
+      "default_must_be_enabled": "The default language must be enabled.",
+      "duplicate_language": "This language has already been added.",
+      "translation_incomplete": "Translations are incomplete for some languages.",
+      "missing_field": "Missing translation for \"{{field}}\" in \"{{language}}\"."
+    },
+    "success": {
+      "language_added": "Language added.",
+      "language_removed": "Language removed.",
+      "default_changed": "Default language changed.",
+      "translations_saved": "Translations saved."
+    },
+    "errors": {
+      "add_fail": "Failed to add language.",
+      "remove_fail": "Failed to remove language.",
+      "save_fail": "Failed to save translations.",
+      "load_fail": "Failed to load languages.",
+      "license_required": "Multi-language feature requires an Enterprise license."
+    }
   }
 }

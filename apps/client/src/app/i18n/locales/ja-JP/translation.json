@@ -456,5 +456,54 @@
       "element": "質問",
       "hiddenField": "非表示フィールド"
     }
+  },
+  "multilingual": {
+    "title": "多言語",
+    "add_language": "言語を追加",
+    "remove_language": "言語を削除",
+    "default_language": "デフォルト言語",
+    "set_as_default": "デフォルトに設定",
+    "enable_language": "言語を有効化",
+    "disable_language": "言語を無効化",
+    "language_switch": "言語切り替えを表示",
+    "language_switch_hint": "アンケート中に回答者が言語を切り替えられるようにします",
+    "translation_status": "翻訳状況",
+    "translation_complete": "完了",
+    "translation_incomplete": "未完了",
+    "translation_missing": "未翻訳",
+    "translate_all": "すべて翻訳",
+    "auto_translate": "自動翻訳",
+    "rtl_detected": "右から左の言語が検出されました",
+    "max_languages": "アンケートあたり最大{{max}}言語",
+    "language_code": "言語コード",
+    "language_name": "言語名",
+    "native_name": "現地語名",
+    "search_language": "言語を検索...",
+    "no_languages": "設定された言語がありません",
+    "no_results": "一致する言語が見つかりません",
+    "direction": {
+      "ltr": "左から右",
+      "rtl": "右から左"
+    },
+    "validation": {
+      "default_required": "デフォルト言語が必要です。",
+      "default_must_be_enabled": "デフォルト言語は有効化されている必要があります。",
+      "duplicate_language": "この言語は既に追加されています。",
+      "translation_incomplete": "一部の言語の翻訳が完了していません。",
+      "missing_field": "\"{{language}}\"の\"{{field}}\"の翻訳がありません。"
+    },
+    "success": {
+      "language_added": "言語が追加されました。",
+      "language_removed": "言語が削除されました。",
+      "default_changed": "デフォルト言語が変更されました。",
+      "translations_saved": "翻訳が保存されました。"
+    },
+    "errors": {
+      "add_fail": "言語の追加に失敗しました。",
+      "remove_fail": "言語の削除に失敗しました。",
+      "save_fail": "翻訳の保存に失敗しました。",
+      "load_fail": "言語の読み込みに失敗しました。",
+      "license_required": "多言語機能にはEnterpriseライセンスが必要です。"
+    }
   }
 }
