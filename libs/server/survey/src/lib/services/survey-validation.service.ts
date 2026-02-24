@@ -1,28 +1,32 @@
-import { Injectable, BadRequestException } from '@nestjs/common';
+import { Injectable, BadRequestException, Logger } from '@nestjs/common';
 import { validateSchemaShape, validateSchema } from '@coltorapps/builder';
 import {
   surveyBuilder,
   validateSurveyLogic,
-  detectCyclicLogic,
+  validateSurveyVariablesAndFields,
 } from '@inquiry/survey-builder-config';
 import type {
   WelcomeCard,
   HiddenFields,
+  SurveyVariable,
   LogicItem,
 } from '@inquiry/survey-builder-config';
 import { HIDDEN_FIELD_FORBIDDEN_IDS } from '../constants/hidden-field-forbidden-ids.js';
 
 /**
  * 설문 발행 전 검증 서비스.
- * Builder 스키마 구조 + 비즈니스 규칙 + 조건부 로직을 3단계로 검증한다.
+ * Builder 스키마 구조 + 비즈니스 규칙 + 조건부 로직 + 변수/히든 필드를 4단계로 검증한다.
  */
 @Injectable()
 export class SurveyValidationService {
+  private readonly logger = new Logger(SurveyValidationService.name);
+
   /**
    * 발행 전 전체 검증을 수행한다.
    * 1) builder 스키마 구조 검증 (validateSchemaShape + validateSchema)
    * 2) 비즈니스 규칙 검증 (ending, welcomeCard, PIN, hiddenField, displayOption)
    * 3) 조건부 로직 검증 (블록 로직 구조 + 순환 검출)
+   * 4) 변수/히든 필드 검증 (ID 유일성, 이름 패턴, 참조 무결성, recall fallback)
    *
    * @param survey - Prisma에서 조회한 설문 객체
    * @throws BadRequestException - 검증 실패 시
@@ -33,6 +37,7 @@ export class SurveyValidationService {
     welcomeCard: unknown;
     pin: string | null;
     hiddenFields: unknown;
+    variables?: unknown;
     displayOption: string;
     displayLimit: number | null;
   }): Promise<void> {
@@ -44,6 +49,9 @@ export class SurveyValidationService {
 
     // 3단계: 조건부 로직 검증
     this.validateLogic(survey.schema, survey.hiddenFields);
+
+    // 4단계: 변수/히든 필드 검증
+    this.validateVariablesAndHiddenFields(survey);
   }
 
   /**
@@ -246,6 +254,80 @@ export class SurveyValidationService {
 
     if (errors.length > 0) {
       throw new BadRequestException(errors.join(' '));
+    }
+  }
+
+  /**
+   * 변수와 히든 필드를 검증한다 (4단계).
+   * - 변수 ID 유일성, 이름 패턴/유일성, 타입-값 일치
+   * - 히든 필드 ID 유효성, 금지 ID, 중복
+   * - Recall fallback 빈 값 경고 (로그만 남기고 발행은 허용)
+   *
+   * @param survey - 설문 데이터 (schema, variables, hiddenFields 포함)
+   */
+  private validateVariablesAndHiddenFields(survey: {
+    schema: unknown;
+    variables?: unknown;
+    hiddenFields: unknown;
+  }): void {
+    // 변수 파싱
+    const rawVariables = survey.variables as
+      | SurveyVariable[]
+      | null
+      | undefined;
+    const variables: Array<{
+      id: string;
+      name: string;
+      type: string;
+      value: string | number;
+    }> = Array.isArray(rawVariables) ? rawVariables : [];
+
+    // 히든 필드 파싱
+    const rawHiddenFields = survey.hiddenFields as
+      | HiddenFields
+      | null
+      | undefined;
+    const hiddenFields: { enabled: boolean; fieldIds: string[] } =
+      rawHiddenFields && rawHiddenFields.enabled
+        ? { enabled: true, fieldIds: rawHiddenFields.fieldIds ?? [] }
+        : { enabled: false, fieldIds: [] };
+
+    // 스키마에서 element ID 수집
+    const schemaObj = survey.schema as
+      | Record<string, unknown>
+      | null
+      | undefined;
+    const entities = schemaObj
+      ? (schemaObj['entities'] as Record<string, { type: string }> | undefined)
+      : undefined;
+    const existingElementIds: string[] = [];
+    if (entities) {
+      for (const [entityId, entity] of Object.entries(entities)) {
+        if (entity.type !== 'block') {
+          existingElementIds.push(entityId);
+        }
+      }
+    }
+
+    // 변수/히든 필드가 모두 비어있으면 검증 건너뛰기
+    if (variables.length === 0 && !hiddenFields.enabled) return;
+
+    // 통합 검증 수행
+    const result = validateSurveyVariablesAndFields(
+      variables,
+      hiddenFields,
+      existingElementIds,
+      (schemaObj ?? {}) as Record<string, unknown>
+    );
+
+    // 경고는 로그로 남기기 (발행 차단하지 않음)
+    for (const warning of result.warnings) {
+      this.logger.warn(`[발행 검증 경고] ${warning}`);
+    }
+
+    // 오류가 있으면 발행 차단
+    if (!result.valid) {
+      throw new BadRequestException(result.errors.join(' '));
     }
   }
 }

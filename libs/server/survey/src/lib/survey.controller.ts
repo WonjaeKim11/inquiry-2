@@ -13,10 +13,15 @@ import {
   HttpCode,
   HttpStatus,
   NotFoundException,
+  BadRequestException,
 } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import type { Request } from 'express';
 import { ZodValidationPipe } from '@inquiry/server-core';
+import {
+  checkHiddenFieldReferences,
+  checkVariableReferences,
+} from '@inquiry/survey-builder-config';
 import { SurveyService } from './services/survey.service.js';
 import { SurveyTemplateService } from './services/survey-template.service.js';
 import { SurveyValidationService } from './services/survey-validation.service.js';
@@ -206,5 +211,39 @@ export class SurveyController {
     const survey = await this.surveyService.getSurvey(user.id, surveyId);
     await this.validationService.validateForPublish(survey);
     return { valid: true, message: '로직 검증을 통과했습니다.' };
+  }
+
+  /**
+   * POST /api/surveys/:surveyId/validate-entities
+   * 엔티티(변수/히든 필드) 삭제 전 참조 무결성을 검사한다.
+   * 로직/리콜/쿼터/followUp에서 해당 엔티티가 참조되고 있는지 확인.
+   */
+  @Post('surveys/:surveyId/validate-entities')
+  @HttpCode(HttpStatus.OK)
+  async validateEntities(
+    @Param('surveyId') surveyId: string,
+    @Body() body: { entityId: string; entityType: 'variable' | 'hiddenField' },
+    @Req() req: Request
+  ) {
+    const user = req.user as AuthenticatedUser;
+
+    if (!body.entityId || !body.entityType) {
+      throw new BadRequestException('entityId와 entityType은 필수입니다.');
+    }
+
+    const survey = await this.surveyService.getSurvey(user.id, surveyId);
+    const schema = (survey.schema ?? {}) as Record<string, unknown>;
+
+    const result =
+      body.entityType === 'variable'
+        ? checkVariableReferences(body.entityId, schema)
+        : checkHiddenFieldReferences(body.entityId, schema);
+
+    return {
+      entityId: body.entityId,
+      entityType: body.entityType,
+      inUse: result.inUse,
+      usedIn: result.usedIn,
+    };
   }
 }
