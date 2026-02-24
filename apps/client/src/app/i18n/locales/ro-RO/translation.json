@@ -285,6 +285,56 @@
         "type_mismatch": "Valoarea nu corespunde tipului variabilei."
       }
     },
+    "quota": {
+      "title": "Cote",
+      "add": "Adaugă cotă",
+      "edit": "Editează cotă",
+      "delete": "Șterge cotă",
+      "name_label": "Numele cotei",
+      "name_placeholder": "Ex.: Respondenți masculini",
+      "limit_label": "Limita de răspunsuri",
+      "limit_placeholder": "Minim 1",
+      "action_label": "Acțiune la atingerea limitei",
+      "action": {
+        "endSurvey": "Închide sondajul",
+        "continueSurvey": "Continuă sondajul"
+      },
+      "ending_card_label": "Card de încheiere",
+      "ending_card_placeholder": "Selectați cardul de încheiere",
+      "count_partial": "Numără trimiterile parțiale",
+      "count_partial_hint": "Când este activat, răspunsurile incomplete sunt și ele numărate",
+      "conditions": {
+        "title": "Condiții",
+        "hint": "Dacă nu este setată nicio condiție, toate răspunsurile vor fi numărate"
+      },
+      "progress": "{{count}} / {{limit}} răspunsuri",
+      "status": {
+        "active": "Activă",
+        "full": "Cotă atinsă"
+      },
+      "delete_confirm": "Sigur doriți să ștergeți această cotă?",
+      "validation": {
+        "name_required": "Numele cotei este obligatoriu.",
+        "name_duplicate": "O cotă cu acest nume există deja.",
+        "name_pattern": "Numele cotei conține caractere invalide.",
+        "limit_min": "Limita trebuie să fie cel puțin 1.",
+        "limit_integer": "Limita trebuie să fie un număr întreg.",
+        "action_required": "Selectați o acțiune.",
+        "ending_required": "Cardul de încheiere este necesar pentru acțiunea Închide sondajul.",
+        "max_quotas": "Maximum {{max}} cote per sondaj."
+      },
+      "success": {
+        "created": "Cotă creată.",
+        "updated": "Cotă actualizată.",
+        "deleted": "Cotă ștearsă."
+      },
+      "errors": {
+        "create_fail": "Crearea cotei a eșuat.",
+        "update_fail": "Actualizarea cotei a eșuat.",
+        "delete_fail": "Ștergerea cotei a eșuat.",
+        "load_fail": "Încărcarea cotelor a eșuat."
+      }
+    },
     "settings": {
       "title": "Setări chestionar",
       "display_option": "Opțiune de afișare",

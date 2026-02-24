@@ -572,6 +572,56 @@
         "type_mismatch": "Value does not match the variable type."
       }
     },
+    "quota": {
+      "title": "Quotas",
+      "add": "Add Quota",
+      "edit": "Edit Quota",
+      "delete": "Delete Quota",
+      "name_label": "Quota Name",
+      "name_placeholder": "e.g., Male Respondents",
+      "limit_label": "Response Limit",
+      "limit_placeholder": "Minimum 1",
+      "action_label": "Action When Limit Reached",
+      "action": {
+        "endSurvey": "End Survey",
+        "continueSurvey": "Continue Survey"
+      },
+      "ending_card_label": "Ending Card",
+      "ending_card_placeholder": "Select an ending card",
+      "count_partial": "Count partial submissions",
+      "count_partial_hint": "When enabled, incomplete responses also count",
+      "conditions": {
+        "title": "Conditions",
+        "hint": "If no condition is set, all responses will be counted"
+      },
+      "progress": "{{count}} / {{limit}} responses",
+      "status": {
+        "active": "Active",
+        "full": "Quota Full"
+      },
+      "delete_confirm": "Are you sure you want to delete this quota?",
+      "validation": {
+        "name_required": "Quota name is required.",
+        "name_duplicate": "A quota with this name already exists.",
+        "name_pattern": "Quota name contains invalid characters.",
+        "limit_min": "Limit must be at least 1.",
+        "limit_integer": "Limit must be an integer.",
+        "action_required": "Please select an action.",
+        "ending_required": "Ending card is required for End Survey action.",
+        "max_quotas": "Maximum {{max}} quotas per survey."
+      },
+      "success": {
+        "created": "Quota created.",
+        "updated": "Quota updated.",
+        "deleted": "Quota deleted."
+      },
+      "errors": {
+        "create_fail": "Failed to create quota.",
+        "update_fail": "Failed to update quota.",
+        "delete_fail": "Failed to delete quota.",
+        "load_fail": "Failed to load quotas."
+      }
+    },
     "settings": {
       "title": "Survey Settings",
       "display_option": "Display Option",

@@ -572,6 +572,56 @@
         "type_mismatch": "값이 변수 유형과 일치하지 않습니다."
       }
     },
+    "quota": {
+      "title": "쿼터",
+      "add": "쿼터 추가",
+      "edit": "쿼터 수정",
+      "delete": "쿼터 삭제",
+      "name_label": "쿼터 이름",
+      "name_placeholder": "예: 남성 응답자",
+      "limit_label": "응답 한도",
+      "limit_placeholder": "최소 1",
+      "action_label": "한도 초과 시 동작",
+      "action": {
+        "endSurvey": "설문 종료",
+        "continueSurvey": "설문 계속"
+      },
+      "ending_card_label": "종료 카드",
+      "ending_card_placeholder": "종료 카드를 선택하세요",
+      "count_partial": "부분 제출도 카운트",
+      "count_partial_hint": "활성화하면 미완료 응답도 집계됩니다",
+      "conditions": {
+        "title": "조건",
+        "hint": "조건을 설정하지 않으면 모든 응답이 집계됩니다"
+      },
+      "progress": "{{count}} / {{limit}} 응답",
+      "status": {
+        "active": "활성",
+        "full": "쿼터 초과"
+      },
+      "delete_confirm": "이 쿼터를 삭제하시겠습니까?",
+      "validation": {
+        "name_required": "쿼터 이름은 필수입니다.",
+        "name_duplicate": "이미 같은 이름의 쿼터가 존재합니다.",
+        "name_pattern": "쿼터 이름에 유효하지 않은 문자가 포함되어 있습니다.",
+        "limit_min": "한도는 최소 1이어야 합니다.",
+        "limit_integer": "한도는 정수여야 합니다.",
+        "action_required": "동작을 선택해 주세요.",
+        "ending_required": "설문 종료 동작에는 종료 카드가 필요합니다.",
+        "max_quotas": "설문당 최대 {{max}}개의 쿼터를 설정할 수 있습니다."
+      },
+      "success": {
+        "created": "쿼터가 생성되었습니다.",
+        "updated": "쿼터가 수정되었습니다.",
+        "deleted": "쿼터가 삭제되었습니다."
+      },
+      "errors": {
+        "create_fail": "쿼터 생성에 실패했습니다.",
+        "update_fail": "쿼터 수정에 실패했습니다.",
+        "delete_fail": "쿼터 삭제에 실패했습니다.",
+        "load_fail": "쿼터 목록을 불러오지 못했습니다."
+      }
+    },
     "settings": {
       "title": "설문 설정",
       "display_option": "표시 옵션",

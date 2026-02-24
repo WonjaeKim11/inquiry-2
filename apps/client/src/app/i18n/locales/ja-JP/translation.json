@@ -285,6 +285,56 @@
         "type_mismatch": "値が変数の型と一致しません。"
       }
     },
+    "quota": {
+      "title": "クォータ",
+      "add": "クォータ追加",
+      "edit": "クォータ編集",
+      "delete": "クォータ削除",
+      "name_label": "クォータ名",
+      "name_placeholder": "例：男性回答者",
+      "limit_label": "回答上限",
+      "limit_placeholder": "最小1",
+      "action_label": "上限到達時のアクション",
+      "action": {
+        "endSurvey": "アンケート終了",
+        "continueSurvey": "アンケート続行"
+      },
+      "ending_card_label": "終了カード",
+      "ending_card_placeholder": "終了カードを選択",
+      "count_partial": "部分送信をカウント",
+      "count_partial_hint": "有効にすると、未完了の回答もカウントされます",
+      "conditions": {
+        "title": "条件",
+        "hint": "条件を設定しない場合、すべての回答がカウントされます"
+      },
+      "progress": "{{count}} / {{limit}} 回答",
+      "status": {
+        "active": "アクティブ",
+        "full": "クォータ到達"
+      },
+      "delete_confirm": "このクォータを削除しますか？",
+      "validation": {
+        "name_required": "クォータ名は必須です。",
+        "name_duplicate": "同じ名前のクォータが既に存在します。",
+        "name_pattern": "クォータ名に無効な文字が含まれています。",
+        "limit_min": "上限は1以上である必要があります。",
+        "limit_integer": "上限は整数である必要があります。",
+        "action_required": "アクションを選択してください。",
+        "ending_required": "アンケート終了アクションには終了カードが必要です。",
+        "max_quotas": "アンケートあたり最大{{max}}クォータです。"
+      },
+      "success": {
+        "created": "クォータが作成されました。",
+        "updated": "クォータが更新されました。",
+        "deleted": "クォータが削除されました。"
+      },
+      "errors": {
+        "create_fail": "クォータの作成に失敗しました。",
+        "update_fail": "クォータの更新に失敗しました。",
+        "delete_fail": "クォータの削除に失敗しました。",
+        "load_fail": "クォータの読み込みに失敗しました。"
+      }
+    },
     "settings": {
       "title": "アンケート設定",
       "display_option": "表示オプション",

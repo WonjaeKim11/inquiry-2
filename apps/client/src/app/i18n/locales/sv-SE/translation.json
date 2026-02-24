@@ -285,6 +285,56 @@
         "type_mismatch": "Värdet matchar inte variabeltypen."
       }
     },
+    "quota": {
+      "title": "Kvoter",
+      "add": "Lägg till kvot",
+      "edit": "Redigera kvot",
+      "delete": "Ta bort kvot",
+      "name_label": "Kvotnamn",
+      "name_placeholder": "T.ex. Manliga respondenter",
+      "limit_label": "Svarsgräns",
+      "limit_placeholder": "Minst 1",
+      "action_label": "Åtgärd vid uppnådd gräns",
+      "action": {
+        "endSurvey": "Avsluta enkät",
+        "continueSurvey": "Fortsätt enkät"
+      },
+      "ending_card_label": "Slutkort",
+      "ending_card_placeholder": "Välj ett slutkort",
+      "count_partial": "Räkna partiella svar",
+      "count_partial_hint": "När aktiverat räknas även ofullständiga svar",
+      "conditions": {
+        "title": "Villkor",
+        "hint": "Om inget villkor anges räknas alla svar"
+      },
+      "progress": "{{count}} / {{limit}} svar",
+      "status": {
+        "active": "Aktiv",
+        "full": "Kvot uppnådd"
+      },
+      "delete_confirm": "Är du säker på att du vill ta bort denna kvot?",
+      "validation": {
+        "name_required": "Kvotnamn krävs.",
+        "name_duplicate": "En kvot med detta namn finns redan.",
+        "name_pattern": "Kvotnamnet innehåller ogiltiga tecken.",
+        "limit_min": "Gränsen måste vara minst 1.",
+        "limit_integer": "Gränsen måste vara ett heltal.",
+        "action_required": "Välj en åtgärd.",
+        "ending_required": "Slutkort krävs för åtgärden Avsluta enkät.",
+        "max_quotas": "Maximalt {{max}} kvoter per enkät."
+      },
+      "success": {
+        "created": "Kvot skapad.",
+        "updated": "Kvot uppdaterad.",
+        "deleted": "Kvot borttagen."
+      },
+      "errors": {
+        "create_fail": "Det gick inte att skapa kvoten.",
+        "update_fail": "Det gick inte att uppdatera kvoten.",
+        "delete_fail": "Det gick inte att ta bort kvoten.",
+        "load_fail": "Det gick inte att ladda kvoterna."
+      }
+    },
     "settings": {
       "title": "Enkätinställningar",
       "display_option": "Visningsalternativ",

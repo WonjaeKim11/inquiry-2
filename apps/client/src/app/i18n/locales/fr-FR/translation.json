@@ -285,6 +285,56 @@
         "type_mismatch": "La valeur ne correspond pas au type de variable."
       }
     },
+    "quota": {
+      "title": "Quotas",
+      "add": "Ajouter un quota",
+      "edit": "Modifier le quota",
+      "delete": "Supprimer le quota",
+      "name_label": "Nom du quota",
+      "name_placeholder": "Ex. : Répondants masculins",
+      "limit_label": "Limite de réponses",
+      "limit_placeholder": "Minimum 1",
+      "action_label": "Action lorsque la limite est atteinte",
+      "action": {
+        "endSurvey": "Terminer l'enquête",
+        "continueSurvey": "Continuer l'enquête"
+      },
+      "ending_card_label": "Carte de fin",
+      "ending_card_placeholder": "Sélectionner une carte de fin",
+      "count_partial": "Compter les soumissions partielles",
+      "count_partial_hint": "Lorsqu'activé, les réponses incomplètes sont également comptées",
+      "conditions": {
+        "title": "Conditions",
+        "hint": "Si aucune condition n'est définie, toutes les réponses seront comptées"
+      },
+      "progress": "{{count}} / {{limit}} réponses",
+      "status": {
+        "active": "Actif",
+        "full": "Quota atteint"
+      },
+      "delete_confirm": "Êtes-vous sûr de vouloir supprimer ce quota ?",
+      "validation": {
+        "name_required": "Le nom du quota est requis.",
+        "name_duplicate": "Un quota avec ce nom existe déjà.",
+        "name_pattern": "Le nom du quota contient des caractères invalides.",
+        "limit_min": "La limite doit être d'au moins 1.",
+        "limit_integer": "La limite doit être un nombre entier.",
+        "action_required": "Veuillez sélectionner une action.",
+        "ending_required": "La carte de fin est requise pour l'action Terminer l'enquête.",
+        "max_quotas": "Maximum {{max}} quotas par enquête."
+      },
+      "success": {
+        "created": "Quota créé.",
+        "updated": "Quota mis à jour.",
+        "deleted": "Quota supprimé."
+      },
+      "errors": {
+        "create_fail": "Échec de la création du quota.",
+        "update_fail": "Échec de la mise à jour du quota.",
+        "delete_fail": "Échec de la suppression du quota.",
+        "load_fail": "Échec du chargement des quotas."
+      }
+    },
     "settings": {
       "title": "Paramètres de l'enquête",
       "display_option": "Option d'affichage",

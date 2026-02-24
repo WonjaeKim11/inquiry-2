@@ -285,6 +285,56 @@
         "type_mismatch": "El valor no coincide con el tipo de variable."
       }
     },
+    "quota": {
+      "title": "Cuotas",
+      "add": "Agregar cuota",
+      "edit": "Editar cuota",
+      "delete": "Eliminar cuota",
+      "name_label": "Nombre de cuota",
+      "name_placeholder": "Ej., Encuestados masculinos",
+      "limit_label": "Límite de respuestas",
+      "limit_placeholder": "Mínimo 1",
+      "action_label": "Acción al alcanzar el límite",
+      "action": {
+        "endSurvey": "Finalizar encuesta",
+        "continueSurvey": "Continuar encuesta"
+      },
+      "ending_card_label": "Tarjeta de finalización",
+      "ending_card_placeholder": "Seleccionar tarjeta de finalización",
+      "count_partial": "Contar envíos parciales",
+      "count_partial_hint": "Al activar, las respuestas incompletas también se cuentan",
+      "conditions": {
+        "title": "Condiciones",
+        "hint": "Si no se establece ninguna condición, se contarán todas las respuestas"
+      },
+      "progress": "{{count}} / {{limit}} respuestas",
+      "status": {
+        "active": "Activa",
+        "full": "Cuota completa"
+      },
+      "delete_confirm": "¿Está seguro de que desea eliminar esta cuota?",
+      "validation": {
+        "name_required": "El nombre de cuota es obligatorio.",
+        "name_duplicate": "Ya existe una cuota con este nombre.",
+        "name_pattern": "El nombre de cuota contiene caracteres no válidos.",
+        "limit_min": "El límite debe ser al menos 1.",
+        "limit_integer": "El límite debe ser un número entero.",
+        "action_required": "Seleccione una acción.",
+        "ending_required": "La tarjeta de finalización es necesaria para la acción Finalizar encuesta.",
+        "max_quotas": "Máximo {{max}} cuotas por encuesta."
+      },
+      "success": {
+        "created": "Cuota creada.",
+        "updated": "Cuota actualizada.",
+        "deleted": "Cuota eliminada."
+      },
+      "errors": {
+        "create_fail": "Error al crear la cuota.",
+        "update_fail": "Error al actualizar la cuota.",
+        "delete_fail": "Error al eliminar la cuota.",
+        "load_fail": "Error al cargar las cuotas."
+      }
+    },
     "settings": {
       "title": "Configuración de la encuesta",
       "display_option": "Opción de visualización",

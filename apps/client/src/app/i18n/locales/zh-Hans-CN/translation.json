@@ -285,6 +285,56 @@
         "type_mismatch": "值与变量类型不匹配。"
       }
     },
+    "quota": {
+      "title": "配额",
+      "add": "添加配额",
+      "edit": "编辑配额",
+      "delete": "删除配额",
+      "name_label": "配额名称",
+      "name_placeholder": "例如：男性受访者",
+      "limit_label": "回复限制",
+      "limit_placeholder": "最少 1",
+      "action_label": "达到限制时的操作",
+      "action": {
+        "endSurvey": "结束问卷",
+        "continueSurvey": "继续问卷"
+      },
+      "ending_card_label": "结束卡片",
+      "ending_card_placeholder": "选择结束卡片",
+      "count_partial": "计算部分提交",
+      "count_partial_hint": "启用后，未完成的回复也会被计算",
+      "conditions": {
+        "title": "条件",
+        "hint": "如果未设置条件，所有回复都将被计算"
+      },
+      "progress": "{{count}} / {{limit}} 个回复",
+      "status": {
+        "active": "活跃",
+        "full": "配额已满"
+      },
+      "delete_confirm": "确定要删除此配额吗？",
+      "validation": {
+        "name_required": "配额名称为必填项。",
+        "name_duplicate": "已存在同名配额。",
+        "name_pattern": "配额名称包含无效字符。",
+        "limit_min": "限制必须至少为 1。",
+        "limit_integer": "限制必须为整数。",
+        "action_required": "请选择操作。",
+        "ending_required": "结束问卷操作需要结束卡片。",
+        "max_quotas": "每个问卷最多 {{max}} 个配额。"
+      },
+      "success": {
+        "created": "配额已创建。",
+        "updated": "配额已更新。",
+        "deleted": "配额已删除。"
+      },
+      "errors": {
+        "create_fail": "创建配额失败。",
+        "update_fail": "更新配额失败。",
+        "delete_fail": "删除配额失败。",
+        "load_fail": "加载配额失败。"
+      }
+    },
     "settings": {
       "title": "问卷设置",
       "display_option": "显示选项",

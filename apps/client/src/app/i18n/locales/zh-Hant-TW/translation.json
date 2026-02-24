@@ -285,6 +285,56 @@
         "type_mismatch": "值與變數類型不相符。"
       }
     },
+    "quota": {
+      "title": "配額",
+      "add": "新增配額",
+      "edit": "編輯配額",
+      "delete": "刪除配額",
+      "name_label": "配額名稱",
+      "name_placeholder": "例如：男性受訪者",
+      "limit_label": "回覆限制",
+      "limit_placeholder": "最少 1",
+      "action_label": "達到限制時的動作",
+      "action": {
+        "endSurvey": "結束問卷",
+        "continueSurvey": "繼續問卷"
+      },
+      "ending_card_label": "結束卡片",
+      "ending_card_placeholder": "選擇結束卡片",
+      "count_partial": "計算部分提交",
+      "count_partial_hint": "啟用後，未完成的回覆也會被計算",
+      "conditions": {
+        "title": "條件",
+        "hint": "如果未設定條件，所有回覆都將被計算"
+      },
+      "progress": "{{count}} / {{limit}} 個回覆",
+      "status": {
+        "active": "啟用中",
+        "full": "配額已滿"
+      },
+      "delete_confirm": "確定要刪除此配額嗎？",
+      "validation": {
+        "name_required": "配額名稱為必填。",
+        "name_duplicate": "已存在相同名稱的配額。",
+        "name_pattern": "配額名稱包含無效字元。",
+        "limit_min": "限制必須至少為 1。",
+        "limit_integer": "限制必須為整數。",
+        "action_required": "請選擇動作。",
+        "ending_required": "結束問卷動作需要結束卡片。",
+        "max_quotas": "每份問卷最多 {{max}} 個配額。"
+      },
+      "success": {
+        "created": "配額已建立。",
+        "updated": "配額已更新。",
+        "deleted": "配額已刪除。"
+      },
+      "errors": {
+        "create_fail": "建立配額失敗。",
+        "update_fail": "更新配額失敗。",
+        "delete_fail": "刪除配額失敗。",
+        "load_fail": "載入配額失敗。"
+      }
+    },
     "settings": {
       "title": "問卷設定",
       "display_option": "顯示選項",

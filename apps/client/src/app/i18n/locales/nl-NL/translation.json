@@ -285,6 +285,56 @@
         "type_mismatch": "Waarde komt niet overeen met het variabeletype."
       }
     },
+    "quota": {
+      "title": "Quota's",
+      "add": "Quota toevoegen",
+      "edit": "Quota bewerken",
+      "delete": "Quota verwijderen",
+      "name_label": "Quotanaam",
+      "name_placeholder": "Bijv. Mannelijke respondenten",
+      "limit_label": "Antwoordlimiet",
+      "limit_placeholder": "Minimaal 1",
+      "action_label": "Actie bij bereiken van limiet",
+      "action": {
+        "endSurvey": "Enquête beëindigen",
+        "continueSurvey": "Enquête voortzetten"
+      },
+      "ending_card_label": "Eindkaart",
+      "ending_card_placeholder": "Selecteer een eindkaart",
+      "count_partial": "Gedeeltelijke inzendingen tellen",
+      "count_partial_hint": "Indien ingeschakeld, tellen onvolledige antwoorden ook mee",
+      "conditions": {
+        "title": "Voorwaarden",
+        "hint": "Als er geen voorwaarde is ingesteld, worden alle antwoorden geteld"
+      },
+      "progress": "{{count}} / {{limit}} antwoorden",
+      "status": {
+        "active": "Actief",
+        "full": "Quota bereikt"
+      },
+      "delete_confirm": "Weet u zeker dat u dit quota wilt verwijderen?",
+      "validation": {
+        "name_required": "Quotanaam is verplicht.",
+        "name_duplicate": "Er bestaat al een quota met deze naam.",
+        "name_pattern": "Quotanaam bevat ongeldige tekens.",
+        "limit_min": "Limiet moet minimaal 1 zijn.",
+        "limit_integer": "Limiet moet een geheel getal zijn.",
+        "action_required": "Selecteer een actie.",
+        "ending_required": "Eindkaart is vereist voor de actie Enquête beëindigen.",
+        "max_quotas": "Maximaal {{max}} quota's per enquête."
+      },
+      "success": {
+        "created": "Quota aangemaakt.",
+        "updated": "Quota bijgewerkt.",
+        "deleted": "Quota verwijderd."
+      },
+      "errors": {
+        "create_fail": "Quota aanmaken mislukt.",
+        "update_fail": "Quota bijwerken mislukt.",
+        "delete_fail": "Quota verwijderen mislukt.",
+        "load_fail": "Quota's laden mislukt."
+      }
+    },
     "settings": {
       "title": "Enquête-instellingen",
       "display_option": "Weergaveoptie",

@@ -285,6 +285,56 @@
         "type_mismatch": "Der Wert stimmt nicht mit dem Variablentyp überein."
       }
     },
+    "quota": {
+      "title": "Quoten",
+      "add": "Quote hinzufügen",
+      "edit": "Quote bearbeiten",
+      "delete": "Quote löschen",
+      "name_label": "Quotenname",
+      "name_placeholder": "z.B. Männliche Befragte",
+      "limit_label": "Antwortlimit",
+      "limit_placeholder": "Minimum 1",
+      "action_label": "Aktion bei Erreichen des Limits",
+      "action": {
+        "endSurvey": "Umfrage beenden",
+        "continueSurvey": "Umfrage fortsetzen"
+      },
+      "ending_card_label": "Endkarte",
+      "ending_card_placeholder": "Endkarte auswählen",
+      "count_partial": "Teilweise Einreichungen zählen",
+      "count_partial_hint": "Wenn aktiviert, werden auch unvollständige Antworten gezählt",
+      "conditions": {
+        "title": "Bedingungen",
+        "hint": "Wenn keine Bedingung festgelegt ist, werden alle Antworten gezählt"
+      },
+      "progress": "{{count}} / {{limit}} Antworten",
+      "status": {
+        "active": "Aktiv",
+        "full": "Quote erreicht"
+      },
+      "delete_confirm": "Möchten Sie diese Quote wirklich löschen?",
+      "validation": {
+        "name_required": "Quotenname ist erforderlich.",
+        "name_duplicate": "Eine Quote mit diesem Namen existiert bereits.",
+        "name_pattern": "Quotenname enthält ungültige Zeichen.",
+        "limit_min": "Das Limit muss mindestens 1 betragen.",
+        "limit_integer": "Das Limit muss eine ganze Zahl sein.",
+        "action_required": "Bitte wählen Sie eine Aktion.",
+        "ending_required": "Endkarte ist für die Aktion \u201eUmfrage beenden\u201c erforderlich.",
+        "max_quotas": "Maximal {{max}} Quoten pro Umfrage."
+      },
+      "success": {
+        "created": "Quote erstellt.",
+        "updated": "Quote aktualisiert.",
+        "deleted": "Quote gelöscht."
+      },
+      "errors": {
+        "create_fail": "Quote konnte nicht erstellt werden.",
+        "update_fail": "Quote konnte nicht aktualisiert werden.",
+        "delete_fail": "Quote konnte nicht gelöscht werden.",
+        "load_fail": "Quoten konnten nicht geladen werden."
+      }
+    },
     "settings": {
       "title": "Umfrageeinstellungen",
       "display_option": "Anzeigeoption",

@@ -285,6 +285,56 @@
         "type_mismatch": "Az érték nem egyezik a változó típusával."
       }
     },
+    "quota": {
+      "title": "Kvóták",
+      "add": "Kvóta hozzáadása",
+      "edit": "Kvóta szerkesztése",
+      "delete": "Kvóta törlése",
+      "name_label": "Kvóta neve",
+      "name_placeholder": "Pl.: Férfi válaszadók",
+      "limit_label": "Válaszkorlát",
+      "limit_placeholder": "Minimum 1",
+      "action_label": "Művelet a korlát elérésekor",
+      "action": {
+        "endSurvey": "Kérdőív befejezése",
+        "continueSurvey": "Kérdőív folytatása"
+      },
+      "ending_card_label": "Befejező kártya",
+      "ending_card_placeholder": "Válasszon befejező kártyát",
+      "count_partial": "Részleges beküldések számítása",
+      "count_partial_hint": "Ha engedélyezve van, a befejezetlen válaszok is számítanak",
+      "conditions": {
+        "title": "Feltételek",
+        "hint": "Ha nincs feltétel megadva, minden válasz számításra kerül"
+      },
+      "progress": "{{count}} / {{limit}} válasz",
+      "status": {
+        "active": "Aktív",
+        "full": "Kvóta betelt"
+      },
+      "delete_confirm": "Biztosan törölni szeretné ezt a kvótát?",
+      "validation": {
+        "name_required": "A kvóta neve kötelező.",
+        "name_duplicate": "Már létezik ilyen nevű kvóta.",
+        "name_pattern": "A kvóta neve érvénytelen karaktereket tartalmaz.",
+        "limit_min": "A korlátnak legalább 1-nek kell lennie.",
+        "limit_integer": "A korlátnak egész számnak kell lennie.",
+        "action_required": "Kérjük, válasszon műveletet.",
+        "ending_required": "A befejező kártya szükséges a Kérdőív befejezése művelethez.",
+        "max_quotas": "Kérdőívenként legfeljebb {{max}} kvóta."
+      },
+      "success": {
+        "created": "Kvóta létrehozva.",
+        "updated": "Kvóta frissítve.",
+        "deleted": "Kvóta törölve."
+      },
+      "errors": {
+        "create_fail": "A kvóta létrehozása sikertelen.",
+        "update_fail": "A kvóta frissítése sikertelen.",
+        "delete_fail": "A kvóta törlése sikertelen.",
+        "load_fail": "A kvóták betöltése sikertelen."
+      }
+    },
     "settings": {
       "title": "Kérdőív beállításai",
       "display_option": "Megjelenítési opció",

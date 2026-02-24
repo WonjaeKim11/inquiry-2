@@ -285,6 +285,56 @@
         "type_mismatch": "O valor não corresponde ao tipo da variável."
       }
     },
+    "quota": {
+      "title": "Cotas",
+      "add": "Adicionar cota",
+      "edit": "Editar cota",
+      "delete": "Excluir cota",
+      "name_label": "Nome da cota",
+      "name_placeholder": "Ex.: Respondentes masculinos",
+      "limit_label": "Limite de respostas",
+      "limit_placeholder": "Mínimo 1",
+      "action_label": "Ação ao atingir o limite",
+      "action": {
+        "endSurvey": "Encerrar pesquisa",
+        "continueSurvey": "Continuar pesquisa"
+      },
+      "ending_card_label": "Cartão de encerramento",
+      "ending_card_placeholder": "Selecionar cartão de encerramento",
+      "count_partial": "Contar envios parciais",
+      "count_partial_hint": "Quando ativado, respostas incompletas também são contadas",
+      "conditions": {
+        "title": "Condições",
+        "hint": "Se nenhuma condição for definida, todas as respostas serão contadas"
+      },
+      "progress": "{{count}} / {{limit}} respostas",
+      "status": {
+        "active": "Ativa",
+        "full": "Cota atingida"
+      },
+      "delete_confirm": "Tem certeza de que deseja excluir esta cota?",
+      "validation": {
+        "name_required": "O nome da cota é obrigatório.",
+        "name_duplicate": "Já existe uma cota com este nome.",
+        "name_pattern": "O nome da cota contém caracteres inválidos.",
+        "limit_min": "O limite deve ser pelo menos 1.",
+        "limit_integer": "O limite deve ser um número inteiro.",
+        "action_required": "Selecione uma ação.",
+        "ending_required": "O cartão de encerramento é necessário para a ação Encerrar pesquisa.",
+        "max_quotas": "Máximo de {{max}} cotas por pesquisa."
+      },
+      "success": {
+        "created": "Cota criada.",
+        "updated": "Cota atualizada.",
+        "deleted": "Cota excluída."
+      },
+      "errors": {
+        "create_fail": "Falha ao criar a cota.",
+        "update_fail": "Falha ao atualizar a cota.",
+        "delete_fail": "Falha ao excluir a cota.",
+        "load_fail": "Falha ao carregar as cotas."
+      }
+    },
     "settings": {
       "title": "Configurações da pesquisa",
       "display_option": "Opção de exibição",

@@ -285,6 +285,56 @@
         "type_mismatch": "O valor não corresponde ao tipo da variável."
       }
     },
+    "quota": {
+      "title": "Quotas",
+      "add": "Adicionar quota",
+      "edit": "Editar quota",
+      "delete": "Eliminar quota",
+      "name_label": "Nome da quota",
+      "name_placeholder": "Ex.: Respondentes masculinos",
+      "limit_label": "Limite de respostas",
+      "limit_placeholder": "Mínimo 1",
+      "action_label": "Ação ao atingir o limite",
+      "action": {
+        "endSurvey": "Terminar inquérito",
+        "continueSurvey": "Continuar inquérito"
+      },
+      "ending_card_label": "Cartão de fim",
+      "ending_card_placeholder": "Selecionar cartão de fim",
+      "count_partial": "Contar submissões parciais",
+      "count_partial_hint": "Quando ativado, respostas incompletas também são contadas",
+      "conditions": {
+        "title": "Condições",
+        "hint": "Se nenhuma condição for definida, todas as respostas serão contadas"
+      },
+      "progress": "{{count}} / {{limit}} respostas",
+      "status": {
+        "active": "Ativa",
+        "full": "Quota atingida"
+      },
+      "delete_confirm": "Tem a certeza de que pretende eliminar esta quota?",
+      "validation": {
+        "name_required": "O nome da quota é obrigatório.",
+        "name_duplicate": "Já existe uma quota com este nome.",
+        "name_pattern": "O nome da quota contém caracteres inválidos.",
+        "limit_min": "O limite deve ser pelo menos 1.",
+        "limit_integer": "O limite deve ser um número inteiro.",
+        "action_required": "Selecione uma ação.",
+        "ending_required": "O cartão de fim é necessário para a ação Terminar inquérito.",
+        "max_quotas": "Máximo de {{max}} quotas por inquérito."
+      },
+      "success": {
+        "created": "Quota criada.",
+        "updated": "Quota atualizada.",
+        "deleted": "Quota eliminada."
+      },
+      "errors": {
+        "create_fail": "Falha ao criar a quota.",
+        "update_fail": "Falha ao atualizar a quota.",
+        "delete_fail": "Falha ao eliminar a quota.",
+        "load_fail": "Falha ao carregar as quotas."
+      }
+    },
     "settings": {
       "title": "Definições do inquérito",
       "display_option": "Opção de apresentação",
