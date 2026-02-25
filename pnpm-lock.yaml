@@ -274,6 +274,9 @@ importers:
       '@inquiry/server-client-api':
         specifier: workspace:*
         version: link:../../libs/server/client-api
+      '@inquiry/server-contact':
+        specifier: workspace:*
+        version: link:../../libs/server/contact
       '@inquiry/server-core':
         specifier: workspace:*
         version: link:../../libs/server/core
@@ -836,6 +839,30 @@ importers:
       zod:
         specifier: ^4.3.6
         version: 4.3.6
+
+  libs/server/contact:
+    dependencies:
+      '@inquiry/server-audit-log':
+        specifier: workspace:*
+        version: link:../audit-log
+      '@inquiry/server-core':
+        specifier: workspace:*
+        version: link:../core
+      '@inquiry/server-license':
+        specifier: workspace:*
+        version: link:../license
+      '@inquiry/server-prisma':
+        specifier: workspace:*
+        version: link:../prisma
+      '@nestjs/common':
+        specifier: ^11.0.0
+        version: 11.1.13(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2)
+      '@nestjs/config':
+        specifier: ^4.0.3
+        version: 4.0.3(@nestjs/common@11.1.13(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(rxjs@7.8.2)
+      '@nestjs/passport':
+        specifier: ^11.0.5
+        version: 11.0.5(@nestjs/common@11.1.13(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0)
 
   libs/server/core:
     dependencies:

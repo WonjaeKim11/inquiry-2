@@ -23,6 +23,7 @@ import { MultilingualModule } from '@inquiry/server-multilingual';
 import { ApiKeyModule } from '@inquiry/server-api-key';
 import { ClientApiModule } from '@inquiry/server-client-api';
 import { ManagementApiModule } from '@inquiry/server-management-api';
+import { ContactModule } from '@inquiry/server-contact';
 import { HealthModule } from './health/health.module';
 import { V2HealthModule } from './v2-health/v2-health.module';
 import { AppController } from './app.controller';
@@ -64,6 +65,7 @@ import { AppService } from './app.service';
     ApiKeyModule,
     ClientApiModule,
     ManagementApiModule,
+    ContactModule,
     V2HealthModule,
     HealthModule,
     // API 버전 라우팅: Client API와 Management API를 v1 경로에 마운트

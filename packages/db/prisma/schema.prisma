@@ -80,6 +80,19 @@ enum ApiKeyPermission {
   MANAGE
 }
 
+/// 속성 키 종류
+enum ContactAttributeType {
+  DEFAULT
+  CUSTOM
+}
+
+/// 속성 값 데이터 타입
+enum ContactAttributeDataType {
+  STRING
+  NUMBER
+  DATE
+}
+
 /// 설문조사 상태
 enum SurveyStatus {
   DRAFT
@@ -363,13 +376,14 @@ model Environment {
   projectId         String
   appSetupCompleted Boolean         @default(false)
 
-  project           Project                      @relation(fields: [projectId], references: [id], onDelete: Cascade)
-  actionClasses     ActionClass[]
-  apiKeyPermissions ApiKeyEnvironmentPermission[]
-  surveys           Survey[]
-  responses         Response[]
-  displays          Display[]
-  contacts          Contact[]
+  project               Project                      @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  actionClasses         ActionClass[]
+  apiKeyPermissions     ApiKeyEnvironmentPermission[]
+  surveys               Survey[]
+  responses             Response[]
+  displays              Display[]
+  contacts              Contact[]
+  contactAttributeKeys  ContactAttributeKey[]
 
   @@index([projectId])
   @@map("environments")
@@ -476,6 +490,7 @@ model Survey {
   responses   Response[]
   displays    Display[]
   quotas      Quota[]
+  personalizedLinks PersonalizedLink[]
 
   @@index([environmentId])
   @@map("surveys")
@@ -562,17 +577,78 @@ model Display {
   @@map("displays")
 }
 
-/// 연락처/사용자 식별 정보 (스텁)
+/// 설문 대상 연락처. Environment 단위로 격리된다.
 model Contact {
   id            String   @id @default(cuid(2))
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
-  attributes    Json     @default("{}")
   environmentId String
 
-  environment Environment @relation(fields: [environmentId], references: [id], onDelete: Cascade)
-  responses   Response[]
+  environment      Environment              @relation(fields: [environmentId], references: [id], onDelete: Cascade)
+  attributeValues  ContactAttributeValue[]
+  responses        Response[]
+  personalizedLinks PersonalizedLink[]
 
   @@index([environmentId])
   @@map("contacts")
+}
+
+/// 연락처 속성 키 정의. default(시스템) 또는 custom(사용자 정의).
+model ContactAttributeKey {
+  id            String                     @id @default(cuid())
+  isUnique      Boolean                    @default(false)
+  key           String
+  name          String?
+  description   String?
+  type          ContactAttributeType
+  dataType      ContactAttributeDataType   @default(STRING)
+  environmentId String
+  createdAt     DateTime                   @default(now())
+  updatedAt     DateTime                   @updatedAt
+
+  environment   Environment                @relation(fields: [environmentId], references: [id], onDelete: Cascade)
+  values        ContactAttributeValue[]
+
+  @@unique([key, environmentId])
+  @@index([environmentId])
+  @@map("contact_attribute_keys")
+}
+
+/// 연락처 속성 값. Contact와 AttributeKey 조합으로 유니크.
+model ContactAttributeValue {
+  id                      String    @id @default(cuid())
+  contactAttributeKeyId   String
+  contactId               String
+  value                   String
+  numberValue             Float?
+  dateValue               DateTime?
+  createdAt               DateTime  @default(now())
+  updatedAt               DateTime  @updatedAt
+
+  contactAttributeKey     ContactAttributeKey  @relation(fields: [contactAttributeKeyId], references: [id], onDelete: Cascade)
+  contact                 Contact              @relation(fields: [contactId], references: [id], onDelete: Cascade)
+
+  @@unique([contactId, contactAttributeKeyId])
+  @@index([contactAttributeKeyId, value])
+  @@index([contactAttributeKeyId, numberValue])
+  @@index([contactAttributeKeyId, dateValue])
+  @@map("contact_attribute_values")
+}
+
+/// 개인화된 설문 링크. Contact별 고유 URL + 선택적 만료일.
+model PersonalizedLink {
+  id            String    @id @default(cuid())
+  contactId     String
+  surveyId      String
+  token         String    @unique
+  expiresAt     DateTime?
+  createdAt     DateTime  @default(now())
+
+  contact       Contact   @relation(fields: [contactId], references: [id], onDelete: Cascade)
+  survey        Survey    @relation(fields: [surveyId], references: [id], onDelete: Cascade)
+
+  @@index([contactId])
+  @@index([surveyId])
+  @@index([token])
+  @@map("personalized_links")
 }

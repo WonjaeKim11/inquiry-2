@@ -1,0 +1,13 @@
+{
+  "extends": "../../../tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true
+  },
+  "references": [
+    { "path": "../prisma" },
+    { "path": "../audit-log" },
+    { "path": "../core" },
+    { "path": "../license" },
+    { "path": "./tsconfig.lib.json" }
+  ]
+}
