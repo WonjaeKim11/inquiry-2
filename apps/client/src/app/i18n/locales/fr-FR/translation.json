@@ -824,5 +824,90 @@
       "invalid_email": "Invalid email format: {{email}}",
       "value_type_mismatch": "'{{value}}' does not match {{type}} format."
     }
+  },
+  "segment": {
+    "list": {
+      "empty": "Aucun segment trouvé.",
+      "total_count": "Total {{count}} segments",
+      "create_new": "Créer un segment",
+      "survey_count": "Enquêtes",
+      "visibility": "Visibilité",
+      "private": "Privé",
+      "public": "Public"
+    },
+    "form": {
+      "title_label": "Titre",
+      "title_placeholder": "Entrez le titre du segment",
+      "title_required": "Le titre du segment est requis.",
+      "title_max": "Le titre doit contenir 100 caractères ou moins.",
+      "description_label": "Description",
+      "description_placeholder": "Entrez la description du segment (optionnel)",
+      "private_label": "Segment privé",
+      "cancel": "Annuler",
+      "create": "Créer",
+      "save": "Enregistrer",
+      "edit": "Modifier"
+    },
+    "actions": {
+      "clone": "Cloner",
+      "delete": "Supprimer",
+      "reset": "Réinitialiser les filtres"
+    },
+    "dialogs": {
+      "delete_title": "Supprimer le segment",
+      "delete_message": "Voulez-vous vraiment supprimer le segment \"{{title}}\" ? Cette action est irréversible."
+    },
+    "filter": {
+      "empty": "Aucun filtre configuré. Ajoutez un filtre pour définir les règles de ciblage.",
+      "add": "Ajouter un filtre",
+      "add_below": "Ajouter un filtre en dessous",
+      "create_group": "Créer un groupe",
+      "remove": "Supprimer le filtre",
+      "type_attribute": "Attribut",
+      "type_person": "Personne",
+      "type_segment": "Segment",
+      "type_device": "Appareil",
+      "select_attribute": "Sélectionner un attribut",
+      "select_segment": "Sélectionner un segment",
+      "select_device": "Sélectionner un appareil",
+      "select_operator": "Sélectionner un opérateur",
+      "device_desktop": "Ordinateur",
+      "device_phone": "Téléphone",
+      "device_tablet": "Tablette",
+      "value_placeholder": "Entrez une valeur",
+      "time_day": "Jours",
+      "time_week": "Semaines",
+      "time_month": "Mois",
+      "time_year": "Années",
+      "op_equals": "Égal à",
+      "op_does_not_equal": "Différent de",
+      "op_contains": "Contient",
+      "op_does_not_contain": "Ne contient pas",
+      "op_starts_with": "Commence par",
+      "op_ends_with": "Se termine par",
+      "op_is_set": "Est défini",
+      "op_is_not_set": "N'est pas défini",
+      "op_less_than": "Inférieur à",
+      "op_less_equal": "Inférieur ou égal",
+      "op_greater_than": "Supérieur à",
+      "op_greater_equal": "Supérieur ou égal",
+      "op_is_before": "Est avant",
+      "op_is_after": "Est après",
+      "op_is_exactly": "Est exactement",
+      "op_is_within_last": "Dans les derniers",
+      "op_is_not_within_last": "Pas dans les derniers",
+      "op_is_today": "Est aujourd'hui",
+      "op_is_yesterday": "Est hier",
+      "op_user_is_in": "L'utilisateur est dans",
+      "op_user_is_not_in": "L'utilisateur n'est pas dans",
+      "op_is_device": "Est l'appareil"
+    },
+    "license": {
+      "required_title": "Licence Enterprise requise",
+      "required_message": "Une licence Enterprise est nécessaire pour utiliser les fonctionnalités de gestion des segments."
+    },
+    "errors": {
+      "delete_failed": "Échec de la suppression du segment."
+    }
   }
 }

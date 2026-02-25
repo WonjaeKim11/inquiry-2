@@ -824,5 +824,88 @@
       "invalid_email": "Invalid email format: {{email}}",
       "value_type_mismatch": "'{{value}}' does not match {{type}} format."
     }
+  },
+  "segment": {
+    "list": {
+      "empty": "セグメントが見つかりません。",
+      "total_count": "合計 {{count}} セグメント",
+      "create_new": "セグメント作成",
+      "survey_count": "アンケート数",
+      "visibility": "公開設定",
+      "private": "非公開",
+      "public": "公開"
+    },
+    "form": {
+      "title_label": "タイトル",
+      "title_placeholder": "セグメントタイトルを入力",
+      "title_required": "セグメントタイトルは必須です。",
+      "title_max": "タイトルは100文字以内にしてください。",
+      "description_label": "説明",
+      "description_placeholder": "セグメントの説明を入力（任意）",
+      "private_label": "非公開セグメント",
+      "cancel": "キャンセル",
+      "create": "作成",
+      "save": "保存",
+      "edit": "編集"
+    },
+    "actions": {
+      "clone": "複製",
+      "delete": "削除",
+      "reset": "フィルターをリセット"
+    },
+    "dialogs": {
+      "delete_title": "セグメント削除",
+      "delete_message": "セグメント「{{title}}」を削除してもよろしいですか？この操作は取り消せません。"
+    },
+    "filter": {
+      "empty": "フィルターが設定されていません。ターゲティングルールを定義するにはフィルターを追加してください。",
+      "add": "フィルター追加",
+      "add_below": "下にフィルター追加",
+      "create_group": "グループ作成",
+      "remove": "フィルター削除",
+      "type_attribute": "属性",
+      "type_person": "ユーザー",
+      "type_segment": "セグメント",
+      "type_device": "デバイス",
+      "select_attribute": "属性を選択",
+      "select_segment": "セグメントを選択",
+      "select_device": "デバイスを選択",
+      "select_operator": "演算子を選択",
+      "device_desktop": "デスクトップ",
+      "device_phone": "スマートフォン",
+      "device_tablet": "タブレット",
+      "value_placeholder": "値を入力",
+      "time_day": "日",
+      "time_week": "週",
+      "time_month": "月",
+      "time_year": "年",
+      "op_equals": "等しい",
+      "op_does_not_equal": "等しくない",
+      "op_contains": "含む",
+      "op_does_not_contain": "含まない",
+      "op_starts_with": "で始まる",
+      "op_ends_with": "で終わる",
+      "op_is_set": "設定済み",
+      "op_is_not_set": "未設定",
+      "op_less_than": "より小さい",
+      "op_less_equal": "以下",
+      "op_greater_than": "より大きい",
+      "op_greater_equal": "以上",
+      "op_is_before": "より前",
+      "op_is_after": "より後",
+      "op_is_exactly": "完全一致",
+      "op_is_within_last": "直近以内",
+      "op_is_not_within_last": "直近以外",
+      "op_is_today": "今日",
+      "op_is_yesterday": "昨日",
+      "op_user_is_in": "ユーザーが含まれる",
+      "op_user_is_not_in": "ユーザーが含まれない",
+      "op_is_device": "デバイスタイプ"
+    },
+    "license": {
+      "required_title": "Enterpriseライセンスが必要です",
+      "required_message": "セグメント管理機能を使用するにはEnterpriseライセンスが必要です。"
+    },
+    "errors": { "delete_failed": "セグメントの削除に失敗しました。" }
   }
 }

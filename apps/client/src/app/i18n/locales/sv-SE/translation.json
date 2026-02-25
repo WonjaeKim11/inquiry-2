@@ -824,5 +824,88 @@
       "invalid_email": "Invalid email format: {{email}}",
       "value_type_mismatch": "'{{value}}' does not match {{type}} format."
     }
+  },
+  "segment": {
+    "list": {
+      "empty": "Inga segment hittades.",
+      "total_count": "Totalt {{count}} segment",
+      "create_new": "Skapa segment",
+      "survey_count": "Enkater",
+      "visibility": "Synlighet",
+      "private": "Privat",
+      "public": "Offentlig"
+    },
+    "form": {
+      "title_label": "Titel",
+      "title_placeholder": "Ange segmenttitel",
+      "title_required": "Segmenttitel ar obligatorisk.",
+      "title_max": "Titeln far vara hogst 100 tecken.",
+      "description_label": "Beskrivning",
+      "description_placeholder": "Ange segmentbeskrivning (valfritt)",
+      "private_label": "Privat segment",
+      "cancel": "Avbryt",
+      "create": "Skapa",
+      "save": "Spara",
+      "edit": "Redigera"
+    },
+    "actions": {
+      "clone": "Klona",
+      "delete": "Radera",
+      "reset": "Aterstall filter"
+    },
+    "dialogs": {
+      "delete_title": "Radera segment",
+      "delete_message": "Ar du saker pa att du vill radera segmentet \"{{title}}\"? Denna atgard kan inte angras."
+    },
+    "filter": {
+      "empty": "Inga filter konfigurerade. Lagg till ett filter for att definiera malgrupper.",
+      "add": "Lagg till filter",
+      "add_below": "Lagg till filter nedan",
+      "create_group": "Skapa grupp",
+      "remove": "Ta bort filter",
+      "type_attribute": "Attribut",
+      "type_person": "Person",
+      "type_segment": "Segment",
+      "type_device": "Enhet",
+      "select_attribute": "Valj attribut",
+      "select_segment": "Valj segment",
+      "select_device": "Valj enhet",
+      "select_operator": "Valj operator",
+      "device_desktop": "Dator",
+      "device_phone": "Telefon",
+      "device_tablet": "Surfplatta",
+      "value_placeholder": "Ange varde",
+      "time_day": "Dagar",
+      "time_week": "Veckor",
+      "time_month": "Manader",
+      "time_year": "Ar",
+      "op_equals": "Lika med",
+      "op_does_not_equal": "Inte lika med",
+      "op_contains": "Innehaller",
+      "op_does_not_contain": "Innehaller inte",
+      "op_starts_with": "Borjar med",
+      "op_ends_with": "Slutar med",
+      "op_is_set": "Ar satt",
+      "op_is_not_set": "Ar inte satt",
+      "op_less_than": "Mindre an",
+      "op_less_equal": "Mindre eller lika",
+      "op_greater_than": "Storre an",
+      "op_greater_equal": "Storre eller lika",
+      "op_is_before": "Ar fore",
+      "op_is_after": "Ar efter",
+      "op_is_exactly": "Ar exakt",
+      "op_is_within_last": "Inom de senaste",
+      "op_is_not_within_last": "Inte inom de senaste",
+      "op_is_today": "Ar idag",
+      "op_is_yesterday": "Ar igar",
+      "op_user_is_in": "Anvandaren ar i",
+      "op_user_is_not_in": "Anvandaren ar inte i",
+      "op_is_device": "Ar enhet"
+    },
+    "license": {
+      "required_title": "Enterprise-licens kravs",
+      "required_message": "En Enterprise-licens kravs for att anvanda segmenthanteringsfunktioner."
+    },
+    "errors": { "delete_failed": "Det gick inte att radera segmentet." }
   }
 }

@@ -210,6 +210,9 @@ importers:
       '@inquiry/client-project':
         specifier: workspace:*
         version: link:../../libs/client/project
+      '@inquiry/client-segment':
+        specifier: workspace:*
+        version: link:../../libs/client/segment
       '@inquiry/client-styling':
         specifier: workspace:*
         version: link:../../libs/client/styling
@@ -228,6 +231,9 @@ importers:
       '@inquiry/shared-i18n':
         specifier: workspace:*
         version: link:../../packages/shared-i18n
+      '@inquiry/shared-segment':
+        specifier: workspace:*
+        version: link:../../packages/shared-segment
       '@inquiry/survey-builder-config':
         specifier: workspace:*
         version: link:../../packages/survey-builder-config
@@ -563,6 +569,30 @@ importers:
       '@inquiry/client-ui':
         specifier: workspace:*
         version: link:../ui
+      react:
+        specifier: ^19.0.0
+        version: 19.2.4
+      react-i18next:
+        specifier: ^16.5.4
+        version: 16.5.4(i18next@25.8.13(typescript@5.9.3))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)
+      zod:
+        specifier: ^4.3.6
+        version: 4.3.6
+
+  libs/client/segment:
+    dependencies:
+      '@inquiry/client-contact':
+        specifier: workspace:*
+        version: link:../contact
+      '@inquiry/client-core':
+        specifier: workspace:*
+        version: link:../core
+      '@inquiry/client-ui':
+        specifier: workspace:*
+        version: link:../ui
+      '@inquiry/shared-segment':
+        specifier: workspace:*
+        version: link:../../../packages/shared-segment
       react:
         specifier: ^19.0.0
         version: 19.2.4

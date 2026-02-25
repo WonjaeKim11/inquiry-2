@@ -1100,5 +1100,90 @@
       "invalid_email": "Invalid email format: {{email}}",
       "value_type_mismatch": "'{{value}}' does not match {{type}} format."
     }
+  },
+  "segment": {
+    "list": {
+      "empty": "No segments found.",
+      "total_count": "Total {{count}} segments",
+      "create_new": "Create Segment",
+      "survey_count": "Surveys",
+      "visibility": "Visibility",
+      "private": "Private",
+      "public": "Public"
+    },
+    "form": {
+      "title_label": "Title",
+      "title_placeholder": "Enter segment title",
+      "title_required": "Segment title is required.",
+      "title_max": "Title must be 100 characters or less.",
+      "description_label": "Description",
+      "description_placeholder": "Enter segment description (optional)",
+      "private_label": "Private segment",
+      "cancel": "Cancel",
+      "create": "Create",
+      "save": "Save",
+      "edit": "Edit"
+    },
+    "actions": {
+      "clone": "Clone",
+      "delete": "Delete",
+      "reset": "Reset Filters"
+    },
+    "dialogs": {
+      "delete_title": "Delete Segment",
+      "delete_message": "Are you sure you want to delete the segment \"{{title}}\"? This action cannot be undone."
+    },
+    "filter": {
+      "empty": "No filters configured. Add a filter to define targeting rules.",
+      "add": "Add Filter",
+      "add_below": "Add filter below",
+      "create_group": "Create group",
+      "remove": "Remove filter",
+      "type_attribute": "Attribute",
+      "type_person": "Person",
+      "type_segment": "Segment",
+      "type_device": "Device",
+      "select_attribute": "Select attribute",
+      "select_segment": "Select segment",
+      "select_device": "Select device",
+      "select_operator": "Select operator",
+      "device_desktop": "Desktop",
+      "device_phone": "Phone",
+      "device_tablet": "Tablet",
+      "value_placeholder": "Enter value",
+      "time_day": "Days",
+      "time_week": "Weeks",
+      "time_month": "Months",
+      "time_year": "Years",
+      "op_equals": "Equals",
+      "op_does_not_equal": "Does not equal",
+      "op_contains": "Contains",
+      "op_does_not_contain": "Does not contain",
+      "op_starts_with": "Starts with",
+      "op_ends_with": "Ends with",
+      "op_is_set": "Is set",
+      "op_is_not_set": "Is not set",
+      "op_less_than": "Less than",
+      "op_less_equal": "Less than or equal",
+      "op_greater_than": "Greater than",
+      "op_greater_equal": "Greater than or equal",
+      "op_is_before": "Is before",
+      "op_is_after": "Is after",
+      "op_is_exactly": "Is exactly",
+      "op_is_within_last": "Is within last",
+      "op_is_not_within_last": "Is not within last",
+      "op_is_today": "Is today",
+      "op_is_yesterday": "Is yesterday",
+      "op_user_is_in": "User is in",
+      "op_user_is_not_in": "User is not in",
+      "op_is_device": "Is device"
+    },
+    "license": {
+      "required_title": "Enterprise License Required",
+      "required_message": "An Enterprise license is required to use segment management features."
+    },
+    "errors": {
+      "delete_failed": "Failed to delete segment."
+    }
   }
 }

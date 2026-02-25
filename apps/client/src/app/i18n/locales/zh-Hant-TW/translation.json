@@ -824,5 +824,84 @@
       "invalid_email": "Invalid email format: {{email}}",
       "value_type_mismatch": "'{{value}}' does not match {{type}} format."
     }
+  },
+  "segment": {
+    "list": {
+      "empty": "未找到區段。",
+      "total_count": "共 {{count}} 個區段",
+      "create_new": "建立區段",
+      "survey_count": "問卷數",
+      "visibility": "可見性",
+      "private": "私有",
+      "public": "公開"
+    },
+    "form": {
+      "title_label": "標題",
+      "title_placeholder": "輸入區段標題",
+      "title_required": "區段標題為必填。",
+      "title_max": "標題不可超過100個字元。",
+      "description_label": "描述",
+      "description_placeholder": "輸入區段描述（選填）",
+      "private_label": "私有區段",
+      "cancel": "取消",
+      "create": "建立",
+      "save": "儲存",
+      "edit": "編輯"
+    },
+    "actions": { "clone": "複製", "delete": "刪除", "reset": "重設篩選" },
+    "dialogs": {
+      "delete_title": "刪除區段",
+      "delete_message": "確定要刪除區段「{{title}}」嗎？此操作無法復原。"
+    },
+    "filter": {
+      "empty": "未設定篩選條件。新增篩選條件以定義目標規則。",
+      "add": "新增篩選",
+      "add_below": "在下方新增篩選",
+      "create_group": "建立群組",
+      "remove": "刪除篩選",
+      "type_attribute": "屬性",
+      "type_person": "使用者",
+      "type_segment": "區段",
+      "type_device": "裝置",
+      "select_attribute": "選擇屬性",
+      "select_segment": "選擇區段",
+      "select_device": "選擇裝置",
+      "select_operator": "選擇運算子",
+      "device_desktop": "桌面版",
+      "device_phone": "手機",
+      "device_tablet": "平板",
+      "value_placeholder": "輸入值",
+      "time_day": "天",
+      "time_week": "週",
+      "time_month": "月",
+      "time_year": "年",
+      "op_equals": "等於",
+      "op_does_not_equal": "不等於",
+      "op_contains": "包含",
+      "op_does_not_contain": "不包含",
+      "op_starts_with": "開頭是",
+      "op_ends_with": "結尾是",
+      "op_is_set": "已設定",
+      "op_is_not_set": "未設定",
+      "op_less_than": "小於",
+      "op_less_equal": "小於等於",
+      "op_greater_than": "大於",
+      "op_greater_equal": "大於等於",
+      "op_is_before": "早於",
+      "op_is_after": "晚於",
+      "op_is_exactly": "精確符合",
+      "op_is_within_last": "最近以內",
+      "op_is_not_within_last": "最近以外",
+      "op_is_today": "今天",
+      "op_is_yesterday": "昨天",
+      "op_user_is_in": "使用者屬於",
+      "op_user_is_not_in": "使用者不屬於",
+      "op_is_device": "裝置類型"
+    },
+    "license": {
+      "required_title": "需要企業版授權",
+      "required_message": "使用區段管理功能需要企業版授權。"
+    },
+    "errors": { "delete_failed": "刪除區段失敗。" }
   }
 }

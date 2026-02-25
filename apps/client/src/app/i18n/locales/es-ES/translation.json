@@ -824,5 +824,90 @@
       "invalid_email": "Invalid email format: {{email}}",
       "value_type_mismatch": "'{{value}}' does not match {{type}} format."
     }
+  },
+  "segment": {
+    "list": {
+      "empty": "No se encontraron segmentos.",
+      "total_count": "Total {{count}} segmentos",
+      "create_new": "Crear segmento",
+      "survey_count": "Encuestas",
+      "visibility": "Visibilidad",
+      "private": "Privado",
+      "public": "Público"
+    },
+    "form": {
+      "title_label": "Título",
+      "title_placeholder": "Ingrese el título del segmento",
+      "title_required": "El título del segmento es obligatorio.",
+      "title_max": "El título debe tener 100 caracteres o menos.",
+      "description_label": "Descripción",
+      "description_placeholder": "Ingrese la descripción del segmento (opcional)",
+      "private_label": "Segmento privado",
+      "cancel": "Cancelar",
+      "create": "Crear",
+      "save": "Guardar",
+      "edit": "Editar"
+    },
+    "actions": {
+      "clone": "Clonar",
+      "delete": "Eliminar",
+      "reset": "Restablecer filtros"
+    },
+    "dialogs": {
+      "delete_title": "Eliminar segmento",
+      "delete_message": "¿Está seguro de que desea eliminar el segmento \"{{title}}\"? Esta acción no se puede deshacer."
+    },
+    "filter": {
+      "empty": "No hay filtros configurados. Agregue un filtro para definir reglas de segmentación.",
+      "add": "Agregar filtro",
+      "add_below": "Agregar filtro debajo",
+      "create_group": "Crear grupo",
+      "remove": "Eliminar filtro",
+      "type_attribute": "Atributo",
+      "type_person": "Persona",
+      "type_segment": "Segmento",
+      "type_device": "Dispositivo",
+      "select_attribute": "Seleccionar atributo",
+      "select_segment": "Seleccionar segmento",
+      "select_device": "Seleccionar dispositivo",
+      "select_operator": "Seleccionar operador",
+      "device_desktop": "Escritorio",
+      "device_phone": "Teléfono",
+      "device_tablet": "Tableta",
+      "value_placeholder": "Ingrese valor",
+      "time_day": "Días",
+      "time_week": "Semanas",
+      "time_month": "Meses",
+      "time_year": "Años",
+      "op_equals": "Igual a",
+      "op_does_not_equal": "No es igual a",
+      "op_contains": "Contiene",
+      "op_does_not_contain": "No contiene",
+      "op_starts_with": "Comienza con",
+      "op_ends_with": "Termina con",
+      "op_is_set": "Está establecido",
+      "op_is_not_set": "No está establecido",
+      "op_less_than": "Menor que",
+      "op_less_equal": "Menor o igual",
+      "op_greater_than": "Mayor que",
+      "op_greater_equal": "Mayor o igual",
+      "op_is_before": "Es antes de",
+      "op_is_after": "Es después de",
+      "op_is_exactly": "Es exactamente",
+      "op_is_within_last": "Dentro de los últimos",
+      "op_is_not_within_last": "No dentro de los últimos",
+      "op_is_today": "Es hoy",
+      "op_is_yesterday": "Es ayer",
+      "op_user_is_in": "Usuario está en",
+      "op_user_is_not_in": "Usuario no está en",
+      "op_is_device": "Es dispositivo"
+    },
+    "license": {
+      "required_title": "Licencia Enterprise requerida",
+      "required_message": "Se requiere una licencia Enterprise para utilizar las funciones de gestión de segmentos."
+    },
+    "errors": {
+      "delete_failed": "Error al eliminar el segmento."
+    }
   }
 }

@@ -824,5 +824,88 @@
       "invalid_email": "Invalid email format: {{email}}",
       "value_type_mismatch": "'{{value}}' does not match {{type}} format."
     }
+  },
+  "segment": {
+    "list": {
+      "empty": "Nu s-au gasit segmente.",
+      "total_count": "Total {{count}} segmente",
+      "create_new": "Creaza segment",
+      "survey_count": "Sondaje",
+      "visibility": "Vizibilitate",
+      "private": "Privat",
+      "public": "Public"
+    },
+    "form": {
+      "title_label": "Titlu",
+      "title_placeholder": "Introduceti titlul segmentului",
+      "title_required": "Titlul segmentului este obligatoriu.",
+      "title_max": "Titlul trebuie sa aiba maximum 100 de caractere.",
+      "description_label": "Descriere",
+      "description_placeholder": "Introduceti descrierea segmentului (optional)",
+      "private_label": "Segment privat",
+      "cancel": "Anulare",
+      "create": "Creare",
+      "save": "Salvare",
+      "edit": "Editare"
+    },
+    "actions": {
+      "clone": "Clonare",
+      "delete": "Stergere",
+      "reset": "Resetare filtre"
+    },
+    "dialogs": {
+      "delete_title": "Stergere segment",
+      "delete_message": "Sunteti sigur ca doriti sa stergeti segmentul \"{{title}}\"? Aceasta actiune nu poate fi anulata."
+    },
+    "filter": {
+      "empty": "Nu exista filtre configurate. Adaugati un filtru pentru a defini reguli de targetare.",
+      "add": "Adauga filtru",
+      "add_below": "Adauga filtru dedesubt",
+      "create_group": "Creaza grup",
+      "remove": "Sterge filtru",
+      "type_attribute": "Atribut",
+      "type_person": "Persoana",
+      "type_segment": "Segment",
+      "type_device": "Dispozitiv",
+      "select_attribute": "Selectati atribut",
+      "select_segment": "Selectati segment",
+      "select_device": "Selectati dispozitiv",
+      "select_operator": "Selectati operator",
+      "device_desktop": "Desktop",
+      "device_phone": "Telefon",
+      "device_tablet": "Tableta",
+      "value_placeholder": "Introduceti valoare",
+      "time_day": "Zile",
+      "time_week": "Saptamani",
+      "time_month": "Luni",
+      "time_year": "Ani",
+      "op_equals": "Egal cu",
+      "op_does_not_equal": "Nu este egal cu",
+      "op_contains": "Contine",
+      "op_does_not_contain": "Nu contine",
+      "op_starts_with": "Incepe cu",
+      "op_ends_with": "Se termina cu",
+      "op_is_set": "Este setat",
+      "op_is_not_set": "Nu este setat",
+      "op_less_than": "Mai mic decat",
+      "op_less_equal": "Mai mic sau egal",
+      "op_greater_than": "Mai mare decat",
+      "op_greater_equal": "Mai mare sau egal",
+      "op_is_before": "Este inainte de",
+      "op_is_after": "Este dupa",
+      "op_is_exactly": "Este exact",
+      "op_is_within_last": "In ultimele",
+      "op_is_not_within_last": "Nu in ultimele",
+      "op_is_today": "Este astazi",
+      "op_is_yesterday": "Este ieri",
+      "op_user_is_in": "Utilizatorul este in",
+      "op_user_is_not_in": "Utilizatorul nu este in",
+      "op_is_device": "Este dispozitiv"
+    },
+    "license": {
+      "required_title": "Licenta Enterprise necesara",
+      "required_message": "O licenta Enterprise este necesara pentru a utiliza functiile de gestionare a segmentelor."
+    },
+    "errors": { "delete_failed": "Stergerea segmentului a esuat." }
   }
 }

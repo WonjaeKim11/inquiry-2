@@ -824,5 +824,88 @@
       "invalid_email": "Invalid email format: {{email}}",
       "value_type_mismatch": "'{{value}}' does not match {{type}} format."
     }
+  },
+  "segment": {
+    "list": {
+      "empty": "Nem találhatók szegmensek.",
+      "total_count": "Összesen {{count}} szegmens",
+      "create_new": "Szegmens létrehozása",
+      "survey_count": "Kérdőívek",
+      "visibility": "Láthatóság",
+      "private": "Privát",
+      "public": "Nyilvános"
+    },
+    "form": {
+      "title_label": "Cím",
+      "title_placeholder": "Adja meg a szegmens címét",
+      "title_required": "A szegmens címe kötelező.",
+      "title_max": "A cím legfeljebb 100 karakter lehet.",
+      "description_label": "Leírás",
+      "description_placeholder": "Adja meg a szegmens leírását (opcionális)",
+      "private_label": "Privát szegmens",
+      "cancel": "Mégse",
+      "create": "Létrehozás",
+      "save": "Mentés",
+      "edit": "Szerkesztés"
+    },
+    "actions": {
+      "clone": "Klónozás",
+      "delete": "Törlés",
+      "reset": "Szűrők visszaállítása"
+    },
+    "dialogs": {
+      "delete_title": "Szegmens törlése",
+      "delete_message": "Biztosan törölni szeretné a(z) \"{{title}}\" szegmenst? Ez a művelet nem vonható vissza."
+    },
+    "filter": {
+      "empty": "Nincsenek beállított szűrők. Adjon hozzá szűrőt a célzási szabályok meghatározásához.",
+      "add": "Szűrő hozzáadása",
+      "add_below": "Szűrő hozzáadása alá",
+      "create_group": "Csoport létrehozása",
+      "remove": "Szűrő eltávolítása",
+      "type_attribute": "Attribútum",
+      "type_person": "Személy",
+      "type_segment": "Szegmens",
+      "type_device": "Eszköz",
+      "select_attribute": "Attribútum kiválasztása",
+      "select_segment": "Szegmens kiválasztása",
+      "select_device": "Eszköz kiválasztása",
+      "select_operator": "Operátor kiválasztása",
+      "device_desktop": "Asztali",
+      "device_phone": "Telefon",
+      "device_tablet": "Táblagép",
+      "value_placeholder": "Érték megadása",
+      "time_day": "Nap",
+      "time_week": "Hét",
+      "time_month": "Hónap",
+      "time_year": "Év",
+      "op_equals": "Egyenlő",
+      "op_does_not_equal": "Nem egyenlő",
+      "op_contains": "Tartalmazza",
+      "op_does_not_contain": "Nem tartalmazza",
+      "op_starts_with": "Kezdődik",
+      "op_ends_with": "Végződik",
+      "op_is_set": "Be van állítva",
+      "op_is_not_set": "Nincs beállítva",
+      "op_less_than": "Kisebb mint",
+      "op_less_equal": "Kisebb vagy egyenlő",
+      "op_greater_than": "Nagyobb mint",
+      "op_greater_equal": "Nagyobb vagy egyenlő",
+      "op_is_before": "Előtte van",
+      "op_is_after": "Utána van",
+      "op_is_exactly": "Pontosan",
+      "op_is_within_last": "Az utolsó időszakban",
+      "op_is_not_within_last": "Nem az utolsó időszakban",
+      "op_is_today": "Ma",
+      "op_is_yesterday": "Tegnap",
+      "op_user_is_in": "Felhasználó benne van",
+      "op_user_is_not_in": "Felhasználó nincs benne",
+      "op_is_device": "Eszköz típus"
+    },
+    "license": {
+      "required_title": "Enterprise licenc szükséges",
+      "required_message": "A szegmenskezelési funkciók használatához Enterprise licenc szükséges."
+    },
+    "errors": { "delete_failed": "A szegmens törlése sikertelen." }
   }
 }

@@ -824,5 +824,84 @@
       "invalid_email": "Invalid email format: {{email}}",
       "value_type_mismatch": "'{{value}}' does not match {{type}} format."
     }
+  },
+  "segment": {
+    "list": {
+      "empty": "未找到细分群组。",
+      "total_count": "共 {{count}} 个细分群组",
+      "create_new": "创建细分群组",
+      "survey_count": "问卷数",
+      "visibility": "可见性",
+      "private": "私有",
+      "public": "公开"
+    },
+    "form": {
+      "title_label": "标题",
+      "title_placeholder": "输入细分群组标题",
+      "title_required": "细分群组标题为必填项。",
+      "title_max": "标题不能超过100个字符。",
+      "description_label": "描述",
+      "description_placeholder": "输入细分群组描述（可选）",
+      "private_label": "私有细分群组",
+      "cancel": "取消",
+      "create": "创建",
+      "save": "保存",
+      "edit": "编辑"
+    },
+    "actions": { "clone": "克隆", "delete": "删除", "reset": "重置筛选" },
+    "dialogs": {
+      "delete_title": "删除细分群组",
+      "delete_message": "确定要删除细分群组 \"{{title}}\" 吗？此操作无法撤销。"
+    },
+    "filter": {
+      "empty": "未配置筛选条件。添加筛选条件以定义目标规则。",
+      "add": "添加筛选",
+      "add_below": "在下方添加筛选",
+      "create_group": "创建分组",
+      "remove": "删除筛选",
+      "type_attribute": "属性",
+      "type_person": "用户",
+      "type_segment": "细分群组",
+      "type_device": "设备",
+      "select_attribute": "选择属性",
+      "select_segment": "选择细分群组",
+      "select_device": "选择设备",
+      "select_operator": "选择运算符",
+      "device_desktop": "桌面端",
+      "device_phone": "手机",
+      "device_tablet": "平板",
+      "value_placeholder": "输入值",
+      "time_day": "天",
+      "time_week": "周",
+      "time_month": "月",
+      "time_year": "年",
+      "op_equals": "等于",
+      "op_does_not_equal": "不等于",
+      "op_contains": "包含",
+      "op_does_not_contain": "不包含",
+      "op_starts_with": "开头是",
+      "op_ends_with": "结尾是",
+      "op_is_set": "已设置",
+      "op_is_not_set": "未设置",
+      "op_less_than": "小于",
+      "op_less_equal": "小于等于",
+      "op_greater_than": "大于",
+      "op_greater_equal": "大于等于",
+      "op_is_before": "早于",
+      "op_is_after": "晚于",
+      "op_is_exactly": "精确匹配",
+      "op_is_within_last": "最近以内",
+      "op_is_not_within_last": "最近以外",
+      "op_is_today": "今天",
+      "op_is_yesterday": "昨天",
+      "op_user_is_in": "用户属于",
+      "op_user_is_not_in": "用户不属于",
+      "op_is_device": "设备类型"
+    },
+    "license": {
+      "required_title": "需要企业版许可证",
+      "required_message": "使用细分群组管理功能需要企业版许可证。"
+    },
+    "errors": { "delete_failed": "删除细分群组失败。" }
   }
 }

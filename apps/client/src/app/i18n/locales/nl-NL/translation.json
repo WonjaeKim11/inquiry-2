@@ -824,5 +824,88 @@
       "invalid_email": "Invalid email format: {{email}}",
       "value_type_mismatch": "'{{value}}' does not match {{type}} format."
     }
+  },
+  "segment": {
+    "list": {
+      "empty": "Geen segmenten gevonden.",
+      "total_count": "Totaal {{count}} segmenten",
+      "create_new": "Segment aanmaken",
+      "survey_count": "Enquêtes",
+      "visibility": "Zichtbaarheid",
+      "private": "Privé",
+      "public": "Openbaar"
+    },
+    "form": {
+      "title_label": "Titel",
+      "title_placeholder": "Voer segmenttitel in",
+      "title_required": "Segmenttitel is vereist.",
+      "title_max": "Titel mag maximaal 100 tekens bevatten.",
+      "description_label": "Beschrijving",
+      "description_placeholder": "Voer segmentbeschrijving in (optioneel)",
+      "private_label": "Privésegment",
+      "cancel": "Annuleren",
+      "create": "Aanmaken",
+      "save": "Opslaan",
+      "edit": "Bewerken"
+    },
+    "actions": {
+      "clone": "Klonen",
+      "delete": "Verwijderen",
+      "reset": "Filters resetten"
+    },
+    "dialogs": {
+      "delete_title": "Segment verwijderen",
+      "delete_message": "Weet u zeker dat u het segment \"{{title}}\" wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt."
+    },
+    "filter": {
+      "empty": "Geen filters geconfigureerd. Voeg een filter toe om targetingregels te definiëren.",
+      "add": "Filter toevoegen",
+      "add_below": "Filter hieronder toevoegen",
+      "create_group": "Groep aanmaken",
+      "remove": "Filter verwijderen",
+      "type_attribute": "Attribuut",
+      "type_person": "Persoon",
+      "type_segment": "Segment",
+      "type_device": "Apparaat",
+      "select_attribute": "Attribuut selecteren",
+      "select_segment": "Segment selecteren",
+      "select_device": "Apparaat selecteren",
+      "select_operator": "Operator selecteren",
+      "device_desktop": "Desktop",
+      "device_phone": "Telefoon",
+      "device_tablet": "Tablet",
+      "value_placeholder": "Waarde invoeren",
+      "time_day": "Dagen",
+      "time_week": "Weken",
+      "time_month": "Maanden",
+      "time_year": "Jaren",
+      "op_equals": "Is gelijk aan",
+      "op_does_not_equal": "Is niet gelijk aan",
+      "op_contains": "Bevat",
+      "op_does_not_contain": "Bevat niet",
+      "op_starts_with": "Begint met",
+      "op_ends_with": "Eindigt met",
+      "op_is_set": "Is ingesteld",
+      "op_is_not_set": "Is niet ingesteld",
+      "op_less_than": "Kleiner dan",
+      "op_less_equal": "Kleiner of gelijk",
+      "op_greater_than": "Groter dan",
+      "op_greater_equal": "Groter of gelijk",
+      "op_is_before": "Is voor",
+      "op_is_after": "Is na",
+      "op_is_exactly": "Is precies",
+      "op_is_within_last": "Binnen de laatste",
+      "op_is_not_within_last": "Niet binnen de laatste",
+      "op_is_today": "Is vandaag",
+      "op_is_yesterday": "Is gisteren",
+      "op_user_is_in": "Gebruiker zit in",
+      "op_user_is_not_in": "Gebruiker zit niet in",
+      "op_is_device": "Is apparaat"
+    },
+    "license": {
+      "required_title": "Enterprise-licentie vereist",
+      "required_message": "Een Enterprise-licentie is vereist om segmentbeheerfuncties te gebruiken."
+    },
+    "errors": { "delete_failed": "Segment verwijderen mislukt." }
   }
 }

@@ -824,5 +824,88 @@
       "invalid_email": "Invalid email format: {{email}}",
       "value_type_mismatch": "'{{value}}' does not match {{type}} format."
     }
+  },
+  "segment": {
+    "list": {
+      "empty": "Сегменты не найдены.",
+      "total_count": "Всего {{count}} сегментов",
+      "create_new": "Создать сегмент",
+      "survey_count": "Опросы",
+      "visibility": "Видимость",
+      "private": "Приватный",
+      "public": "Публичный"
+    },
+    "form": {
+      "title_label": "Название",
+      "title_placeholder": "Введите название сегмента",
+      "title_required": "Название сегмента обязательно.",
+      "title_max": "Название должно содержать не более 100 символов.",
+      "description_label": "Описание",
+      "description_placeholder": "Введите описание сегмента (необязательно)",
+      "private_label": "Приватный сегмент",
+      "cancel": "Отмена",
+      "create": "Создать",
+      "save": "Сохранить",
+      "edit": "Редактировать"
+    },
+    "actions": {
+      "clone": "Клонировать",
+      "delete": "Удалить",
+      "reset": "Сбросить фильтры"
+    },
+    "dialogs": {
+      "delete_title": "Удалить сегмент",
+      "delete_message": "Вы уверены, что хотите удалить сегмент \"{{title}}\"? Это действие нельзя отменить."
+    },
+    "filter": {
+      "empty": "Фильтры не настроены. Добавьте фильтр для определения правил таргетинга.",
+      "add": "Добавить фильтр",
+      "add_below": "Добавить фильтр ниже",
+      "create_group": "Создать группу",
+      "remove": "Удалить фильтр",
+      "type_attribute": "Атрибут",
+      "type_person": "Пользователь",
+      "type_segment": "Сегмент",
+      "type_device": "Устройство",
+      "select_attribute": "Выбрать атрибут",
+      "select_segment": "Выбрать сегмент",
+      "select_device": "Выбрать устройство",
+      "select_operator": "Выбрать оператор",
+      "device_desktop": "ПК",
+      "device_phone": "Телефон",
+      "device_tablet": "Планшет",
+      "value_placeholder": "Введите значение",
+      "time_day": "Дней",
+      "time_week": "Недель",
+      "time_month": "Месяцев",
+      "time_year": "Лет",
+      "op_equals": "Равно",
+      "op_does_not_equal": "Не равно",
+      "op_contains": "Содержит",
+      "op_does_not_contain": "Не содержит",
+      "op_starts_with": "Начинается с",
+      "op_ends_with": "Заканчивается на",
+      "op_is_set": "Установлено",
+      "op_is_not_set": "Не установлено",
+      "op_less_than": "Меньше чем",
+      "op_less_equal": "Меньше или равно",
+      "op_greater_than": "Больше чем",
+      "op_greater_equal": "Больше или равно",
+      "op_is_before": "До",
+      "op_is_after": "После",
+      "op_is_exactly": "Точно",
+      "op_is_within_last": "За последние",
+      "op_is_not_within_last": "Не за последние",
+      "op_is_today": "Сегодня",
+      "op_is_yesterday": "Вчера",
+      "op_user_is_in": "Пользователь входит в",
+      "op_user_is_not_in": "Пользователь не входит в",
+      "op_is_device": "Тип устройства"
+    },
+    "license": {
+      "required_title": "Требуется лицензия Enterprise",
+      "required_message": "Для использования функций управления сегментами требуется лицензия Enterprise."
+    },
+    "errors": { "delete_failed": "Не удалось удалить сегмент." }
   }
 }

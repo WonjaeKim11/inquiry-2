@@ -89,6 +89,12 @@
     },
     {
       "path": "../../libs/client/contact"
+    },
+    {
+      "path": "../../libs/client/segment"
+    },
+    {
+      "path": "../../packages/shared-segment"
     }
   ]
 }

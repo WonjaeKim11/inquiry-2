@@ -1100,5 +1100,90 @@
       "invalid_email": "유효하지 않은 이메일 형식입니다: {{email}}",
       "value_type_mismatch": "'{{value}}'은(는) {{type}} 형식에 맞지 않습니다."
     }
+  },
+  "segment": {
+    "list": {
+      "empty": "세그먼트가 없습니다.",
+      "total_count": "전체 {{count}}개 세그먼트",
+      "create_new": "세그먼트 생성",
+      "survey_count": "설문 수",
+      "visibility": "공개 여부",
+      "private": "비공개",
+      "public": "공개"
+    },
+    "form": {
+      "title_label": "제목",
+      "title_placeholder": "세그먼트 제목을 입력하세요",
+      "title_required": "세그먼트 제목은 필수입니다.",
+      "title_max": "제목은 100자 이하여야 합니다.",
+      "description_label": "설명",
+      "description_placeholder": "세그먼트 설명을 입력하세요 (선택사항)",
+      "private_label": "비공개 세그먼트",
+      "cancel": "취소",
+      "create": "생성",
+      "save": "저장",
+      "edit": "수정"
+    },
+    "actions": {
+      "clone": "복제",
+      "delete": "삭제",
+      "reset": "필터 초기화"
+    },
+    "dialogs": {
+      "delete_title": "세그먼트 삭제",
+      "delete_message": "세그먼트 \"{{title}}\"을(를) 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다."
+    },
+    "filter": {
+      "empty": "설정된 필터가 없습니다. 타겟팅 규칙을 정의하려면 필터를 추가하세요.",
+      "add": "필터 추가",
+      "add_below": "아래에 필터 추가",
+      "create_group": "그룹 생성",
+      "remove": "필터 삭제",
+      "type_attribute": "속성",
+      "type_person": "사용자",
+      "type_segment": "세그먼트",
+      "type_device": "디바이스",
+      "select_attribute": "속성 선택",
+      "select_segment": "세그먼트 선택",
+      "select_device": "디바이스 선택",
+      "select_operator": "연산자 선택",
+      "device_desktop": "데스크톱",
+      "device_phone": "스마트폰",
+      "device_tablet": "태블릿",
+      "value_placeholder": "값 입력",
+      "time_day": "일",
+      "time_week": "주",
+      "time_month": "개월",
+      "time_year": "년",
+      "op_equals": "같음",
+      "op_does_not_equal": "같지 않음",
+      "op_contains": "포함",
+      "op_does_not_contain": "포함하지 않음",
+      "op_starts_with": "시작함",
+      "op_ends_with": "끝남",
+      "op_is_set": "설정됨",
+      "op_is_not_set": "설정되지 않음",
+      "op_less_than": "보다 작음",
+      "op_less_equal": "이하",
+      "op_greater_than": "보다 큼",
+      "op_greater_equal": "이상",
+      "op_is_before": "이전",
+      "op_is_after": "이후",
+      "op_is_exactly": "정확히 일치",
+      "op_is_within_last": "최근 이내",
+      "op_is_not_within_last": "최근 이외",
+      "op_is_today": "오늘",
+      "op_is_yesterday": "어제",
+      "op_user_is_in": "사용자 포함",
+      "op_user_is_not_in": "사용자 미포함",
+      "op_is_device": "디바이스 유형"
+    },
+    "license": {
+      "required_title": "Enterprise 라이선스 필요",
+      "required_message": "세그먼트 관리 기능을 사용하려면 Enterprise 라이선스가 필요합니다."
+    },
+    "errors": {
+      "delete_failed": "세그먼트 삭제에 실패했습니다."
+    }
   }
 }

@@ -824,5 +824,90 @@
       "invalid_email": "Invalid email format: {{email}}",
       "value_type_mismatch": "'{{value}}' does not match {{type}} format."
     }
+  },
+  "segment": {
+    "list": {
+      "empty": "Keine Segmente gefunden.",
+      "total_count": "Insgesamt {{count}} Segmente",
+      "create_new": "Segment erstellen",
+      "survey_count": "Umfragen",
+      "visibility": "Sichtbarkeit",
+      "private": "Privat",
+      "public": "Öffentlich"
+    },
+    "form": {
+      "title_label": "Titel",
+      "title_placeholder": "Segmenttitel eingeben",
+      "title_required": "Segmenttitel ist erforderlich.",
+      "title_max": "Titel darf maximal 100 Zeichen lang sein.",
+      "description_label": "Beschreibung",
+      "description_placeholder": "Segmentbeschreibung eingeben (optional)",
+      "private_label": "Privates Segment",
+      "cancel": "Abbrechen",
+      "create": "Erstellen",
+      "save": "Speichern",
+      "edit": "Bearbeiten"
+    },
+    "actions": {
+      "clone": "Klonen",
+      "delete": "Löschen",
+      "reset": "Filter zurücksetzen"
+    },
+    "dialogs": {
+      "delete_title": "Segment löschen",
+      "delete_message": "Möchten Sie das Segment \"{{title}}\" wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden."
+    },
+    "filter": {
+      "empty": "Keine Filter konfiguriert. Fügen Sie einen Filter hinzu, um Targeting-Regeln zu definieren.",
+      "add": "Filter hinzufügen",
+      "add_below": "Filter darunter hinzufügen",
+      "create_group": "Gruppe erstellen",
+      "remove": "Filter entfernen",
+      "type_attribute": "Attribut",
+      "type_person": "Person",
+      "type_segment": "Segment",
+      "type_device": "Gerät",
+      "select_attribute": "Attribut auswählen",
+      "select_segment": "Segment auswählen",
+      "select_device": "Gerät auswählen",
+      "select_operator": "Operator auswählen",
+      "device_desktop": "Desktop",
+      "device_phone": "Telefon",
+      "device_tablet": "Tablet",
+      "value_placeholder": "Wert eingeben",
+      "time_day": "Tage",
+      "time_week": "Wochen",
+      "time_month": "Monate",
+      "time_year": "Jahre",
+      "op_equals": "Gleich",
+      "op_does_not_equal": "Ungleich",
+      "op_contains": "Enthält",
+      "op_does_not_contain": "Enthält nicht",
+      "op_starts_with": "Beginnt mit",
+      "op_ends_with": "Endet mit",
+      "op_is_set": "Ist gesetzt",
+      "op_is_not_set": "Ist nicht gesetzt",
+      "op_less_than": "Kleiner als",
+      "op_less_equal": "Kleiner oder gleich",
+      "op_greater_than": "Größer als",
+      "op_greater_equal": "Größer oder gleich",
+      "op_is_before": "Ist vor",
+      "op_is_after": "Ist nach",
+      "op_is_exactly": "Ist genau",
+      "op_is_within_last": "Innerhalb der letzten",
+      "op_is_not_within_last": "Nicht innerhalb der letzten",
+      "op_is_today": "Ist heute",
+      "op_is_yesterday": "Ist gestern",
+      "op_user_is_in": "Benutzer ist in",
+      "op_user_is_not_in": "Benutzer ist nicht in",
+      "op_is_device": "Ist Gerät"
+    },
+    "license": {
+      "required_title": "Enterprise-Lizenz erforderlich",
+      "required_message": "Für die Segmentverwaltung ist eine Enterprise-Lizenz erforderlich."
+    },
+    "errors": {
+      "delete_failed": "Segment konnte nicht gelöscht werden."
+    }
   }
 }
