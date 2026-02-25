@@ -826,6 +826,8 @@
     }
   },
   "segment": {
+    "title": "Segmente",
+    "description": "Erstellen und verwalten Sie Zielgruppensegmente, um bestimmte Kontaktgruppen anzusprechen.",
     "list": {
       "empty": "Keine Segmente gefunden.",
       "total_count": "Insgesamt {{count}} Segmente",
@@ -843,10 +845,11 @@
       "description_label": "Beschreibung",
       "description_placeholder": "Segmentbeschreibung eingeben (optional)",
       "private_label": "Privates Segment",
+      "details": "Segmentdetails",
       "cancel": "Abbrechen",
-      "create": "Erstellen",
+      "create": "Segment erstellen",
       "save": "Speichern",
-      "edit": "Bearbeiten"
+      "edit": "Segment bearbeiten"
     },
     "actions": {
       "clone": "Klonen",
@@ -858,6 +861,7 @@
       "delete_message": "Möchten Sie das Segment \"{{title}}\" wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden."
     },
     "filter": {
+      "title": "Filterregeln",
       "empty": "Keine Filter konfiguriert. Fügen Sie einen Filter hinzu, um Targeting-Regeln zu definieren.",
       "add": "Filter hinzufügen",
       "add_below": "Filter darunter hinzufügen",
@@ -907,7 +911,8 @@
       "required_message": "Für die Segmentverwaltung ist eine Enterprise-Lizenz erforderlich."
     },
     "errors": {
-      "delete_failed": "Segment konnte nicht gelöscht werden."
+      "delete_failed": "Segment konnte nicht gelöscht werden.",
+      "not_found": "Segment nicht gefunden."
     }
   }
 }

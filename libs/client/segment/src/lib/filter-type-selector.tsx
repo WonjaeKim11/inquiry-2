@@ -15,7 +15,7 @@ import type {
   DeviceType,
 } from '@inquiry/shared-segment';
 import { fetchAttributeKeys, type AttributeKey } from '@inquiry/client-contact';
-import { fetchSegments, type SegmentItem } from './segment-api.js';
+import { fetchSegments, type SegmentItem } from './segment-api';
 
 interface FilterTypeSelectorProps {
   resource: FilterResource;

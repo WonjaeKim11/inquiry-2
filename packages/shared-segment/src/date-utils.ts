@@ -1,4 +1,4 @@
-import type { TimeUnit } from './types.js';
+import type { TimeUnit } from './types';
 
 /**
  * 주어진 날짜에서 시간 단위만큼 뺀 날짜를 반환한다.

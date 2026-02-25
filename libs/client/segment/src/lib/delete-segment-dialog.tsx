@@ -11,7 +11,7 @@ import {
   DialogFooter,
   Button,
 } from '@inquiry/client-ui';
-import { deleteSegment, type SegmentItem } from './segment-api.js';
+import { deleteSegment, type SegmentItem } from './segment-api';
 
 interface DeleteSegmentDialogProps {
   envId: string;

@@ -826,6 +826,8 @@
     }
   },
   "segment": {
+    "title": "Segments",
+    "description": "Créez et gérez des segments d'audience pour cibler des groupes de contacts spécifiques.",
     "list": {
       "empty": "Aucun segment trouvé.",
       "total_count": "Total {{count}} segments",
@@ -843,10 +845,11 @@
       "description_label": "Description",
       "description_placeholder": "Entrez la description du segment (optionnel)",
       "private_label": "Segment privé",
+      "details": "Détails du segment",
       "cancel": "Annuler",
-      "create": "Créer",
+      "create": "Créer un segment",
       "save": "Enregistrer",
-      "edit": "Modifier"
+      "edit": "Modifier le segment"
     },
     "actions": {
       "clone": "Cloner",
@@ -858,6 +861,7 @@
       "delete_message": "Voulez-vous vraiment supprimer le segment \"{{title}}\" ? Cette action est irréversible."
     },
     "filter": {
+      "title": "Règles de filtrage",
       "empty": "Aucun filtre configuré. Ajoutez un filtre pour définir les règles de ciblage.",
       "add": "Ajouter un filtre",
       "add_below": "Ajouter un filtre en dessous",
@@ -907,7 +911,8 @@
       "required_message": "Une licence Enterprise est nécessaire pour utiliser les fonctionnalités de gestion des segments."
     },
     "errors": {
-      "delete_failed": "Échec de la suppression du segment."
+      "delete_failed": "Échec de la suppression du segment.",
+      "not_found": "Segment introuvable."
     }
   }
 }

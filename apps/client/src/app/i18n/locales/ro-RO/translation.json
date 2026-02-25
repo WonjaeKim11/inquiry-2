@@ -826,6 +826,8 @@
     }
   },
   "segment": {
+    "title": "Segmente",
+    "description": "Creati si gestionati segmente de audienta pentru a viza grupuri specifice de contacte.",
     "list": {
       "empty": "Nu s-au gasit segmente.",
       "total_count": "Total {{count}} segmente",
@@ -843,10 +845,11 @@
       "description_label": "Descriere",
       "description_placeholder": "Introduceti descrierea segmentului (optional)",
       "private_label": "Segment privat",
+      "details": "Detalii segment",
       "cancel": "Anulare",
-      "create": "Creare",
+      "create": "Creare segment",
       "save": "Salvare",
-      "edit": "Editare"
+      "edit": "Editare segment"
     },
     "actions": {
       "clone": "Clonare",
@@ -858,6 +861,7 @@
       "delete_message": "Sunteti sigur ca doriti sa stergeti segmentul \"{{title}}\"? Aceasta actiune nu poate fi anulata."
     },
     "filter": {
+      "title": "Reguli de filtrare",
       "empty": "Nu exista filtre configurate. Adaugati un filtru pentru a defini reguli de targetare.",
       "add": "Adauga filtru",
       "add_below": "Adauga filtru dedesubt",
@@ -906,6 +910,9 @@
       "required_title": "Licenta Enterprise necesara",
       "required_message": "O licenta Enterprise este necesara pentru a utiliza functiile de gestionare a segmentelor."
     },
-    "errors": { "delete_failed": "Stergerea segmentului a esuat." }
+    "errors": {
+      "delete_failed": "Stergerea segmentului a esuat.",
+      "not_found": "Segmentul nu a fost gasit."
+    }
   }
 }

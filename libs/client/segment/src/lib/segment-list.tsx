@@ -10,12 +10,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@inquiry/client-ui';
-import {
-  fetchSegments,
-  cloneSegment,
-  type SegmentItem,
-} from './segment-api.js';
-import { DeleteSegmentDialog } from './delete-segment-dialog.js';
+import { fetchSegments, cloneSegment, type SegmentItem } from './segment-api';
+import { DeleteSegmentDialog } from './delete-segment-dialog';
 
 interface SegmentListProps {
   envId: string;

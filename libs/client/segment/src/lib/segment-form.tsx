@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, Input, Label, Textarea, Switch } from '@inquiry/client-ui';
-import type { SegmentFormValues } from './schemas/segment.schema.js';
+import type { SegmentFormValues } from './schemas/segment.schema';
 
 interface SegmentFormProps {
   /** 초기값 (수정 시) */

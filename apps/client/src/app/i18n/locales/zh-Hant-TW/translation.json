@@ -826,6 +826,8 @@
     }
   },
   "segment": {
+    "title": "區段",
+    "description": "建立和管理受眾區段，以定向特定聯絡人群組。",
     "list": {
       "empty": "未找到區段。",
       "total_count": "共 {{count}} 個區段",
@@ -843,10 +845,11 @@
       "description_label": "描述",
       "description_placeholder": "輸入區段描述（選填）",
       "private_label": "私有區段",
+      "details": "區段詳情",
       "cancel": "取消",
-      "create": "建立",
+      "create": "建立區段",
       "save": "儲存",
-      "edit": "編輯"
+      "edit": "編輯區段"
     },
     "actions": { "clone": "複製", "delete": "刪除", "reset": "重設篩選" },
     "dialogs": {
@@ -854,6 +857,7 @@
       "delete_message": "確定要刪除區段「{{title}}」嗎？此操作無法復原。"
     },
     "filter": {
+      "title": "篩選規則",
       "empty": "未設定篩選條件。新增篩選條件以定義目標規則。",
       "add": "新增篩選",
       "add_below": "在下方新增篩選",
@@ -902,6 +906,9 @@
       "required_title": "需要企業版授權",
       "required_message": "使用區段管理功能需要企業版授權。"
     },
-    "errors": { "delete_failed": "刪除區段失敗。" }
+    "errors": {
+      "delete_failed": "刪除區段失敗。",
+      "not_found": "未找到區段。"
+    }
   }
 }

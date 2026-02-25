@@ -1102,6 +1102,8 @@
     }
   },
   "segment": {
+    "title": "세그먼트",
+    "description": "특정 연락처 그룹을 타겟팅하기 위한 세그먼트를 생성하고 관리합니다.",
     "list": {
       "empty": "세그먼트가 없습니다.",
       "total_count": "전체 {{count}}개 세그먼트",
@@ -1119,10 +1121,11 @@
       "description_label": "설명",
       "description_placeholder": "세그먼트 설명을 입력하세요 (선택사항)",
       "private_label": "비공개 세그먼트",
+      "details": "세그먼트 세부 정보",
       "cancel": "취소",
-      "create": "생성",
+      "create": "세그먼트 생성",
       "save": "저장",
-      "edit": "수정"
+      "edit": "세그먼트 수정"
     },
     "actions": {
       "clone": "복제",
@@ -1134,6 +1137,7 @@
       "delete_message": "세그먼트 \"{{title}}\"을(를) 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다."
     },
     "filter": {
+      "title": "필터 규칙",
       "empty": "설정된 필터가 없습니다. 타겟팅 규칙을 정의하려면 필터를 추가하세요.",
       "add": "필터 추가",
       "add_below": "아래에 필터 추가",
@@ -1183,7 +1187,8 @@
       "required_message": "세그먼트 관리 기능을 사용하려면 Enterprise 라이선스가 필요합니다."
     },
     "errors": {
-      "delete_failed": "세그먼트 삭제에 실패했습니다."
+      "delete_failed": "세그먼트 삭제에 실패했습니다.",
+      "not_found": "세그먼트를 찾을 수 없습니다."
     }
   }
 }

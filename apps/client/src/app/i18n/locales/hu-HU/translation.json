@@ -826,6 +826,8 @@
     }
   },
   "segment": {
+    "title": "Szegmensek",
+    "description": "Hozzon létre és kezeljen közönségszegmenseket meghatározott kapcsolati csoportok célzásához.",
     "list": {
       "empty": "Nem találhatók szegmensek.",
       "total_count": "Összesen {{count}} szegmens",
@@ -843,10 +845,11 @@
       "description_label": "Leírás",
       "description_placeholder": "Adja meg a szegmens leírását (opcionális)",
       "private_label": "Privát szegmens",
+      "details": "Szegmens részletei",
       "cancel": "Mégse",
-      "create": "Létrehozás",
+      "create": "Szegmens létrehozása",
       "save": "Mentés",
-      "edit": "Szerkesztés"
+      "edit": "Szegmens szerkesztése"
     },
     "actions": {
       "clone": "Klónozás",
@@ -858,6 +861,7 @@
       "delete_message": "Biztosan törölni szeretné a(z) \"{{title}}\" szegmenst? Ez a művelet nem vonható vissza."
     },
     "filter": {
+      "title": "Szűrési szabályok",
       "empty": "Nincsenek beállított szűrők. Adjon hozzá szűrőt a célzási szabályok meghatározásához.",
       "add": "Szűrő hozzáadása",
       "add_below": "Szűrő hozzáadása alá",
@@ -906,6 +910,9 @@
       "required_title": "Enterprise licenc szükséges",
       "required_message": "A szegmenskezelési funkciók használatához Enterprise licenc szükséges."
     },
-    "errors": { "delete_failed": "A szegmens törlése sikertelen." }
+    "errors": {
+      "delete_failed": "A szegmens törlése sikertelen.",
+      "not_found": "Szegmens nem található."
+    }
   }
 }

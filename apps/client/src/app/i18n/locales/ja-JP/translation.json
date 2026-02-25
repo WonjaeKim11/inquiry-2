@@ -826,6 +826,8 @@
     }
   },
   "segment": {
+    "title": "セグメント",
+    "description": "特定の連絡先グループをターゲティングするためのオーディエンスセグメントを作成・管理します。",
     "list": {
       "empty": "セグメントが見つかりません。",
       "total_count": "合計 {{count}} セグメント",
@@ -843,10 +845,11 @@
       "description_label": "説明",
       "description_placeholder": "セグメントの説明を入力（任意）",
       "private_label": "非公開セグメント",
+      "details": "セグメント詳細",
       "cancel": "キャンセル",
-      "create": "作成",
+      "create": "セグメント作成",
       "save": "保存",
-      "edit": "編集"
+      "edit": "セグメント編集"
     },
     "actions": {
       "clone": "複製",
@@ -858,6 +861,7 @@
       "delete_message": "セグメント「{{title}}」を削除してもよろしいですか？この操作は取り消せません。"
     },
     "filter": {
+      "title": "フィルタールール",
       "empty": "フィルターが設定されていません。ターゲティングルールを定義するにはフィルターを追加してください。",
       "add": "フィルター追加",
       "add_below": "下にフィルター追加",
@@ -906,6 +910,9 @@
       "required_title": "Enterpriseライセンスが必要です",
       "required_message": "セグメント管理機能を使用するにはEnterpriseライセンスが必要です。"
     },
-    "errors": { "delete_failed": "セグメントの削除に失敗しました。" }
+    "errors": {
+      "delete_failed": "セグメントの削除に失敗しました。",
+      "not_found": "セグメントが見つかりません。"
+    }
   }
 }

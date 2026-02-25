@@ -1,4 +1,4 @@
-import type { FilterItem, FilterConnector, FilterResource } from './types.js';
+import type { FilterItem, FilterConnector, FilterResource } from './types';
 
 /**
  * 새로운 빈 필터 항목을 생성한다.

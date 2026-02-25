@@ -1,8 +1,8 @@
 'use client';
 
 import type { FilterItem } from '@inquiry/shared-segment';
-import { FilterItemRow } from './filter-item-row.js';
-import { ConnectorToggle } from './connector-toggle.js';
+import { FilterItemRow } from './filter-item-row';
+import { ConnectorToggle } from './connector-toggle';
 
 interface FilterGroupProps {
   filters: FilterItem[];

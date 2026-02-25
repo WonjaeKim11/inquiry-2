@@ -826,6 +826,8 @@
     }
   },
   "segment": {
+    "title": "Segmentos",
+    "description": "Crie e gerencie segmentos de audiencia para direcionar grupos de contatos especificos.",
     "list": {
       "empty": "Nenhum segmento encontrado.",
       "total_count": "Total de {{count}} segmentos",
@@ -843,10 +845,11 @@
       "description_label": "Descrição",
       "description_placeholder": "Digite a descrição do segmento (opcional)",
       "private_label": "Segmento privado",
+      "details": "Detalhes do segmento",
       "cancel": "Cancelar",
-      "create": "Criar",
+      "create": "Criar segmento",
       "save": "Salvar",
-      "edit": "Editar"
+      "edit": "Editar segmento"
     },
     "actions": {
       "clone": "Clonar",
@@ -858,6 +861,7 @@
       "delete_message": "Tem certeza de que deseja excluir o segmento \"{{title}}\"? Esta ação não pode ser desfeita."
     },
     "filter": {
+      "title": "Regras de filtro",
       "empty": "Nenhum filtro configurado. Adicione um filtro para definir regras de segmentação.",
       "add": "Adicionar filtro",
       "add_below": "Adicionar filtro abaixo",
@@ -906,6 +910,9 @@
       "required_title": "Licença Enterprise necessária",
       "required_message": "Uma licença Enterprise é necessária para usar os recursos de gerenciamento de segmentos."
     },
-    "errors": { "delete_failed": "Falha ao excluir o segmento." }
+    "errors": {
+      "delete_failed": "Falha ao excluir o segmento.",
+      "not_found": "Segmento nao encontrado."
+    }
   }
 }

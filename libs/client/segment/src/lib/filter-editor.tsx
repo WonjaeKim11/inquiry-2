@@ -12,7 +12,7 @@ import {
   updateFilter,
   createGroupFromFilter,
 } from '@inquiry/shared-segment';
-import { FilterGroup } from './filter-group.js';
+import { FilterGroup } from './filter-group';
 
 interface FilterEditorProps {
   /** 현재 필터 배열 */

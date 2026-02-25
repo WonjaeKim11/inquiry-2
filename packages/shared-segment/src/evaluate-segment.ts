@@ -1,10 +1,10 @@
-import type { FilterItem } from './types.js';
+import type { FilterItem } from './types';
 import {
   subtractTimeUnit,
   startOfDay,
   endOfDay,
   isSameDay,
-} from './date-utils.js';
+} from './date-utils';
 
 /**
  * 연락처 속성을 기반으로 필터 트리를 평가한다.

@@ -4,9 +4,9 @@ import { useTranslation } from 'react-i18next';
 import { Button } from '@inquiry/client-ui';
 import type { FilterItem, FilterResource } from '@inquiry/shared-segment';
 import { resetFilterForResource } from '@inquiry/shared-segment';
-import { FilterTypeSelector } from './filter-type-selector.js';
-import { OperatorSelector } from './operator-selector.js';
-import { ValueInput } from './value-input.js';
+import { FilterTypeSelector } from './filter-type-selector';
+import { OperatorSelector } from './operator-selector';
+import { ValueInput } from './value-input';
 
 interface FilterItemRowProps {
   filter: FilterItem;

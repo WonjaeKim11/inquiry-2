@@ -826,6 +826,8 @@
     }
   },
   "segment": {
+    "title": "Segmenten",
+    "description": "Maak en beheer doelgroepsegmenten om specifieke contactgroepen te targeten.",
     "list": {
       "empty": "Geen segmenten gevonden.",
       "total_count": "Totaal {{count}} segmenten",
@@ -843,10 +845,11 @@
       "description_label": "Beschrijving",
       "description_placeholder": "Voer segmentbeschrijving in (optioneel)",
       "private_label": "Privésegment",
+      "details": "Segmentdetails",
       "cancel": "Annuleren",
-      "create": "Aanmaken",
+      "create": "Segment aanmaken",
       "save": "Opslaan",
-      "edit": "Bewerken"
+      "edit": "Segment bewerken"
     },
     "actions": {
       "clone": "Klonen",
@@ -858,6 +861,7 @@
       "delete_message": "Weet u zeker dat u het segment \"{{title}}\" wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt."
     },
     "filter": {
+      "title": "Filterregels",
       "empty": "Geen filters geconfigureerd. Voeg een filter toe om targetingregels te definiëren.",
       "add": "Filter toevoegen",
       "add_below": "Filter hieronder toevoegen",
@@ -906,6 +910,9 @@
       "required_title": "Enterprise-licentie vereist",
       "required_message": "Een Enterprise-licentie is vereist om segmentbeheerfuncties te gebruiken."
     },
-    "errors": { "delete_failed": "Segment verwijderen mislukt." }
+    "errors": {
+      "delete_failed": "Segment verwijderen mislukt.",
+      "not_found": "Segment niet gevonden."
+    }
   }
 }

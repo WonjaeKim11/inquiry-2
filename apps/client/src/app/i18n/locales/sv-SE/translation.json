@@ -826,6 +826,8 @@
     }
   },
   "segment": {
+    "title": "Segment",
+    "description": "Skapa och hantera malgruppssegment for att rikta in dig pa specifika kontaktgrupper.",
     "list": {
       "empty": "Inga segment hittades.",
       "total_count": "Totalt {{count}} segment",
@@ -843,10 +845,11 @@
       "description_label": "Beskrivning",
       "description_placeholder": "Ange segmentbeskrivning (valfritt)",
       "private_label": "Privat segment",
+      "details": "Segmentdetaljer",
       "cancel": "Avbryt",
-      "create": "Skapa",
+      "create": "Skapa segment",
       "save": "Spara",
-      "edit": "Redigera"
+      "edit": "Redigera segment"
     },
     "actions": {
       "clone": "Klona",
@@ -858,6 +861,7 @@
       "delete_message": "Ar du saker pa att du vill radera segmentet \"{{title}}\"? Denna atgard kan inte angras."
     },
     "filter": {
+      "title": "Filterregler",
       "empty": "Inga filter konfigurerade. Lagg till ett filter for att definiera malgrupper.",
       "add": "Lagg till filter",
       "add_below": "Lagg till filter nedan",
@@ -906,6 +910,9 @@
       "required_title": "Enterprise-licens kravs",
       "required_message": "En Enterprise-licens kravs for att anvanda segmenthanteringsfunktioner."
     },
-    "errors": { "delete_failed": "Det gick inte att radera segmentet." }
+    "errors": {
+      "delete_failed": "Det gick inte att radera segmentet.",
+      "not_found": "Segmentet hittades inte."
+    }
   }
 }

@@ -1102,6 +1102,8 @@
     }
   },
   "segment": {
+    "title": "Segments",
+    "description": "Create and manage audience segments to target specific groups of contacts.",
     "list": {
       "empty": "No segments found.",
       "total_count": "Total {{count}} segments",
@@ -1119,10 +1121,11 @@
       "description_label": "Description",
       "description_placeholder": "Enter segment description (optional)",
       "private_label": "Private segment",
+      "details": "Segment Details",
       "cancel": "Cancel",
-      "create": "Create",
+      "create": "Create Segment",
       "save": "Save",
-      "edit": "Edit"
+      "edit": "Edit Segment"
     },
     "actions": {
       "clone": "Clone",
@@ -1134,6 +1137,7 @@
       "delete_message": "Are you sure you want to delete the segment \"{{title}}\"? This action cannot be undone."
     },
     "filter": {
+      "title": "Filter Rules",
       "empty": "No filters configured. Add a filter to define targeting rules.",
       "add": "Add Filter",
       "add_below": "Add filter below",
@@ -1183,7 +1187,8 @@
       "required_message": "An Enterprise license is required to use segment management features."
     },
     "errors": {
-      "delete_failed": "Failed to delete segment."
+      "delete_failed": "Failed to delete segment.",
+      "not_found": "Segment not found."
     }
   }
 }

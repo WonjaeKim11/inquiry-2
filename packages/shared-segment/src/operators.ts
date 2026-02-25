@@ -1,4 +1,4 @@
-import type { FilterOperator, FilterType } from './types.js';
+import type { FilterOperator, FilterType } from './types';
 
 /** 값이 필요 없는 연산자 집합 (isSet, isNotSet, isToday, isYesterday) */
 export const VALUE_LESS_OPERATORS: ReadonlySet<FilterOperator> = new Set([
