@@ -122,6 +122,9 @@
     },
     {
       "path": "./libs/server/contact"
+    },
+    {
+      "path": "./libs/client/contact"
     }
   ]
 }

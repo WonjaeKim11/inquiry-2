@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@inquiry/client-auth": "workspace:*",
+    "@inquiry/client-contact": "workspace:*",
     "@inquiry/client-core": "workspace:*",
     "@inquiry/client-api-key": "workspace:*",
     "@inquiry/client-member": "workspace:*",

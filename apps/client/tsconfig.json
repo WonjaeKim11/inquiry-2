@@ -86,6 +86,9 @@
     },
     {
       "path": "../../libs/client/survey-editor"
+    },
+    {
+      "path": "../../libs/client/contact"
     }
   ]
 }
