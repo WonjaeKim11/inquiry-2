@@ -384,9 +384,30 @@ model Environment {
   displays              Display[]
   contacts              Contact[]
   contactAttributeKeys  ContactAttributeKey[]
+  segments              Segment[]
 
   @@index([projectId])
   @@map("environments")
+}
+
+/// 세그먼트: 연락처를 필터 조건으로 그룹화하는 단위.
+/// filters는 FilterItem[] 구조의 JSON 트리.
+model Segment {
+  id            String   @id @default(cuid())
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  title         String
+  description   String?
+  isPrivate     Boolean  @default(true)
+  filters       Json     @default("[]")
+  environmentId String
+
+  environment Environment @relation(fields: [environmentId], references: [id], onDelete: Cascade)
+  surveys     Survey[]
+
+  @@unique([environmentId, title])
+  @@index([environmentId])
+  @@map("segments")
 }
 
 /// 액션 클래스 (사용자 행동 정의)
@@ -474,7 +495,7 @@ model Survey {
   projectOverwrites     Json?
   surveyMetadata        Json?
   customHeadScript      String?
-  segment               Json?
+  segmentId             String?
   languages             Json         @default("[]")
 
   // 기능 플래그
@@ -487,6 +508,7 @@ model Survey {
   // Relations
   environment Environment @relation(fields: [environmentId], references: [id], onDelete: Cascade)
   creator     User?       @relation(fields: [creatorId], references: [id], onDelete: SetNull)
+  segment     Segment?    @relation(fields: [segmentId], references: [id], onDelete: SetNull)
   responses   Response[]
   displays    Display[]
   quotas      Quota[]

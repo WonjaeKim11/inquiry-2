@@ -1311,6 +1311,12 @@ importers:
 
   packages/shared-i18n: {}
 
+  packages/shared-segment:
+    dependencies:
+      zod:
+        specifier: ^4.3.6
+        version: 4.3.6
+
   packages/survey-builder-config:
     dependencies:
       '@coltorapps/builder':

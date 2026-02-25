@@ -125,6 +125,9 @@
     },
     {
       "path": "./libs/client/contact"
+    },
+    {
+      "path": "./packages/shared-segment"
     }
   ]
 }
