@@ -1,4 +1,7 @@
 import { Module } from '@nestjs/common';
+import { TypeDetectorService } from './services/type-detector.service.js';
+import { ContactAttributeService } from './services/contact-attribute.service.js';
+import { ContactAttributeController } from './controllers/contact-attribute.controller.js';
 
 /**
  * Contact 관리 모듈.
@@ -6,8 +9,8 @@ import { Module } from '@nestjs/common';
  * ServerPrismaModule, AuditLogModule, LicenseModule은 @Global()이므로 별도 import 불필요.
  */
 @Module({
-  controllers: [],
-  providers: [],
-  exports: [],
+  controllers: [ContactAttributeController],
+  providers: [TypeDetectorService, ContactAttributeService],
+  exports: [TypeDetectorService, ContactAttributeService],
 })
 export class ContactModule {}
