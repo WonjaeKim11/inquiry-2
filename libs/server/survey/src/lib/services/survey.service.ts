@@ -156,6 +156,8 @@ export class SurveyService {
         ...(dto.isIpCollectionEnabled !== undefined && {
           isIpCollectionEnabled: dto.isIpCollectionEnabled,
         }),
+        // 세그먼트 연결 (설문 대상 필터링)
+        ...(dto.segmentId !== undefined && { segmentId: dto.segmentId }),
       },
     });
 
@@ -322,6 +324,8 @@ export class SurveyService {
       updateData['isBackButtonHidden'] = dto.isBackButtonHidden;
     if (dto.isIpCollectionEnabled !== undefined)
       updateData['isIpCollectionEnabled'] = dto.isIpCollectionEnabled;
+    // 세그먼트 연결/해제 (null이면 세그먼트 해제)
+    if (dto.segmentId !== undefined) updateData['segmentId'] = dto.segmentId;
 
     const updated = await this.prisma.survey.update({
       where: { id: surveyId },

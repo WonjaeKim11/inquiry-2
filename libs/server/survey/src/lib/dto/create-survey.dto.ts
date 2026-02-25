@@ -76,6 +76,8 @@ export const CreateSurveySchema = z.object({
   isBackButtonHidden: z.boolean().optional(),
   /** IP 수집 활성화 */
   isIpCollectionEnabled: z.boolean().optional(),
+  /** 연결할 세그먼트 ID (설문 대상 필터링용) */
+  segmentId: z.string().optional(),
 });
 
 export type CreateSurveyDto = z.infer<typeof CreateSurveySchema>;

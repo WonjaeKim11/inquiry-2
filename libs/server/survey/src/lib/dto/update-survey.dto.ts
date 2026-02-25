@@ -6,7 +6,12 @@ import { CreateSurveySchema } from './create-survey.dto.js';
  * CreateSurveySchema의 모든 필드를 optional로 확장한다.
  * 전달된 필드만 업데이트된다 (부분 업데이트).
  * 상태 변경은 별도 엔드포인트(/publish, /pause 등)를 사용한다.
+ *
+ * segmentId는 nullable로 확장하여 세그먼트 해제(null 설정)를 허용한다.
  */
-export const UpdateSurveySchema = CreateSurveySchema.partial();
+export const UpdateSurveySchema = CreateSurveySchema.partial().extend({
+  /** 연결할 세그먼트 ID (null로 설정하면 세그먼트 해제) */
+  segmentId: z.string().nullable().optional(),
+});
 
 export type UpdateSurveyDto = z.infer<typeof UpdateSurveySchema>;
