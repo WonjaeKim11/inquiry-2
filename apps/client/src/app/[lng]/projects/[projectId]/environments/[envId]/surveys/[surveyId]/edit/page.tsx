@@ -1,49 +1,35 @@
 'use client';
 
-import { use, useEffect, useState, useCallback, useMemo } from 'react';
+import { use, useEffect, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '@inquiry/client-core';
-import {
-  Button,
-  Input,
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  Alert,
-  AlertDescription,
-  Tabs,
-  TabsList,
-  TabsTrigger,
-  TabsContent,
-} from '@inquiry/client-ui';
-import { SurveyStylingTab } from '@inquiry/client-styling';
+import { Alert, AlertDescription, Button } from '@inquiry/client-ui';
 import { useProject } from '@inquiry/client-project';
+import { useSurvey } from '@inquiry/client-survey';
+import { surveyBuilder } from '@inquiry/survey-builder-config';
+import { useBuilderStore } from '@coltorapps/builder-react';
+import type { SurveyBuilderSchema } from '@inquiry/survey-builder-config';
 import {
-  useSurvey,
-  useAutoSave,
-  SurveyStatusBadge,
-  publishSurvey,
-  pauseSurvey,
-  resumeSurvey,
-  completeSurvey,
-  updateSurvey,
-} from '@inquiry/client-survey';
-import type { SurveyStatus, UpdateSurveyInput } from '@inquiry/client-survey';
-import {
-  MultiLanguageCard,
-  EditorLanguageSelector,
-  useSurveyLanguages,
-} from '@inquiry/client-multilingual';
-import type {
-  EditingLanguageContext,
-  LanguageWithConfig,
-} from '@inquiry/client-multilingual';
+  surveyToBuilderData,
+  EditorUIProvider,
+  SurveyMetaProvider,
+  SurveyEditorLayout,
+  ElementsView,
+  SettingsView,
+  StylingView,
+  FollowUpsView,
+  SurveyPreview,
+  useEditorUI,
+  useEditorAutoSave,
+  useSurveyPublish,
+} from '@inquiry/client-survey-editor';
+import type { SurveyMetaState } from '@inquiry/client-survey-editor';
 
 /**
  * 설문 편집기 페이지.
- * 설문 데이터를 로드하고, 이름/스키마 편집, 자동 저장, 상태 전이, 다국어 설정 기능을 제공한다.
+ * 서버에서 설문 데이터를 로드하고, Builder Store + Meta Context를 초기화한 뒤
+ * SurveyEditorLayout으로 편집기 UI를 렌더링한다.
  */
 export default function SurveyEditPage({
   params,
@@ -61,66 +47,10 @@ export default function SurveyEditPage({
   const router = useRouter();
 
   // 설문 데이터 로드
-  const { survey, loading, error, refetch } = useSurvey(surveyId);
+  const { survey, loading, error } = useSurvey(surveyId);
 
-  // 편집 상태
-  const [name, setName] = useState('');
-  const [schemaText, setSchemaText] = useState('');
-  const [statusError, setStatusError] = useState<string | null>(null);
-  const [transitioning, setTransitioning] = useState(false);
-  const [editingLanguage, setEditingLanguage] =
-    useState<EditingLanguageContext | null>(null);
-
-  // 설문 데이터가 로드되면 편집 상태를 초기화한다
-  useEffect(() => {
-    if (survey) {
-      setName(survey.name);
-      setSchemaText(JSON.stringify(survey.schema ?? {}, null, 2));
-    }
-  }, [survey]);
-
-  // 자동 저장용 데이터 객체를 메모이제이션한다
-  const autoSaveData: UpdateSurveyInput = useMemo(
-    () => ({ name, schema: safeParseJSON(schemaText) }),
-    [name, schemaText]
-  );
-
-  // 자동 저장 (초안 상태에서만 활성화)
-  const { saving, lastSavedAt } = useAutoSave(surveyId, autoSaveData, {
-    enabled: survey?.status === 'DRAFT',
-  });
-
-  /** 다국어 설정 변경 시 즉시 서버에 저장하고 refetch한다 */
-  const handleMultilingualUpdate = useCallback(
-    async (data: Partial<UpdateSurveyInput>) => {
-      try {
-        await updateSurvey(surveyId, data);
-        await refetch();
-      } catch {
-        // MultiLanguageCard 내부에서 에러를 처리하므로 여기서는 무시
-      }
-    },
-    [surveyId, refetch]
-  );
-
-  // 현재 프로젝트 정보 — 스타일 오버라이드 허용 여부 확인에 사용
+  // 프로젝트 정보 — 스타일 오버라이드 허용 여부 확인에 사용
   const { currentProject } = useProject();
-
-  /** 설문 스타일링 저장 핸들러 */
-  const handleSaveStyling = useCallback(
-    async (styling: Record<string, unknown> | null) => {
-      await updateSurvey(surveyId, { styling });
-      await refetch();
-    },
-    [surveyId, refetch]
-  );
-
-  // 다국어 훅 — EditorLanguageSelector에 전달할 데이터
-  const { languagesWithConfig } = useSurveyLanguages(
-    projectId,
-    survey,
-    handleMultilingualUpdate
-  );
 
   // 미인증 시 로그인 페이지로 리다이렉트
   useEffect(() => {
@@ -129,40 +59,11 @@ export default function SurveyEditPage({
     }
   }, [authLoading, user, router, lng]);
 
-  /**
-   * 상태 전이 액션을 실행한다.
-   * 성공 시 설문 데이터를 다시 조회한다.
-   */
-  const handleStatusTransition = useCallback(
-    async (action: 'publish' | 'pause' | 'resume' | 'complete') => {
-      setStatusError(null);
-      setTransitioning(true);
-
-      const actionMap = {
-        publish: publishSurvey,
-        pause: pauseSurvey,
-        resume: resumeSurvey,
-        complete: completeSurvey,
-      };
-
-      try {
-        const result = await actionMap[action](surveyId);
-        if (!result.ok) {
-          throw new Error(result.message || t('survey.errors.transition_fail'));
-        }
-        await refetch();
-      } catch (err) {
-        setStatusError(
-          err instanceof Error
-            ? err.message
-            : t('survey.errors.transition_fail')
-        );
-      } finally {
-        setTransitioning(false);
-      }
-    },
-    [surveyId, refetch, t]
-  );
+  // 설문 데이터를 Builder Store용 schema와 Meta로 분리한다
+  const builderData = useMemo(() => {
+    if (!survey) return null;
+    return surveyToBuilderData(survey);
+  }, [survey]);
 
   if (authLoading || loading) {
     return (
@@ -176,7 +77,7 @@ export default function SurveyEditPage({
     return null;
   }
 
-  if (error || !survey) {
+  if (error || !survey || !builderData) {
     return (
       <div className="mx-auto max-w-4xl p-8">
         <Alert variant="destructive">
@@ -199,213 +100,84 @@ export default function SurveyEditPage({
     );
   }
 
+  const isStyleOverrideAllowed =
+    (currentProject?.styling as Record<string, unknown>)?.allowStyleOverride !==
+    false;
+
   return (
-    <div className="mx-auto max-w-4xl p-8">
-      {/* 네비게이션 */}
-      <div className="mb-6 flex items-center gap-2">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() =>
-            router.push(
-              `/${lng}/projects/${projectId}/environments/${envId}/surveys`
-            )
-          }
-        >
-          {t('survey.editor.back_to_list')}
-        </Button>
-      </div>
-
-      {/* 헤더: 설문 이름 + 상태 배지 + 언어 선택 + 저장 표시 */}
-      <div className="mb-8 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <h1 className="text-2xl font-bold">{t('survey.editor.title')}</h1>
-          <SurveyStatusBadge status={survey.status} />
-        </div>
-        <div className="flex items-center gap-4">
-          {languagesWithConfig.filter(
-            (l: LanguageWithConfig) => l.isEnabled || l.isDefault
-          ).length > 1 && (
-            <EditorLanguageSelector
-              languages={languagesWithConfig}
-              editingContext={editingLanguage}
-              onSelectLanguage={setEditingLanguage}
-            />
-          )}
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            {saving && <span>{t('survey.actions.saving')}</span>}
-            {!saving && lastSavedAt && (
-              <span>{t('survey.actions.auto_saved')}</span>
-            )}
-          </div>
-        </div>
-      </div>
-
-      {/* 상태 전이 에러 */}
-      {statusError && (
-        <Alert variant="destructive" className="mb-4">
-          <AlertDescription>{statusError}</AlertDescription>
-        </Alert>
-      )}
-
-      {/* 상태 전이 버튼 */}
-      <div className="mb-6 flex flex-wrap gap-2">
-        <StatusTransitionButtons
-          status={survey.status}
-          transitioning={transitioning}
-          onTransition={handleStatusTransition}
-          t={t}
+    <EditorUIProvider
+      initialConfig={{
+        isStyleOverrideAllowed,
+      }}
+    >
+      <SurveyMetaProvider initialMeta={builderData.meta as SurveyMetaState}>
+        <SurveyEditorInner
+          schema={builderData.schema}
+          backUrl={`/${lng}/projects/${projectId}/environments/${envId}/surveys`}
         />
-      </div>
-
-      {/* 탭 구성: 편집 / 스타일링 */}
-      <Tabs defaultValue="edit" className="w-full">
-        <TabsList className="mb-6">
-          <TabsTrigger value="edit">
-            {t('survey.editor.tab_edit', 'Edit')}
-          </TabsTrigger>
-          <TabsTrigger value="styling">
-            {t('survey.editor.tab_styling', 'Styling')}
-          </TabsTrigger>
-        </TabsList>
-
-        {/* 편집 탭 — 기존 콘텐츠 */}
-        <TabsContent value="edit">
-          {/* 설문 이름 편집 */}
-          <Card className="mb-6">
-            <CardHeader>
-              <CardTitle>{t('survey.create.name_label')}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <Input
-                type="text"
-                value={name}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  setName(e.target.value)
-                }
-                placeholder={t('survey.create.name_placeholder')}
-              />
-            </CardContent>
-          </Card>
-
-          {/* 스키마 편집 (JSON) */}
-          <Card className="mb-6">
-            <CardHeader>
-              <CardTitle>{t('survey.editor.questions')}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <textarea
-                className="min-h-[300px] w-full rounded-md border bg-transparent p-3 font-mono text-sm focus:outline-none focus:ring-2 focus:ring-ring"
-                value={schemaText}
-                onChange={(e) => setSchemaText(e.target.value)}
-                spellCheck={false}
-              />
-            </CardContent>
-          </Card>
-
-          {/* 다국어 설정 카드 */}
-          <MultiLanguageCard
-            projectId={projectId}
-            survey={survey}
-            onUpdate={handleMultilingualUpdate}
-            lng={lng}
-          />
-        </TabsContent>
-
-        {/* 스타일링 탭 */}
-        <TabsContent value="styling">
-          <SurveyStylingTab
-            surveyStyling={(survey.styling as Record<string, unknown>) ?? null}
-            surveyType={survey.type}
-            allowStyleOverride={
-              (currentProject?.styling as Record<string, unknown>)
-                ?.allowStyleOverride !== false
-            }
-            onSave={handleSaveStyling}
-          />
-        </TabsContent>
-      </Tabs>
-    </div>
+      </SurveyMetaProvider>
+    </EditorUIProvider>
   );
 }
 
 /**
- * JSON 문자열을 안전하게 파싱한다.
- * 파싱 실패 시 undefined를 반환한다.
+ * 편집기 내부 컴포넌트.
+ * EditorUIProvider, SurveyMetaProvider 하위에서 훅을 사용한다.
+ * Builder Store를 생성하고, 자동 저장 + 발행 기능을 연결하며,
+ * 활성 탭에 따라 편집 콘텐츠를 전환한다.
  */
-function safeParseJSON(text: string): unknown {
-  try {
-    return JSON.parse(text);
-  } catch {
-    return undefined;
-  }
-}
-
-/**
- * 현재 상태에 따라 사용 가능한 상태 전이 버튼을 렌더링한다.
- * DRAFT → Publish, IN_PROGRESS → Pause/Complete, PAUSED → Resume/Complete
- */
-function StatusTransitionButtons({
-  status,
-  transitioning,
-  onTransition,
-  t,
+function SurveyEditorInner({
+  schema,
+  backUrl,
 }: {
-  status: SurveyStatus;
-  transitioning: boolean;
-  onTransition: (action: 'publish' | 'pause' | 'resume' | 'complete') => void;
-  t: (key: string) => string;
+  schema: SurveyBuilderSchema | undefined;
+  backUrl: string;
 }) {
-  switch (status) {
-    case 'DRAFT':
-      return (
-        <Button
-          onClick={() => onTransition('publish')}
-          disabled={transitioning}
-        >
-          {t('survey.actions.publish')}
-        </Button>
-      );
-    case 'IN_PROGRESS':
-      return (
-        <>
-          <Button
-            variant="outline"
-            onClick={() => onTransition('pause')}
-            disabled={transitioning}
-          >
-            {t('survey.actions.pause')}
-          </Button>
-          <Button
-            variant="secondary"
-            onClick={() => onTransition('complete')}
-            disabled={transitioning}
-          >
-            {t('survey.actions.complete')}
-          </Button>
-        </>
-      );
-    case 'PAUSED':
-      return (
-        <>
-          <Button
-            onClick={() => onTransition('resume')}
-            disabled={transitioning}
-          >
-            {t('survey.actions.resume')}
-          </Button>
-          <Button
-            variant="secondary"
-            onClick={() => onTransition('complete')}
-            disabled={transitioning}
-          >
-            {t('survey.actions.complete')}
-          </Button>
-        </>
-      );
-    case 'COMPLETED':
-      return null;
+  // Builder Store 생성 (initialData로 서버 데이터를 복원)
+  const builderStore = useBuilderStore(surveyBuilder, {
+    initialData: schema
+      ? {
+          schema,
+          entitiesAttributesErrors: {},
+          schemaError: null,
+        }
+      : undefined,
+  });
+
+  const { activeTab } = useEditorUI();
+  const { performSave } = useEditorAutoSave(builderStore);
+  const { publish } = useSurveyPublish(
+    () => builderStore.getData()?.schema as SurveyBuilderSchema | undefined
+  );
+
+  // 활성 탭에 따라 편집 콘텐츠를 렌더링한다
+  let editorContent;
+  switch (activeTab) {
+    case 'elements':
+      editorContent = <ElementsView builderStore={builderStore} />;
+      break;
+    case 'settings':
+      editorContent = <SettingsView />;
+      break;
+    case 'styling':
+      editorContent = <StylingView />;
+      break;
+    case 'followUps':
+      editorContent = <FollowUpsView />;
+      break;
     default:
-      return null;
+      editorContent = <ElementsView builderStore={builderStore} />;
   }
+
+  return (
+    <SurveyEditorLayout
+      editorContent={editorContent}
+      previewContent={<SurveyPreview builderStore={builderStore} />}
+      backUrl={backUrl}
+      onSave={performSave}
+      onPublish={async () => {
+        await publish();
+      }}
+    />
+  );
 }

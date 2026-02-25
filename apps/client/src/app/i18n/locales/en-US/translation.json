@@ -977,6 +977,57 @@
       "removePictureChoice": "Remove picture choice",
       "allowMulti": "Allow Multiple Selection",
       "shuffleChoices": "Shuffle Choices"
+    },
+    "settings": {
+      "deployment": {
+        "title": "Deployment",
+        "comingSoon": "Coming Soon"
+      },
+      "trigger": {
+        "title": "Trigger",
+        "comingSoon": "Coming Soon"
+      },
+      "responseOptions": {
+        "title": "Response Options",
+        "displayOption": "Display Option",
+        "displayOptions": {
+          "respondToAll": "Respond to All",
+          "displayOnce": "Display Once",
+          "displayMultiple": "Display Multiple Times"
+        },
+        "singleUse": "Single Use",
+        "singleUseDescription": "Allow only one response per person",
+        "autoComplete": "Auto Complete",
+        "autoCompleteDescription": "Automatically close the survey after submission"
+      },
+      "recontact": {
+        "title": "Recontact",
+        "comingSoon": "Coming Soon"
+      },
+      "placement": {
+        "title": "Placement",
+        "comingSoon": "Coming Soon"
+      },
+      "targeting": {
+        "title": "Targeting",
+        "comingSoon": "Coming Soon"
+      }
+    },
+    "styling": {
+      "title": "Styling"
+    },
+    "followUps": {
+      "title": "Follow-Ups",
+      "proBadge": "Pro",
+      "comingSoon": "Coming Soon",
+      "comingSoonDescription": "Follow-up actions will be available in a future update (FSD-022)."
+    },
+    "preview": {
+      "title": "Preview",
+      "refreshPreview": "Refresh Preview",
+      "welcomeCard": "Welcome Card",
+      "endingCard": "Ending Card",
+      "noElements": "No elements yet"
     }
   }
 }

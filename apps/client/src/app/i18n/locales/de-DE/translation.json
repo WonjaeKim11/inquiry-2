@@ -701,6 +701,57 @@
       "removePictureChoice": "Bildauswahl entfernen",
       "allowMulti": "Mehrfachauswahl erlauben",
       "shuffleChoices": "Auswahlmöglichkeiten mischen"
+    },
+    "settings": {
+      "deployment": {
+        "title": "Bereitstellung",
+        "comingSoon": "Demnächst verfügbar"
+      },
+      "trigger": {
+        "title": "Auslöser",
+        "comingSoon": "Demnächst verfügbar"
+      },
+      "responseOptions": {
+        "title": "Antwortoptionen",
+        "displayOption": "Anzeigeoption",
+        "displayOptions": {
+          "respondToAll": "Alle antworten lassen",
+          "displayOnce": "Einmal anzeigen",
+          "displayMultiple": "Mehrfach anzeigen"
+        },
+        "singleUse": "Einmalige Nutzung",
+        "singleUseDescription": "Nur eine Antwort pro Person erlauben",
+        "autoComplete": "Automatisch abschließen",
+        "autoCompleteDescription": "Umfrage nach dem Absenden automatisch schließen"
+      },
+      "recontact": {
+        "title": "Erneute Kontaktaufnahme",
+        "comingSoon": "Demnächst verfügbar"
+      },
+      "placement": {
+        "title": "Platzierung",
+        "comingSoon": "Demnächst verfügbar"
+      },
+      "targeting": {
+        "title": "Zielgruppenauswahl",
+        "comingSoon": "Demnächst verfügbar"
+      }
+    },
+    "styling": {
+      "title": "Gestaltung"
+    },
+    "followUps": {
+      "title": "Nachverfolgung",
+      "proBadge": "Pro",
+      "comingSoon": "Demnächst verfügbar",
+      "comingSoonDescription": "Nachverfolgungsaktionen werden in einem zukünftigen Update verfügbar sein (FSD-022)."
+    },
+    "preview": {
+      "title": "Vorschau",
+      "refreshPreview": "Vorschau aktualisieren",
+      "welcomeCard": "Willkommenskarte",
+      "endingCard": "Endkarte",
+      "noElements": "Noch keine Elemente"
     }
   }
 }

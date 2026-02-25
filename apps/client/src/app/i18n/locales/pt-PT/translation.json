@@ -701,6 +701,57 @@
       "removePictureChoice": "Remover opção de imagem",
       "allowMulti": "Permitir seleção múltipla",
       "shuffleChoices": "Aleatorizar opções"
+    },
+    "settings": {
+      "deployment": {
+        "title": "Implementação",
+        "comingSoon": "Em breve"
+      },
+      "trigger": {
+        "title": "Acionador",
+        "comingSoon": "Em breve"
+      },
+      "responseOptions": {
+        "title": "Opções de resposta",
+        "displayOption": "Opção de exibição",
+        "displayOptions": {
+          "respondToAll": "Responder a todos",
+          "displayOnce": "Exibir uma vez",
+          "displayMultiple": "Exibir várias vezes"
+        },
+        "singleUse": "Utilização única",
+        "singleUseDescription": "Permitir apenas uma resposta por pessoa",
+        "autoComplete": "Conclusão automática",
+        "autoCompleteDescription": "Fechar automaticamente o inquérito após submissão"
+      },
+      "recontact": {
+        "title": "Recontacto",
+        "comingSoon": "Em breve"
+      },
+      "placement": {
+        "title": "Posicionamento",
+        "comingSoon": "Em breve"
+      },
+      "targeting": {
+        "title": "Segmentação",
+        "comingSoon": "Em breve"
+      }
+    },
+    "styling": {
+      "title": "Estilização"
+    },
+    "followUps": {
+      "title": "Acompanhamentos",
+      "proBadge": "Pro",
+      "comingSoon": "Em breve",
+      "comingSoonDescription": "As ações de acompanhamento estarão disponíveis numa futura atualização (FSD-022)."
+    },
+    "preview": {
+      "title": "Pré-visualização",
+      "refreshPreview": "Atualizar pré-visualização",
+      "welcomeCard": "Cartão de boas-vindas",
+      "endingCard": "Cartão de conclusão",
+      "noElements": "Ainda sem elementos"
     }
   }
 }

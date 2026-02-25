@@ -77,3 +77,23 @@ export {
   BuilderStoreProvider,
   useBuilderStoreContext,
 } from './lib/components/elements-view/BuilderStoreContext';
+
+// Settings View Components
+export { SettingsView } from './lib/components/settings-view/SettingsView';
+export { DeploymentCard } from './lib/components/settings-view/DeploymentCard';
+export { TriggerCard } from './lib/components/settings-view/TriggerCard';
+export { ResponseOptionsCard } from './lib/components/settings-view/ResponseOptionsCard';
+export { RecontactCard } from './lib/components/settings-view/RecontactCard';
+export { PlacementCard } from './lib/components/settings-view/PlacementCard';
+export { TargetingCard } from './lib/components/settings-view/TargetingCard';
+
+// Styling View Components
+export { StylingView } from './lib/components/styling-view/StylingView';
+
+// Follow-Ups View Components
+export { FollowUpsView } from './lib/components/follow-ups-view/FollowUpsView';
+
+// Preview Components
+export { SurveyPreview } from './lib/components/preview/SurveyPreview';
+export { PreviewModal } from './lib/components/preview/PreviewModal';
+export { PreviewFullwidth } from './lib/components/preview/PreviewFullwidth';

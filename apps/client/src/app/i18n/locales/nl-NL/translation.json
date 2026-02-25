@@ -701,6 +701,57 @@
       "removePictureChoice": "Afbeeldingskeuze verwijderen",
       "allowMulti": "Meervoudige selectie toestaan",
       "shuffleChoices": "Keuzes willekeurig ordenen"
+    },
+    "settings": {
+      "deployment": {
+        "title": "Implementatie",
+        "comingSoon": "Binnenkort beschikbaar"
+      },
+      "trigger": {
+        "title": "Trigger",
+        "comingSoon": "Binnenkort beschikbaar"
+      },
+      "responseOptions": {
+        "title": "Antwoordopties",
+        "displayOption": "Weergaveoptie",
+        "displayOptions": {
+          "respondToAll": "Iedereen laten reageren",
+          "displayOnce": "Eenmalig weergeven",
+          "displayMultiple": "Meerdere keren weergeven"
+        },
+        "singleUse": "Eenmalig gebruik",
+        "singleUseDescription": "Slechts één reactie per persoon toestaan",
+        "autoComplete": "Automatisch voltooien",
+        "autoCompleteDescription": "Enquête automatisch sluiten na indiening"
+      },
+      "recontact": {
+        "title": "Hercontact",
+        "comingSoon": "Binnenkort beschikbaar"
+      },
+      "placement": {
+        "title": "Plaatsing",
+        "comingSoon": "Binnenkort beschikbaar"
+      },
+      "targeting": {
+        "title": "Doelgroep",
+        "comingSoon": "Binnenkort beschikbaar"
+      }
+    },
+    "styling": {
+      "title": "Stijl"
+    },
+    "followUps": {
+      "title": "Vervolgacties",
+      "proBadge": "Pro",
+      "comingSoon": "Binnenkort beschikbaar",
+      "comingSoonDescription": "Vervolgacties worden beschikbaar in een toekomstige update (FSD-022)."
+    },
+    "preview": {
+      "title": "Voorbeeld",
+      "refreshPreview": "Voorbeeld vernieuwen",
+      "welcomeCard": "Welkomstkaart",
+      "endingCard": "Eindkaart",
+      "noElements": "Nog geen elementen"
     }
   }
 }

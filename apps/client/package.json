@@ -12,6 +12,7 @@
     "@inquiry/client-styling": "workspace:*",
     "@inquiry/client-multilingual": "workspace:*",
     "@inquiry/client-survey": "workspace:*",
+    "@inquiry/client-survey-editor": "workspace:*",
     "@inquiry/client-ui": "workspace:*",
     "@inquiry/db": "workspace:*",
     "@inquiry/shared-i18n": "workspace:*",

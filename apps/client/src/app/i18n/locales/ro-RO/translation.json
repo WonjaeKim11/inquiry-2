@@ -701,6 +701,57 @@
       "removePictureChoice": "Eliminare opțiune imagine",
       "allowMulti": "Permite selecție multiplă",
       "shuffleChoices": "Amestecă opțiunile"
+    },
+    "settings": {
+      "deployment": {
+        "title": "Implementare",
+        "comingSoon": "În curând"
+      },
+      "trigger": {
+        "title": "Declanșator",
+        "comingSoon": "În curând"
+      },
+      "responseOptions": {
+        "title": "Opțiuni de răspuns",
+        "displayOption": "Opțiune de afișare",
+        "displayOptions": {
+          "respondToAll": "Răspunde tuturor",
+          "displayOnce": "Afișează o dată",
+          "displayMultiple": "Afișează de mai multe ori"
+        },
+        "singleUse": "Utilizare unică",
+        "singleUseDescription": "Permite doar un răspuns per persoană",
+        "autoComplete": "Completare automată",
+        "autoCompleteDescription": "Închide automat sondajul după trimitere"
+      },
+      "recontact": {
+        "title": "Recontactare",
+        "comingSoon": "În curând"
+      },
+      "placement": {
+        "title": "Plasare",
+        "comingSoon": "În curând"
+      },
+      "targeting": {
+        "title": "Targetare",
+        "comingSoon": "În curând"
+      }
+    },
+    "styling": {
+      "title": "Stilizare"
+    },
+    "followUps": {
+      "title": "Acțiuni ulterioare",
+      "proBadge": "Pro",
+      "comingSoon": "În curând",
+      "comingSoonDescription": "Acțiunile ulterioare vor fi disponibile într-o actualizare viitoare (FSD-022)."
+    },
+    "preview": {
+      "title": "Previzualizare",
+      "refreshPreview": "Actualizare previzualizare",
+      "welcomeCard": "Card de bun venit",
+      "endingCard": "Card de încheiere",
+      "noElements": "Nu există elemente încă"
     }
   }
 }

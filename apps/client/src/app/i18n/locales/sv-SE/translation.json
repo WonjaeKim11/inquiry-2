@@ -701,6 +701,57 @@
       "removePictureChoice": "Ta bort bildval",
       "allowMulti": "Tillåt flerval",
       "shuffleChoices": "Blanda val"
+    },
+    "settings": {
+      "deployment": {
+        "title": "Distribution",
+        "comingSoon": "Kommer snart"
+      },
+      "trigger": {
+        "title": "Utlösare",
+        "comingSoon": "Kommer snart"
+      },
+      "responseOptions": {
+        "title": "Svarsalternativ",
+        "displayOption": "Visningsalternativ",
+        "displayOptions": {
+          "respondToAll": "Svara alla",
+          "displayOnce": "Visa en gång",
+          "displayMultiple": "Visa flera gånger"
+        },
+        "singleUse": "Engångsanvändning",
+        "singleUseDescription": "Tillåt bara ett svar per person",
+        "autoComplete": "Automatisk slutförande",
+        "autoCompleteDescription": "Stäng enkäten automatiskt efter inlämning"
+      },
+      "recontact": {
+        "title": "Återkontakt",
+        "comingSoon": "Kommer snart"
+      },
+      "placement": {
+        "title": "Placering",
+        "comingSoon": "Kommer snart"
+      },
+      "targeting": {
+        "title": "Målgrupp",
+        "comingSoon": "Kommer snart"
+      }
+    },
+    "styling": {
+      "title": "Styling"
+    },
+    "followUps": {
+      "title": "Uppföljningar",
+      "proBadge": "Pro",
+      "comingSoon": "Kommer snart",
+      "comingSoonDescription": "Uppföljningsåtgärder kommer att finnas tillgängliga i en framtida uppdatering (FSD-022)."
+    },
+    "preview": {
+      "title": "Förhandsgranskning",
+      "refreshPreview": "Uppdatera förhandsgranskning",
+      "welcomeCard": "Välkomstkort",
+      "endingCard": "Slutkort",
+      "noElements": "Inga element ännu"
     }
   }
 }

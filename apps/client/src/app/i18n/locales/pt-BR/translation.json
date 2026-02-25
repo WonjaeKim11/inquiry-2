@@ -701,6 +701,57 @@
       "removePictureChoice": "Remover opção de imagem",
       "allowMulti": "Permitir seleção múltipla",
       "shuffleChoices": "Embaralhar opções"
+    },
+    "settings": {
+      "deployment": {
+        "title": "Implantação",
+        "comingSoon": "Em breve"
+      },
+      "trigger": {
+        "title": "Gatilho",
+        "comingSoon": "Em breve"
+      },
+      "responseOptions": {
+        "title": "Opções de resposta",
+        "displayOption": "Opção de exibição",
+        "displayOptions": {
+          "respondToAll": "Responder a todos",
+          "displayOnce": "Exibir uma vez",
+          "displayMultiple": "Exibir várias vezes"
+        },
+        "singleUse": "Uso único",
+        "singleUseDescription": "Permitir apenas uma resposta por pessoa",
+        "autoComplete": "Conclusão automática",
+        "autoCompleteDescription": "Fechar automaticamente a pesquisa após o envio"
+      },
+      "recontact": {
+        "title": "Recontato",
+        "comingSoon": "Em breve"
+      },
+      "placement": {
+        "title": "Posicionamento",
+        "comingSoon": "Em breve"
+      },
+      "targeting": {
+        "title": "Segmentação",
+        "comingSoon": "Em breve"
+      }
+    },
+    "styling": {
+      "title": "Estilização"
+    },
+    "followUps": {
+      "title": "Acompanhamentos",
+      "proBadge": "Pro",
+      "comingSoon": "Em breve",
+      "comingSoonDescription": "As ações de acompanhamento estarão disponíveis em uma atualização futura (FSD-022)."
+    },
+    "preview": {
+      "title": "Pré-visualização",
+      "refreshPreview": "Atualizar pré-visualização",
+      "welcomeCard": "Cartão de boas-vindas",
+      "endingCard": "Cartão de encerramento",
+      "noElements": "Nenhum elemento ainda"
     }
   }
 }

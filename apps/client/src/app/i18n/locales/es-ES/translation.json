@@ -701,6 +701,57 @@
       "removePictureChoice": "Eliminar opción de imagen",
       "allowMulti": "Permitir selección múltiple",
       "shuffleChoices": "Aleatorizar opciones"
+    },
+    "settings": {
+      "deployment": {
+        "title": "Implementación",
+        "comingSoon": "Próximamente"
+      },
+      "trigger": {
+        "title": "Activador",
+        "comingSoon": "Próximamente"
+      },
+      "responseOptions": {
+        "title": "Opciones de respuesta",
+        "displayOption": "Opción de visualización",
+        "displayOptions": {
+          "respondToAll": "Responder a todos",
+          "displayOnce": "Mostrar una vez",
+          "displayMultiple": "Mostrar varias veces"
+        },
+        "singleUse": "Uso único",
+        "singleUseDescription": "Permitir solo una respuesta por persona",
+        "autoComplete": "Completar automáticamente",
+        "autoCompleteDescription": "Cerrar automáticamente la encuesta después del envío"
+      },
+      "recontact": {
+        "title": "Recontacto",
+        "comingSoon": "Próximamente"
+      },
+      "placement": {
+        "title": "Ubicación",
+        "comingSoon": "Próximamente"
+      },
+      "targeting": {
+        "title": "Segmentación",
+        "comingSoon": "Próximamente"
+      }
+    },
+    "styling": {
+      "title": "Estilización"
+    },
+    "followUps": {
+      "title": "Seguimientos",
+      "proBadge": "Pro",
+      "comingSoon": "Próximamente",
+      "comingSoonDescription": "Las acciones de seguimiento estarán disponibles en una futura actualización (FSD-022)."
+    },
+    "preview": {
+      "title": "Vista previa",
+      "refreshPreview": "Actualizar vista previa",
+      "welcomeCard": "Tarjeta de bienvenida",
+      "endingCard": "Tarjeta de finalización",
+      "noElements": "Aún no hay elementos"
     }
   }
 }

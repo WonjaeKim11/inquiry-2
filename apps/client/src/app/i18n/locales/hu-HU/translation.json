@@ -701,6 +701,57 @@
       "removePictureChoice": "Képválasztás eltávolítása",
       "allowMulti": "Többszörös választás engedélyezése",
       "shuffleChoices": "Választások keverése"
+    },
+    "settings": {
+      "deployment": {
+        "title": "Telepítés",
+        "comingSoon": "Hamarosan"
+      },
+      "trigger": {
+        "title": "Aktiváló",
+        "comingSoon": "Hamarosan"
+      },
+      "responseOptions": {
+        "title": "Válaszlehetőségek",
+        "displayOption": "Megjelenítési opció",
+        "displayOptions": {
+          "respondToAll": "Mindenki válaszolhat",
+          "displayOnce": "Egyszer megjelenítés",
+          "displayMultiple": "Többszöri megjelenítés"
+        },
+        "singleUse": "Egyszeri használat",
+        "singleUseDescription": "Személyenként csak egy válasz engedélyezése",
+        "autoComplete": "Automatikus befejezés",
+        "autoCompleteDescription": "A felmérés automatikus bezárása beküldés után"
+      },
+      "recontact": {
+        "title": "Újrakapcsolódás",
+        "comingSoon": "Hamarosan"
+      },
+      "placement": {
+        "title": "Elhelyezés",
+        "comingSoon": "Hamarosan"
+      },
+      "targeting": {
+        "title": "Célzás",
+        "comingSoon": "Hamarosan"
+      }
+    },
+    "styling": {
+      "title": "Stílus"
+    },
+    "followUps": {
+      "title": "Utókövetés",
+      "proBadge": "Pro",
+      "comingSoon": "Hamarosan",
+      "comingSoonDescription": "Az utókövetési műveletek egy jövőbeli frissítésben lesznek elérhetők (FSD-022)."
+    },
+    "preview": {
+      "title": "Előnézet",
+      "refreshPreview": "Előnézet frissítése",
+      "welcomeCard": "Üdvözlő kártya",
+      "endingCard": "Befejező kártya",
+      "noElements": "Még nincsenek elemek"
     }
   }
 }

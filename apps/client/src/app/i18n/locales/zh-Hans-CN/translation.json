@@ -701,6 +701,57 @@
       "removePictureChoice": "删除图片选项",
       "allowMulti": "允许多选",
       "shuffleChoices": "随机排列选项"
+    },
+    "settings": {
+      "deployment": {
+        "title": "部署",
+        "comingSoon": "即将推出"
+      },
+      "trigger": {
+        "title": "触发器",
+        "comingSoon": "即将推出"
+      },
+      "responseOptions": {
+        "title": "回答选项",
+        "displayOption": "显示选项",
+        "displayOptions": {
+          "respondToAll": "允许所有人回答",
+          "displayOnce": "仅显示一次",
+          "displayMultiple": "多次显示"
+        },
+        "singleUse": "单次使用",
+        "singleUseDescription": "每人只允许一次回答",
+        "autoComplete": "自动完成",
+        "autoCompleteDescription": "提交后自动关闭调查"
+      },
+      "recontact": {
+        "title": "再联系",
+        "comingSoon": "即将推出"
+      },
+      "placement": {
+        "title": "放置位置",
+        "comingSoon": "即将推出"
+      },
+      "targeting": {
+        "title": "目标定位",
+        "comingSoon": "即将推出"
+      }
+    },
+    "styling": {
+      "title": "样式设置"
+    },
+    "followUps": {
+      "title": "后续操作",
+      "proBadge": "Pro",
+      "comingSoon": "即将推出",
+      "comingSoonDescription": "后续操作功能将在未来更新中提供（FSD-022）。"
+    },
+    "preview": {
+      "title": "预览",
+      "refreshPreview": "刷新预览",
+      "welcomeCard": "欢迎卡片",
+      "endingCard": "结束卡片",
+      "noElements": "暂无元素"
     }
   }
 }

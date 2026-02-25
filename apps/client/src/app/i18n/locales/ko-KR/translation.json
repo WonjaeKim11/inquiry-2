@@ -977,6 +977,57 @@
       "removePictureChoice": "이미지 선택지 삭제",
       "allowMulti": "복수 선택 허용",
       "shuffleChoices": "선택지 셔플"
+    },
+    "settings": {
+      "deployment": {
+        "title": "배포",
+        "comingSoon": "준비 중"
+      },
+      "trigger": {
+        "title": "트리거",
+        "comingSoon": "준비 중"
+      },
+      "responseOptions": {
+        "title": "응답 옵션",
+        "displayOption": "표시 옵션",
+        "displayOptions": {
+          "respondToAll": "모두에게 응답 허용",
+          "displayOnce": "한 번만 표시",
+          "displayMultiple": "여러 번 표시"
+        },
+        "singleUse": "단일 응답",
+        "singleUseDescription": "1인당 하나의 응답만 허용합니다",
+        "autoComplete": "자동 완료",
+        "autoCompleteDescription": "제출 후 설문을 자동으로 닫습니다"
+      },
+      "recontact": {
+        "title": "재접촉",
+        "comingSoon": "준비 중"
+      },
+      "placement": {
+        "title": "배치",
+        "comingSoon": "준비 중"
+      },
+      "targeting": {
+        "title": "타겟팅",
+        "comingSoon": "준비 중"
+      }
+    },
+    "styling": {
+      "title": "스타일링"
+    },
+    "followUps": {
+      "title": "후속 작업",
+      "proBadge": "Pro",
+      "comingSoon": "준비 중",
+      "comingSoonDescription": "후속 작업 기능은 향후 업데이트(FSD-022)에서 제공될 예정입니다."
+    },
+    "preview": {
+      "title": "미리보기",
+      "refreshPreview": "미리보기 새로고침",
+      "welcomeCard": "웰컴 카드",
+      "endingCard": "종료 카드",
+      "noElements": "아직 요소가 없습니다"
     }
   }
 }

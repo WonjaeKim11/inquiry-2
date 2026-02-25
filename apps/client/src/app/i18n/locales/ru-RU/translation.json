@@ -701,6 +701,57 @@
       "removePictureChoice": "Удалить вариант с изображением",
       "allowMulti": "Разрешить множественный выбор",
       "shuffleChoices": "Перемешать варианты"
+    },
+    "settings": {
+      "deployment": {
+        "title": "Развёртывание",
+        "comingSoon": "Скоро"
+      },
+      "trigger": {
+        "title": "Триггер",
+        "comingSoon": "Скоро"
+      },
+      "responseOptions": {
+        "title": "Параметры ответов",
+        "displayOption": "Вариант отображения",
+        "displayOptions": {
+          "respondToAll": "Ответить всем",
+          "displayOnce": "Показать один раз",
+          "displayMultiple": "Показывать несколько раз"
+        },
+        "singleUse": "Одноразовое использование",
+        "singleUseDescription": "Разрешить только один ответ на человека",
+        "autoComplete": "Автозавершение",
+        "autoCompleteDescription": "Автоматически закрывать опрос после отправки"
+      },
+      "recontact": {
+        "title": "Повторный контакт",
+        "comingSoon": "Скоро"
+      },
+      "placement": {
+        "title": "Размещение",
+        "comingSoon": "Скоро"
+      },
+      "targeting": {
+        "title": "Таргетинг",
+        "comingSoon": "Скоро"
+      }
+    },
+    "styling": {
+      "title": "Стилизация"
+    },
+    "followUps": {
+      "title": "Последующие действия",
+      "proBadge": "Pro",
+      "comingSoon": "Скоро",
+      "comingSoonDescription": "Последующие действия будут доступны в будущем обновлении (FSD-022)."
+    },
+    "preview": {
+      "title": "Предпросмотр",
+      "refreshPreview": "Обновить предпросмотр",
+      "welcomeCard": "Карточка приветствия",
+      "endingCard": "Карточка завершения",
+      "noElements": "Элементов пока нет"
     }
   }
 }
