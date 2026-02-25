@@ -1,19 +1,26 @@
 import {
   Controller,
   Get,
+  Post,
   Delete,
   Param,
   Query,
+  Body,
   Req,
   UseGuards,
   UseFilters,
+  UseInterceptors,
+  UploadedFile,
   HttpCode,
   HttpStatus,
+  BadRequestException,
 } from '@nestjs/common';
+import { FileInterceptor } from '@nestjs/platform-express';
 import { AuthGuard } from '@nestjs/passport';
 import { ApiExceptionFilter, ZodValidationPipe } from '@inquiry/server-core';
 import { LicenseGuard, RequireLicense } from '@inquiry/server-license';
 import { ContactService } from '../services/contact.service.js';
+import { CsvImportService } from '../services/csv-import.service.js';
 import {
   ContactAccessGuard,
   ContactMinRole,
@@ -22,6 +29,7 @@ import {
   SearchContactSchema,
   type SearchContactDto,
 } from '../dto/search-contact.dto.js';
+import { DuplicateStrategy } from '../interfaces/contact.types.js';
 import type { Request } from 'express';
 
 /**
@@ -33,7 +41,10 @@ import type { Request } from 'express';
 @UseGuards(AuthGuard('jwt'), LicenseGuard, ContactAccessGuard)
 @RequireLicense('contacts')
 export class ContactController {
-  constructor(private readonly contactService: ContactService) {}
+  constructor(
+    private readonly contactService: ContactService,
+    private readonly csvImportService: CsvImportService
+  ) {}
 
   /**
    * GET /environments/:envId/contacts
@@ -46,6 +57,44 @@ export class ContactController {
     @Query(new ZodValidationPipe(SearchContactSchema)) query: SearchContactDto
   ) {
     return this.contactService.findAll(envId, query);
+  }
+
+  /**
+   * POST /environments/:envId/contacts/import
+   * CSV 파일을 업로드하여 연락처를 대량 가져온다.
+   * multipart/form-data로 file 필드에 CSV 파일을 전송한다.
+   * duplicateStrategy 필드로 중복 처리 전략을 지정한다 (기본값: skip).
+   */
+  @Post('import')
+  @ContactMinRole('ADMIN')
+  @UseInterceptors(FileInterceptor('file'))
+  async importCsv(
+    @Param('envId') envId: string,
+    @UploadedFile() file: Express.Multer.File,
+    @Body('duplicateStrategy') duplicateStrategyRaw: string,
+    @Req() req: Request
+  ) {
+    if (!file) {
+      throw new BadRequestException('CSV 파일이 필요합니다.');
+    }
+
+    // 중복 전략 문자열 -> enum 매핑 (잘못된 값이면 기본값 skip)
+    const strategyMap: Record<string, DuplicateStrategy> = {
+      skip: DuplicateStrategy.SKIP,
+      update: DuplicateStrategy.UPDATE,
+      overwrite: DuplicateStrategy.OVERWRITE,
+    };
+
+    const strategy =
+      strategyMap[duplicateStrategyRaw ?? 'skip'] ?? DuplicateStrategy.SKIP;
+    const user = req.user as { id: string };
+
+    return this.csvImportService.importCsv(
+      envId,
+      file.buffer,
+      strategy,
+      user.id
+    );
   }
 
   /**

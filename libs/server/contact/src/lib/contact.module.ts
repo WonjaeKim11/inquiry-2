@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { TypeDetectorService } from './services/type-detector.service.js';
 import { ContactAttributeService } from './services/contact-attribute.service.js';
 import { ContactService } from './services/contact.service.js';
+import { DuplicateStrategyService } from './services/duplicate-strategy.service.js';
+import { CsvImportService } from './services/csv-import.service.js';
 import { ContactAttributeController } from './controllers/contact-attribute.controller.js';
 import { ContactController } from './controllers/contact.controller.js';
 import { ContactAccessGuard } from './guards/contact-access.guard.js';
@@ -18,9 +20,16 @@ import { EnterpriseLicenseGuard } from './guards/enterprise-license.guard.js';
     TypeDetectorService,
     ContactAttributeService,
     ContactService,
+    DuplicateStrategyService,
+    CsvImportService,
     ContactAccessGuard,
     EnterpriseLicenseGuard,
   ],
-  exports: [TypeDetectorService, ContactAttributeService, ContactService],
+  exports: [
+    TypeDetectorService,
+    ContactAttributeService,
+    ContactService,
+    CsvImportService,
+  ],
 })
 export class ContactModule {}
