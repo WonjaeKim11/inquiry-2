@@ -6,16 +6,24 @@ import { DuplicateStrategyService } from './services/duplicate-strategy.service.
 import { CsvImportService } from './services/csv-import.service.js';
 import { ContactAttributeController } from './controllers/contact-attribute.controller.js';
 import { ContactController } from './controllers/contact.controller.js';
+import { ContactManagementApiController } from './controllers/contact-management-api.controller.js';
+import { ContactClientApiController } from './controllers/contact-client-api.controller.js';
 import { ContactAccessGuard } from './guards/contact-access.guard.js';
 import { EnterpriseLicenseGuard } from './guards/enterprise-license.guard.js';
 
 /**
  * Contact 관리 모듈.
  * 연락처 CRUD, CSV Import, 속성 관리, 개인화 링크 기능을 제공한다.
+ * v2 Management API (Bulk Upload), v2 Client API (SDK Identify) 컨트롤러를 포함한다.
  * ServerPrismaModule, AuditLogModule, LicenseModule은 @Global()이므로 별도 import 불필요.
  */
 @Module({
-  controllers: [ContactAttributeController, ContactController],
+  controllers: [
+    ContactAttributeController,
+    ContactController,
+    ContactManagementApiController,
+    ContactClientApiController,
+  ],
   providers: [
     TypeDetectorService,
     ContactAttributeService,

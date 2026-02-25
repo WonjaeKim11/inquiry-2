@@ -21,6 +21,9 @@
     { "path": "../audit-log/tsconfig.lib.json" },
     { "path": "../prisma/tsconfig.lib.json" },
     { "path": "../core/tsconfig.lib.json" },
-    { "path": "../license/tsconfig.lib.json" }
+    { "path": "../license/tsconfig.lib.json" },
+    { "path": "../api-key/tsconfig.lib.json" },
+    { "path": "../rate-limit/tsconfig.lib.json" },
+    { "path": "../client-api/tsconfig.lib.json" }
   ]
 }

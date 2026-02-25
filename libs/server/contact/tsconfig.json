@@ -8,6 +8,9 @@
     { "path": "../audit-log" },
     { "path": "../core" },
     { "path": "../license" },
+    { "path": "../api-key" },
+    { "path": "../rate-limit" },
+    { "path": "../client-api" },
     { "path": "./tsconfig.lib.json" }
   ]
 }
