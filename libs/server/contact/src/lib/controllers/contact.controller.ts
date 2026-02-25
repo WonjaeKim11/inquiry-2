@@ -21,6 +21,11 @@ import { ApiExceptionFilter, ZodValidationPipe } from '@inquiry/server-core';
 import { LicenseGuard, RequireLicense } from '@inquiry/server-license';
 import { ContactService } from '../services/contact.service.js';
 import { CsvImportService } from '../services/csv-import.service.js';
+import { PersonalizedLinkService } from '../services/personalized-link.service.js';
+import {
+  CreatePersonalizedLinkSchema,
+  type CreatePersonalizedLinkDto,
+} from '../dto/create-personalized-link.dto.js';
 import {
   ContactAccessGuard,
   ContactMinRole,
@@ -43,7 +48,8 @@ import type { Request } from 'express';
 export class ContactController {
   constructor(
     private readonly contactService: ContactService,
-    private readonly csvImportService: CsvImportService
+    private readonly csvImportService: CsvImportService,
+    private readonly personalizedLinkService: PersonalizedLinkService
   ) {}
 
   /**
@@ -94,6 +100,26 @@ export class ContactController {
       file.buffer,
       strategy,
       user.id
+    );
+  }
+
+  /**
+   * POST /environments/:envId/contacts/personalized-links
+   * 개인화된 설문 링크를 생성한다.
+   * 동일 연락처+설문 조합에 기존 링크가 있으면 만료일만 갱신한다.
+   */
+  @Post('personalized-links')
+  @ContactMinRole('ADMIN')
+  @HttpCode(HttpStatus.CREATED)
+  createPersonalizedLinks(
+    @Param('envId') envId: string,
+    @Body(new ZodValidationPipe(CreatePersonalizedLinkSchema))
+    dto: CreatePersonalizedLinkDto
+  ) {
+    return this.personalizedLinkService.createLinks(
+      dto.surveyId,
+      dto.contactIds,
+      dto.expirationDays
     );
   }
 

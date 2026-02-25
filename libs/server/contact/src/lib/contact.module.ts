@@ -4,6 +4,7 @@ import { ContactAttributeService } from './services/contact-attribute.service.js
 import { ContactService } from './services/contact.service.js';
 import { DuplicateStrategyService } from './services/duplicate-strategy.service.js';
 import { CsvImportService } from './services/csv-import.service.js';
+import { PersonalizedLinkService } from './services/personalized-link.service.js';
 import { ContactAttributeController } from './controllers/contact-attribute.controller.js';
 import { ContactController } from './controllers/contact.controller.js';
 import { ContactManagementApiController } from './controllers/contact-management-api.controller.js';
@@ -30,6 +31,7 @@ import { EnterpriseLicenseGuard } from './guards/enterprise-license.guard.js';
     ContactService,
     DuplicateStrategyService,
     CsvImportService,
+    PersonalizedLinkService,
     ContactAccessGuard,
     EnterpriseLicenseGuard,
   ],
@@ -38,6 +40,7 @@ import { EnterpriseLicenseGuard } from './guards/enterprise-license.guard.js';
     ContactAttributeService,
     ContactService,
     CsvImportService,
+    PersonalizedLinkService,
   ],
 })
 export class ContactModule {}

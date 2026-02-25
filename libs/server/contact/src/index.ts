@@ -19,3 +19,5 @@ export * from './lib/dto/search-contact.dto.js';
 export * from './lib/dto/csv-import.dto.js';
 export * from './lib/dto/bulk-upload.dto.js';
 export * from './lib/dto/sdk-identify.dto.js';
+export * from './lib/services/personalized-link.service.js';
+export * from './lib/dto/create-personalized-link.dto.js';
