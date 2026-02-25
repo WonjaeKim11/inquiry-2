@@ -103,6 +103,7 @@
     "@inquiry/server-client-api": "workspace:*",
     "@inquiry/server-management-api": "workspace:*",
     "@inquiry/server-contact": "workspace:*",
+    "@inquiry/server-segment": "workspace:*",
     "@nestjs/common": "^11.0.0",
     "@nestjs/config": "^4.0.3",
     "@nestjs/core": "^11.0.0",

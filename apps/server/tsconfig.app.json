@@ -18,6 +18,9 @@
   "exclude": [],
   "references": [
     {
+      "path": "../../libs/server/segment/tsconfig.lib.json"
+    },
+    {
       "path": "../../libs/server/contact/tsconfig.lib.json"
     },
     {

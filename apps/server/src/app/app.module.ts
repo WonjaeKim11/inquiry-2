@@ -24,6 +24,7 @@ import { ApiKeyModule } from '@inquiry/server-api-key';
 import { ClientApiModule } from '@inquiry/server-client-api';
 import { ManagementApiModule } from '@inquiry/server-management-api';
 import { ContactModule } from '@inquiry/server-contact';
+import { SegmentModule } from '@inquiry/server-segment';
 import { HealthModule } from './health/health.module';
 import { V2HealthModule } from './v2-health/v2-health.module';
 import { AppController } from './app.controller';
@@ -66,6 +67,7 @@ import { AppService } from './app.service';
     ClientApiModule,
     ManagementApiModule,
     ContactModule,
+    SegmentModule,
     V2HealthModule,
     HealthModule,
     // API 버전 라우팅: Client API와 Management API를 v1 경로에 마운트

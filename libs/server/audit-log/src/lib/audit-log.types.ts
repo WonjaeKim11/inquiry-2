@@ -38,7 +38,12 @@ export type AuditAction =
   | 'language.created'
   | 'language.deleted'
   | 'contact.deleted'
-  | 'contact.csv_imported';
+  | 'contact.csv_imported'
+  | 'segment.created'
+  | 'segment.updated'
+  | 'segment.deleted'
+  | 'segment.cloned'
+  | 'segment.reset';
 
 /** 감사 로그 대상 엔티티 - 감사 이벤트가 영향을 미치는 리소스 유형 */
 export type AuditTarget =
@@ -55,7 +60,8 @@ export type AuditTarget =
   | 'project'
   | 'actionClass'
   | 'language'
-  | 'contact';
+  | 'contact'
+  | 'segment';
 
 /** 감사 모드 - 이벤트 기록 방식 (DB 저장, 로그 출력, 또는 둘 다) */
 export type AuditMode = 'db' | 'log' | 'both';
